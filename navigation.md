@@ -1,5 +1,5 @@
 ﻿#⎝◕‿◕⎠ MDwiki 試玩中
-[一起來玩玩看 MDwiki]()
+[MDwiki]()
 
   - #我來說說 MDwiki
   - [我所理解的 MDwiki（試玩中XD）](index.md)
@@ -21,7 +21,7 @@
   - [IIS Server 教學](http://dynalon.github.io/mdwiki/#!tutorials/iis/iis.md "Set up MDwiki on IIS Server")
   ----
   - #Markdown
-  - [常見的 Markdown 寫法介紹](#!mdwiki/mdwiki.markdown.md)
+  - [常見的 Markdown 寫法介紹]()
 
 [反勒索病毒推廣！]()
 
@@ -32,13 +32,7 @@
   - [為加密式惡意行為，事先設防降低受害風險 (反勒索病毒)](https://trello.com/c/PV4kfjSD)
   - [ニコニコ動画 改用 HTML5 來播放（完全不透過 Flash）](https://trello.com/c/1lAqsfi8)
 
-[魔力寶貝]()
-
-  - #露畢恩島
-  - [2016.06.30 改版後開放的新地圖 露畢恩島](cg/cg.md)
-  ----
-  - #特殊紀錄
-  - [採集寵物幫助可能跨等幫忙的特殊規則發現！](cg/cg.pet.md)
+[2016.08.01]()
 
 [gimmick:themechooser](替換佈景主題)
 
