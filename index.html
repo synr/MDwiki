@@ -218,13 +218,14 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
         isgoogle = new RegExp( "^https?:\/\/.*.googledrive.com.*\/host\/(.*)\/(#.*)$", "i");
         var thispage_googleid = location.href.replace(isgoogle,'$1');
         
-        re = new RegExp( "^(https?:\/\/" + document.domain + ")|(javascript:)", "gim");
+        re = new RegExp( "^(https?:\/\/" + document.domain + ")|(javascript:)|", "gim");
         
         for( var i=0; i < tagA.length; i++ ){
             //不是本網域或指令的LINK，就要+開新窗。
             if( !tagA[i].href.match( re ) ){
                 //本來沒有開新窗屬性的，就給他+。已經有了就不用了。
-                if (tagA[i].target != "_blank") {
+                //增加過濾單機路徑
+                if ((tagA[i].target != "_blank") && (tagA[i].href.indexOf('file:\/\/\/')==-1))  {
                     //thispage_googleid 如果不是 google，就會保留完整網址。
                     //if(thispage_googleid==location.href){
                     //    console.log('這不是北七複雜的 Google Drive');
@@ -244,6 +245,11 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                 }
             }
             googledrive_url(tagA[i]);  //只是利用同一個迴圈做事
+            //單機，條件1代表正在單機，條件2代表現在這個URL不是本機路徑，就可以+新窗。
+            if (((document.domain=="") && (tagA[i].href.indexOf('file:\/\/\/')==-1)) && (tagA[i].target != "_blank") ) {
+                tagA[i].target = "_blank";
+                console.log(tagA[i]); 
+            }
         }
     }
     function googledrive_url(link_url_array){
@@ -252,7 +258,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
         //location.href.replace(/(^https?:\/\/.*.googledrive.com.*\/host\/)(.*\/#.*)$/i,'https://googledrive.com/host/'+'$2');
         //取得最漂亮的 google drive link（不使用組合，玩取代才能無差別），如果不是的 URL 也會保持原樣。
         //下面就是判斷是不是保持原樣。有被改過的表示就是 google drive host。
-        if(taga_before != link_url_array.href){
+        if ( (taga_before != link_url_array.href) && (taga_before != '') ){
             console.log('Google drive change = ' + taga_before + '  to  ' + link_url_array);
         }        
     }

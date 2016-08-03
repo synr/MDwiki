@@ -65,17 +65,20 @@ var b=["note","メモ","筆記"],c=["attention","注意","注意"],C=["warning",
 - 想改成：
   1. 最差至少要全都無差別另開。
   2. 最好就是要判斷非本站才另開。（直接完成２）
-- 主要關鍵：
+- 原理：
+透過 JavaScript 去抓所有的超連結，然後判斷是不是有包含網站網域。
+沒有包含就可以讓他開新視窗。
+- 主要關鍵：直接使用各種參考連結的寫法（擇一） \+ 讓 ``<div>`` 用 ``onClick`` 呼叫才能。
+- 詳細：
 卡關後觀察到 MDwiki 特性是靠 JavaScript 創造。
 所以會有生成的先後序的問題，導致直接套用各種參考連結寫的方法都無效。
+一般方法頂多都是用 ``<body>`` 設定 ``onLoad`` 事件去觸發。
+但 MDwiki 建立物件都是在那之後，理所當然會沒有用XD
 因此直接使用各種參考連結的寫法（擇一） \+ 讓 ``<div>`` 用 ``onClick`` 呼叫才能。
 好處是 ``onClick`` 事件在手機上也能觸發，可以完美無痛的使用。
 主要喜歡參考連結中 http://www.vixual.net/blog/archives/202 的寫法。
 他主要透過原始的 JavaScript 利用正則 ``RegExp`` 去操作。
 所以也用他的方法深入改寫。
-- 原理：
-透過 JavaScript 去抓所有的超連結，然後判斷是不是有包含網站網域。
-沒有包含就可以讓他開新視窗。
 - 結論：這是通用版本，可以讓所有非本站的連結成叧新視窗的效果。
 - 參考過程
   - http://www.wfublog.com/2014/09/html-a-tag-hyperlink-skill.html
@@ -91,10 +94,10 @@ var b=["note","メモ","筆記"],c=["attention","注意","注意"],C=["warning",
   -  修改位子：搜尋 ``<!-- END dist/MDwiki.min.js -->`` 或 ``</head>``。
   將以下代碼放在 ``<!-- END dist/MDwiki.min.js -->``～``</head>`` 之間。
   - 修改代碼（以下兩種擇一設置就有效，推薦要死要活版XD）
-    - 改的我要死要活得 Google Drive Host 醜八怪連結縮短
+    - 改的我要死要活得 Google Drive Host 醜八怪連結縮短（+單機可用版）
 這個版本同時解決 Google Drive 空間網址超亂會連錯頁問題。
 ~~~
-<!-- 外部超連結另開視窗 Google Drive 複雜版 function 設置 start -->
+<!-- 外部超連結另開視窗 Google Drive 複雜版 function + 單機設置 start -->
 <!-- 主要參考:http://www.vixual.net/blog/archives/202並搭配元件 onClick觸發 -->
 <script type="text/javascript">
     function parseLink(){
@@ -103,13 +106,14 @@ var b=["note","メモ","筆記"],c=["attention","注意","注意"],C=["warning",
         isgoogle = new RegExp( "^https?:\/\/.*.googledrive.com.*\/host\/(.*)\/(#.*)$", "i");
         var thispage_googleid = location.href.replace(isgoogle,'$1');
         
-        re = new RegExp( "^(https?:\/\/" + document.domain + ")|(javascript:)", "gim");
+        re = new RegExp( "^(https?:\/\/" + document.domain + ")|(javascript:)|", "gim");
         
         for( var i=0; i < tagA.length; i++ ){
             //不是本網域或指令的LINK，就要+開新窗。
             if( !tagA[i].href.match( re ) ){
                 //本來沒有開新窗屬性的，就給他+。已經有了就不用了。
-                if (tagA[i].target != "_blank") {
+                //增加過濾單機路徑
+                if ((tagA[i].target != "_blank") && (tagA[i].href.indexOf('file:\/\/\/')==-1))  {
                     //thispage_googleid 如果不是 google，就會保留完整網址。
                     //if(thispage_googleid==location.href){
                     //    console.log('這不是北七複雜的 Google Drive');
@@ -129,6 +133,11 @@ var b=["note","メモ","筆記"],c=["attention","注意","注意"],C=["warning",
                 }
             }
             googledrive_url(tagA[i]);  //只是利用同一個迴圈做事
+            //單機，條件1代表正在單機，條件2代表現在這個URL不是本機路徑，就可以+新窗。
+            if (((document.domain=="") && (tagA[i].href.indexOf('file:\/\/\/')==-1)) && (tagA[i].target != "_blank") ) {
+                tagA[i].target = "_blank";
+                console.log(tagA[i]); 
+            }
         }
     }
     function googledrive_url(link_url_array){
@@ -137,12 +146,12 @@ var b=["note","メモ","筆記"],c=["attention","注意","注意"],C=["warning",
         //location.href.replace(/(^https?:\/\/.*.googledrive.com.*\/host\/)(.*\/#.*)$/i,'https://googledrive.com/host/'+'$2');
         //取得最漂亮的 google drive link（不使用組合，玩取代才能無差別），如果不是的 URL 也會保持原樣。
         //下面就是判斷是不是保持原樣。有被改過的表示就是 google drive host。
-        if(taga_before != link_url_array.href){
+        if ( (taga_before != link_url_array.href) && (taga_before != '') ){
             console.log('Google drive change = ' + taga_before + '  to  ' + link_url_array);
         }        
     }
 </script>
-<!-- 外部超連結另開視窗 Google Drive 複雜版 function 設置  end -->
+<!-- 外部超連結另開視窗 Google Drive 複雜版 function + 單機設置  end -->
 ~~~
       - 這個版本是因為 Google Drive Host 連結實在太醜就算了，
         後來還會定期自爆，造成假性破連結。
@@ -177,6 +186,4 @@ var b=["note","メモ","筆記"],c=["attention","注意","注意"],C=["warning",
 ~~~
   3. 利用尋找與取代功能：
 搜尋 ``<body>`` 取代成 ``<body onload="javascript:parseLink();">``。
-
-警告! 單機版本的話，另開窗的辨識還是沒有解決！
-但這東西很少人會用單機版XD
+  4. 完成上述就 OK 了XD
