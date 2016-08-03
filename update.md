@@ -106,7 +106,7 @@ var b=["note","メモ","筆記"],c=["attention","注意","注意"],C=["warning",
         isgoogle = new RegExp( "^https?:\/\/.*.googledrive.com.*\/host\/(.*)\/(#.*)$", "i");
         var thispage_googleid = location.href.replace(isgoogle,'$1');
         
-        re = new RegExp( "^(https?:\/\/" + document.domain + ")|(javascript:)|", "gim");
+        re = new RegExp( "^(https?:\/\/" + document.domain + ")|(javascript:)", "gim");
         
         for( var i=0; i < tagA.length; i++ ){
             //不是本網域或指令的LINK，就要+開新窗。
@@ -136,7 +136,7 @@ var b=["note","メモ","筆記"],c=["attention","注意","注意"],C=["warning",
             //單機，條件1代表正在單機，條件2代表現在這個URL不是本機路徑，就可以+新窗。
             if (((document.domain=="") && (tagA[i].href.indexOf('file:\/\/\/')==-1)) && (tagA[i].target != "_blank") ) {
                 tagA[i].target = "_blank";
-                console.log(tagA[i]); 
+                console.log('單機 = ' + tagA[i]); 
             }
         }
     }
