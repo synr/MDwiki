@@ -1,14 +1,25 @@
 #測試 Gimmicks
 ##可以把 YouTube 嵌入
-- [](http://www.youtube.com/watch?v=RMINSD7MmT4)
+- 一般
 ```markdown
 [](http://www.youtube.com/watch?v=RMINSD7MmT4)
 ```
+[](http://www.youtube.com/watch?v=RMINSD7MmT4)
+- 短
+```markdown
+[](http://youtu.be/RMINSD7MmT4)
+```
+[](http://youtu.be/RMINSD7MmT4)
+
+----
+
 - [gimmick:ForkMeOnGitHub ({ color: 'green',  position: 'right' })](http://www.github.com/Dynalon/mdwiki)
 ```
 [gimmick:ForkMeOnGitHub ({ color: 'red',  position: 'left' })](http://www.github.com/Dynalon/mdwiki)
 [gimmick:ForkMeOnGitHub ({ color: 'green',  position: 'right' })](http://www.github.com/Dynalon/mdwiki)
 ```
+
+----
 
 ##Alerts
 - 官方說明文件：[點此](http://dynalon.github.io/mdwiki/#!gimmicks.md#Alerts)
