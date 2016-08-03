@@ -1,7 +1,8 @@
-﻿hint:提示！我目前剛開始試玩中，這個網站不一定會永久存在。
+﻿
+hint:提示！我目前剛開始試玩中，這個網站不一定會永久存在。
 
 #⎝◕‿◕⎠MDwiki
-##我所理解的 MDwiki（試玩中）
+##我所理解的 MDwiki（試玩中XD）
 
 - MDwiki：用 ``Makdown`` + Wiki 視覺感(?) 來呈現，簡單卻有章節架構的網站，
   - 官方網站：[http://dynalon.github.io/mdwiki/](http://dynalon.github.io/mdwiki/)

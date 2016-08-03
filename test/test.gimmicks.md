@@ -12,11 +12,12 @@
 
 ##Alerts
 - 官方說明文件：[點此](http://dynalon.github.io/mdwiki/#!gimmicks.md#Alerts)
-- 種類：
+- 預設種類：
   - ``Attention:`` or ``Attention!``
   - ``Hint:`` or ``Hint!``
   - ``Note:`` or ``Note!``
   - ``Warning:`` or ``Warning!``
+  - 實際上也可以自己擴充想用的關鍵字，詳細可以參考 [ → 這裡 ← ](http://3dtech.jp/blog/?p=101) 。
 - 只要 「Attention:」出現（含冒號或驚嘆號，只能半形），就會出現明顯底色框框。
 也有其他三種關鍵字，可以觸發。
 只要文章內有出現這個字，就會整個文章區塊底色上色。
@@ -27,6 +28,10 @@ Attention! 注意！~~聽到注意要立正~~！
 ```
 
 Attention! 注意！~~聽到注意要立正~~！
+
+注意!~~聽到注意要立正~~！
+
+警告!
 
 ```
 Note! This is a note.
