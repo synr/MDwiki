@@ -40,7 +40,87 @@ Markdown 本身沒有註解的語法，雖然有什麼要備忘可以利用 HTML
 
 ----
 
-###測試結合燈箱效果
+##測試結合燈箱（Lightbox）效果
+#####這是直接寫 HTML 的方式完成，所以實際上內文已經很複雜了。
+#####如果以後可以改成 Gimmicks 之類的外掛，應該會比較好。
 
-<a class="various" data-fancybox-type="iframe" href="https://drive.google.com/file/d/0B_b1e3AASsaLamM2YWF1Q2cwODQ/preview?vq=hd720">Iframe</a>
-<a class="fancybox fancybox.iframe" href="https://drive.google.com/file/d/0B_b1e3AASsaLamM2YWF1Q2cwODQ/preview?vq=hd720">Iframe</a>
+- MDwiki 雖然好像有內建 [colorbox](http://www.jacklmoore.com/colorbox)，但我一直用不成功。
+- 換另一個燈箱做另外安裝：[fancybox](http://fancyapps.com/fancybox/#examples)（v2.1.5-0）
+很幸運這個燈箱的效果，不會跟之前寫的新開視窗衝突。
+  - 需要另外安裝一些檔案，下載完整包後挑出其中需要的部分檔案即可：
+    - 基本上 ``source`` 跟 ``lib`` 兩個資料夾直接複製過來 ``MDwiki/fancybox`` 即可。
+更詳細的檔案如下：
+      - fancybox/lib/jquery.mousewheel-3.0.6.pack.js
+      - fancybox/source/jquery.fancybox.css
+      - fancybox/source/jquery.fancybox.pack.js
+      - fancybox/source/helpers/jquery.fancybox-buttons.css
+      - fancybox/source/helpers/jquery.fancybox-buttons.js
+      - fancybox/source/helpers/jquery.fancybox-media.js
+      - fancybox/source/helpers/jquery.fancybox-thumbs.css
+      - fancybox/source/helpers/jquery.fancybox-media.js
+      - fancybox/source/helpers/jquery.fancybox-thumbs.css
+      - fancybox/source/helpers/jquery.fancybox-thumbs.js
+      - ``fancybox/source/`` 裡面的相關圖片檔
+  - 並且在 ``.html`` 中的 ``</head>`` 之前加入這段：
+~~~
+<!-- Lightbox fancybox 燈箱開始-->
+    <!-- Add mousewheel plugin (this is optional) -->
+    <script type="text/javascript" src="fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+
+    <!-- Add fancyBox -->
+    <link rel="stylesheet" href="fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+    <script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+    <!-- Optionally add helpers - button, thumbnail and/or media -->
+    <link rel="stylesheet" href="fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+    <script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+    <script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+
+    <link rel="stylesheet" href="fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+    <script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".fancybox").fancybox();
+        });
+    </script>
+
+    <script type="text/javascript">
+        // http://fancyapps.com/fancybox/#examples
+        $(document).ready(function() {
+            $(".googleiframe").fancybox({
+                maxWidth    : 9999,
+                maxHeight   : 9999,
+                fitToView   : false,
+                width       : '95%',
+                height      : '95%',
+                autoSize    : true,
+                closeClick  : false,
+                openEffect  : 'none',
+                closeEffect : 'none'
+            });
+        });
+    </script>
+<!-- Lightbox fancybox 燈箱結束-->
+~~~
+  - 張貼處的 md 文件使用時
+~~~
+<a class="googleiframe" data-fancybox-type="iframe" href="https://drive.google.com/file/d/0B_b1e3AASsaLamM2YWF1Q2cwODQ/preview?vq=hd720&autoplay=1" title="這是操作免費檔案變動監視軟體 DirectoryMonitor + 同步軟體 FreeFileSync，達成有變動就同步效果的備忘錄影。">Iframe</a>
+~~~
+    - 關鍵是在原本的超連結 ``<a>`` 加入２～３個屬性跟屬性值：
+``class="googleiframe"`` 跟 ``data-fancybox-type="iframe"``。
+    - ``title`` 屬性非必要，有需要顯示什麼文字才需要寫。
+  - 效果：<a class="googleiframe" data-fancybox-type="iframe" href="https://drive.google.com/file/d/0B_b1e3AASsaLamM2YWF1Q2cwODQ/preview?vq=hd720&autoplay=1" title="這是操作免費檔案變動監視軟體 DirectoryMonitor + 同步軟體 FreeFileSync，達成有變動就同步效果的備忘錄影。">Iframe</a>
+<!-- <a class="fancybox fancybox.iframe" href="https://drive.google.com/file/d/0B_b1e3AASsaLamM2YWF1Q2cwODQ/preview?vq=hd720">Iframe</a> -->
+  - 範例測試：<a class="googleiframe" data-fancybox-type="iframe" href="http://fancyapps.com/fancybox/#examples" title="http://fancyapps.com/fancybox/#examples">fancyapps.com/fancybox/#examples</a>
+
+###相關候選燈箱
+- [fancyBox - Fancy jQuery Lightbox Alternative](http://fancyapps.com/fancybox/#examples)
+  - 目前網站安裝的是這個
+- [rlightbox – a jQuery UI mediabox](http://ryrych.pl/rlightbox2)：UI 還可以，但功能可能(?)比較少
+- [Fresco - A Beautiful Responsive Lightbox](http://www.frescojs.com)：很漂亮XD
+- [Colorbox - a jQuery lightbox](http://www.jacklmoore.com/colorbox)
+  - MDwiki 好像有內建這個，但用不太出來XD
+測試官方 Colorbox 的寫法都不生效。
+  - 測試過另外重新安裝 ``Colorbox``，疑似因為跟內建的打架(?)。
+最後，還是沒有效果但也沒有錯誤訊息。所以才換 ``fancyBox``。

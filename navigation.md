@@ -44,7 +44,7 @@
 
   - #更新項目
   - [更新 MDwiki 重點架構檔案 頁面](#!update.md#[2016.08.05]_更新_MDwiki_重點架構檔案)
-  - [加 md 檔案竟然也能直接使用 HTML 標籤！？頁面](#!update.md#[2016.08.05]_增加_md_檔案竟然也能直接使用_HTML_標籤！？頁面)
+  - [新增 md 檔案竟然也能直接使用 HTML 標籤！？頁面](#!update.md#[2016.08.05]_增加_md_檔案竟然也能直接使用_HTML_標籤！？頁面)
   - [增加 Gimmicks for Google Drive 失敗卻發現可以用原始HTML](#!update.md#[2016.08.04]_增加_Gimmicks_for_Google_Drive_失敗)
   - [\[外部調整\]\[Gimmicks 改寫\] Alert 提示觸發擴充關鍵字](#!update.md#[2016.08.03]_Gimmicks_改寫_Alert_提示觸發擴充關鍵字)
   - [\[外部調整\] 增加 CSS 圖片自動縮放控制](#!update.md#[2016.08.03]_透過_CSS_增加對圖片自動縮放控制)
