@@ -11,6 +11,7 @@
 - 然後聯想到改用燈箱（Lightbox）的方式展示影片，裡面也有另裝 ``fancybox2`` 成功的測試效果。
 - 預計要再寫個小 JavaScript，去自動把 Markdown 標準 URL，自動判斷連結目標來在燈箱呈現。
 並且竟可能把圖片也用燈箱呈現。（預計先針對有連結目標的圖片）
+  - 可參考技術文件 [DOM Element setAttribute() Method](http://www.w3schools.com/jsref/met_element_setattribute.asp)。
   - 如果沒有卡關，預計判斷成功後直接操作 ``<a>`` tag 的 HTML DOM 增加燈箱用的項目屬性。
 - 其他詳細可參閱 [md 檔案竟然也能直接使用 HTML 標籤！？](#!mdwiki/mdwiki.html.md)。
 
