@@ -1,5 +1,28 @@
-#更新紀錄
-##\[2016.08.30\] Gimmicks 改寫 Alert 提示觸發擴充關鍵字
+﻿#更新紀錄
+
+##\[2016.08.05\] 更新 MDwiki 重點架構檔案
+- 將 [MDwiki 重點架構檔案](#!mdwiki/mdwiki.main.md) 增加更多詳細敘述，但還沒補完。
+主要是加入 ``config.json`` 的敘述。
+
+----
+
+##\[2016.08.05\] 增加 md 檔案竟然也能直接使用 HTML 標籤！？頁面
+- 詳細可參閱 [md 檔案竟然也能直接使用 HTML 標籤！？](#!mdwiki/mdwiki.html.md)。
+
+----
+
+##\[2016.08.04\] 增加 Gimmicks for Google Drive 失敗
+仿製失敗，並在 Github 上面直接提問。不過估計應該不太會有回應XDDD
+
+#### 卻意外發現可以用原始 HTML XD
+- 詳細可參閱 [md 檔案竟然也能直接使用 HTML 標籤！？](#!mdwiki/mdwiki.html.md)。
+- 所以可以直接用 HTML 來寫目前 Gimmicks 無法做到的部分。
+- 這樣的缺點就是，md 純文字檔的可讀性會下降。
+因為參雜一堆 HTML 所以視覺上文字就變亂了XD
+
+----
+
+##\[2016.08.03\] Gimmicks 改寫 Alert 提示觸發擴充關鍵字
 ###說明
 - 逛到日站有教怎麼修改，所以也改了。
 - 主要關鍵：[MDwikiはじめました | 3D技術研究所Blog](http://3dtech.jp/blog/?p=101) 的教學

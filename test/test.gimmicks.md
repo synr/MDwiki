@@ -13,6 +13,16 @@
 
 ----
 
+- Google Drive Player
+```markdown
+[](http://drive.google.com/file/d/0B_b1e3AASsaLb21xbmwxQ19BZFE/edit)
+```
+[](http://drive.google.com/file/d/0B_b1e3AASsaLb21xbmwxQ19BZFE/edit)
+
+提示：暫時改不出所以沒效果XD
+
+----
+
 - [gimmick:ForkMeOnGitHub ({ color: 'green',  position: 'right' })](http://www.github.com/Dynalon/mdwiki)
 ```
 [gimmick:ForkMeOnGitHub ({ color: 'red',  position: 'left' })](http://www.github.com/Dynalon/mdwiki)
