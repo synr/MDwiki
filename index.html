@@ -404,38 +404,6 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                                 //但 x-frame-options 的原理是 在 HTTP 的 head 標示
                                 //所以，可以直接透過讀取各 URL 回的 HTTP HEAD 抓裡面的關鍵字判斷
                             };
-
-                            function test(url){
-                                var req = new XMLHttpRequest();
-                                req.open('GET', url, false);
-                                req.send(null);
-                                var headers = req.getAllResponseHeaders().toLowerCase();
-                                console.log(headers);
-                            }
-                            test('https://trello.com');
-
-                            // function uesd_x_frame_options(url){
-                            //     var yes_the_domain_ues = 0;
-                            //     if(url==undefined){
-                            //         url = '';
-                            //     }
-                                
-                            //     var req = new XMLHttpRequest();
-                            //     req.open('GET', url, false);
-                            //     req.send(null);
-                            //     var headers = req.getAllResponseHeaders().toLowerCase();
-                            //     console.log(headers.match(/x\-frame\-options\:\s(.*)/g));
-
-                            //     if(headers.match(/x\-frame\-options\:\s(.*)/g)){
-                            //         yes_the_domain_ues = 1;
-                            //     }else{
-                            //         yes_the_domain_ues = 0;
-                            //     }
-
-                            //     return yes_the_domain_ues;
-                            // }
-                           
-                            console.log('是否有被 x-frame-options 禁止 = ' + test(iframeAll_array[i].src));
                         }
                     }
                     this.title = '<a href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);">→ ' + this.title + ' ←</a><br />如果上面的網頁一直沒出來，↑請點此↑連結直接觀看該網站。';
