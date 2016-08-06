@@ -393,19 +393,6 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                 openEffect  : 'none',
                 closeEffect : 'none',
                 afterLoad: function() {
-                    var iframeAll_array = document.getElementsByTagName( "iframe" );
-                    for (var i = 0; i < iframeAll_array.length; i++) {
-                        if(iframeAll_array[i].id.match(/^fancybox.*/i)){
-                            console.log(i + ' = 燈箱 id = ' + iframeAll_array[i].id.match(/^fancybox.*/i));
-                            console.log(i + ' = 燈箱網址 = ' + iframeAll_array[i].src);
-
-                            iframeAll_array[i].onerror = function(){
-                                //x-frame-options 的問題 onerror 2016.08.06 的今天暫時抓不到
-                                //但 x-frame-options 的原理是 在 HTTP 的 head 標示
-                                //所以，可以直接透過讀取各 URL 回的 HTTP HEAD 抓裡面的關鍵字判斷
-                            };
-                        }
-                    }
                     this.title = '<a href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);">→ ' + this.title + ' ←</a><br />如果上面的網頁一直沒出來，↑請點此↑連結直接觀看該網站。';
                     function css_add_inline( css_code ) {
                         var div = document.createElement( "div" );
