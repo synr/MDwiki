@@ -395,7 +395,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                 beforeLoad: function() {
                     if(!(this.href.match(/^https.*/i))){
                         //如果不是 https
-                        this.href = this.href.replace(/^http\:\/\//,'http\:\/\/');
+                        this.href = this.href.replace(/^http\:\/\//,'https\:\/\/');
                         console.log('改用 https 效果 = ' + this.href);
                         console.log(this);
                     }
