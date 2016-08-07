@@ -402,7 +402,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                     //想法：燈箱 Load 前，先判斷現在網域
                     //是 https 的話，那麼就要跳過 http:// 的網址近來燈箱。
                     if(location.href.match(/^https.*/i)){
-                        alert('https 不給你用燈箱啦！');
+                        //alert('https 不給你用燈箱啦！');
                         $.fancybox.close(1);
                     }
                 },
