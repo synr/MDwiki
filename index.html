@@ -337,6 +337,11 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                 uesLightbox(tagA[i]);
                 console.log('單機 = ' + tagA[i]); 
             }
+
+            if(!(tagA[i].href.match(/^https.*/i))){
+                tagA[i].href = tagA[i].href.replace(/^http\:\/\//,'https\:\/\/')
+                console.log('無差別改寫成 https: = ' + tagA[i].href);
+            }
         }
     }
     function googledrive_url(link_url_array){
@@ -393,15 +398,6 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                 openEffect  : 'none',
                 closeEffect : 'none',
                 beforeLoad: function() {
-                    var iframeAll_array = document.getElementsByTagName( "iframe" );
-                    for (var i = 0; i < iframeAll_array.length; i++) {
-                        if(!(iframeAll_array[i].src.match(/^https.*/i))){
-                            //如果不是 https
-                            iframeAll_array[i].src = iframeAll_array[i].src.replace(/^http\:\/\//,'https\:\/\/');
-                            console.log('beforeLoad 全都改用 https 連線效果 = ' + iframeAll_array[i].src);
-                            console.log(this);
-                        }
-                    }
                 },
                 afterLoad: function() {
                     var iframeAll_array = document.getElementsByTagName( "iframe" );
