@@ -124,3 +124,15 @@ Markdown 本身沒有註解的語法，雖然有什麼要備忘可以利用 HTML
 測試官方 Colorbox 的寫法都不生效。
   - 測試過另外重新安裝 ``Colorbox``，疑似因為跟內建的打架(?)。
 最後，還是沒有效果但也沒有錯誤訊息。所以才換 ``fancyBox``。
+
+
+###Other test
+- [Bootstrap](https://kkbruce.tw/bs3/Javascript)
+
+<script type="text/javascript">
+	$(function () {
+	  $('[data-toggle="popover"]').popover()
+	})	
+</script>
+
+<a href="#" tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">取消解除狀態 (ㆆᴗㆆ)﻿</a>
