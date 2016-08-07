@@ -258,19 +258,19 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
         var canuesiframe = 1;
         //https
         if(location.href.match(/^https\.*/i)){
-            if(tag.href.match(/^https\.*/i)){
+            if(a_tag.href.match(/^https\.*/i)){
                 canuesiframe = 1;
             }
-            if(tag.href.match(/^http\:\/\/.*/i)){
+            if(a_tag.href.match(/^http\:\/\/.*/i)){
                 canuesiframe = 0;
             }
         }
 
         if(location.href.match(/^http\:\/\/.*/i)){
-            if(tag.href.match(/^https\.*/i)){
+            if(a_tag.href.match(/^https\.*/i)){
                 canuesiframe = 1;
             }
-            if(tag.href.match(/^http\:\/\/.*/i)){
+            if(a_tag.href.match(/^http\:\/\/.*/i)){
                 canuesiframe = 1;
             }
         }
