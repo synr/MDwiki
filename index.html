@@ -254,8 +254,32 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
         // http    http
         // http    https
         // https   https
-        // https   http    所以要加入!
-        if (!( (location.href.match(/^https.*/i)) && (a_tag.href.match(/^http\:\/\/.*/i)) )) {
+        // https   http    不允許
+        var canuesiframe = 1;
+        //https
+        if(location.href.match(/^https\.*/i)){
+            if(tag.href.match(/^https\.*/i)){
+                canuesiframe = 1;
+            }
+            if(tag.href.match(/^http\:\/\/.*/i)){
+                canuesiframe = 0;
+            }
+        }
+
+        if(location.href.match(/^http\:\/\/.*/i)){
+            if(tag.href.match(/^https\.*/i)){
+                canuesiframe = 1;
+            }
+            if(tag.href.match(/^http\:\/\/.*/i)){
+                canuesiframe = 1;
+            }
+        }
+
+        if(location.href.match(/^file\:\/\/\//i)){
+            canuesiframe = 1;            
+        }
+
+        if (canuesiframe) {
             //http://www.w3schools.com/jsref/met_element_setattribute.asp
             a_tag.setAttribute('class', 'googleiframe');
             a_tag.setAttribute('data-fancybox-type', 'iframe');
