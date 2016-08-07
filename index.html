@@ -249,12 +249,15 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
 <!-- 外部超連結另開視窗 Google Drive 複雜版 function + 單機設置 start -->
 <!-- 主要參考:http://www.vixual.net/blog/archives/202並搭配元件 onClick觸發 -->
 <script type="text/javascript">
-    function uesLightbox(tag_item){
-        //http://www.w3schools.com/jsref/met_element_setattribute.asp
-        tag_item.setAttribute('class', 'googleiframe');
-        tag_item.setAttribute('data-fancybox-type', 'iframe');
-        //tag_item.setAttribute('title', tag_item.href);
-        tag_item.setAttribute('title', tag_item.text);
+    function uesLightbox(a_tag){
+        //如果是 https 端裡面要塞 http 會被拒絕，所以直接不允許他當成燈箱
+        if ( (location.href.match(/^https.*/i)) && (a_tag.href.match(/^http\:\/\/.*/i)) ) {
+            //http://www.w3schools.com/jsref/met_element_setattribute.asp
+            a_tag.setAttribute('class', 'googleiframe');
+            a_tag.setAttribute('data-fancybox-type', 'iframe');
+            //a_tag.setAttribute('title', a_tag.href);
+            a_tag.setAttribute('title', a_tag.text);
+        }
 
         // $(function(){
         //     // 判斷連結的內容，並依內容在連結後加上相對應的圖片
@@ -267,32 +270,32 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
         //取得附檔名
         //http://pattyshih66.pixnet.net/blog/post/151955062-%E2%92%BF-%E4%BD%BF%E7%94%A8javascript%E8%AA%9E%E6%B3%95%E5%8F%96%E5%BE%97%E6%AA%94%E6%A1%88%E5%89%AF%E6%AA%94%E5%90%8D
         //[\[jQ\]幫外部連結加上自訂的圖示 | 男丁格爾's 脫殼玩](http://abgne.tw/?p=3)
-        var ext = tag_item.href.substr(tag_item.href.lastIndexOf('.') + 1, tag_item.href.length);
+        var ext = a_tag.href.substr(a_tag.href.lastIndexOf('.') + 1, a_tag.href.length);
         //if ((ext == 'jpg') || (ext == 'JPG')){
         //match 到的話會是字串，字串在 if = true；沒有 match 到的話 會是 null，在 if 裡會 = false
         if (ext.match(/.*jpg$/i)!=null){
             // console.log(ext + ' = jpg');
-            tag_item.setAttribute('class', 'fancybox-thumb');
-            tag_item.setAttribute('rel', 'fancybox-thumb');
-            tag_item.setAttribute('data-fancybox-type', 'image');
+            a_tag.setAttribute('class', 'fancybox-thumb');
+            a_tag.setAttribute('rel', 'fancybox-thumb');
+            a_tag.setAttribute('data-fancybox-type', 'image');
         }
         if (ext.match(/.*gif$/i)!=null){
             // console.log(ext + ' = jpg');
-            tag_item.setAttribute('class', 'fancybox-thumb');
-            tag_item.setAttribute('rel', 'fancybox-thumb');
-            tag_item.setAttribute('data-fancybox-type', 'image');
+            a_tag.setAttribute('class', 'fancybox-thumb');
+            a_tag.setAttribute('rel', 'fancybox-thumb');
+            a_tag.setAttribute('data-fancybox-type', 'image');
         }
         if (ext.match(/.*png$/i)!=null){
             // console.log(ext + ' = jpg');
-            tag_item.setAttribute('class', 'fancybox-thumb');
-            tag_item.setAttribute('rel', 'fancybox-thumb');
-            tag_item.setAttribute('data-fancybox-type', 'image');
+            a_tag.setAttribute('class', 'fancybox-thumb');
+            a_tag.setAttribute('rel', 'fancybox-thumb');
+            a_tag.setAttribute('data-fancybox-type', 'image');
         }
         if (ext.match(/.*svg$/i)!=null){
             // console.log(ext + ' = jpg');
-            tag_item.setAttribute('class', 'fancybox-thumb');
-            tag_item.setAttribute('rel', 'fancybox-thumb');
-            tag_item.setAttribute('data-fancybox-type', 'image');
+            a_tag.setAttribute('class', 'fancybox-thumb');
+            a_tag.setAttribute('rel', 'fancybox-thumb');
+            a_tag.setAttribute('data-fancybox-type', 'image');
         }
     }
 
@@ -380,10 +383,6 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
     </script>
 
     <script type="text/javascript">
-
-    </script>
-
-    <script type="text/javascript">
         // http://fancyapps.com/fancybox/#examples
         $(document).ready(function() {
             $(".googleiframe").fancybox({
@@ -401,12 +400,12 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                     //console.log('beforeLoad this.href match https = ' + (this.href.match(/^https.*/i)));
                     //想法：燈箱 Load 前，先判斷現在網域
                     //是 https 的話，那麼就要跳過 http:// 的網址近來燈箱。
-                    if(location.href.match(/^https.*/i)){
-                        if(location.href.match(/^http\:\/\/.*/i)){
-                            console.log('不好意思，https 不能在燈箱載入不同協定的 ' + this.href);
-                            $.fancybox.close(1);
-                        }
-                    }
+                    // if(location.href.match(/^https.*/i)){
+                    //     if(location.href.match(/^http\:\/\/.*/i)){
+                    //         console.log('不好意思，https 不能在燈箱載入不同協定的 ' + this.href);
+                    //         $.fancybox.close(1);
+                    //     }
+                    // }
                 },
                 afterLoad: function() {
                     var iframeAll_array = document.getElementsByTagName( "iframe" );
