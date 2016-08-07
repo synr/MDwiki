@@ -35,7 +35,7 @@ Markdown 本身沒有註解的語法，雖然有什麼要備忘可以利用 HTML
 - 這是操作免費[檔案變動監視軟體 DirectoryMonitor](https://www.google.com.tw/search?newwindow=1&q=DirectoryMonitor+%E9%98%BF%E6%A6%AE&oq=DirectoryMonitor+%E9%98%BF%E6%A6%AE&gs_l=serp.3..30i10.1299.5522.0.5904.19.13.6.0.0.0.120.1181.9j4.13.0....0...1c.1j4.64.serp..2.15.818...0i13.eAX9NC_IGiw) + [同步軟體 FreeFileSync](https://www.google.com.tw/search?newwindow=1&q=FreeFileSync+%E9%98%BF%E6%A6%AE&oq=FreeFileSync+%E9%98%BF%E6%A6%AE&gs_l=serp.3..0.407.2032.0.3750.7.7.0.0.0.0.144.814.3j4.7.0....0...1c.1j4.64.serp..1.2.277.yK-23SciBkw)，達成有變動就同步效果的備忘錄影。
 
 <center>
-<iframe style="width : 100%;" frameborder="0" allowfullscreen src="https://drive.google.com/file/d/0B_b1e3AASsaLamM2YWF1Q2cwODQ/preview?vq=hd720" width="640" height="480"></iframe>
+<iframe id="test_googledrive" style="width : 100%;" frameborder="0" allowfullscreen src="https://drive.google.com/file/d/0B_b1e3AASsaLamM2YWF1Q2cwODQ/preview?vq=hd720" width="640" height="480"></iframe>
 </center>
 
 ----
@@ -136,3 +136,19 @@ Markdown 本身沒有註解的語法，雖然有什麼要備忘可以利用 HTML
 </script>
 
 <a href="#" tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">取消解除狀態 (ㆆᴗㆆ)﻿</a>
+
+----
+
+<script type="text/javascript">
+    var elem = document.getElementById('test_googledrive');
+    document.getElementById('toggle').addEventListener('click', () => {
+	    if (screenfull.enabled) {
+	    	screenfull.request(elem);
+	    }
+    });	
+</script>
+
+- https://github.com/sindresorhus/screenfull.js
+  - Fullscreen an element
+
+<button id="toggle" class="btn btn-lg btn-danger">Toggle 全螢幕</button>

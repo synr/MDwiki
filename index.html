@@ -247,145 +247,146 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
     </script> -->
 
 <!-- 外部超連結另開視窗 Google Drive 複雜版 function + 單機設置 start -->
-<!-- 主要參考:http://www.vixual.net/blog/archives/202並搭配元件 onClick觸發 -->
-<script type="text/javascript">
-    function uesLightbox(a_tag){
-        //如果是 https 端裡面要塞 http 會被拒絕，所以直接不允許他當成燈箱
-        // http    http
-        // http    https
-        // https   https
-        // https   http    不允許
-        var canuesiframe = 1;
-        //https
-        if(location.href.match(/^https\.*/i)){
-            if(a_tag.href.match(/^https\.*/i)){
-                canuesiframe = 1;
-            }
-            if(a_tag.href.match(/^http\:\/\/.*/i)){
-                canuesiframe = 0;
-            }
-        }
-
-        if(location.href.match(/^http\:\/\/.*/i)){
-            if(a_tag.href.match(/^https\.*/i)){
-                canuesiframe = 1;
-            }
-            if(a_tag.href.match(/^http\:\/\/.*/i)){
-                canuesiframe = 1;
-            }
-        }
-
-        if(location.href.match(/^file\:\/\/\//i)){
-            canuesiframe = 1;            
-        }
-
-        if (canuesiframe) {
-            //http://www.w3schools.com/jsref/met_element_setattribute.asp
-            a_tag.setAttribute('class', 'googleiframe');
-            a_tag.setAttribute('data-fancybox-type', 'iframe');
-            //a_tag.setAttribute('title', a_tag.href);
-            a_tag.setAttribute('title', a_tag.text);
-        }
-
-        // $(function(){
-        //     // 判斷連結的內容，並依內容在連結後加上相對應的圖片
-        //     $('a[href$=".jpg"]').attr('rel', 'fancybox-thumb');
-        //     $('a[href$=".jpg"]').attr('class', 'fancybox-thumb');
-        //     $('a[href$=".jpg"]').attr('data-fancybox-type', 'image');
-        // });
-        //class="googleiframe" 跟 data-fancybox-type="iframe" title 
-
-        //取得附檔名
-        //http://pattyshih66.pixnet.net/blog/post/151955062-%E2%92%BF-%E4%BD%BF%E7%94%A8javascript%E8%AA%9E%E6%B3%95%E5%8F%96%E5%BE%97%E6%AA%94%E6%A1%88%E5%89%AF%E6%AA%94%E5%90%8D
-        //[\[jQ\]幫外部連結加上自訂的圖示 | 男丁格爾's 脫殼玩](http://abgne.tw/?p=3)
-        var ext = a_tag.href.substr(a_tag.href.lastIndexOf('.') + 1, a_tag.href.length);
-        //if ((ext == 'jpg') || (ext == 'JPG')){
-        //match 到的話會是字串，字串在 if = true；沒有 match 到的話 會是 null，在 if 裡會 = false
-        if (ext.match(/.*jpg$/i)!=null){
-            // console.log(ext + ' = jpg');
-            a_tag.setAttribute('class', 'fancybox-thumb');
-            a_tag.setAttribute('rel', 'fancybox-thumb');
-            a_tag.setAttribute('data-fancybox-type', 'image');
-        }
-        if (ext.match(/.*gif$/i)!=null){
-            // console.log(ext + ' = jpg');
-            a_tag.setAttribute('class', 'fancybox-thumb');
-            a_tag.setAttribute('rel', 'fancybox-thumb');
-            a_tag.setAttribute('data-fancybox-type', 'image');
-        }
-        if (ext.match(/.*png$/i)!=null){
-            // console.log(ext + ' = jpg');
-            a_tag.setAttribute('class', 'fancybox-thumb');
-            a_tag.setAttribute('rel', 'fancybox-thumb');
-            a_tag.setAttribute('data-fancybox-type', 'image');
-        }
-        if (ext.match(/.*svg$/i)!=null){
-            // console.log(ext + ' = jpg');
-            a_tag.setAttribute('class', 'fancybox-thumb');
-            a_tag.setAttribute('rel', 'fancybox-thumb');
-            a_tag.setAttribute('data-fancybox-type', 'image');
-        }
-    }
-
-    function parseLink(){
-        var tagA = document.getElementsByTagName( "a" );
-
-        isgoogle = new RegExp( "^https?:\/\/.*.googledrive.com.*\/host\/(.*)\/(#.*)$", "i");
-        var thispage_googleid = location.href.replace(isgoogle,'$1');
-        
-        re = new RegExp( "^(https?:\/\/" + document.domain + ")|(javascript:)", "gim");
-        
-        for( var i=0; i < tagA.length; i++ ){
-            //不是本網域或指令的LINK，就要+開新窗。
-            if( !tagA[i].href.match( re ) ){
-                //本來沒有開新窗屬性的，就給他+。已經有了就不用了。
-                //增加過濾單機路徑
-                if ((tagA[i].target != "_blank") && (tagA[i].href.indexOf('file:\/\/\/')==-1))  {
-                    //thispage_googleid 如果不是 google，就會保留完整網址。
-                    //if(thispage_googleid==location.href){
-                    //    console.log('這不是北七複雜的 Google Drive');
-                    //}
-                    //console.log('thispage_googleid = ' + thispage_googleid);
-                    if(!(thispage_googleid==location.href)){
-                        //有取得 google drive id
-                        if(tagA[i].href.indexOf(thispage_googleid)==-1){
-                            //上層 if 判斷是 google，這層判斷 google id 不同就要當外站處理，另開視窗。
-                            tagA[i].target = "_blank";
-                            uesLightbox(tagA[i]);
-                            console.log(tagA[i]);   
-                        }
-                    }else{
-                        tagA[i].target = "_blank";
-                        uesLightbox(tagA[i]);
-                        console.log(tagA[i]);                        
-                    }
+    <!-- 主要參考:http://www.vixual.net/blog/archives/202並搭配元件 onClick觸發 -->
+    <script type="text/javascript">
+        function uesLightbox(a_tag){
+            //如果是 https 端裡面要塞 http 會被拒絕，所以直接不允許他當成燈箱
+            //先用這個解決。不然就要出問題的時候再排除。
+            // http    http
+            // http    https
+            // https   https
+            // https   http    不允許
+            var canuesiframe = 1;
+            //https
+            if(location.href.match(/^https\.*/i)){
+                if(a_tag.href.match(/^https\.*/i)){
+                    canuesiframe = 1;
+                }
+                if(a_tag.href.match(/^http\:\/\/.*/i)){
+                    canuesiframe = 0;
                 }
             }
-            googledrive_url(tagA[i]);  //只是利用同一個迴圈做事
-            //單機，條件1代表正在單機，條件2代表現在這個URL不是本機路徑，就可以+新窗。
-            if (((document.domain=="") && (tagA[i].href.indexOf('file:\/\/\/')==-1)) && (tagA[i].target != "_blank") ) {
-                tagA[i].target = "_blank";
-                uesLightbox(tagA[i]);
-                console.log('單機 = ' + tagA[i]); 
+
+            if(location.href.match(/^http\:\/\/.*/i)){
+                if(a_tag.href.match(/^https\.*/i)){
+                    canuesiframe = 1;
+                }
+                if(a_tag.href.match(/^http\:\/\/.*/i)){
+                    canuesiframe = 1;
+                }
             }
-            //如果是 https 端裡面要塞 http 會被拒絕，所以全都當成 https 去連線
-            // if(!(tagA[i].href.match(/^https.*/i))){
-            //     tagA[i].href = tagA[i].href.replace(/^http\:\/\//,'https\:\/\/')
-            //     console.log('無差別改寫成 https: = ' + tagA[i].href);
-            // }
+
+            if(location.href.match(/^file\:\/\/\//i)){
+                canuesiframe = 1;            
+            }
+
+            if (canuesiframe) {
+                //http://www.w3schools.com/jsref/met_element_setattribute.asp
+                a_tag.setAttribute('class', 'googleiframe');
+                a_tag.setAttribute('data-fancybox-type', 'iframe');
+                //a_tag.setAttribute('title', a_tag.href);
+                a_tag.setAttribute('title', a_tag.text);
+            }
+
+            // $(function(){
+            //     // 判斷連結的內容，並依內容在連結後加上相對應的圖片
+            //     $('a[href$=".jpg"]').attr('rel', 'fancybox-thumb');
+            //     $('a[href$=".jpg"]').attr('class', 'fancybox-thumb');
+            //     $('a[href$=".jpg"]').attr('data-fancybox-type', 'image');
+            // });
+            //class="googleiframe" 跟 data-fancybox-type="iframe" title 
+
+            //取得附檔名
+            //http://pattyshih66.pixnet.net/blog/post/151955062-%E2%92%BF-%E4%BD%BF%E7%94%A8javascript%E8%AA%9E%E6%B3%95%E5%8F%96%E5%BE%97%E6%AA%94%E6%A1%88%E5%89%AF%E6%AA%94%E5%90%8D
+            //[\[jQ\]幫外部連結加上自訂的圖示 | 男丁格爾's 脫殼玩](http://abgne.tw/?p=3)
+            var ext = a_tag.href.substr(a_tag.href.lastIndexOf('.') + 1, a_tag.href.length);
+            //if ((ext == 'jpg') || (ext == 'JPG')){
+            //match 到的話會是字串，字串在 if = true；沒有 match 到的話 會是 null，在 if 裡會 = false
+            if (ext.match(/.*jpg$/i)!=null){
+                // console.log(ext + ' = jpg');
+                a_tag.setAttribute('class', 'fancybox-thumb');
+                a_tag.setAttribute('rel', 'fancybox-thumb');
+                a_tag.setAttribute('data-fancybox-type', 'image');
+            }
+            if (ext.match(/.*gif$/i)!=null){
+                // console.log(ext + ' = jpg');
+                a_tag.setAttribute('class', 'fancybox-thumb');
+                a_tag.setAttribute('rel', 'fancybox-thumb');
+                a_tag.setAttribute('data-fancybox-type', 'image');
+            }
+            if (ext.match(/.*png$/i)!=null){
+                // console.log(ext + ' = jpg');
+                a_tag.setAttribute('class', 'fancybox-thumb');
+                a_tag.setAttribute('rel', 'fancybox-thumb');
+                a_tag.setAttribute('data-fancybox-type', 'image');
+            }
+            if (ext.match(/.*svg$/i)!=null){
+                // console.log(ext + ' = jpg');
+                a_tag.setAttribute('class', 'fancybox-thumb');
+                a_tag.setAttribute('rel', 'fancybox-thumb');
+                a_tag.setAttribute('data-fancybox-type', 'image');
+            }
         }
-    }
-    function googledrive_url(link_url_array){
-        var taga_before = link_url_array.href;
-        link_url_array.href = link_url_array.href.replace(/^https?:\/\/.*.googledrive.com.*\/host\/(.*\/.*$)/i,'https://googledrive.com/host/'+'$1');
-        //location.href.replace(/(^https?:\/\/.*.googledrive.com.*\/host\/)(.*\/#.*)$/i,'https://googledrive.com/host/'+'$2');
-        //取得最漂亮的 google drive link（不使用組合，玩取代才能無差別），如果不是的 URL 也會保持原樣。
-        //下面就是判斷是不是保持原樣。有被改過的表示就是 google drive host。
-        if ( (taga_before != link_url_array.href) && (taga_before != '') ){
-            console.log('Google drive change = ' + taga_before + '  to  ' + link_url_array);
-        }        
-    }
-</script>
+
+        function parseLink(){
+            var tagA = document.getElementsByTagName( "a" );
+
+            isgoogle = new RegExp( "^https?:\/\/.*.googledrive.com.*\/host\/(.*)\/(#.*)$", "i");
+            var thispage_googleid = location.href.replace(isgoogle,'$1');
+            
+            re = new RegExp( "^(https?:\/\/" + document.domain + ")|(javascript:)", "gim");
+            
+            for( var i=0; i < tagA.length; i++ ){
+                //不是本網域或指令的LINK，就要+開新窗。
+                if( !tagA[i].href.match( re ) ){
+                    //本來沒有開新窗屬性的，就給他+。已經有了就不用了。
+                    //增加過濾單機路徑
+                    if ((tagA[i].target != "_blank") && (tagA[i].href.indexOf('file:\/\/\/')==-1))  {
+                        //thispage_googleid 如果不是 google，就會保留完整網址。
+                        //if(thispage_googleid==location.href){
+                        //    console.log('這不是北七複雜的 Google Drive');
+                        //}
+                        //console.log('thispage_googleid = ' + thispage_googleid);
+                        if(!(thispage_googleid==location.href)){
+                            //有取得 google drive id
+                            if(tagA[i].href.indexOf(thispage_googleid)==-1){
+                                //上層 if 判斷是 google，這層判斷 google id 不同就要當外站處理，另開視窗。
+                                tagA[i].target = "_blank";
+                                uesLightbox(tagA[i]);
+                                console.log(tagA[i]);   
+                            }
+                        }else{
+                            tagA[i].target = "_blank";
+                            uesLightbox(tagA[i]);
+                            console.log(tagA[i]);                        
+                        }
+                    }
+                }
+                googledrive_url(tagA[i]);  //只是利用同一個迴圈做事
+                //單機，條件1代表正在單機，條件2代表現在這個URL不是本機路徑，就可以+新窗。
+                if (((document.domain=="") && (tagA[i].href.indexOf('file:\/\/\/')==-1)) && (tagA[i].target != "_blank") ) {
+                    tagA[i].target = "_blank";
+                    uesLightbox(tagA[i]);
+                    console.log('單機 = ' + tagA[i]); 
+                }
+                //如果是 https 端裡面要塞 http 會被拒絕，所以全都當成 https 去連線
+                // if(!(tagA[i].href.match(/^https.*/i))){
+                //     tagA[i].href = tagA[i].href.replace(/^http\:\/\//,'https\:\/\/')
+                //     console.log('無差別改寫成 https: = ' + tagA[i].href);
+                // }
+            }
+        }
+        function googledrive_url(link_url_array){
+            var taga_before = link_url_array.href;
+            link_url_array.href = link_url_array.href.replace(/^https?:\/\/.*.googledrive.com.*\/host\/(.*\/.*$)/i,'https://googledrive.com/host/'+'$1');
+            //location.href.replace(/(^https?:\/\/.*.googledrive.com.*\/host\/)(.*\/#.*)$/i,'https://googledrive.com/host/'+'$2');
+            //取得最漂亮的 google drive link（不使用組合，玩取代才能無差別），如果不是的 URL 也會保持原樣。
+            //下面就是判斷是不是保持原樣。有被改過的表示就是 google drive host。
+            if ( (taga_before != link_url_array.href) && (taga_before != '') ){
+                console.log('Google drive change = ' + taga_before + '  to  ' + link_url_array);
+            }        
+        }
+    </script>
 <!-- 外部超連結另開視窗 Google Drive 複雜版 function + 單機設置  end -->
 
 <!-- Lightbox fancybox 燈箱開始-->
@@ -434,14 +435,21 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                     //         $.fancybox.close(1);
                     //     }
                     // }
+                    //----針對 X-Frame-Options 確定的網域，在這裡作手動排除。
+                    if(this.href.match(/(?:^https?:\/\/trello.com|^https?:\/\/github.com|^https?:\/\/highlightjs.org|^https?:\/\/www.google.com|^https?:\/\/greasyfork.org|^https?:\/\/chrome.google.com)/gi)){
+                        console.log('【Error】Refused to display \'' + this.href + '\' in a frame because it set \'X-Frame-Options\'');
+                        $.fancybox.close(1);
+                    }
                 },
                 afterLoad: function() {
                     var iframeAll_array = document.getElementsByTagName( "iframe" );
+                    var iframe_id = '';
                     for (var i = 0; i < iframeAll_array.length; i++) {
                         // $(iframeAll_array[i].id).load(function(){
                         //     alert('loaded!');
                         // });
                         if(iframeAll_array[i].id.match(/^fancybox.*/i)){
+                            iframe_id = iframeAll_array[i].id.match(/^fancybox.*/i);
                             console.log(i + ' = 燈箱 id = ' + iframeAll_array[i].id.match(/^fancybox.*/i));
                             console.log(i + ' = 燈箱網址 = ' + iframeAll_array[i].src);
 
@@ -475,14 +483,17 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                             // console.log('是否有被 x-frame-options 禁止 = ' + test(iframeAll_array[i].src));
                         }
                     }
+
                     //this.title = '<a href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);">→ ' + this.title + ' ←</a>';
-                    this.title = '<a href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);">如果空白讀不到 → 請點此連結 ← 另開直連該網站。</a>　<a href="javascript:console.log(document.getElementsByClassName(\'fancybox-title fancybox-title-over-wrap\')[0].style.visibility=\'hidden\')">我知道了，我要關閉這礙眼的提示。</a>';
+                    this.title = '<a href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);">如果空白讀不到 → 請點此連結 ← 另開直連該網站。</a>　<button id="button_iframe" onclick="javascript:max_full(\'' + iframe_id + '\',\'button_iframe\');document.getElementById(\'button_iframe\').click();">→ 全螢幕 ←</button>　<a href="javascript:console.log(document.getElementsByClassName(\'fancybox-title fancybox-title-over-wrap\')[0].style.visibility=\'hidden\')">我知道了，我要關閉這礙眼的提示。</a>';
                     // function css_add_inline( css_code ) {
                     //     var div = document.createElement( "div" );
                     //     div.innerHTML = "<p>x</p><style>" + css_code + "</style>";
                     //     document.body.appendChild(div.childNodes[1]);
                     // }
                     //css_add_inline( ".fancybox-title-float-wrap {position: absolute;bottom: 0;right: 50%;margin-bottom: -0px;z-index: 8050;text-align: center;}; " );
+                    //max_full(iframe_id,'button_iframe123');
+
                 },
                 helpers : {
                     title : {
@@ -519,6 +530,20 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
         });
     </script>
 <!-- Lightbox fancybox 燈箱結束-->
+<!-- 全螢幕功能_開始 -->
+    <!-- https://github.com/sindresorhus/screenfull.js -->
+    <script type="text/javascript" src="screenfull.js"></script>
+    <script type="text/javascript">
+        function max_full(iframe_id,trigger_item){
+            var elem = document.getElementById(iframe_id);
+            document.getElementById(trigger_item).addEventListener('click', () => {
+                if (screenfull.enabled) {
+                    screenfull.request(elem);
+                }
+            });
+        }
+    </script>
+<!-- 全螢幕功能_結束 -->
 </head>
 <body onload="javascript:parseLink();">
     <noscript>
