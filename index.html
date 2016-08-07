@@ -251,7 +251,11 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
 <script type="text/javascript">
     function uesLightbox(a_tag){
         //如果是 https 端裡面要塞 http 會被拒絕，所以直接不允許他當成燈箱
-        if ( (location.href.match(/^https.*/i)) && (a_tag.href.match(/^http\:\/\/.*/i)) ) {
+        // http    http
+        // http    https
+        // https   https
+        // https   http    所以要加入!
+        if (!( (location.href.match(/^https.*/i)) && (a_tag.href.match(/^http\:\/\/.*/i)) )) {
             //http://www.w3schools.com/jsref/met_element_setattribute.asp
             a_tag.setAttribute('class', 'googleiframe');
             a_tag.setAttribute('data-fancybox-type', 'iframe');
