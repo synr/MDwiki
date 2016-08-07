@@ -393,11 +393,14 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                 openEffect  : 'none',
                 closeEffect : 'none',
                 beforeLoad: function() {
-                    if(!(this.href.match(/^https.*/i))){
-                        //如果不是 https
-                        this.href = this.href.replace(/^http\:\/\//,'https\:\/\/');
-                        console.log('改用 https 效果 = ' + this.href);
-                        console.log(this);
+                    var iframeAll_array = document.getElementsByTagName( "iframe" );
+                    for (var i = 0; i < iframeAll_array.length; i++) {
+                        if(!(iframeAll_array[i].src.match(/^https.*/i))){
+                            //如果不是 https
+                            iframeAll_array[i].src = iframeAll_array[i].src.replace(/^http\:\/\//,'https\:\/\/');
+                            console.log('beforeLoad 全都改用 https 連線效果 = ' + iframeAll_array[i].src);
+                            console.log(this);
+                        }
                     }
                 },
                 afterLoad: function() {
