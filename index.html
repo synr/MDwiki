@@ -436,6 +436,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                     if(!(this.href.match(/^https.*/i))){
                         //如果不是 https
                         this.href = this.href.replace(/^http\:\/\//,'https\:\/\/');
+                        console.log('改用 https 效果 = ' + this.href);
                     }
                     this.title = '<a href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);">如果空白讀不到 → 請點此連結 ← 另開直連該網站。</a>　<a href="javascript:console.log(document.getElementsByClassName(\'fancybox-title fancybox-title-over-wrap\')[0].style.visibility=\'hidden\')">我知道了，我要關閉這礙眼的提示。</a>';
                     // function css_add_inline( css_code ) {
