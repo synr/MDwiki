@@ -337,11 +337,11 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                 uesLightbox(tagA[i]);
                 console.log('單機 = ' + tagA[i]); 
             }
-
-            if(!(tagA[i].href.match(/^https.*/i))){
-                tagA[i].href = tagA[i].href.replace(/^http\:\/\//,'https\:\/\/')
-                console.log('無差別改寫成 https: = ' + tagA[i].href);
-            }
+            //如果是 https 端裡面要塞 http 會被拒絕，所以全都當成 https 去連線
+            // if(!(tagA[i].href.match(/^https.*/i))){
+            //     tagA[i].href = tagA[i].href.replace(/^http\:\/\//,'https\:\/\/')
+            //     console.log('無差別改寫成 https: = ' + tagA[i].href);
+            // }
         }
     }
     function googledrive_url(link_url_array){
@@ -398,6 +398,13 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                 openEffect  : 'none',
                 closeEffect : 'none',
                 beforeLoad: function() {
+                    console.log('beforeLoad this.href match https = ' + (this.href.match(/^https.*/i)));
+                    //想法：燈箱 Load 前，先判斷現在網域
+                    //是 https 的話，那麼就要跳過 http:// 的網址近來燈箱。
+                    if(location.href.match(/^https.*/i)){
+                        alert('https 不給你用燈箱啦！');
+                        $.fancybox.close(1);
+                    }
                 },
                 afterLoad: function() {
                     var iframeAll_array = document.getElementsByTagName( "iframe" );
