@@ -256,27 +256,27 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
             // http    https
             // https   https
             // https   http    不允許
-            var canuesiframe = 0;
+            var canuesiframe = 1;
             //https
             if(location.href.match(/^https\.*/i)){
                 if(a_tag.href.match(/^https\.*/i)){
                     canuesiframe = 1;
-                    console.log('https + https');
+                    //console.log('https + https');
                 }
                 if(a_tag.href.match(/^http\:\/\/.*/i)){
                     canuesiframe = 0;
-                    console.log('https + http');
+                    //console.log('https + http');
                 }
             }
 
             if(location.href.match(/^http\:\/\/.*/i)){
                 if(a_tag.href.match(/^https\.*/i)){
                     canuesiframe = 1;
-                    console.log('http + https');
+                    //console.log('http + https');
                 }
                 if(a_tag.href.match(/^http\:\/\/.*/i)){
                     canuesiframe = 1;
-                    console.log('http + http');
+                    //console.log('http + http');
                 }
             }
 
