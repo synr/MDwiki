@@ -261,23 +261,28 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
             if(location.href.match(/^https\.*/i)){
                 if(a_tag.href.match(/^https\.*/i)){
                     canuesiframe = 1;
+                    console.log('https + https');
                 }
                 if(a_tag.href.match(/^http\:\/\/.*/i)){
                     canuesiframe = 0;
+                    console.log('https + http');
                 }
             }
 
             if(location.href.match(/^http\:\/\/.*/i)){
                 if(a_tag.href.match(/^https\.*/i)){
                     canuesiframe = 1;
+                    console.log('http + https');
                 }
                 if(a_tag.href.match(/^http\:\/\/.*/i)){
                     canuesiframe = 1;
+                    console.log('http + http');
                 }
             }
 
             if(location.href.match(/^file\:\/\/\//i)){
-                canuesiframe = 1;            
+                canuesiframe = 1;
+                console.log('localhost');
             }
 
             if (canuesiframe) {
