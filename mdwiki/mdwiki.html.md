@@ -47,6 +47,9 @@ Markdown 本身沒有註解的語法，雖然有什麼要備忘可以利用 HTML
 - MDwiki 雖然好像有內建 [colorbox](http://www.jacklmoore.com/colorbox)，但我一直用不成功。
 - 換另一個燈箱做另外安裝：[fancybox](http://fancyapps.com/fancybox/#examples)（v2.1.5-0）
 很幸運這個燈箱的效果，不會跟之前寫的新開視窗衝突。
+  - 效果：<a class="googleiframe" data-fancybox-type="iframe" href="https://drive.google.com/file/d/0B_b1e3AASsaLamM2YWF1Q2cwODQ/preview?vq=hd720" title="這是操作免費檔案變動監視軟體 DirectoryMonitor + 同步軟體 FreeFileSync，達成有變動就同步效果的備忘錄影。">Iframe</a>
+<!-- <a class="fancybox fancybox.iframe" href="https://drive.google.com/file/d/0B_b1e3AASsaLamM2YWF1Q2cwODQ/preview?vq=hd720">Iframe</a> -->
+  - 範例測試：<a href="http://fancyapps.com/fancybox/#examples" title="http://fancyapps.com/fancybox/#examples">fancyapps.com/fancybox/#examples</a>
   - 需要另外安裝一些檔案，下載完整包後挑出其中需要的部分檔案即可：
     - 基本上 ``source`` 跟 ``lib`` 兩個資料夾直接複製過來 ``MDwiki/fancybox`` 即可。
 更詳細的檔案如下：
@@ -110,9 +113,6 @@ Markdown 本身沒有註解的語法，雖然有什麼要備忘可以利用 HTML
     - 關鍵是在原本的超連結 ``<a>`` 加入２～３個屬性跟屬性值：
 ``class="googleiframe"`` 跟 ``data-fancybox-type="iframe"``。
     - ``title`` 屬性非必要，有需要顯示什麼文字才需要寫。
-  - 效果：<a class="googleiframe" data-fancybox-type="iframe" href="https://drive.google.com/file/d/0B_b1e3AASsaLamM2YWF1Q2cwODQ/preview?vq=hd720&autoplay=1" title="這是操作免費檔案變動監視軟體 DirectoryMonitor + 同步軟體 FreeFileSync，達成有變動就同步效果的備忘錄影。">Iframe</a>
-<!-- <a class="fancybox fancybox.iframe" href="https://drive.google.com/file/d/0B_b1e3AASsaLamM2YWF1Q2cwODQ/preview?vq=hd720">Iframe</a> -->
-  - 範例測試：<a class="googleiframe" data-fancybox-type="iframe" href="http://fancyapps.com/fancybox/#examples" title="http://fancyapps.com/fancybox/#examples">fancyapps.com/fancybox/#examples</a>
 
 ###相關候選燈箱
 - [fancyBox - Fancy jQuery Lightbox Alternative](http://fancyapps.com/fancybox/#examples)
@@ -139,6 +139,9 @@ Markdown 本身沒有註解的語法，雖然有什麼要備忘可以利用 HTML
 
 ----
 
+###全螢幕
+- https://github.com/sindresorhus/screenfull.js
+
 <script type="text/javascript">
     var elem = document.getElementById('test_googledrive');
     document.getElementById('toggle').addEventListener('click', () => {
@@ -152,3 +155,6 @@ Markdown 本身沒有註解的語法，雖然有什麼要備忘可以利用 HTML
   - Fullscreen an element
 
 <button id="toggle" class="btn btn-lg btn-danger">Toggle 全螢幕</button>
+
+###Web font
+<div class="fonttest">測試中文顯示</div>
