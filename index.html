@@ -436,7 +436,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                     //     }
                     // }
                     //----針對 X-Frame-Options 確定的網域，在這裡作手動排除。
-                    if(this.href.match(/(?:^https?:\/\/trello.com|^https?:\/\/github.com|^https?:\/\/highlightjs.org|^https?:\/\/www.google.com|^https?:\/\/greasyfork.org|^https?:\/\/chrome.google.com|^https?:\/\/*.fancyapps.com)/gi)){
+                    if(this.href.match(/(?:^https?:\/\/trello.com|^https?:\/\/github.com|^https?:\/\/highlightjs.org|^https?:\/\/www.google.com|^https?:\/\/greasyfork.org|^https?:\/\/chrome.google.com)/gi)){
                         console.log('【Error】Refused to display \'' + this.href + '\' in a frame because it set \'X-Frame-Options\'');
                         $.fancybox.close(1);
                     }
