@@ -436,7 +436,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                     //     }
                     // }
                     //----針對 X-Frame-Options 確定的網域，在這裡作手動排除。
-                    if(this.href.match(/(?:^https?:\/\/trello.com|^https?:\/\/github.com|^https?:\/\/highlightjs.org|^https?:\/\/www.google.com|^https?:\/\/greasyfork.org|^https?:\/\/chrome.google.com)/gi)){
+                    if(this.href.match(/(?:^https?:\/\/trello.com|^https?:\/\/github.com|^https?:\/\/highlightjs.org|^https?:\/\/www.google.com|^https?:\/\/greasyfork.org|^https?:\/\/chrome.google.com|^https?:\/\/*.fancyapps.com)/gi)){
                         console.log('【Error】Refused to display \'' + this.href + '\' in a frame because it set \'X-Frame-Options\'');
                         $.fancybox.close(1);
                     }
@@ -485,7 +485,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                     }
 
                     //this.title = '<a href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);">→ ' + this.title + ' ←</a>';
-                    this.title = '<a href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);">如果空白讀不到 → 請點此連結 ← 另開直連該網站。</a>　<button id="button_iframe" onclick="javascript:max_full(\'' + iframe_id + '\',\'button_iframe\');document.getElementById(\'button_iframe\').click();">→ 全螢幕 ←</button>　<a href="javascript:console.log(document.getElementsByClassName(\'fancybox-title fancybox-title-over-wrap\')[0].style.visibility=\'hidden\')">我知道了，我要關閉這礙眼的提示。</a>';
+                    this.title = '<a href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);">如果空白讀不到 → 請點此連結 ← 另開直連該網站。</a>　<button id="button_iframe" onclick="javascript:max_full(\'' + iframe_id + '\',\'button_iframe\');document.getElementById(\'button_iframe\').click();">→ 全螢幕（測試中） ←</button>　<a href="javascript:console.log(document.getElementsByClassName(\'fancybox-title fancybox-title-over-wrap\')[0].style.visibility=\'hidden\')">我知道了，我要關閉這礙眼的提示。</a>';
                     // function css_add_inline( css_code ) {
                     //     var div = document.createElement( "div" );
                     //     div.innerHTML = "<p>x</p><style>" + css_code + "</style>";
@@ -544,6 +544,25 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
         }
     </script>
 <!-- 全螢幕功能_結束 -->
+
+<!-- Web font_開始 -->
+    <!-- http://ifontcloud.com/index/fontKnowledge_9.jsp -->
+    <script type='text/javascript' src='//font.arphic.com/FontSubsetOutput/1470551355753/EEC76680DA382707F92AE6B91449CB67/1470551355753.JS?2011523677'></script>
+    <style type="text/css">
+        .arwf-loading body { /*Web Font正在載入中，不顯示文字*/
+              opacity: 0;
+              visibility: hidden;
+        }
+        .arwf-active body { /*Web Font處理成功，直接顯示文字*/
+              opacity: 1;
+              visibility: visible;
+        }
+        .arwf-inactive body {/*如果Web Font處理失敗，直接顯示文字*/
+              opacity: 1;
+              visibility: visible;
+        }
+    </style>
+<!-- Web font_結束 -->
 </head>
 <body onload="javascript:parseLink();">
     <noscript>
