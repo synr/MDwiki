@@ -49,7 +49,7 @@ Markdown 本身沒有註解的語法，雖然有什麼要備忘可以利用 HTML
   如果有後端環境，可以寫代理網頁先行連線去讀取對方網域查看 ``X-Frame-Options`` 數值。
 
 #####這是直接寫 HTML 的方式完成，所以實際上內文已經很複雜了。
-#####如果以後可以改成 Gimmicks 之類的外掛，應該會比較好。
+#####如果以後可以改成 Gimmicks 之類的外掛，應該會比較好。（已改用 JavaScript 觸發判斷）
 
 - MDwiki 雖然好像有內建 [colorbox](http://www.jacklmoore.com/colorbox)，但我一直用不成功。
 - 換另一個燈箱做另外安裝：[fancybox](http://fancyapps.com/fancybox/#examples)（v2.1.5-0）
