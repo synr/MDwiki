@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<!-- <meta name="viewport" content="width=device-width initial-scale=1.5 maximum-scale=1 user-scalable=1"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<script type="text/javascript">
+		function alwayscenter(){
+			var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+			var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+			var top = height*0.5-(document.getElementsByTagName('div')[0].style.height.replace('px',''))*0.5-45*0.5;
+			var left = width*0.5-(document.getElementsByTagName('div')[0].style.width.replace('px',''))*0.5-45*0.5;
+		    document.getElementsByTagName('div')[0].style.margin = top + 'px 0px 0px ' + left + 'px';
+		    // console.log('width = ' + width);
+		    // console.log('height = ' + height);
+		    // console.log('top (height%) = ' + top);
+		    // console.log('left (width%) = ' + left);
+		}
+		window.onresize = alwayscenter;
+	</script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.4.js"></script>
+    <script>
+        $(function () {
+            $("#pass").keypress(function (e) {
+                $("#sCapsLockWarning").toggle(
+                    //沒按下Shift鍵，卻輸入大寫字母
+                    (e.which >= 65 && e.which <= 90 && !e.shiftKey) ||
+                    //按下Shift鍵時，卻輸入小寫字母
+                    (e.which >= 97 && e.which <= 122 && e.shiftKey)
+                    );
+                // if($("#pass").value.match(/.*[A-Z]/g)){
+                // 	alert('big');
+
+                // }
+                if($("#pass")[0].value.match(/.*[A-Z]/g)){
+                	$("#pass")[0].style.color = 'red';
+                	$("#sCapsLockWarning").show();
+                }else{
+                	$("#pass")[0].style.color = '';
+                	$("#sCapsLockWarning").hide();
+                }
+            }).focusout(function () { if(!$("#pass")[0].value.match(/.*[A-Z]/g)) { $("#sCapsLockWarning").hide(); } });
+        });
+    </script>
+    <style>#sCapsLockWarning { font-size: 9pt; color: Red; display: none; }</style>
+	<style type="text/css">
+		footer {
+		  position: fixed;
+		  bottom: 0;
+		  left: 0;
+		  height: 25px;
+		  background-color: white;
+		  width: 100%;
+	      text-align: center;
+		}
+
+		/* ~~~~ */
+
+/*		input[type=text],input[type=password] {
+			font-family: "AvenirNextLTW01-Regular",helvetica,arial,sans-serif !important;
+			width: 62.10526%;
+		    text-align: center;
+		    border-style: outset;
+		    border-width: 0;
+		    cursor: pointer;
+		    ime-mode: disabled;
+		    -webkit-ime-mode: disabled;
+		    -o-ime-mode: disabled;
+		    -moz-ime-mode: disabled;
+		    -ms-ime-mode: disabled;
+		    border-radius: 6px;
+		    -moz-border-radius: 6px;
+		    -webkit-border-radius: 6px;
+		    -webkit-transition: all .4s ease;
+		    -moz-transition: all .4s ease;
+		    -ms-transition: all .4s ease;
+		    -o-transition: all .4s ease;
+		    transition: all .4s ease;
+		}*/
+/*		::-webkit-scrollbar {
+		    width: .5em;
+		    height: .5em;
+		    background-color: #fff;
+		}
+		
+		::-webkit-scrollbar-thumb {
+		    min-height: .5em;
+		    min-width: .5em;
+		    -webkit-border-radius: 4px;
+		    background-color: #bff1bf;
+		}*/
+		
+		::selection, input[type="text"]:focus::selection {
+		    background-color: #f7e42f;
+		    color: white;
+		}
+
+
+		input[type=text],input[type=password]{
+			margin: 10px 0px 10px 0px;
+			outline:none;
+		    border: 0;
+		    border-style: ridge;
+		    border-radius: 6px;
+		    -moz-border-radius: 6px;
+		    -webkit-border-radius: 6px;
+
+		    text-align: center;	
+		    border-color:rgba(11,193,15,.5)!important;
+		    box-shadow: 0 0 18px rgba(11,193,15,.5);
+		    -moz-box-shadow: 0 0 18px rgba(11,193,15,.5);
+		    -webkit-box-shadow: 0 0 18px rgba(11,193,15,.5);		    		
+
+		    width:100%;
+		    height:24px;
+		    font-size: 16px;
+		    font-family: '微軟正黑體';
+
+		}
+		input[type=text]:focus,input[type=password]:focus,input[type=checkbox]:focus,input[type=radio]:focus,textarea:focus,select:focus{
+			outline:none;
+
+			font-size: 24px;
+		 	height: 36px;
+
+			border-color:rgba(250,188,1,.75)!important;
+			box-shadow:0 0 18px rgba(250,188,1,.5);
+			-moz-box-shadow:0 0 18px rgba(250,188,1,.5);
+			-webkit-box-shadow:0 0 18px rgba(250,188,1,.5);
+
+		    border: 0;
+		    border-style: ridge;
+		    -webkit-transition: all .7s ease;
+		    -moz-transition: all .7s ease;
+		    -ms-transition: all .7s ease;
+		    -o-transition: all .7s ease;
+		    transition: all .7s ease;
+
+		    background: #FFF;
+		    text-decoration: none;
+
+		    border-radius: 6px;
+		    -moz-border-radius: 6px;
+		    -webkit-border-radius: 6px;
+
+		    -webkit-transform: scale(1.005);
+		    -moz-transform: scale(1.005);
+		    transform: scale(1.005);
+		}
+		input[type=submit] {
+			width: 100%;
+			margin: 10px 0px 10px 0px;
+		    background-color: #5fcf80 !important;
+		    border-color: #3ac162 !important;
+		    font-weight: bold;
+		    padding: 12px 15px;
+		    background: #3f8abf;
+		    color: #fff !important;
+		    font-size: 14px;
+		    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+		    cursor: pointer;
+		    text-decoration: none;
+		    text-shadow: 0 1px 0px rgba(0,0,0,0.15);
+		    border-width: 1px 1px 3px !important;
+		    border-style: solid;
+		    border-color: #326e99;
+		    white-space: nowrap;
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		    display: -moz-inline-stack;
+		    display: inline-block;
+		    vertical-align: middle;
+		    zoom: 1;
+		    -webkit-border-radius: 5px;
+		    -moz-border-radius: 5px;
+		    -ms-border-radius: 5px;
+		    -o-border-radius: 5px;
+		    border-radius: 5px;
+		    -webkit-box-sizing: border-box;
+		    -moz-box-sizing: border-box;
+		    box-sizing: border-box;
+		    -webkit-box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+		    -moz-box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+		    box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+		}
+		input[type=submit]:cilck {
+		    color: #8de28d;
+		    background: 0;
+		    text-decoration: none;
+		    text-shadow: 0 0 12px rgba(11,193,15,.5);
+		    -webkit-transform: rotateY(360deg);
+		    -moz-transform: rotateY(360deg);
+		    -o-transform: rotateY(360deg);
+		    transform: rotateY(360deg);
+		    cursor: pointer
+		}
+	</style>
+	<style type="text/css">
+		#box {
+		    /*width: 224px;*/
+		    margin: 0px auto;
+		    text-align: left;
+		    padding: 20px;
+		    background-color: #ffffff;
+		    color: #333;
+		    border: 1px solid #e5e5e5;
+		    box-shadow: rgba(200,200,200,0.7) 0 4px 10px -1px;
+
+/*            height: 170px;
+            width: 300px;*/
+            /*background-color: black;*/
+
+			/*height: 400px;*/
+			display: -webkit-flex;
+			display:         flex;
+			-webkit-align-items: center;
+			        align-items: center;
+			-webkit-justify-content: center;
+			        justify-content: center;
+
+		/*    -webkit-transform: scale(1.15);
+		    -moz-transform: scale(1.15);
+		    transform: scale(1.15)*/
+		};
+		div {
+		    display: block;
+		}
+		label{
+		    font-family: '微軟正黑體';			
+		}
+	</style>
+</head>
+<body onload="javascript:alwayscenter();document.getElementById('username').focus();">
+			<div id="box" style="height: 170px;width: 300px;/*position: static; left: auto; top: auto; bottom: auto; right: auto;*/">
+	<form action="假裝的.php" method="get" onsubmit="javascript: /*return false;*/">
+	<!-- <form action="action_page.php"  method="post" onsubmit=""> -->
+		<!-- <fieldset> -->
+			<!-- <legend>系統登入</legend> -->
+
+				<label>帳號</label>
+				<acronym title="請輸入帳號">
+					<input name="username_NAME_for_php" id="username" type="text" maxlength="100" tabindex="1" aria-required="true" value="" placeholder="輸入帳號" title="請輸入帳號" autocorrect="off" accept-charset="UTF-8" enctype="application/x-www-form-urlencoded" onmouseover="javascript:this.focus();this.select()" onkeypress="javascript:if (window.event.keyCode==13){document.getElementById('pass').focus(); return false;};" style="ime-mode:disabled" required />
+				</acronym>
+
+
+				<label>密碼</label>
+				<acronym title="請輸入密碼">
+					<input name="pass_NAME_for_php" id="pass" type="password" maxlength="100" tabindex="2" aria-required="true" value="" placeholder="輸入密碼" title="請輸入密碼" autocorrect="off" accept-charset="UTF-8" enctype="application/x-www-form-urlencoded" onmouseover="javascript:this.focus();this.select()" onkeypress="javascript:if (window.event.keyCode==13){document.getElementById('submit').focus(); return false;}" style="ime-mode:disabled" required /> 
+				</acronym>
+				<span id="sCapsLockWarning"><b>提示：密碼大小寫有別，您輸入的密碼包含大寫。</b></span>
+				<input type="submit" id="submit" value="登入" tabindex="3" data-disable-with="登入中..." />
+			
+		<!-- </fieldset> -->
+	</form></div>
+<!-- 	<br />
+	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> -->
+	<!-- <br /><hr /><br /> -->
+<!-- http://www.jqueryrain.com/?tI2fDja6 -->
+<!-- 	<div id="box" style="position: static; left: auto; top: auto; bottom: auto; right: auto;">
+		<form action="" method="post">
+		<label>Username</label> <input type="text" name="username" class="input" autocomplete="off" id="username">
+		<label>Password </label><input type="password" name="password" class="input" autocomplete="off" id="password"><br>
+		<input type="submit" class="button button-primary" value="Login" id="login"> <span class="msg"></span>
+
+		<div style="font-size:12px; margin-top:10px" id="error"><span style="color:#cc0000">Error:</span> Invalid username and password. </div>
+
+		</form>
+	</div> -->
+
+	<footer>© test</footer>
+</body>
+</html>
