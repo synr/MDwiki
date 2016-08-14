@@ -40,9 +40,10 @@
   - [為加密式惡意行為，事先設防降低受害風險 (反勒索病毒)](https://trello.com/c/PV4kfjSD)
   - [ニコニコ動画 改用 HTML5 來播放（完全不透過 Flash）](https://trello.com/c/1lAqsfi8)
 
-[2016.08.05 更新]()
+[2016.08.08 更新]()
 
   - #更新項目
+  - [\[外部調整\] 加入外的「fancybox」燈箱](#!update.md#[2016.08.08]_加入外的「fancybox」燈箱)
   - [更新 MDwiki 重點架構檔案 頁面](#!update.md#[2016.08.05]_更新_MDwiki_重點架構檔案)
   - [新增 md 檔案竟然也能直接使用 HTML 標籤！？頁面](#!update.md#[2016.08.05]_增加_md_檔案竟然也能直接使用_HTML_標籤！？頁面)
   - [增加 Gimmicks for Google Drive 失敗卻發現可以用原始HTML](#!update.md#[2016.08.04]_增加_Gimmicks_for_Google_Drive_失敗)
