@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html >
+<html>
+<head>
+<script>
+function aa() {
+    var file = document.getElementById('ff').files[0];
+    //console.dir(file);
+    if (file) {
+        var msg = [];
+        msg.push('檔名：' + file.name
+             , '大小：' + file.size
+             , '檔案類型：' + file.type
+             , '修改日期：' + file.lastModifiedDate.toLocaleDateString()
+            );
+        document.getElementById('msg').innerHTML = msg.join("<"+"br"+">");
+        
+        //讀取檔案
+        var fileReader = new FileReader();
+        fileReader.onload = function(event){//讀取完後執行的動作
+            //console.dir(event);
+            document.getElementById('xx').src = event.target.result;
+        };
+        fileReader.readAsDataURL(file);//讀取檔案內容,以DataURL格式回傳結果
+        
+        //fileReader.readAsText(file, 'UTF-8');
+    }
+}
+</script>
+</head>
+<body>
+<input type=file id="ff" onchange="javascript:aa()"/>
+<div id="msg"></div>
+<img id="xx" src="" />
+</body>
+</html> 

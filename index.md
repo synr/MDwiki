@@ -108,5 +108,7 @@
 ----
 
 ####提供參考：
-- 這份頁面寫的 ``markdown`` 原始文件內容，可下載此連結查看：[→ 點我點我 ←](https://docs.google.com/uc?id=0B_b1e3AASsaLYVRFN2FEd002R3M&export=download)
+- 這份頁面寫的 ``markdown`` 原始文件內容，可下載此連結查看：[→ 點我點我 ←](http://landerso.at-ninja.jp/index.md)
 - 本站使用 0.6.2 版作測試
+
+<!-- - 這份頁面寫的 ``markdown`` 原始文件內容，可下載此連結查看：[→ 點我點我 ←](https://docs.google.com/uc?id=0B_b1e3AASsaLYVRFN2FEd002R3M&export=download) -->

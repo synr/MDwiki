@@ -55,4 +55,5 @@
 
 [gimmick:themechooser](替換佈景主題)
 
+<!-- [gimmick:theme](Darkly) -->
 [gimmick:theme](flatly)

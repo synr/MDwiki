@@ -1,4 +1,4 @@
-﻿#更新紀錄
+#更新紀錄
 
 提示！所有提到的「外部修改」，都是指對 ``*.html`` 進行修改。
 這個系統只有一個 ``*.html`` 檔案，應該不會搞錯吧XD！
@@ -25,6 +25,42 @@
 所以有點想要 ``增加 Gimmicks`` 或者直接寫 JavaScript 進行條件觸發修改 HTML DOM 本體。
 但如之前更新提到的，Gimmicks 要加入新規則都一直仿不成功，所以這次直接跳過嘗試改他XD（诶？）
 
+
+
+<!--
+
+..........結果還是沒有寫完！！！！
+改天再來寫XD
+
+https://github.com/sindresorhus/screenfull.js
+
+https://mengzhuo.org/regex/
+~~~
+/(?:^https?:\/\/trello.com|^https?:\/\/github.com|^https?:\/\/highlightjs.org|^https?:\/\/www.google.com|^https?:\/\/greasyfork.org|^https?:\/\/chrome.google.com)/gm
+~~~
+
+```
+https://github.com/chjj/marked
+https://trello.com
+http://trello.com
+https://highlightjs.org/
+https://www.google.com
+https://greasyfork.org/zh-TW/scripts/14391-zenzawatch
+https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo
+```
+
+~~~
+var req = new XMLHttpRequest();
+req.open('GET', 'https://trello.com', false);
+req.send(null);
+var headers = req.getAllResponseHeaders().toLowerCase();
+console.log(headers);
+~~~
+
+~~~
+https://www.bootstrapcdn.com/bootswatch/
+~~~
+-->
 
 ----
 
