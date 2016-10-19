@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:og="http://ogp.me/ns#">
 <!--
    This is MDwiki v0.6.2
    (C) 2013 by Timo Dörr and contributors. This software is licensed
@@ -13,6 +13,11 @@
     <meta name="fragment" content="!">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
     <meta charset="UTF-8">
+    <!--http://littleshell-multimedia.blogspot.tw/2011/03/facebook-sharer.html http://littleshell-multimedia.blogspot.tw/2013/10/facebook-sharer-description-title-image.html-->
+    <meta property="og:title" content="⎝◕‿◕⎠ MDwiki 試玩中"/>
+    <meta property="og:image" content="http://landerso.at-ninja.jp/index.png"/>
+    <meta property="og:description" content="⎝◕‿◕⎠ MDwiki 試玩中：我目前剛開始試玩中。意在記錄操作備忘兼分享方法。但這個網站不一定會永久存在。"/>
+    <!--http://littleshell-multimedia.blogspot.tw/2011/03/facebook-sharer.html http://littleshell-multimedia.blogspot.tw/2013/10/facebook-sharer-description-title-image.html-->
     <style type="text/css">
     div img {
         /* http://fanchie.blogspot.tw/2008/02/css-css.html */
@@ -333,7 +338,24 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
             }
         }
 
+        //2016.10.19+
+        function md_file_show(md_name = '$2',target_id){
+            //var this_md = location.href.replace(/(.*)#!(.*)/,'$1').replace('index.html','')  + location.href.replace(/(.*)#!(.*)/,'$2');
+            var this_md = location.href.replace(/(.*)#!(.*)/,'$1').replace('index.html','')  + location.href.replace(/(.*)#!(.*)/,md_name);
+            if(document.getElementById(target_id).title == "#"){
+                document.getElementById(target_id).href = this_md;
+                document.getElementById(target_id).title = this_md;
+                console.log(md_name + ' = ' + document.getElementById(target_id).href);
+            }
+        }
+
         function parseLink(){
+
+            //2016.10.19+ md_file_show()
+            md_file_show('$2','md_file');
+            md_file_show('navigation.md','md_file_navigation');
+            md_file_show('config.json','md_file_config');
+
             var tagA = document.getElementsByTagName( "a" );
 
             isgoogle = new RegExp( "^https?:\/\/.*.googledrive.com.*\/host\/(.*)\/(#.*)$", "i");
@@ -458,6 +480,11 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                             console.log(i + ' = 燈箱 id = ' + iframeAll_array[i].id.match(/^fancybox.*/i));
                             console.log(i + ' = 燈箱網址 = ' + iframeAll_array[i].src);
 
+                            if(iframeAll_array[i].src.match(/^.*.md$|^.*config.json$/gim)){
+                                console.log(iframeAll_array[i].src + '已經下載開啟，關閉燈箱。');
+                                $.fancybox.close(1);
+                            }
+
                             // iframeAll_array[i].onerror = function(){
                             //     //x-frame-options 的問題 onerror 2016.08.06 的今天暫時抓不到
                             //     //但 x-frame-options 的原理是 在 HTTP 的 head 標示
@@ -490,7 +517,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                     }
 
                     //this.title = '<a href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);">→ ' + this.title + ' ←</a>';
-                    this.title = '<a href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);">如果空白讀不到 → 請點此連結 ← 另開直連該網站。</a>　<button id="button_iframe" onclick="javascript:max_full(\'' + iframe_id + '\',\'button_iframe\');document.getElementById(\'button_iframe\').click();">→ 全螢幕（測試中） ←</button>　<a href="javascript:console.log(document.getElementsByClassName(\'fancybox-title fancybox-title-over-wrap\')[0].style.visibility=\'hidden\')">我知道了，我要關閉這礙眼的提示。</a>';
+                    this.title = '<a href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);">如果空白讀不到 → 請點此連結 ← 另開直連該網站。</a>　<button id="button_iframe" onclick="javascript:max_full(\'' + iframe_id + '\',\'button_iframe\');document.getElementById(\'button_iframe\').click();">→ 點我變成全螢幕 ←</button>　<a href="javascript:console.log(document.getElementsByClassName(\'fancybox-title fancybox-title-over-wrap\')[0].style.visibility=\'hidden\')">我知道了，我要關閉這礙眼的提示。</a>';
                     // function css_add_inline( css_code ) {
                     //     var div = document.createElement( "div" );
                     //     div.innerHTML = "<p>x</p><style>" + css_code + "</style>";
@@ -552,7 +579,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
 
 <!-- Web font_開始 -->
     <!-- http://ifontcloud.com/index/fontKnowledge_9.jsp -->
-    <script type='text/javascript' src='//font.arphic.com/FontSubsetOutput/1470551355753/EEC76680DA382707F92AE6B91449CB67/1470551355753.JS?2011523677'></script>
+<!--     <script type='text/javascript' src='//font.arphic.com/FontSubsetOutput/1470551355753/EEC76680DA382707F92AE6B91449CB67/1470551355753.JS?2011523677'></script>
     <style type="text/css">
         .arwf-loading body { /*Web Font正在載入中，不顯示文字*/
               opacity: 0;
@@ -566,8 +593,13 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
               opacity: 1;
               visibility: visible;
         }
-    </style>
+    </style> -->
 <!-- Web font_結束 -->
+
+    <!-- Share 開始 -->
+        <!-- <script type='text/javascript' data-cfasync='false' src='//dsms0mj1bbhn4.cloudfront.net/assets/pub/shareaholic.js' data-shr-siteid='4d41c958ee8d9c1447085e3971ae296c' async='async'></script> -->
+        <!-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-580633de792d2c59"></script>  -->
+    <!-- Share 結束 -->
 </head>
 <body onload="javascript:parseLink();">
     <noscript>
