@@ -341,14 +341,14 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
         //2016.10.19+
         function md_file_show(md_name = '$2',target_id){
             //var this_md = location.href.replace(/(.*)#!(.*)/,'$1').replace('index.html','')  + location.href.replace(/(.*)#!(.*)/,'$2');
-            //var this_md = location.href.replace(/(.*)#!(.*)/,'$1').replace('index.html','')  + location.href.replace(/(.*)#!(.*)/,md_name);
-            var this_md = location.href.replace(/(.*)#!(.*)/,md_name);
+            var this_md = location.href.replace(/(.*)#!(.*)/,'$1').replace('index.html','')  + location.href.replace(/(.*)#!(.*)/,md_name);
+            //var this_md = location.href.replace(/(.*)#!(.*)/,md_name);
             if(document.getElementById(target_id).title == '#'){
                 document.getElementById(target_id).title = this_md;
                 document.getElementById(target_id).href = this_md;
                 //document.getElementById(target_id).download = md_name;
                 //document.getElementById(target_id).href = document.getElementById(target_id).href.replace(/(.*)\/(.*)/,'$2');
-                console.log(md_name + ' = '+ this_md +' = ' + document.getElementById(target_id).href);
+                //console.log(md_name + ' = '+ this_md +' = ' + document.getElementById(target_id).href);
             }
         }
 
