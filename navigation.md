@@ -63,7 +63,7 @@
 [💾 Save & Share]()
 
   - #📢 Save & Share
-  - #　這些功能可拉成書籤工具
+  - #　也可以拉成書籤工具
   - #　詳情請參照影片區
   ----
   - #💾 Save
@@ -80,13 +80,14 @@
   - <a href="javascript: void(window.open('https://plus.google.com/share?url=' + encodeURIComponent(window.location.href)));">分享到 <img src="googleplus.png" /> Google+</a>
   ----
   - #🔎  查看本站 .md 原始碼
-  - <a href="#" id='md_file' class="googleiframe" title="#" data-fancybox-type="iframe">查看本頁 .md 檔  👀</a>
-  - <a href="#" id='md_file_navigation' class="googleiframe" title="#" data-fancybox-type="iframe">🔧 navigation.md  👀</a>
-  - <a href="#" id='md_file_config' class="googleiframe" title="#" data-fancybox-type="iframe">🔨 config.json  👀</a>
+  - <a href="###" id='md_file' class="googleiframe" title="#" data-fancybox-type="iframe">查看本頁 .md 檔  👀</a>
+  - <a href="###" id='md_file_navigation' class="googleiframe" title="#" data-fancybox-type="iframe">🔧 navigation.md  👀</a>
+  - <a href="###" id='md_file_config' class="googleiframe" title="#" data-fancybox-type="iframe">🔨 config.json  👀</a>
   
-[🔃  2016.10.19 更新]()
+[🔃  2016.10.20 更新]()
 
   - #更新項目
+  - [🆕 增加 OneNote 分享，修正其他分享功能。](# "2016.10.20 完成待補寫")
   - [🆕 增加「語言/漢字轉換」：可不換頁轉換漢字外觀](# "2016.10.19 完成待補寫")
   - [🆕 \[內/外部都調整\]完成「Trello 格式化儲存卡片功能」並新增儲存分享按鈕](# "2016.10.18 完成待補寫")
   - [\[外部調整\] 加入外的「fancybox」燈箱](#!update.md#[2016.08.08]_加入外的「fancybox」燈箱)
