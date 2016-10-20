@@ -359,6 +359,10 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
             md_file_show('$2','md_file');
             md_file_show('navigation.md','md_file_navigation');
             md_file_show('config.json','md_file_config');
+            //2016.10.20+
+            if(!is_mobile()){
+                //$(document.getElementById('line')).hide();
+            }
 
             var tagA = document.getElementsByTagName( "a" );
 
