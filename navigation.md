@@ -83,7 +83,8 @@
   - <a href="javascript: void(window.open('https://plus.google.com/share?url=' + encodeURIComponent(window.location.href)));">分享到 <img src="googleplus.png" /> Google+</a>
   ----
   - #🔎  查看本站 .md 原始碼
-  - <a href="###" id='md_file' class="googleiframe" title="#" data-fancybox-type="iframe">查看本頁 .md 寫法 👀</a>
+  - <a href="javascript:window.open(location.href.replace(/(.*)#!(.*)/,'$1').replace('index.html','')  + location.href.replace(/(.*)#!(.*)/,'$2'),'_blank');" target="_blank">👀 直接看 .md 寫法</a>
+  - <a href="###" id='md_file' class="googleiframe" title="#" data-fancybox-type="iframe">👀 燈箱看本頁 .md 👀</a>
   - <a href="###" id='md_file_navigation' class="googleiframe" title="#" data-fancybox-type="iframe">🔧 navigation.md  👀</a>
   - <a href="###" id='md_file_config' class="googleiframe" title="#" data-fancybox-type="iframe">🔨 config.json  👀</a>
   
