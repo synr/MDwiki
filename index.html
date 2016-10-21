@@ -20,6 +20,8 @@
     <meta property="og:description" content="⎝◕‿◕⎠ MDwiki 試玩中：我目前剛開始試玩中。意在記錄操作備忘兼分享方法。但這個網站不一定會永久存在。"/>
     <meta property="og:url" content="http://landerso.at-ninja.jp/" />
     <!--http://littleshell-multimedia.blogspot.tw/2011/03/facebook-sharer.html http://littleshell-multimedia.blogspot.tw/2013/10/facebook-sharer-description-title-image.html-->
+    <meta name="theme-color" content="#FFFFFF">
+    <!-- https://blog.gtwang.org/web-development/android-chrome-browser-theme-color-support/ -->
     <style type="text/css">
     div img {
         /* http://fanchie.blogspot.tw/2008/02/css-css.html */
@@ -369,6 +371,68 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                 console.log('手機板才載入 addthis 方便分享按鈕。');
             }
             */
+            //2016.10.21+ 根據佈景主題改變網址列顏色
+            //<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.7/darkly/bootstrap.min.css">
+            if(bootstrap_theme()!=''){
+                switch(bootstrap_theme()) {
+                    case 'bootstrap':
+                        break;
+                    case 'amelia':
+                        set_theme_color('#8e1821');
+                        break;
+                    case 'cerulean':
+                        set_theme_color('#1993d9');
+                        break; 
+                    case 'cosmo':
+                        set_theme_color('#111');
+                        break;
+                    case 'cyborg':
+                        set_theme_color('#000');
+                        break;
+                    case 'flatly':
+                        set_theme_color('#1f2c39');
+                        break;
+                    case 'journal':
+                        set_theme_color('#ededed');
+                        break;
+                    case 'readable':
+                        set_theme_color('#e7e7e7');
+                        break; 
+                    case 'simplex':
+                        set_theme_color('#ededed');
+                        break; 
+                    case 'slate':
+                        set_theme_color('#2a2d31');
+                        break;
+                    case 'spacelab':
+                        set_theme_color('#dcdcdc');
+                        break;
+                    case 'united':
+                        set_theme_color('#bc3d11');
+                        break;
+                    case 'yeti':
+                        set_theme_color('#222');
+                        break;
+                    case 'darkly':
+                        set_theme_color('#375a7f');
+                        break;
+                    case 'lumen':
+                        set_theme_color('#f8f8f8');
+                        break;
+                    case 'Paper':
+                        set_theme_color('#FFF');
+                        break;
+                    case 'sandstone':
+                        set_theme_color('#3e3f3a');
+                        break;
+                    case 'superhero':
+                        set_theme_color('#2b3e50');
+                        break;
+                    default:
+                        set_theme_color('#e6e6e6');
+                        break;
+                }
+            }
 
             var tagA = document.getElementsByTagName( "a" );
 
@@ -620,6 +684,48 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
         function is_mobile(){
             return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
         }
+        //2016.10.21 判別目前的 bootstrap 佈景主題（http://bootswatch.com/）
+        function bootstrap_theme(){
+            var get_css = '';
+            var x = document.getElementsByTagName('link');
+            var i = x.length;
+            while (i--) {
+                if (x[i].type == 'text/css') {
+                    get_css = x[i].href;
+                    if(/.*bootswatch\/.....\/(.*)\/bootstrap.min.css/gi.test(get_css)){
+                        return get_css.replace(/.*bootswatch\/.....\/(.*)\/bootstrap.min.css/gi,'$1');
+                    }
+                    //console.log(x[i].href);
+                }
+            }
+            return '';
+        }
+        //2016.10.21 判別 theme-color https://blog.gtwang.org/web-development/android-chrome-browser-theme-color-support/
+        function get_theme_color(){
+            var get_color = '';
+            var x = document.getElementsByTagName('meta');
+            var i = x.length;
+            while (i--) {
+                if (x[i].name == 'theme\-color') {
+                    get_color = x[i].content;
+                    return get_color;
+                }
+            }
+            return '';
+        }
+
+        function set_theme_color(set_color='#FFFFFF'){
+            if(get_theme_color()!=set_color){
+                var x = document.getElementsByTagName('meta');
+                var i = x.length;
+                while (i--) {
+                    if (x[i].name == 'theme\-color') {
+                        x[i].content = set_color;
+                    }
+                }
+                console.log(bootstrap_theme() + '：' + get_theme_color());
+            }
+        }
         /*
         function plus_js(data_url,id_){
                     if (typeof(id_) != 'undefined'){
@@ -643,7 +749,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
     </script>
 <!-- 2016.10.20 增加判斷瀏覽者裝置 function 結束 -->
 </head>
-<body onload="javascript:parseLink();">
+<body onload="javascript:parseLink();" onclick="javascript:parseLink();">
     <noscript>
         This website requires Javascript to be enabled. Please turn on Javascript
         and reload the page.
