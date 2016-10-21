@@ -363,11 +363,12 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
             if(!is_mobile()){
                 $(document.getElementById('line')).hide();
             }
-
+            /*
             if(is_mobile()){
                 plus_js('//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-580633de792d2c59','addthis');            
                 console.log('手機板才載入 addthis 方便分享按鈕。');
             }
+            */
 
             var tagA = document.getElementsByTagName( "a" );
 
@@ -493,10 +494,10 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                             console.log(i + ' = 燈箱 id = ' + iframeAll_array[i].id.match(/^fancybox.*/i));
                             console.log(i + ' = 燈箱網址 = ' + iframeAll_array[i].src);
 
-                            if(iframeAll_array[i].src.match(/^.*.md$|^.*config.json$/gim)){
-                                console.log(iframeAll_array[i].src + '已經下載開啟，關閉燈箱。');
-                                $.fancybox.close(1);
-                            }
+                            // if(iframeAll_array[i].src.match(/^.*.md$|^.*config.json$/gim)){
+                            //     console.log(iframeAll_array[i].src + '已經下載開啟，關閉燈箱。');
+                            //     $.fancybox.close(1);
+                            // }
 
                             // iframeAll_array[i].onerror = function(){
                             //     //x-frame-options 的問題 onerror 2016.08.06 的今天暫時抓不到
@@ -619,6 +620,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
         function is_mobile(){
             return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
         }
+        /*
         function plus_js(data_url,id_){
                     if (typeof(id_) != 'undefined'){
                     }else{
@@ -637,6 +639,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                     //document.body.appendChild(s);
                     document.getElementsByTagName('head')[0].appendChild(s);
         }
+        */
     </script>
 <!-- 2016.10.20 增加判斷瀏覽者裝置 function 結束 -->
 </head>
