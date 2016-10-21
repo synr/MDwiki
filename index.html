@@ -354,6 +354,10 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
             }
         }
 
+        if(is_mobile()){
+            plus_js('//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-580633de792d2c59','addthis');            
+        }
+
         function parseLink(){
             //2016.10.19+ md_file_show()
             md_file_show('$2','md_file');
@@ -631,9 +635,6 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                     s.id = id_;
                     //document.body.appendChild(s);
                     document.getElementsByTagName('head')[0].appendChild(s);
-        }
-        if(is_mobile()){
-            plus_js('//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-580633de792d2c59','addthis');            
         }
     </script>
 <!-- 2016.10.20 增加判斷瀏覽者裝置 function 結束 -->
