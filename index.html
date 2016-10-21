@@ -354,10 +354,6 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
             }
         }
 
-        if(is_mobile()){
-            plus_js('//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-580633de792d2c59','addthis');            
-        }
-
         function parseLink(){
             //2016.10.19+ md_file_show()
             md_file_show('$2','md_file');
@@ -368,6 +364,10 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                 $(document.getElementById('line')).hide();
             }
 
+            if(is_mobile()){
+                plus_js('//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-580633de792d2c59','addthis');            
+            }
+            
             var tagA = document.getElementsByTagName( "a" );
 
             isgoogle = new RegExp( "^https?:\/\/.*.googledrive.com.*\/host\/(.*)\/(#.*)$", "i");
