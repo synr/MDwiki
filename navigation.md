@@ -1,4 +1,4 @@
-#⎝◕‿◕⎠ MDwiki 試玩中
+#⎝◕‿◕⎠ MDwiki 試玩中test
 [📖  MDwiki]()
 
   - # 📣 我來說說 MDwiki
@@ -76,7 +76,7 @@
   - <a href="javascript: void( window.open('https://mail.google.com/mail/?view=cm&fs=1&body='+ encodeURIComponent('- \[' + document.title) + '\]\(' +encodeURIComponent(location.href) + '\)' + encodeURIComponent('\n\n'+document.getSelection()) + '&su=' + encodeURIComponent(document.title) +  '&ui=2' ) );">📧 用 <img src="gmail.png" /> Gmail 寄信</a>
   ----
   - #↪ Share
-  - <a id="line" href="javascript: if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){void(window.open('http://line.me/R/msg/text/?' + encodeURIComponent( document.title + '\n' + location.href + '\n\n' + document.getSelection())));}else{console.log('Line is not allow share without mobile.')}">分享到 <img src="line.png" /> Line</a>
+  - <a id="line" href="javascript: if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){void(window.open('http://line.me/R/msg/text/?' + encodeURIComponent( document.title + '\n' + location.href + '\n\n' + document.getSelection())));}">分享到 <img src="line.png" /> Line</a>
   - <a href="javascript: if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){void(window.open('http://www.plurk.com/m/?qualifier=shares&content=' + encodeURIComponent( '\[' + document.title + '\]\(' + location.href + '\)\n' + document.getSelection())));}else{void(window.open('http://www.plurk.com/?qualifier=shares&status=' + encodeURIComponent( '\[' + document.title + '\]\(' + location.href + '\)\n' + document.getSelection())));}">分享到 <img src="plurk.jpg" /> Plurk</a>
   - <a href="javascript: void(window.open('http://www.facebook.com/sharer.php?u='.concat(encodeURIComponent(location.href)) .concat('&t=') .concat(encodeURIComponent(document.title))));">分享到 <img src="facebook.png" /> Facebook</a>
   - <a href="javascript: void(window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(window.location.href) + '&text=' + encodeURIComponent(document.title +'\n' + document.getSelection())));">分享到 <img src="twitter.png" /> Twitter</a>
