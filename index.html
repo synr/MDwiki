@@ -366,8 +366,9 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
 
             if(is_mobile()){
                 plus_js('//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-580633de792d2c59','addthis');            
+                console.log('手機板才載入 addthis 方便分享按鈕。');
             }
-            
+
             var tagA = document.getElementsByTagName( "a" );
 
             isgoogle = new RegExp( "^https?:\/\/.*.googledrive.com.*\/host\/(.*)\/(#.*)$", "i");
