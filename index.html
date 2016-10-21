@@ -614,6 +614,27 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
         function is_mobile(){
             return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
         }
+        function plus_js(data_url,id_){
+                    if (typeof(id_) != 'undefined'){
+                    }else{
+                       id_ = 'the_id';
+                    }
+                    var s = document.getElementById(id_);
+                    if (s != null) {
+                        document.body.removeChild(s);
+                    }
+                    var s = document.createElement('script');
+                    s.language = "javascript";
+                    s.type = 'text/javascript';
+                    s.src = data_url;
+                    s.setAttribute('charset', 'UTF-8');
+                    s.id = id_;
+                    //document.body.appendChild(s);
+                    document.getElementsByTagName('head')[0].appendChild(s);
+        }
+        if(is_mobile()){
+            plus_js('//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-580633de792d2c59','addthis');            
+        }
     </script>
 <!-- 2016.10.20 增加判斷瀏覽者裝置 function 結束 -->
 </head>
