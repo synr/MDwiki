@@ -49,9 +49,12 @@
 
 
 [gimmick:themechooser](🎨  切換網站配色)
-<!-- [gimmick:theme](Darkly) -->
+<!-- [gimmick:theme](darkly) -->
 <!-- [gimmick:theme](flatly) -->
-[gimmick:theme](cerulean)
+<!-- cyborg -->
+[gimmick:theme](slate)
+<!-- cosmo -->
+<!-- [gimmick:theme](cerulean) -->
 
 [語言]()
 
