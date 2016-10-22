@@ -435,11 +435,30 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
             }
             //2016.10.22+ font
             var myfont = '\"微軟正黑體\",\"Microsoft JhengHei\",sans\-serif';//'\"メイリオ\", Meiryo, \"ＭＳ Ｐゴシック\", \"MS PGothic\", sans-serif';
-            document.getElementsByTagName('body')[0].style.fontFamily = myfont;
-            document.getElementsByTagName('h1')[0].style.fontFamily = myfont;
-            document.getElementsByTagName('h2')[0].style.fontFamily = myfont;
-            document.getElementsByTagName('code')[0].style.fontFamily = myfont;
-            document.getElementsByTagName('li')[0].style.fontFamily = myfont;
+
+            tag_font_set('body',myfont);
+            //document.getElementsByTagName('body')[0].style.fontFamily = myfont;
+
+            tag_font_set('h1',myfont);
+            tag_font_set('h2',myfont);
+            tag_font_set('h3',myfont);
+            tag_font_set('h4',myfont);
+            tag_font_set('h5',myfont);
+            tag_font_set('h6',myfont);
+            tag_font_set('h7',myfont);
+            tag_font_set('code',myfont);
+            tag_font_set('li',myfont);
+            tag_font_set('a',myfont);
+            // if(document.getElementsByTagName('h2')[0] !== undefined)
+            //     for (var i = 0; i < document.getElementsByTagName('h2').length; i++) {
+            //         document.getElementsByTagName('h2')[i].style.fontFamily = myfont;
+            //     }
+            // }
+
+            //document.getElementsByTagName('h1')[0].style.fontFamily = myfont;
+            //document.getElementsByTagName('h2')[0].style.fontFamily = myfont;
+            //document.getElementsByTagName('code')[0].style.fontFamily = myfont;
+            //document.getElementsByTagName('li')[0].style.fontFamily = myfont;
             //應該改成強制寫入 CSS 那種
 
             var tagA = document.getElementsByTagName( "a" );
@@ -734,6 +753,17 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                 console.log(bootstrap_theme() + '：' + get_theme_color());
             }
         }
+
+        function tag_font_set(target_tag,myfont_string){
+            if(document.getElementsByTagName(target_tag)[0] !== undefined)
+                for (var i = 0; i < document.getElementsByTagName(target_tag).length; i++) {
+                    if(document.getElementsByTagName(target_tag)[i].style.fontFamily != myfont_string;){
+                        document.getElementsByTagName(target_tag)[i].style.fontFamily = myfont_string;
+                    }
+                }
+            }
+        }
+
         /*
         function plus_js(data_url,id_){
                     if (typeof(id_) != 'undefined'){
