@@ -2,9 +2,9 @@
 ##可以把 YouTube 嵌入
 - 一般
 ```markdown
-[](http://www.youtube.com/watch?v=RMINSD7MmT4)
+[](https://www.youtube.com/watch?v=RMINSD7MmT4)
 ```
-[](http://www.youtube.com/watch?v=RMINSD7MmT4)
+[](https://www.youtube.com/watch?v=RMINSD7MmT4)
 - 短
 ```markdown
 [](http://youtu.be/RMINSD7MmT4)
@@ -18,6 +18,7 @@
 [](http://drive.google.com/file/d/0B_b1e3AASsaLb21xbmwxQ19BZFE/edit)
 ```
 [](http://drive.google.com/file/d/0B_b1e3AASsaLb21xbmwxQ19BZFE/edit)
+[點我ㄎㄎ](http://drive.google.com/file/d/0B_b1e3AASsaLb21xbmwxQ19BZFE/edit)
 
 提示：暫時改不出所以沒效果XD
 
