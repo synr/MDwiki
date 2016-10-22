@@ -757,7 +757,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
         function tag_font_set(target_tag,myfont_string){
             if(document.getElementsByTagName(target_tag)[0] !== undefined)
                 for (var i = 0; i < document.getElementsByTagName(target_tag).length; i++) {
-                    if(document.getElementsByTagName(target_tag)[i].style.fontFamily != myfont_string;){
+                    if(document.getElementsByTagName(target_tag)[i].style.fontFamily != myfont_string){
                         document.getElementsByTagName(target_tag)[i].style.fontFamily = myfont_string;
                     }
                 }
