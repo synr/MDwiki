@@ -91,9 +91,10 @@
   - <a href="###" id='md_file_navigation' class="googleiframe" title="#" data-fancybox-type="iframe">🔧 navigation.md  👀</a>
   - <a href="###" id='md_file_config' class="googleiframe" title="#" data-fancybox-type="iframe">🔨 config.json  👀</a>
   
-[🔃  2016.10.21 更新]()
+[🔃  2016.10.22 更新]()
 
   - #更新項目
+  - [🆕 增加 字體變化測試 function](# "2016.10.22 完成待補寫，Icon font 暫時不考慮")
   - [🆕 增加 手機板 Chrome 變色處理、繁簡轉換修正、完成 Line](# "2016.10.21 完成待補寫")
   - [🆕 增加 OneNote、Flipboard，修正噗浪、Gmail 手機BUG。](# "2016.10.20 完成待補寫")
   - [🆕 增加「語言/漢字轉換」：可不換頁轉換漢字外觀](# "2016.10.19 完成待補寫")
