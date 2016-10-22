@@ -18,7 +18,7 @@
 [](http://drive.google.com/file/d/0B_b1e3AASsaLb21xbmwxQ19BZFE/edit)
 ```
 [](http://drive.google.com/file/d/0B_b1e3AASsaLb21xbmwxQ19BZFE/edit)
-[點我ㄎㄎ](http://drive.google.com/file/d/0B_b1e3AASsaLb21xbmwxQ19BZFE/edit)
+[點我ㄎㄎ](https://drive.google.com/file/d/0B_b1e3AASsaLb21xbmwxQ19BZFE/preview)
 
 提示：暫時改不出所以沒效果XD
 
