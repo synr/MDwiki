@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Facebook Login JavaScript test</title>
+<meta charset="UTF-8">
+
+    <meta property="og:title" content="⎝◕‿◕⎠ MDwiki 試玩中 - FB 測試"/>
+    <meta property="og:image" content="http://landerso.at-ninja.jp/index.png"/>
+    <meta property="og:description" content="⎝◕‿◕⎠ MDwiki 試玩中：我目前剛開始試玩中。意在記錄操作備忘兼分享方法。但這個網站不一定會永久存在。"/>
+    <meta property="og:url" content="http://landerso.at-ninja.jp/fb.html" />
+
+
+<!-- <meta property="fb:admins" content="管理員ID沒必要" /> -->
+<!-- https://www.cadiis.com.tw/zh-tw/tool-box/594-facebook-comments-plugin -->
+<meta property="fb:app_id" content="1021251388002475" />
+<!-- http://www.techmarks.com/facebook-comments-plugin/ -->
+<!-- https://developers.facebook.com/tools/debug/sharing/ -->
+
+
+<!-- https://developers.facebook.com/tools/comments -->
+</head>
+<body onload="">
+<!-- <script>
+  // This is called with the results from from FB.getLoginStatus().
+  function statusChangeCallback(response) {
+    console.log('statusChangeCallback');
+    console.log(response);
+    // The response object is returned with a status field that lets the
+    // app know the current login status of the person.
+    // Full docs on the response object can be found in the documentation
+    // for FB.getLoginStatus().
+    if (response.status === 'connected') {
+      // Logged into your app and Facebook.
+      testAPI();
+    } else if (response.status === 'not_authorized') {
+      // The person is logged into Facebook, but not your app.
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into this app.';
+    } else {
+      // The person is not logged into Facebook, so we're not sure if
+      // they are logged into this app or not.
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into Facebook.';
+    }
+  }
+
+  // This function is called when someone finishes with the Login
+  // Button.  See the onlogin handler attached to it in the sample
+  // code below.
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '1021251388002475',
+    cookie     : true,  // enable cookies to allow the server to access 
+                        // the session
+    xfbml      : true,  // parse social plugins on this page
+    version    : 'v2.5' // use graph api version 2.5
+  });
+
+  // Now that we've initialized the JavaScript SDK, we call 
+  // FB.getLoginStatus().  This function gets the state of the
+  // person visiting this page and can return one of three states to
+  // the callback you provide.  They can be:
+  //
+  // 1. Logged into your app ('connected')
+  // 2. Logged into Facebook, but not your app ('not_authorized')
+  // 3. Not logged into Facebook and can't tell if they are logged into
+  //    your app or not.
+  //
+  // These three cases are handled in the callback function.
+
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+  // Here we run a very simple test of the Graph API after login is
+  // successful.  See statusChangeCallback() for when this call is made.
+  function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      console.log('Successful login for: ' + response.name);
+      document.getElementById('status').innerHTML =
+        'Thanks for logging in, ' + response.name + '!';
+    });
+  }
+</script> -->
+
+<!--
+  Below we include the Login Button social plugin. This button uses
+  the JavaScript SDK to present a graphical Login button that triggers
+  the FB.login() function when clicked.
+-->
+
+<!-- <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
+
+<div id="status">
+</div> -->
+
+<!-- <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.8&appId=1021251388002475";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script> -->
+
+<!-- <div class="fb-login-button" data-max-rows="1" data-size="small" data-show-faces="false" data-auto-logout-link="true"></div> -->
+
+
+<!-- ===================================================================================== -->
+<!-- https://developers.facebook.com/docs/facebook-login/web -->
+<!-- <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1021251388002475',
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/zh_TW/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+  <div
+    class="fb-like"
+    data-share="true"
+    data-width="450"
+    data-show-faces="true">
+  </div>
+
+<hr /> -->
+
+<!-- ======================================================================================== -->
+
+<!-- https://developers.facebook.com/docs/plugins/comments#configurator -->
+
+<!-- <div id="fb-root"></div>
+<script>
+function load_fb_comments(){
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.8&appId=1021251388002475";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+}
+</script>
+
+<div class="fb-comments" data-href="http://landerso.at-ninja.jp/fb.html" data-numposts="1"></div> -->
+
+<!-- ================================================================================================== -->
+<!-- https://trello.com/c/APfy5iN6/287-facebook-javascript-sdk -->
+
+<script type="text/javascript">
+
+    function fb_js_active(appId_string,lang_set){
+
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId      : appId_string,
+            xfbml      : true,
+            status     : true,
+            cookie     : true,
+            oauth      : true,
+            version    : 'v2.8'
+          });
+        };
+
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = '//connect.facebook.net/' + lang_set + '/sdk.js#xfbml=1&version=v2.8&appId=' + appId_string;
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    }
+
+    function fb_check_login(){
+        FB.getLoginStatus(function(response) {
+          if (response.status === 'connected') {
+            // the user is logged in and has authenticated your
+            // app, and response.authResponse supplies
+            // the user's ID, a valid access token, a signed
+            // request, and the time the access token 
+            // and signed request each expire
+            var uid = response.authResponse.userID;
+            var accessToken = response.authResponse.accessToken;
+            console.log('uid = ' + uid);
+            console.log('accessToken = ' + accessToken);
+            return true;
+          } else if (response.status === 'not_authorized') {
+            // the user is logged in to Facebook, 
+            // but has not authenticated your app (已登入沒授權)
+            return false;
+          } else {
+            // the user isn't logged in to Facebook.
+            console.log('the user isn\'t logged in to Facebook.\nTry login now!');
+            //fb_login();
+            return false;
+          }
+         });
+    }
+
+    function fb_login(){
+      if(!(fb_check_login())){
+        FB.login(function(response) {
+        if (response.authResponse) {
+          // 成功授權後做的事
+            fb_set_login_user_info();
+            console.log('Welcome!  Fetching your information.... ');
+           //取得使用者用戶名稱
+           FB.api('/me', function(response) {
+             console.log('Good to see you, ' + response.name + '.');
+           });
+        } else {
+            console.log('User cancelled login or did not fully authorize.');
+        }
+        },{scope: 'public_profile,email'});
+      }else{
+        console.log('已經在裡面了');
+      }
+    }
+
+    function fb_logout(){
+      FB.logout(function(response) {
+        // user is now logged out
+        //console.log('user is now logged out');
+        console.log(fb_get('fb_name') + ' is now logged out');
+        fb_clear('fb_id');
+        fb_clear('fb_name');
+        fb_clear('fb_email');
+        fb_clear('fb_first_name');
+        fb_clear('fb_last_name');
+        console.log('bye clear userdata over.');
+      });
+      console.log('test  = ' + fb_get('fb_name') +'\n\n' + localStorage['fb_name'] );
+    }
+
+    //window.onload = function () {}
+    // function fb_go() {
+    //     // document.getElementById('fb-comments').setAttribute('data-href', window.location.href);
+    //     // http://stackoverflow.com/questions/13922018/getting-current-url-with-javascript-then-using-derived-value-in-html-code
+    //     //var currentUrl = window.location.href;
+    //     document.getElementById('fb\-comments').setAttribute('data\-href', window.location.href);
+    //     document.getElementById('fb\-comments').setAttribute('class', 'fb-comments');
+    // }
+
+    function fb_set_login_user_info(){
+        // var is_can_uselocalStorage = 0;
+        // try {
+        //     is_can_uselocalStorage = 'localStorage' in window && window['localStorage'] !== null
+        // } catch (e) {
+        //     is_can_uselocalStorage = false
+        // };
+
+        //https://developers.facebook.com/tools/explorer/?method=GET&path=me%3Ffields%3Did%2Cname%2Cadmin_notes&version=v2.8
+        //FB.api('/me', {"fields":"id,name,email,first_name,last_name"}, function(response){
+        FB.api('/me','GET', {"fields":"id,name,email,first_name,last_name"}, function(response){
+             //console.log(response);
+             //console.log(response.id);
+             //console.log(response.name);
+             //console.log(response.email);
+             //console.log(response.first_name);
+             //console.log(response.last_name);
+
+            localStorage['fb_id'] = response.id;
+            localStorage['fb_name'] = response.name;
+            localStorage['fb_email'] = response.email;
+            localStorage['fb_first_name'] = response.first_name;
+            localStorage['fb_last_name'] = response.last_name;
+
+            if(localStorage['fb_id']===undefined){
+                console.log('set fb info F.');
+            }else{ 
+                console.log('set fb info ok.');
+            }
+
+            console.log(fb_get('fb_id'));
+            console.log(fb_get('fb_name'));
+            console.log(fb_get('fb_email'));
+            console.log(fb_get('fb_first_name'));
+            console.log(fb_get('fb_lase_name'));
+
+        });
+        //console.log(get_data);
+        // if(!(localStorage['fb_temp']===undefined)){
+        //     return ['fb_temp'];
+        // }
+    }
+
+    function fb_get(target){
+      if( !(localStorage[target]===undefined))
+      return localStorage[target];
+    }
+    
+    function fb_clear(target){
+      if( !(localStorage[target]===undefined))
+      localStorage[target] = '';
+      localStorage.removeItem(target);
+    }    
+
+    fb_js_active('1021251388002475','ja_JP');
+    // fb_js_active('1021251388002475','zh_TW');
+
+</script>
+
+<div id="fb-root"></div>
+<a href="javascript:fb_login();">登入</a>、<a href="javascript:fb_logout();">登出</a>
+<!-- <div class="fb-comments" data-href="http://landerso.at-ninja.jp/fb.html" data-numposts="1"></div> -->
+<!-- <div id="fb-comments" class="" data-href="#" data-numposts="1"></div> -->
+<hr />
+<div class="fb-comments" data-href="http://landerso.at-ninja.jp/fb.html" data-numposts="1"></div>
+
+
+</body>
+</html> 

@@ -67,7 +67,7 @@
 如果是放在 Google 硬碟、Dropbox、GitHub 的話，可以整個資料夾壓縮下載。
 - 官方教學：
   - [MDwiki - Markdown based wiki done 100% on the client via javascript](http://dynalon.github.io/mdwiki/#!tutorials.md)
-  - [MDwiki 官方教學如何設置在 Google 硬碟](http://dynalon.github.io/mdwiki/#!tutorials/drive.md)
+  - ~~MDwiki 官方教學如何設置在 Google 硬碟~~（[此方法已失效](https://gsuite-developers.googleblog.com/2015/08/deprecating-web-hosting-support-in.html)）
   - [MDwiki 官方教學如何設置在 GitHub](http://dynalon.github.io/mdwiki/#!tutorials/github.md)
   - [MDwiki 官方教學如何設置在 Dropbox（付費功能）](http://dynalon.github.io/mdwiki/#!tutorials/dropbox.md)
 - 查詢到的其他教學：[MDwiki 搭建靜態博客教程 | 霧裡看花終隔一層，蘭亭凝望皆付蕭瑟。](https://blog.ikke.moe/posts/mdwiki-tourial/)
@@ -110,6 +110,9 @@
 ####提供參考：
 - 這份頁面寫的 ``markdown`` 原始文件內容，可下載此連結查看：[→ 點我點我 ←](http://landerso.at-ninja.jp/index.md)
 - [本站使用 0.6.2 版作測試](https://github.com/Dynalon/mdwiki/releases "2014.05.23 發布的版本到現在都沒有更新\n可能不會更新了。")
+- 
+
+[[wiki/test]]
 
 <!-- - 這份頁面寫的 ``markdown`` 原始文件內容，可下載此連結查看：[→ 點我點我 ←](https://docs.google.com/uc?id=0B_b1e3AASsaLYVRFN2FEd002R3M&export=download) -->
 <!-- ####test

@@ -22,7 +22,19 @@
     <!--http://littleshell-multimedia.blogspot.tw/2011/03/facebook-sharer.html http://littleshell-multimedia.blogspot.tw/2013/10/facebook-sharer-description-title-image.html-->
     <meta name="theme-color" content="#FFFFFF">
     <!-- https://blog.gtwang.org/web-development/android-chrome-browser-theme-color-support/ -->
+
     <style type="text/css">
+    @font-face {
+      font-family: 'cwTeXHei';
+      font-style: normal;
+      font-weight: 500;
+      src: url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.eot);
+      src: url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.eot?#iefix) format('embedded-opentype'),
+           url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff2) format('woff2'),
+           url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff) format('woff'),
+           url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.ttf) format('truetype');
+    }
+
     div img {
         /* http://fanchie.blogspot.tw/2008/02/css-css.html */
         /* IE7、FF等其他非 IE 瀏覽器下最大寬度為 500px , IE6 以下不支援 max-width 屬性 */
@@ -365,6 +377,11 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
             if(!is_mobile()){
                 $(document.getElementById('line')).hide();
             }
+            if(/http+:\/\/landerso.at-ninja.jp\//.test(document.location.href)){
+                $(document.getElementById('close_ni')).show();
+            }else{
+                $(document.getElementById('close_ni')).hide();
+            }
             /*
             if(is_mobile()){
                 plus_js('//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-580633de792d2c59','addthis');            
@@ -434,32 +451,38 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                 }
             }
             //2016.10.22+ font
-            var myfont = '\"微軟正黑體\",\"Microsoft JhengHei\",sans\-serif';//'\"メイリオ\", Meiryo, \"ＭＳ Ｐゴシック\", \"MS PGothic\", sans-serif';
+            // var myfont = '\'微軟正黑體\',\'Microsoft JhengHei\',\'sans\-serif\'';//'\"メイリオ\", Meiryo, \"ＭＳ Ｐゴシック\", \"MS PGothic\", sans-serif';
+            // //web font test
+            // //var myfont = '\'cwTeXHei\',\"微軟正黑體\",\"Microsoft JhengHei\",sans\-serif';//'\"メイリオ\", Meiryo, \"ＭＳ Ｐゴシック\", \"MS PGothic\", sans-serif';
 
-            tag_font_set('body',myfont);
-            //document.getElementsByTagName('body')[0].style.fontFamily = myfont;
+            // tag_font_set('body',myfont);
+            // //document.getElementsByTagName('body')[0].style.fontFamily = myfont;
 
-            tag_font_set('h1',myfont);
-            tag_font_set('h2',myfont);
-            tag_font_set('h3',myfont);
-            tag_font_set('h4',myfont);
-            tag_font_set('h5',myfont);
-            tag_font_set('h6',myfont);
-            tag_font_set('h7',myfont);
-            tag_font_set('code',myfont);
-            tag_font_set('li',myfont);
-            tag_font_set('a',myfont);
-            // if(document.getElementsByTagName('h2')[0] !== undefined)
-            //     for (var i = 0; i < document.getElementsByTagName('h2').length; i++) {
-            //         document.getElementsByTagName('h2')[i].style.fontFamily = myfont;
-            //     }
-            // }
+            // tag_font_set('h1',myfont);
+            // tag_font_set('h2',myfont);
+            // tag_font_set('h3',myfont);
+            // tag_font_set('h4',myfont);
+            // tag_font_set('h5',myfont);
+            // tag_font_set('h6',myfont);
+            // tag_font_set('h7',myfont);
+            // tag_font_set('code',myfont);
+            // tag_font_set('li',myfont);
+            // tag_font_set('a',myfont);
+            // // if(document.getElementsByTagName('h2')[0] !== undefined)
+            // //     for (var i = 0; i < document.getElementsByTagName('h2').length; i++) {
+            // //         document.getElementsByTagName('h2')[i].style.fontFamily = myfont;
+            // //     }
+            // // }
 
-            //document.getElementsByTagName('h1')[0].style.fontFamily = myfont;
-            //document.getElementsByTagName('h2')[0].style.fontFamily = myfont;
-            //document.getElementsByTagName('code')[0].style.fontFamily = myfont;
-            //document.getElementsByTagName('li')[0].style.fontFamily = myfont;
-            //應該改成強制寫入 CSS 那種
+            // //document.getElementsByTagName('h1')[0].style.fontFamily = myfont;
+            // //document.getElementsByTagName('h2')[0].style.fontFamily = myfont;
+            // //document.getElementsByTagName('code')[0].style.fontFamily = myfont;
+            // //document.getElementsByTagName('li')[0].style.fontFamily = myfont;
+            // //應該改成強制寫入 CSS 那種
+
+            //2016.10.27+ function 化 font_set
+            font_set();
+            //font_set('\'cwTeXHei\',arial');
 
             var tagA = document.getElementsByTagName( "a" );
 
@@ -764,6 +787,62 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
             }
         }
 
+        function font_set(myfont = '\'微軟正黑體\',\'Microsoft JhengHei\',\'sans\-serif\''){
+            //var myfont = '\'cwTeXHei\',arial';
+
+            tag_font_set('body',myfont);
+            //document.getElementsByTagName('body')[0].style.fontFamily = myfont;
+
+            tag_font_set('h1',myfont);
+            tag_font_set('h2',myfont);
+            tag_font_set('h3',myfont);
+            tag_font_set('h4',myfont);
+            tag_font_set('h5',myfont);
+            tag_font_set('h6',myfont);
+            tag_font_set('h7',myfont);
+            tag_font_set('code',myfont);
+            tag_font_set('li',myfont);
+            tag_font_set('a',myfont);
+            tag_font_set('div',myfont);
+            tag_font_set('span',myfont);
+        }
+
+        function wiki_link(target_tag){
+            if(document.getElementsByTagName(target_tag)[0] !== undefined){
+                for (var i = 0; i < document.getElementsByTagName(target_tag).length; i++) {
+                    if(/\[\[(.*)\]\]/gim.test(document.getElementsByTagName(target_tag)[i].innerHTML)){
+                        if(document.getElementsByTagName(target_tag)[i].innerHTML.replace(/\[\[(.*)\]\]|(\<code.*\[\[.*\]\].*\<\/code\>)/gim,'$1')==''){
+                            //\[\[(.*)\]\]|\<code.*\[\[(.*)\]\].*\<\/code\>            $1=='' -> code 內
+                            document.getElementsByTagName(target_tag)[i].innerHTML = document.getElementsByTagName(target_tag)[i].innerHTML.replace(/\[\[(.*)\]\]/gim,'<a href=\"#!$1\">$1<\/a>');
+                            console.log('wiki aru');
+                        }
+                    }else{
+                        console.log('1 if -else');
+                    }
+                }
+            }else{
+                console.log('no momno');
+            }
+        }
+
+        function wiki_link_id(target_id = 'md\-content'){
+            if(document.getElementById(target_id) !== undefined){
+                //for (var i = 0; i < document.getElementsByTagName(target_tag).length; i++) {
+                    if(/\[\[(.*)\]\]/gim.test(document.getElementById(target_id).innerHTML)){
+                        if(document.getElementById(target_id).innerHTML.replace(/\[\[(.*)\]\]|(\<code.*\[\[.*\]\].*\<\/code\>)/gim,'$1')==''){
+                            //\[\[(.*)\]\]|\<code.*\[\[(.*)\]\].*\<\/code\>            $1=='' -> code 內
+                            document.getElementById(target_id).innerHTML = document.getElementById(target_id).innerHTML.replace(/\[\[(.*)\]\]/gim,'<a href=\"#!$1\">$1<\/a>');
+                            console.log('wiki aru');
+                        }
+                    }else{
+                        console.log('1 if -else');
+                    }
+                //}
+            }else{
+                console.log('no momno');
+            }
+        }
+
         /*
         function plus_js(data_url,id_){
                     if (typeof(id_) != 'undefined'){
@@ -786,7 +865,26 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
         */
     </script>
 <!-- 2016.10.20 增加判斷瀏覽者裝置 function 結束 -->
-    
+
+<!--             //2016.10.22+ font
+            var myfont = '\'cwTeXHei\'';
+
+            tag_font_set('body',myfont);
+            //document.getElementsByTagName('body')[0].style.fontFamily = myfont;
+
+            tag_font_set('h1',myfont);
+            tag_font_set('h2',myfont);
+            tag_font_set('h3',myfont);
+            tag_font_set('h4',myfont);
+            tag_font_set('h5',myfont);
+            tag_font_set('h6',myfont);
+            tag_font_set('h7',myfont);
+            tag_font_set('code',myfont);
+            tag_font_set('li',myfont);
+            tag_font_set('a',myfont); -->
+
+    <!-- 2016.10.28+ font test by https://dfo.dynacw.com.tw/Javascript_Module/JSFontPreview.aspx?t=JS_Gen -->
+
 </head>
 <body onload="javascript:parseLink();" onclick="javascript:parseLink();">
     <noscript>

@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>test</title>
+	<link rel="stylesheet" href="">
+	<script>FontJSON={User:"5305" ,DomainID:"freeGXSDOLNEOKGXS", Font:["DFT_HZP5"]}</script>
+	<script src='https://dfo.dynacw.com.tw/DynaJSFont/DynaFont.js'></script>
+	<!-- <link rel="stylesheet" type="text/css" href="https://dfo.dynacw.com.tw/DynaCSS/DynaCSS.ashx?User=5305&Domain=freeGXSDOLNEOKGXS&DTS=16-10-28-636132180214761532"/> -->
+	<script type="text/javascript">
+        function tag_font_set(target_tag,myfont_string){
+            if(document.getElementsByTagName(target_tag)[0] !== undefined){
+                for (var i = 0; i < document.getElementsByTagName(target_tag).length; i++) {
+                    if(document.getElementsByTagName(target_tag)[i].style.fontFamily != myfont_string){
+                        document.getElementsByTagName(target_tag)[i].style.fontFamily = myfont_string;
+                    }
+                }
+            }
+        }
+
+        function font_set(myfont = '\'DFT\_HZP5\',\'微軟正黑體\',\'Microsoft JhengHei\',\'sans\-serif\''){
+            //var myfont = '\'cwTeXHei\',arial';
+
+            tag_font_set('body',myfont);
+            //document.getElementsByTagName('body')[0].style.fontFamily = myfont;
+
+            tag_font_set('h1',myfont);
+            tag_font_set('h2',myfont);
+            tag_font_set('h3',myfont);
+            tag_font_set('h4',myfont);
+            tag_font_set('h5',myfont);
+            tag_font_set('h6',myfont);
+            tag_font_set('h7',myfont);
+            tag_font_set('code',myfont);
+            tag_font_set('li',myfont);
+            tag_font_set('a',myfont);
+            tag_font_set('div',myfont);
+            tag_font_set('span',myfont);
+        }
+        font_set();		
+	</script>
+</head>
+<body onload="javascript:font_set();">
+	<!-- <span style="font-family:DFT_TF3EZPYU;">輸入文字1</span> -->
+
+	測試
+	<div>測試</div>
+	<span>為什麼我用 JavaScript 後來才載入 CSS .style.fontFamily 改的字體，都不會變？像這行。　　但是順便兩個字又可以。（表示順便這兩個字，在原生的 HTML 文件內有出現過）</span>
+
+	<hr />
+
+
+	<h2>[本標題透過 JavaScript 後，改字體]<br />這下面是本來就已經設定過 font-family 可以回傳字元產生動態字體，但是上面那些後來才透過  JavaScript 加上 CSS 屬性設定字體的卻無法回傳字元增加到字體集。</h2>
+	<h2 style="font-family:'DFT_HZP5'">[本標題原生 HTML 文件就設定好字體才能有]<br />這裡設定好了啊</h2>
+
+	<div style="font-family:'DFT_HZP5'">測試</div>
+	<div style="font-family:'DFT_HZP5'">除非有本來就寫過有ＣＳＳ的設定的字，才會順便。</div>
+
+	<span>問題：<br />如果貴網站的 web-font 功能要完善，是不是應該也要讓後來頁面不跳頁變化後增加的字，能夠丟回去你們伺服器分析更新字體檔？這樣才算動態吧？</span>
+
+</body>
+</html>
