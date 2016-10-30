@@ -69,7 +69,7 @@
 [測試功能]()  
 
   - #網路字體切換：裝置沒安裝的也能看
-  - <a href="javascript:font_set('\'DFT\_HZP5\',arial');jsgendfo();" title="根據頁面的字數動態調整字體檔。所以檔案大小不佔太多傳輸量。除非那頁寫太多不重複的字XD">華康動態 Web Font 測試</a>
+  - <a href="javascript:font_set('\'DFT\_HZP5\',arial');jsgendfo();" title="根據頁面的字數動態調整字體檔。所以檔案大小不佔太多傳輸量。除非那頁寫太多不重複的字XD">華康動態 Web Font（免費試用一個月）</a>
   - <a href="javascript:font_set('\'cwTeXHei\',arial');">Google 思源黑體（警告這會佔用 <b>3 MB</b> 的網路流量）</a>
   - <a href="javascript:font_set();">取消使用任何 Web 字體</a>
   ----
@@ -119,7 +119,7 @@
   - [\[外部調整\] 增加 CSS 圖片自動縮放控制](#!update.md#[2016.08.03]_透過_CSS_增加對圖片自動縮放控制)
   - [\[外部調整\] 解決超連結不會另開新視窗的問題](#!update.md#[2016.08.03]_解決超連結不會另開新視窗的問題)
   - [\[外部調整\] 解決 Google Drive 空間網址超亂會連錯頁問題](#!update.md#[2016.08.03]_解決超連結不會另開新視窗的問題)
-  - <a id='close_ni' href="javascript:$(document.getElementsByClassName('tdftad')).hide();">沙忍</a>
+  - <a id='close_ni' href="javascript:$(document.getElementsByClassName('tdftad')).hide();$(document.getElementById('ninja')).hide();$(document.getElementById('close_ni')).hide();">沙忍</a>
 
 
 <!--
