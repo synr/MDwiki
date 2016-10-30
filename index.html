@@ -923,7 +923,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
     <!-- 2016.10.30+ 控制廣告提示 -->
     <script type="text/javascript">
         //如果是行動裝置或者不是忍者網域
-        if( (is_mobile()) && (!(location.href.indexOf('landerso.at-ninja.jp')!=-1))  ){
+        if( (is_mobile()) || (!(location.href.indexOf('landerso.at-ninja.jp')!=-1))  ){
             $(document.getElementById('ninja')).hide();
         }
     </script>
