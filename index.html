@@ -270,6 +270,12 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
 <!-- 外部超連結另開視窗 Google Drive 複雜版 function + 單機設置 start -->
     <!-- 主要參考:http://www.vixual.net/blog/archives/202並搭配元件 onClick觸發 -->
     <script type="text/javascript">
+        localStorage['jsgendfo_timer'] = 0 ;
+        if (localStorage['font'] === undefined){
+            localStorage['font'] = '';
+        }
+        var change_font = localStorage['font'];
+
         function uesLightbox(a_tag){
             //如果是 https 端裡面要塞 http 會被拒絕，所以直接不允許他當成燈箱
             //先用這個解決。不然就要出問題的時候再排除。
@@ -480,9 +486,20 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
             // //document.getElementsByTagName('li')[0].style.fontFamily = myfont;
             // //應該改成強制寫入 CSS 那種
 
-            //2016.10.27+ function 化 font_set
-            font_set();
-            //font_set('\'cwTeXHei\',arial');
+            //2016.10.30 更改成有記憶的
+            //沒記憶可讀
+            if ((localStorage['font'] == '') || (localStorage['font'] === undefined) ) {
+                //2016.10.27+ function 化 font_set
+                font_set();
+                //console.log('font 原參數');
+                //font_set('\'cwTeXHei\',arial');
+            }else{
+                change_font = localStorage['font']; //先讀記憶
+                font_set(change_font);
+                //console.log('font 客參數：' + change_font);
+            }
+
+
 
             var tagA = document.getElementsByTagName( "a" );
 
@@ -781,15 +798,22 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
             if(document.getElementsByTagName(target_tag)[0] !== undefined){
                 for (var i = 0; i < document.getElementsByTagName(target_tag).length; i++) {
                     if(document.getElementsByTagName(target_tag)[i].style.fontFamily != myfont_string){
-                        document.getElementsByTagName(target_tag)[i].style.fontFamily = myfont_string;
+                        if(myfont_string=='\'微軟正黑體\',\'Microsoft JhengHei\',\'sans\-serif\''){
+                            document.getElementsByTagName(target_tag)[i].style.fontFamily = myfont_string;
+                        }
+                        //2016.10.30 本來是直接取代，改成新的放前不斷增（預設的當然還是要固，不能用累加）
+                        document.getElementsByTagName(target_tag)[i].style.fontFamily = myfont_string + ',\'微軟正黑體\',\'Microsoft JhengHei\',\'sans\-serif\'';
+                        localStorage['font'] = myfont_string; //更改記憶
+                        //因為元件眾多，千萬不要把華坑更新字體檔案寫在這裡面。
+                        //最好是等整個頁面載入完畢後，再呼華康。
                     }
                 }
             }
         }
 
         function font_set(myfont = '\'微軟正黑體\',\'Microsoft JhengHei\',\'sans\-serif\''){
-            //var myfont = '\'cwTeXHei\',arial';
-
+        //function font_set(myfont = '\'DFT\_HZP5\',\'微軟正黑體\',\'Microsoft JhengHei\',\'sans\-serif\''){
+            //console.log('變了 = ' + (myfont!=localStorage['font'])) ;
             tag_font_set('body',myfont);
             //document.getElementsByTagName('body')[0].style.fontFamily = myfont;
 
@@ -805,8 +829,23 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
             tag_font_set('a',myfont);
             tag_font_set('div',myfont);
             tag_font_set('span',myfont);
+
+            //jsgendfo(); //華康用的
+
+            //2016.10.30+ 華康專用次數限制，但不知道為什麼變成次數優先於變化了。變成變化的時候也不會更。但這問題不大就是了。但還是個 BUG。
+            function jsgendfo_timer(){
+                localStorage['jsgendfo_timer'] =  parseInt(localStorage['jsgendfo_timer']) + 1;
+            }
+
+            if( (myfont!=localStorage['font']) || (parseInt(localStorage['jsgendfo_timer'])<3) ) {
+
+                jsgendfo(); //華康官方的更新字體 function，執行過度接近或過多次容易記憶體吃太多。
+                jsgendfo_timer();
+                //console.log( 'jsgendfo = ' + localStorage['jsgendfo_timer']);
+            }
         }
 
+        //未完成區域-------
         function wiki_link(target_tag){
             if(document.getElementsByTagName(target_tag)[0] !== undefined){
                 for (var i = 0; i < document.getElementsByTagName(target_tag).length; i++) {
@@ -842,6 +881,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                 console.log('no momno');
             }
         }
+        //未完成區域-------
 
         /*
         function plus_js(data_url,id_){
@@ -866,24 +906,9 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
     </script>
 <!-- 2016.10.20 增加判斷瀏覽者裝置 function 結束 -->
 
-<!--             //2016.10.22+ font
-            var myfont = '\'cwTeXHei\'';
-
-            tag_font_set('body',myfont);
-            //document.getElementsByTagName('body')[0].style.fontFamily = myfont;
-
-            tag_font_set('h1',myfont);
-            tag_font_set('h2',myfont);
-            tag_font_set('h3',myfont);
-            tag_font_set('h4',myfont);
-            tag_font_set('h5',myfont);
-            tag_font_set('h6',myfont);
-            tag_font_set('h7',myfont);
-            tag_font_set('code',myfont);
-            tag_font_set('li',myfont);
-            tag_font_set('a',myfont); -->
-
     <!-- 2016.10.28+ font test by https://dfo.dynacw.com.tw/Javascript_Module/JSFontPreview.aspx?t=JS_Gen -->
+    <script>FontJSON={User:"5305" ,DomainID:"freeGXSDOLNEOKGXS", Font:["DFT_HZP5"]}</script>
+    <script src='https://dfo.dynacw.com.tw/DynaJSFont/DynaFont.js'></script>
 
 </head>
 <body onload="javascript:parseLink();" onclick="javascript:parseLink();">
@@ -895,6 +920,17 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
     <!-- <div id="md-all"> -->
     </div>
     　<a href="javascript:window.open(location.href.replace(/(.*)#!(.*)/,'$1').replace('index.html','')  + location.href.replace(/(.*)#!(.*)/,'$2'),'_blank');" target="_blank">→ 點我查看本頁原始碼 ←</a>
+    <!-- 2016.10.30+ 控制廣告提示 -->
+    <script type="text/javascript">
+        //如果是行動裝置或者不是忍者網域
+        if( (is_mobile()) && (!(location.href.indexOf('landerso.at-ninja.jp')!=-1))  ){
+            $(document.getElementById('ninja')).hide();
+        }
+    </script>
+    <div id="ninja">
+    <hr />
+    　※ 下面是這個網頁空間的廣告。你如果想要使用這種網站空間，可以點進去看看。(日本語)
+    </div>
     <div id="addthis"></div>
 </body>
 </html>
