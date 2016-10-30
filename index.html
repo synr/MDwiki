@@ -499,8 +499,12 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                 //console.log('font 客參數：' + change_font);
             }
 
-
-
+            // 2016.10.30+ 控制廣告提示
+            //如果是行動裝置或者不是忍者網域，就不要顯示廣告提示
+            if( (is_mobile()) || (!(location.href.indexOf('landerso.at-ninja.jp')!=-1))  ){
+                $(document.getElementById('ninja')).hide();
+            }
+    
             var tagA = document.getElementsByTagName( "a" );
 
             isgoogle = new RegExp( "^https?:\/\/.*.googledrive.com.*\/host\/(.*)\/(#.*)$", "i");
@@ -921,12 +925,6 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
     </div>
     　<a href="javascript:window.open(location.href.replace(/(.*)#!(.*)/,'$1').replace('index.html','')  + location.href.replace(/(.*)#!(.*)/,'$2'),'_blank');" target="_blank">→ 點我查看本頁原始碼 ←</a>
     <!-- 2016.10.30+ 控制廣告提示 -->
-    <script type="text/javascript">
-        //如果是行動裝置或者不是忍者網域
-        if( (is_mobile()) || (!(location.href.indexOf('landerso.at-ninja.jp')!=-1))  ){
-            $(document.getElementById('ninja')).hide();
-        }
-    </script>
     <div id="ninja">
     <hr />
     　※ 下面是這個網頁空間的廣告。你如果想要使用這種網站空間，可以點進去看看。(日本語)
