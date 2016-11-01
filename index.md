@@ -4,7 +4,7 @@
 #⎝◕‿◕⎠MDwiki
 ##我所理解的 MDwiki（試玩中XD）
 
-- 只要會 [Markdown](http://daringfireball.net/projects/markdown/)、會純文字編輯，會上傳東西到 Google 硬碟、Dropbox、GitHub 都可以簡單使用。
+- 只要會 [Markdown](http://daringfireball.net/projects/markdown/)、會純文字編輯，會上傳東西到 ~~Google 硬碟~~、~~Dropbox~~、GitHub 都可以簡單使用。
 而且到處都可以正常觀看！電腦、手機、平板...等等各種行動裝置螢幕翻轉，都會隨時變化最方便觀看的排版。
 
 - MDwiki：主要特色是用 ``Markdown`` + Wiki 視覺感(?) 來呈現，簡單卻有章節架構的網站。
