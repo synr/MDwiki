@@ -24,6 +24,29 @@
     <!-- https://blog.gtwang.org/web-development/android-chrome-browser-theme-color-support/ -->
 
     <style type="text/css">
+
+    ::selection { background-color: rgb(191, 116, 9);color: #FFFFFF; }
+    ::-moz-selection { background-color: rgb(191, 116, 9);color: #FFFFFF; }
+
+    /*美化輸入欄*/
+    input[type=text]:focus,input[type=password]:focus,input[type=checkbox]:focus,input[type=radio]:focus,textarea:focus,select:focus{
+        outline:none;
+
+        border-color:rgba(250,188,1,.75)!important;
+        box-shadow:0 0 18px rgba(250,188,1,.5);
+
+        -moz-box-shadow:0 0 18px rgba(250,188,1,.5);
+        -webkit-box-shadow:0 0 18px rgba(250,188,1,.5);
+    }
+
+    /* 圓角 */
+    input,textarea,select,fieldset,button{ 
+        border:#ccc 1px solid; 
+        border-radius: 6px; 
+        -moz-border-radius: 6px;
+        -webkit-border-radius: 6px;
+    }
+
     @font-face {
       font-family: 'cwTeXHei';
       font-style: normal;
@@ -44,6 +67,9 @@
         /* 當圖片大小大於 500px，自動縮小為 500px */
         width:expression(document.body.clientWidth>100%?"100%":"auto");
         overflow:hidden;
+        /*http://miko2.cglandmark.net/115/keep-image-correct-ratio-in-html-with-css/*/
+        max-height: 100%;
+        max-width: 100%;
     }
     /* hide the main content while we assemble everything */
     .md-hidden-load { display: none; }
@@ -833,6 +859,9 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
             tag_font_set('a',myfont);
             tag_font_set('div',myfont);
             tag_font_set('span',myfont);
+            tag_font_set('textarea',myfont);
+            tag_font_set('input',myfont);
+            tag_font_set('select',myfont);
 
             //jsgendfo(); //華康用的
 
@@ -909,9 +938,10 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
         */
     </script>
 <!-- 2016.10.20 增加判斷瀏覽者裝置 function 結束 -->
-
-    <!-- 2016.10.28+ font test by https://dfo.dynacw.com.tw/Javascript_Module/JSFontPreview.aspx?t=JS_Gen -->
-    <script>FontJSON={User:"5305" ,DomainID:"freeGXSDOLNEOKGXS", Font:["DFT_HZP5"]}</script>
+    
+    <!-- 2016.10.28+ font test by https://dfo.dynacw.com.tw/Javascript_Module/JSFontPreview.aspx?t=JS_Gen --> <!-- KEY point:jsgendfo() -->
+    <!-- <script>FontJSON={User:"5305" ,DomainID:"freeGXSDOLNEOKGXS", Font:["DFT_HZP5"]}</script>  -->
+    <script>FontJSON={User:"5305" ,DomainID:"freeGXSDOLNEOKGXS", Font:["DFT_TF3","DFT_HZP3","DFT_HZP5"]}</script>
     <script src='https://dfo.dynacw.com.tw/DynaJSFont/DynaFont.js'></script>
 
 </head>
