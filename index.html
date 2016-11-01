@@ -24,6 +24,19 @@
     <!-- https://blog.gtwang.org/web-development/android-chrome-browser-theme-color-support/ -->
 
     <style type="text/css">
+        /*http://ifontcloud.com/index/fontKnowledge_9.jsp*/
+        .arwf-loading body { /*Web Font正在載入中，不顯示文字*/
+              opacity: 0;
+              visibility: hidden;
+        }
+        .arwf-active body { /*Web Font處理成功，直接顯示文字*/
+              opacity: 1;
+              visibility: visible;
+        }
+        .arwf-inactive body {/*如果Web Font處理失敗，直接顯示文字*/
+              opacity: 1;
+              visibility: visible;
+        }    
 
     ::selection { background-color: rgb(191, 116, 9);color: #FFFFFF; }
     ::-moz-selection { background-color: rgb(191, 116, 9);color: #FFFFFF; }
@@ -942,10 +955,42 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
     
     <!-- 2016.10.28+ font test by https://dfo.dynacw.com.tw/Javascript_Module/JSFontPreview.aspx?t=JS_Gen --> <!-- KEY point:jsgendfo() -->
     <!-- <script>FontJSON={User:"5305" ,DomainID:"freeGXSDOLNEOKGXS", Font:["DFT_HZP5"]}</script>  -->
-<!--     <script>FontJSON={User:"5305" ,DomainID:"freeGXSDOLNEOKGXS", Font:["DFT_TF3","DFT_HZP3","DFT_HZP5"]}</script>
-    <script src='https://dfo.dynacw.com.tw/DynaJSFont/DynaFont.js'></script> -->
 
+    <!-- <script>FontJSON={User:"5305" ,DomainID:"freeGXSDOLNEOKGXS", Font:["DFT_TF3","DFT_HZP3","DFT_HZP5"]}</script> -->
+    <!-- <script src='https://dfo.dynacw.com.tw/DynaJSFont/DynaFont.js'></script> -->
+    
+    <!-- JustFont -->
     <script src="//s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-45679.js"></script>
+    <script type="text/javascript">
+
+        var _jf = _jf || [];
+
+        _jf.push(['_eventPreload',function(){
+
+           //載入前觸發事件
+           console.log('載入前觸發事件');
+           font_set('cwtexqhei');
+
+        }]);
+
+        _jf.push(['_eventActived',function(){
+
+           //成功觸發事件
+           console.log('成功觸發事件');
+
+        }]);
+
+        _jf.push(['_eventInactived',function(){
+
+           //失敗觸發事件
+           console.log('失敗觸發事件');
+
+        }])
+
+    </script>
+
+    <!-- 文鼎 -->
+    <!-- <script type='text/javascript' src='//font.arphic.com/FontSubsetOutput/1470551355753/EEC76680DA382707F92AE6B91449CB67/1470551355753.JS?5178207705'></script> -->
 
 </head>
 <body onload="javascript:parseLink();" onclick="javascript:parseLink();">
