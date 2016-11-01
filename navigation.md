@@ -46,6 +46,8 @@
 
   - #操作示範
   - [Save & Share 選項拉成書籤工具的示範](https://drive.google.com/file/d/0B3rgktr7zpP9Y253d2xkcTJkSWM/preview)
+  - [原價屋硬碟真比價書籤工具示範](https://drive.google.com/file/d/0B3rgktr7zpP9TFAxWFN3ZnVQODA/preview)
+  - [網站 Web 線上字體操作示範](https://drive.google.com/file/d/0B3rgktr7zpP9M28zb0ptSzV4Z2M/preview)
 
 
 [gimmick:themechooser](🎨  網站配色)
@@ -79,27 +81,30 @@
   - <a href="javascript:font_set('\'cwTeXHei\',arial');">Google 思源黑體（警告這會佔用 <b>3 MB</b> 的網路流量）</a>
   ----
   - #操作示範
-  - [操作示範影片](https://drive.google.com/file/d/0B3rgktr7zpP9M28zb0ptSzV4Z2M/preview)
+  - [📺 操作示範影片](https://drive.google.com/file/d/0B3rgktr7zpP9M28zb0ptSzV4Z2M/preview)
   ----
   - <a href="javascript:font_set();">取消 Web 字體省流量</a>
 
-[站外]()
+[站外工具]()
 
-  - #站外用 Bookmarklet 工具按鈕
-  - #原價屋硬碟真比較
+  - #Bookmarklet 工具按鈕
+  - #原價屋硬碟真比價
+  - #本人親自一次性編寫
+  - #未來不改版
   ----
   - <a href="javascript:void%20function(){if(void%200===localStorage.go%26%26(localStorage.go=%22go%22),%22go%22==localStorage.go){var%20e=%22td%22;if(void%200!==document.getElementsByTagName(e)[0])for(var%20t=0;t%3Cdocument.getElementsByTagName(e).length;t++){var%20n=document.getElementsByTagName(e)[t].innerHTML.replace(/.*([0-9]{3}[G]|[0-9]{1,2}[T][B]).*(\$[0-9]{0,}).*/gim,%22%3Chr%20/%3E【以下為自動幫你換算每%20GB%20多少錢】%3Cbr%20/%3E容量%20$1%20的硬碟賣%20$2%3Cbr%20/%3E相當於%3Cb%3E每%201GB%20%22),o=parseInt(document.getElementsByTagName(e)[t].innerHTML.replace(/.*([0-9]{3}[G]|[0-9]{1,2}[T][B]).*(\$[0-9]{0,}).*/gim,%22$2%22).replace(%22$%22,%22%22)),a=parseInt(document.getElementsByTagName(e)[t].innerHTML.replace(/.*([0-9]{3}[G]).*(\$[0-9]{0,}).*/gim,%22$1%22).replace(%22G%22,%22%22)),r=parseInt(document.getElementsByTagName(e)[t].innerHTML.replace(/.*([0-9]{1,2}[T][B]).*(\$[0-9]{0,}).*/gim,%22$1%22).replace(%22TB%22,%22%22));isNaN(a)%26%26(a=0),isNaN(r)%26%26(r=0);var%20m=a+1024*r,g=(o/(1e3*m*1e3*1e3/1024/1024/1024)).toFixed(3);n=n+%22$%22+g+%22%20台幣%3C/b%3E%22;var%20l=%22%22;1.12%3E=g%26%26(n+=%22%3Cbr%20/%3E%3Cb%3E這還差不多！%3C/b%3E%22),1.3%3Eg%26%26(n+=%22%3Cbr%20/%3E%3Cb%3E%3Cfont%20color='orange'%3E雖然還不算超省，但還可以啦考慮一下%3C/font%3E%3C/b%3E%22,l=%22yellow%22,console.log(n)),g%3E1.3%26%26(n+=%22%3Cbr%20/%3E%3Cb%3E%3Cfont%20color='white'%3E有點貴耶%3C/font%3E%3C/b%3E%22,l=%22blue%22),g%3E1.5%26%26(n+=%22%3Cbr%20/%3E%3Cb%3E%3Cfont%20color='red'%3E1GB%20超過%20$1.5%20台幣！%3Cbr%20/%3E以實價來說算貴囉！小心點！%3C/font%3E%3C/b%3E%22,l=%22pink%22),g%3E5%26%26(n+=%22%3Cbr%20/%3E%3Cb%3E%3Cfont%20color='red'%3E不對啊！你搶劫嗎！！！%3Cbr%20/%3E1GB%20超過%20$5%20台幣太土匪了！%3Cbr%20/%3E太貴了吧！！！！！？%3C/font%3E%3C/b%3E%22,l=%22green%22),1%3Eg%26%26(alert(%22注意！有便宜貨！！！\n\n內容是：\n%22+document.getElementsByTagName(%22td%22)[t].innerHTML.replace(/.*\%3Cimg%20src=\%22.*\%22\%3E(.*\$[0-9]{1,5}).*/gim,%22$1%22)+%22\n\n換算下來是%20每%201GB%20只要%20$%22+g+%22台幣%22),n+=%22%3Cbr%20/%3E%3Cbr%20/%3E%3Cb%3E%3Cfont%20color='white'%3E！！！這是超級便宜貨！！！%3C/font%3E%3C/b%3E%3Cbr%20/%3E%22,l=%22%23CCC%22),isNaN(o)||(document.getElementsByTagName(e)[t].innerHTML=document.getElementsByTagName(e)[t].innerHTML+%22%3Cbr%20/%3E%22+n,document.getElementsByTagName(e)[t].title=%22每%201GB%20=%20$%22+g+%22%20台幣%22,%22%22!=l%26%26(document.getElementsByTagName(e)[t].style=%22background-color:%22+l+%22;%22))}var%20e=%22html%22,c=%22'微軟正黑體','Microsoft%20JhengHei','sans-serif'%22;if(void%200!==document.getElementsByTagName(e)[0])for(var%20t=0;t%3Cdocument.getElementsByTagName(e).length;t++)document.getElementsByTagName(e)[t].style.fontFamily!=c%26%26(document.getElementsByTagName(e)[t].style.fontFamily=c);localStorage.go=%22over%22}window.document.body.onbeforeunload=function(){return%20localStorage.removeItem(%22go%22),!0}}();">硬碟真比較工具</a>
   - #需要配合網址入口：
-  - #www.coolpc.com.tw/m/
-  - #進入後點選【HDD 內接硬碟】
+  - <a href="javascript:window.open('http:\/\/www.coolpc.com.tw/m/','_blank');">www.coolpc.com.tw/m/</a>
+  - #進入後
+  - #點選【HDD 內接硬碟】
   ----
-  - [操作示範影片](https://drive.google.com/file/d/0B3rgktr7zpP9TFAxWFN3ZnVQODA/preview)
+  - [📺 操作示範影片](https://drive.google.com/file/d/0B3rgktr7zpP9TFAxWFN3ZnVQODA/preview)
  
 [💾 Save & Share]()
 
   - #📢 Save & Share
   - #　也可以拉成書籤工具
-  - #　詳情請參照影片區
+  - [📺 操作示範影片](https://drive.google.com/file/d/0B3rgktr7zpP9Y253d2xkcTJkSWM/preview)
   ----
   - #💾 Save
   - <a href="javascript:(function(){for(var b='',c=document.getElementsByTagName('link'),a=c.length;a--;)'shortlink'==c[a].rel&&(b=c[a].href);-1!=location.href.indexOf('//www.youtube.com/watch?')&&(b=location.href.replace(/.*youtube\.com\/watch\?v=(.*)\&(.*)/,'https://youtu.be/$1?$2'));if(-1!=location.href.indexOf('//www.pixiv.net/member.php?id='))for(c=document.getElementsByTagName('input'),a=c.length;a--;)if(/http\:\/\/pixiv\.me\/.*/.test(c[a].value)){b=''==b?c[a].value:b;break}if(-1!=location.href.indexOf('//www.pixiv.net/member_illust.php?'))for(var c= document.getElementsByTagName('link'),a=c.length,d=0<document.getElementsByTagName('html')[0].lang.length?document.getElementsByTagName('html')[0].lang:'';a--;)if('en'==c[a].hreflang){b=''==b?c[a].href.replace(/www(\.pixiv\.com)/,d+'$1'):b;break}if(-1!=location.href.indexOf('//dic.nicovideo.jp'))for(c=document.getElementsByTagName('a'),a=c.length;a--;)if(/.*\/id\/(\d+)/.test(c[a].href)){b=''==b?c[a].href.replace(/.*\/id\/(\d+)/,'http://nico.ms/dic/$1'):b;break}d=(''==b?location.href.replace(/https?\:\/\/www\.nicovideo\.jp\/watch\//, 'http://nico.ms/').replace(/https?\:\/\/seiga\.nicovideo\.jp\/(seiga|watch)\//,'http://nico.ms/').replace(/https?\:\/\/live\.nicovideo\.jp\/watch\//,'http://nico.ms/').replace(/https?\:\/\/com\.nicovideo\.jp\/community\//,'http://nico.ms/').replace(/https?\:\/\/ch\.nicovideo\.jp\/.*\/blomaga\/(ar.*)/,'http://nico.ms/$1').replace(/https?\:\/\/chokuhan\.nicovideo\.jp\/products\/detail\/(\d*)/,'http://nico.ms/nd$1').replace(/https?\:\/\/ichiba\.nicovideo\.jp\/item\/(az.*)/,'http://nico.ms/$1').replace(/https?\:\/\/ichiba\.nicovideo\.jp\/item\/(ysamiami.*)/, 'http://nico.ms/$1').replace(/https?\:\/\/ichiba\.nicovideo\.jp\/item\/(ggbo.*)/,'http://nico.ms/$1').replace(/https?\:\/\/ichiba\.nicovideo\.jp\/item\/(ndsupplier.*)/,'http://nico.ms/$1').replace(/https?\:\/\/ichiba\.nicovideo\.jp\/item\/(dw.*)/,'http://nico.ms/$1').replace(/https?\:\/\/ichiba\.nicovideo\.jp\/item\/(it.*)/,'http://nico.ms/$1').replace(/https?\:\/\/app\.nicovideo\.jp\/app\/(ap.*)/,'http://nico.ms/$1').replace(/https?\:\/\/jk\.nicovideo\.jp\/watch\/(jk.*)/,'http://nico.ms/$1').replace(/https?\:\/\/commons\.nicovideo\.jp\/material\/(nc.*)/, 'http://nico.ms/$1').replace(/https?\:\/\/news\.nicovideo\.jp\/watch\/(nw.*)/,'http://nico.ms/$1').replace(/https?\:\/\/www\.nicovideo\.jp\/(user\/\d*)/,'http://nico.ms/$1').replace(/https?\:\/\/www\.nicovideo\.jp\/(mylist\/\d*)/,'http://nico.ms/$1').replace(/https?\:\/\/www\.nicovideo/,'http://nicovideo').replace(/https?\:\/\/www\.facebook\.com/,'http://fb.com').replace(/https?\:\/\/www\.pixiv\.net\/member\.php\?id\=/,'http://p.tl/m/').replace(/https?\:\/\/www\.pixiv/,'http://pixiv').replace('http://bangumi.tv', 'http://bgm.tv').replace(/https?\:\/\/www\.bilibili\.com/,'http://acg.tv').replace(/(https?:\/\/trello\.com\/(c|b)\/.*)\/.*/,'$1').replace(/(https?)\:\/\/www\.plurk/,'$1://plurk').replace(/(https?)\:\/\/www\.playpcesor/,'$1://playpcesor').replace(/:\/\/.*\.(googledrive\.com.{0,})/,'://$1'):b)+'';b=document.title.replace(/( - \u30cb\u30b3\u30cb\u30b3\u52d5\u753b:GINZA| \u2010 \u30cb\u30b3\u30cb\u30b3\u52d5\u753b:GINZA| \u2010 niconico\u52d5\u756b:GINZA| - Niconico Douga: Ginza)/,'').replace(/( - \u54d4\u54e9\u54d4\u54e9 - \( \u309c- \u309c\)\u3064\u30ed \u4e7e\u676f~ - bilibili| - \u55f6\u54e9\u55f6\u54e9 - \( \u309c- \u309c\)\u3064\u30ed \u4e7e\u676f~ - bilibili)/, '').replace(/\[/g,'\\[').replace(/\]/g,'\\]').replace(/\./g,'\\.').replace(/http\:/g,'http\\:').replace(/https\:/g,'https\\:').replace(/\_/g,'\\_').replace(/\#/g,'\\#').replace(/\*/g,'\\*');navigator.userAgent.match('MSIE');console.log(void 0);var e=getSelection?getSelection().toString():'';-1!=location.href.indexOf('//www.youtube.com/watch?')&&(d=location.href);c=d;a=window;d=encodeURIComponent('- ['+b+']('+d+')')+(e?encodeURIComponent('\n\n----\n\n ```\n'+e+'\n```'):'');a.open('https://trello.com/add-card?source='+ a.location.host+'&mode=popup&url='+encodeURIComponent(c)+(b?'&name='+encodeURIComponent(b.replace(/\\/g,'')):'')+'&desc='+d,'add-trello-card','width=500,height=600,left='+(a.screenX+(a.outerWidth-500)/2)+',top='+(a.screenY+(a.outerHeight-740)/2))})();"> 在 <img src="trello.png" /> Trello 建立一張卡　</a>
@@ -121,10 +126,11 @@
   - <a href="###" id='md_file_navigation' class="googleiframe" title="#" data-fancybox-type="iframe">🔧 navigation.md  👀</a>
   - <a href="###" id='md_file_config' class="googleiframe" title="#" data-fancybox-type="iframe">🔨 config.json  👀</a>
 
-[🔃  2016.10.30 更新]()
+[🔃  2016.11.01 更新]()
 
   - #更新項目
-  - [🆕 新增線上字體測試功能：有華康、Google 思源](# "2016.10.30")
+  - [🆕 新增 站外工具/原價屋硬碟真比價書籤工具](# "2016.11.01")
+  - [🆕 新增 線上網頁字體：有華康(動態變化)、Google 思源](# "2016.10.30")
   - [🆕 增加 字體變化測試 function](# "2016.10.22 完成待補寫，Icon font 暫時不考慮")
   - [🆕 增加 手機板 Chrome 變色處理、繁簡轉換修正、完成 Line](# "2016.10.21 完成待補寫")
   - [🆕 增加 OneNote、Flipboard，修正噗浪、Gmail 手機BUG。](# "2016.10.20 完成待補寫")
