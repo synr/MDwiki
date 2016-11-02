@@ -87,7 +87,7 @@
   - #操作示範
   - [📺 操作示範影片](https://drive.google.com/file/d/0B3rgktr7zpP9M28zb0ptSzV4Z2M/preview)
   ----
-  - <a href="javascript:font_set();">取消 Web 字體省流量</a>
+  - <a href="javascript:font_set();">取消 Web 字體省流量，以 微軟正黑體 顯示。（推薦）</a>
 
 [站外工具]()
 

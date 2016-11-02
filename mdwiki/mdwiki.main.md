@@ -91,10 +91,14 @@
         增加佈景主題選擇功能，括號內的 ``Theme`` 是按鈕文字。
         像我把它改成「替換佈景主題」。
         - ``[gimmick:theme](cosmo)``：指定第一次來網站的人看到的預設主題。
-    - [你也可以直接下載我目前正在使用的這份「navigation.md」文件參考看看。](https://docs.google.com/uc?id=0B_b1e3AASsaLY2RncExYS0NocXM&export=download)
-
+    - <a href="javascript:window.open(location.href.replace(/(.*)#!.*/,'$1navigation.md'),'_blank');" target="_blank">你也可以直接下載我目前正在使用的這份「navigation.md」文件參考看看。</a>
 
 補充提示：
 相關詳細操作方法，暫時直接給其他教學網站的連結XD
 如果未來有閒可能會慢慢更新這個頁面，把詳細操作設定都寫進來。
 在那之前，請參考本內文提供的各種教學連結XD
+
+<!-- 
+    - [你也可以直接下載我目前正在使用的這份「navigation.md」文件參考看看。](https://docs.google.com/uc?id=0B_b1e3AASsaLY2RncExYS0NocXM&export=download)
+    - <a href="javascript:window.open(location.href.replace(/(.*)#!.*/,'$1navigation.md'),'_blank');" target="_blank">你也可以直接下載我目前正在使用的這份「navigation.md」文件參考看看。</a>
+ -->
