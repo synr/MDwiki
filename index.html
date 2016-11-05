@@ -42,10 +42,10 @@
 
 
         .jf-active *, .jf-inactive * { /*處理成功或失敗，都以漸變顯示*/
-              -webkit-transition: opacity 1s ease-out; 
-              -moz-transition: opacity 1s ease-out; 
-              -o-transition: opacity 1s ease-out; 
-              transition: opacity 1s ease-out; 
+              -webkit-transition: opacity 2s ease-out; 
+              -moz-transition: opacity 2s ease-out; 
+              -o-transition: opacity 2s ease-out; 
+              transition: opacity 2s ease-out; 
         }
 
     ::selection { background-color: rgb(191, 116, 9);color: #FFFFFF; }
@@ -662,7 +662,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                     //     }
                     // }
                     //----針對 X-Frame-Options 確定的網域，在這裡作手動排除。
-                    if(this.href.match(/(^https?:\/\/trello.com|^https?:\/\/github.com|^https?:\/\/highlightjs.org|^https?:\/\/www.google.com|^https?:\/\/greasyfork.org|^https?:\/\/chrome.google.com)|^https?:\/\/.*sdbx.jp|^https?:\/\/.*plurk.com/gi)){
+                    if(this.href.match(/(^https?:\/\/trello.com|^https?:\/\/github.com|^https?:\/\/highlightjs.org|^https?:\/\/www.google.com|^https?:\/\/greasyfork.org|^https?:\/\/chrome.google.com|^https?:\/\/www.backblaze.com|^https?:\/\/.*sdbx.jp|^https?:\/\/www.ninja.co.jp|^https?:\/\/.*plurk.com)/gi)){
                         console.log('【Error】Refused to display \'' + this.href + '\' in a frame because it set \'X-Frame-Options\'\n針對這些確定不支援跨站顯示框架網頁的網域，已自動排除使用燈箱。');
                         $.fancybox.close(1);
                     }
@@ -1016,7 +1016,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
     <!-- 2016.10.30+ 控制廣告提示 -->
     <div id="ninja">
     <hr />
-    　※ 下面是這個網頁空間的廣告。你如果想要使用這種網站空間，可以點進去看看。(日本語)
+    　※ 下面是這個網頁空間的廣告。你如果想要使用這種網站空間，可以點進去看看。(日本語) <!--shinobi1--><script type="text/javascript" src="//xa.shinobi.jp/ufo/181939900"></script><noscript><a href="//xa.shinobi.jp/bin/gg?181939900" target="_blank"><img src="//xa.shinobi.jp/bin/ll?181939900" border="0"></a><br><span style="font-size:9px"><img style="margin:0;vertical-align:text-bottom;" src="//img.shinobi.jp/tadaima/fj.gif" width="19" height="11"> </span></noscript><!--shinobi2-->
     </div>
     <div id="addthis"></div>
 </body>

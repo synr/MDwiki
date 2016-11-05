@@ -41,18 +41,21 @@
   - 但是，~~我摸到現在只覺得視覺介面的排版結構很 Wiki 而已~~。
 原因如下：
     1. 畢竟是靜態網站，因此他不能連線資料庫等等，所以不能搜尋。
+如果都是公開頁面的話，只能仰賴搜尋引擎。
+但前提是有把 SEO 做好。
+或者也可以自己建搜尋功能，只是必須結合第三方平台來儲存紀錄當作資料庫。（這條我沒實作過，但感覺應該可以。）
     2. 承上原因，理所當然也沒有版本文件差異比對功能。
       - 如果架在 GitHub，透過 GitHub 平台網站版內功能才能跟上個版本比對。
 但是一樣沒辦法跳板比較。（程式介面是不是能跳板比對差異我沒試過）
-例如：沒辦法第一個版本根最後一個版本比對。
-除非把歷史檔案下載或複製內文，另外用電腦的比對軟體操作比對。（例如：WinMergePortable）
+例如：沒辦法第一個版本跟最後一個版本比對。
+除非把歷史檔案下載或複製內文，另外用電腦的比對軟體（例如：[WinMerge](https://www.google.com.tw/search?num=100&newwindow=1&q=WinMerge+%E9%98%BF%E6%A6%AE&oq=WinMerge+%E9%98%BF%E6%A6%AE&gs_l=serp.3..0.3886.4789.0.5271.2.2.0.0.0.0.113.171.1j1.2.0....0...1c.1j4.64.serp..0.2.168...0i7i30k1.O3ywyYN-4Zw)）操作比對。
 但那樣就輸給一般 WiKi 系統，線上就能挑選版本比對的功能。網站的事情在網站內處理。
       - Google Drive 的話更慘，他只會記錄所有檔案更新版本。
 不但不能比對內文，還不能自由取得舊版本。
 只能取得目前正在使用的版本，如果要看舊版內容就要還原成舊版。
-        - <font color="red">更慘的是，現在 Google 硬碟不能拿來呈現網站了XD
-這些都是過去式，現在不能用 Google 來放 MDwiki。
-Google Drive 已經在 2016 年~~不知道什麼時候偷偷摸摸~~取消這功能。</font>
+        - <font color="red"><a href="https://gsuiteupdates.googleblog.com/2015/08/deprecating-web-hosting-support-in.html"><font color="red">更慘的是 2016.08.31 之後，Google 硬碟不能拿來呈現網站了XD</font></a>
+這些都是過去式，現在不能用 Google Drive 來展示任何網頁。
+Google Drive 已經在 2016.08.31 ~~偷偷摸摸~~取消這功能。</font>
     3. 也沒有共同編輯功能。
 也就是說有 WiKi 的外表，卻沒有 WiKi 的內在精神。
 但有個方法可以達成版本管理跟共同編輯。
@@ -75,14 +78,14 @@ Google Drive 已經在 2016 年~~不知道什麼時候偷偷摸摸~~取消這功
 如果是放在 Google 硬碟、Dropbox、GitHub 的話，可以整個資料夾壓縮下載。
 - 官方建佔教學（英文）：
   - [MDwiki - Markdown based wiki done 100% on the client via javascript](http://dynalon.github.io/mdwiki/#!tutorials.md)
-  - ~~MDwiki 官方教學如何設置在 Google 硬碟~~（[此方法已失效](https://gsuite-developers.googleblog.com/2015/08/deprecating-web-hosting-support-in.html)）
+  - ~~MDwiki 官方教學如何設置在 Google 硬碟~~（[此方法 2016.08.31 後已失效](https://gsuite-developers.googleblog.com/2015/08/deprecating-web-hosting-support-in.html)）
   - [MDwiki 官方教學如何設置在 GitHub](http://dynalon.github.io/mdwiki/#!tutorials/github.md)
-  - [MDwiki 官方教學如何設置在 Dropbox（已改成付費功能，細節設定請自行摸索。）](http://dynalon.github.io/mdwiki/#!tutorials/dropbox.md)
+  - [MDwiki 官方教學如何設置在 Dropbox（已改成付費功能，但我覺得好像也失效了。）](http://dynalon.github.io/mdwiki/#!tutorials/dropbox.md)
 - 查詢到的其他教學：[MDwiki 搭建靜態博客教程 | 霧裡看花終隔一層，蘭亭凝望皆付蕭瑟。](https://blog.ikke.moe/posts/mdwiki-tourial/)
 
 - 當然，你也可以架設在傳統的靜態網站伺服器。
 例如：[http://landerso.at-ninja.jp](http://landerso.at-ninja.jp) 就是我用來測試傳統靜態網站空間的結果。
-  - 這家網域還不錯，但美中不足的是這家空間可能因為日本網站有特別為手機設置什麼機關，
+  - 這家還不錯很多網域可以選，但美中不足的是這家空間可能因為日本網站有特別為手機設置什麼機關，
 所以手機看的時候要特別切去電腦版本才能順利瀏覽。
     - 這個空間最近有出另一個平台服務 [sdbx.jp](//sdbx.jp)，可以解決這個問題。
 示範網站：<http://landerso.sdbx.jp>
@@ -132,7 +135,6 @@ Google Drive 已經在 2016 年~~不知道什麼時候偷偷摸摸~~取消這功
 - 這份頁面寫的 ``markdown`` 原始文件內容，可下載此連結查看：[→ 點我點我 ←](http://landerso.at-ninja.jp/index.md)
 - [本站使用 0.6.2 版作測試](https://github.com/Dynalon/mdwiki/releases "2014.05.23 發布的版本到現在都沒有更新\n可能不會更新了。")
  
-
 <!-- 
 
 #####以下內容測試用
