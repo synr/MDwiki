@@ -49,7 +49,7 @@
   - [網站 Web 線上字體操作示範](https://drive.google.com/file/d/0B3rgktr7zpP9M28zb0ptSzV4Z2M/preview)
   - [原價屋硬碟真比價書籤工具示範](https://drive.google.com/file/d/0B3rgktr7zpP9TFAxWFN3ZnVQODA/preview)
   ----
-  - <a href="javascript:window.open('https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/14616981&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=false&amp;show_reposts=false&amp;visual=true&amp;download=true&amp;download=true&amp;start_track=10','_blank');">★─☆｡oﾟ｡共鳴中(o｀▽´)っ ～*♪･ﾟ｡☆彡</a>
+  - <a href="javascript:$.fancybox.open({padding : 0,href:'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/14616981&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=false&amp;show_reposts=false&amp;visual=true&amp;download=true&amp;download=true&amp;start_track=10',type: 'iframe'});">★─☆｡oﾟ｡共鳴中(o｀▽´)っ ～*♪･ﾟ｡☆彡</a>
 
 [gimmick:themechooser](🎨  網站配色)
 <!-- [gimmick:theme](darkly) -->
@@ -90,7 +90,7 @@
   ----
   - <a href="javascript:font_set();">取消 Web 字體省流量，以 微軟正黑體 顯示。（推薦）</a>
 
-[站外工具]()
+[🔨 站外工具]()
 
   - #Bookmarklet 工具按鈕
   - #原價屋硬碟真比價
@@ -137,9 +137,10 @@
   - <a href="###" id='md_file_navigation' class="googleiframe" title="#" data-fancybox-type="iframe">🔧 navigation.md  👀</a>
   - <a href="###" id='md_file_config' class="googleiframe" title="#" data-fancybox-type="iframe">🔨 config.json  👀</a>
 
-[🔃  2016.11.01 更新]()
+[🔃  2016.11.08 更新]()
 
   - #更新項目
+  - [🆕 新增 共鳴](# "2016.11.08")
   - [🆕 新增 站外工具/原價屋硬碟真比價書籤工具](# "2016.11.01")
   - [🆕 新增 線上網頁字體：有華康(動態變化)、Google 思源](# "2016.10.30")
   - [🆕 增加 字體變化測試 function](# "2016.10.22 完成待補寫，Icon font 暫時不考慮")
@@ -187,6 +188,9 @@
 
   - <a href="javascript:(function(){var s=document.getElementById('tongwenlet_tw');if(s!=null){document.body.removeChild(s);}var s=document.createElement('script');s.language='javascript';s.type='text/javascript';s.src='http://tongwen.openfoundry.org/NewTongWen/tools/bookmarklet_tw.js';s.id='tongwenlet_tw';document.body.appendChild(s); })();">正體中文</a>
   - <a href="javascript:(function(){var s=document.getElementById('tongwenlet_cn');if(s!=null){document.body.removeChild(s);}var s=document.createElement('script');s.language='javascript';s.type='text/javascript';s.src='http://tongwen.openfoundry.org/NewTongWen/tools/bookmarklet_cn.js';s.id='tongwenlet_cn';document.body.appendChild(s); })();">簡體中文 🇨🇳</a>  
+
+
+  - <a href="javascript:window.open('https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/14616981&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=false&amp;show_reposts=false&amp;visual=true&amp;download=true&amp;download=true&amp;start_track=10','_blank');">★─☆｡oﾟ｡共鳴中(o｀▽´)っ ～*♪･ﾟ｡☆彡</a>
 
 -->
 
