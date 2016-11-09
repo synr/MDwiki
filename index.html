@@ -48,8 +48,8 @@
               transition: opacity 2s ease-out; 
         }
 
-    ::selection { background-color: rgb(191, 116, 9);color: #FFFFFF; }
-    ::-moz-selection { background-color: rgb(191, 116, 9);color: #FFFFFF; }
+    ::selection { background-color: rgb(191, 116, 9);color: #FFFFFF;-webkit-box-shadow:0 0 18px rgba(250,188,1,.5);}
+    ::-moz-selection { background-color: rgb(191, 116, 9);color: #FFFFFF;}
 
     /*美化輸入欄*/
     input[type=text]:focus,input[type=password]:focus,input[type=checkbox]:focus,input[type=radio]:focus,textarea:focus,select:focus{
@@ -80,6 +80,116 @@
            url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.woff) format('woff'),
            url(//fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.ttf) format('truetype');
     }
+
+    @font-face {
+      font-family: 'sptest';
+      font-style: normal;
+      font-weight: 500;
+      src: url(sp_test.ttf);
+      src: url(sp_test.ttf?#iefix) format('embedded-opentype'),
+           url(sp_test.ttf) format('woff2'),
+           url(sp_test.ttf) format('woff'),
+           url(sp_test.ttf) format('truetype');
+    }
+
+    @font-face {
+      font-family: 'sptest_otf';
+      font-style: normal;
+      font-weight: 500;
+      src: url(sp_test.otf);
+      src: url(sp_test.otf?#iefix) format('embedded-opentype'),
+           url(sp_test.otf) format('woff2'),
+           url(sp_test.otf) format('woff'),
+           url(sp_test.otf) format('truetype');
+    }
+
+    /* 1 */
+    @font-face {
+      font-family: 'kazesawa_light';
+      font-style: normal;
+      font-weight: 500;
+      src: url(kazesawa_light.eot);
+      src: url(kazesawa_light.eot?#iefix) format('embedded-opentype'),
+           url(kazesawa_light.woff2) format('woff2'),
+           url(kazesawa_light.woff) format('woff'),
+           url(kazesawa_light.ttf) format('truetype');
+    }
+    /* 2 */
+    @font-face {
+      font-family: 'geneilatego';
+      font-style: normal;
+      font-weight: 500;
+      src: url(geneilatego.otf);
+      src: url(geneilatego.otf?#iefix) format('embedded-opentype'),
+           url(geneilatego.woff2) format('woff2'),
+           url(geneilatego.woff) format('woff'),
+           url(geneilatego.otf) format('truetype');
+    }
+    /* 3 */
+    @font-face {
+      font-family: 'geneigothicp_regular';
+      font-style: normal;
+      font-weight: 500;
+      src: url(geneigothicp_regular.otf);
+      src: url(geneigothicp_regular.otf?#iefix) format('embedded-opentype'),
+           url(geneigothicp_regular.woff2) format('woff2'),
+           url(geneigothicp_regular.woff) format('woff'),
+           url(geneigothicp_regular.otf) format('truetype');
+    }
+    /* 4 */
+    @font-face {
+      font-family: 'geneigothicp_light';
+      font-style: normal;
+      font-weight: 500;
+      src: url(geneigothicp_light.otf);
+      src: url(geneigothicp_light.otf?#iefix) format('embedded-opentype'),
+           url(geneigothicp_light.woff2) format('woff2'),
+           url(geneigothicp_light.woff) format('woff'),
+           url(geneigothicp_light.otf) format('truetype');
+    }
+    /* 5 */
+    @font-face {
+      font-family: 'geneiantiquep_medium';
+      font-style: normal;
+      font-weight: 500;
+      src: url(geneiantiquep_medium.otf);
+      src: url(geneiantiquep_medium.otf?#iefix) format('embedded-opentype'),
+           url(geneiantiquep_medium.woff2) format('woff2'),
+           url(geneiantiquep_medium.woff) format('woff'),
+           url(geneiantiquep_medium.otf) format('truetype');
+    }
+    /*http://www.flycan.com/article/css/css-em-to-px-87.html*/
+    /*https://kreen.org/906/google-drive-folder-size*/
+    #md-content{
+      font-size: 1.15em; /*1.03*/
+      line-height: 1.7em;
+      /*text-shadow: 0 0 0.001em;*/
+    }
+
+/*    code{
+      text-shadow: 0 0 0;
+    }
+*/
+    /*http://kazesawa.github.io/css/main.css*/
+    /*http://www.css88.com/book/css/rules/@keyframes.htm*/
+    /*https://coolors.co/3688c3-3474b2-5d53b8-3b76b0-3688c3*/
+
+/*    body{
+      animation: grad 30s ease 2s infinite;
+    }
+
+    @keyframes grad { 0% { background-color: #050D12; }
+      26% { background-color: #132B41; }
+      57% { background-color: #1A1733; }
+      74% { background-color: #162B40; }
+      100% { background-color: #050D12; } }*/
+
+/*    @keyframes grad { 0% { background-color: #3688c3; }
+      26% { background-color: #3474B2; }
+      57% { background-color: #5d53b8; }
+      74% { background-color: #3B76B0; }
+      100% { background-color: #3688c3; } }*/
+
 
     div img {
         /* http://fanchie.blogspot.tw/2008/02/css-css.html */
@@ -939,6 +1049,15 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
             }
         }
         //未完成區域-------
+
+        //2016.11.09 +燈箱網頁顯示
+        function fancybox_openurl(url){
+          $.fancybox.open({
+              padding : 0,
+              href:url,
+              type: 'iframe'
+          });
+        }
 
         /*
         function plus_js(data_url,id_){

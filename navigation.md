@@ -74,21 +74,37 @@
   - #網路字體切換：裝置沒安裝的也能看
   - #動態 Web font
   ----
-  - #華康（收費制，免費試用三套字體～ 2016.11.27 ）
+  - #華康（收費制，免費試用不可替換三套字體～ 2016.11.27 ）
   - <a href="javascript:font_set('\'DFT\_HZP3\',arial');jsgendfo();" title="根據頁面的字數動態調整字體檔。所以檔案大小不佔太多傳輸量。除非那頁寫太多不重複的字XD">華康翩翩體 W3</a>
   - <a href="javascript:font_set('\'DFT\_HZP5\',arial');jsgendfo();" title="根據頁面的字數動態調整字體檔。所以檔案大小不佔太多傳輸量。除非那頁寫太多不重複的字XD">華康翩翩體 W5</a>
-  - <a href="javascript:font_set('\'DFT\_TF3\',arial');jsgendfo();" title="根據頁面的字數動態調整字體檔。所以檔案大小不佔太多傳輸量。除非那頁寫太多不重複的字XD">華康采風體 W3</a>
-  - #Just Font（免費試用兩套字體一個月）
+  - <a href="javascript:font_set('\'DFT\_TF3\',arial');jsgendfo();" title="根據頁面的字數動態調整字體檔。所以檔案大小不佔太多傳輸量。除非那頁寫太多不重複的字XD">華康采風體 W3（這有點小）</a>
+  - #Just Font（免費試用可替換兩套字體維持一個月，只支援 http 協定）
   - <a href="javascript:font_set('\'cwtexqhei\'');_jf.flush();" title="根據頁面的字數動態調整字體檔。所以檔案大小不佔太多傳輸量。除非那頁寫太多不重複的字XD">cwTeX 黑體</a>
   - <a href="javascript:font_set('\'sourcehansans\-tc\'');_jf.flush();" title="根據頁面的字數動態調整字體檔。所以檔案大小不佔太多傳輸量。除非那頁寫太多不重複的字XD">思源黑體 Extralight</a>
   ----
-  - #固定式 Web font（缺點肥大佔流量）
+  - #固定式 Web font 原檔（缺點：肥大佔流量）
   - <a href="javascript:font_set('\'cwTeXHei\',arial');">Google 思源黑體（警告這會耗用 <b>3 MB</b> 的網路流量）</a>
   ----
-  - #操作示範
+  - #固定式 Web font 輕量（缺點：更新內文需手動產檔）
+  - <a href="javascript:font_set('\'kazesawa_light\',arial');fancybox_openurl('http:\/\/kazesawa.github.io');" title="M+ と Source Sans Pro の合成フォント">Kazesawa フォント Light</a>
+  - <a href="javascript:font_set('\'geneilatego\',arial');fancybox_openurl('http:\/\/okoneya.jp\/font\/genei\-latin.html');">源暎ラテゴ（有點太粗XD）</a>
+  - <a href="javascript:font_set('\'geneigothicp\_light\',arial');fancybox_openurl('http:\/\/okoneya.jp\/font\/genei\-gothic.html');">源暎ゴシックＰ Light</a>
+  - <a href="javascript:font_set('\'geneiantiquep\_medium\',arial');fancybox_openurl('http:\/\/okoneya.jp\/font\/genei\-antique.html');">源暎アンチック Medium（有點粗，50 音好看）</a>
+  ----
+  - #字體切換操作示範
   - [📺 操作示範影片](https://drive.google.com/file/d/0B3rgktr7zpP9M28zb0ptSzV4Z2M/preview)
   ----
+  - #也推薦關閉字體變化（咦？）
   - <a href="javascript:font_set();">取消 Web 字體省流量，以 微軟正黑體 顯示。（推薦）</a>
+  ----
+  - #字體手動輕量化工具
+  - [抽出要用的文字：サブセットフォントメーカー](http://opentype.jp/subsetfontmk.htm)
+  - [轉換為 Woff、eot：WOFFコンバータ](http://opentype.jp/woffconv.htm)
+  - [以上工具的使用教學（日本語）](http://11neko.com/font-3/)
+  ----
+  - #附註：
+  - [華康與 Just Font 是正體中文為主的收費制雲端正版字體平台。](# "收費上華康比較昂貴，費用是 Just Font 的 12倍。技術支援上也是 Just Font 比較好，但商用才有支援 https。")
+  - [手動輕量化的部分需要重製字體檔，請選用完全合法免費字體。](# "非法重製容易被吉")
 
 [🔨 站外工具]()
 
@@ -137,9 +153,10 @@
   - <a href="###" id='md_file_navigation' class="googleiframe" title="#" data-fancybox-type="iframe">🔧 navigation.md  👀</a>
   - <a href="###" id='md_file_config' class="googleiframe" title="#" data-fancybox-type="iframe">🔨 config.json  👀</a>
 
-[🔃  2016.11.08 更新]()
+[🔃  2016.11.09 更新]()
 
   - #更新項目
+  - [🆕 新增 手動輕量版的「Kazesawa フォント」、「源暎ラテゴ」](# "2016.11.09")
   - [🆕 新增 共鳴](# "2016.11.08")
   - [🆕 新增 站外工具/原價屋硬碟真比價書籤工具](# "2016.11.01")
   - [🆕 新增 線上網頁字體：有華康(動態變化)、Google 思源](# "2016.10.30")
