@@ -126,7 +126,7 @@
            url(geneilatego.otf) format('truetype');
     }
     /* 3 */
-    @font-face {
+/*    @font-face {
       font-family: 'geneigothicp_regular';
       font-style: normal;
       font-weight: 500;
@@ -135,7 +135,7 @@
            url(geneigothicp_regular.woff2) format('woff2'),
            url(geneigothicp_regular.woff) format('woff'),
            url(geneigothicp_regular.otf) format('truetype');
-    }
+    }*/
     /* 4 */
     @font-face {
       font-family: 'geneigothicp_light';
@@ -157,6 +157,30 @@
            url(geneiantiquep_medium.woff2) format('woff2'),
            url(geneiantiquep_medium.woff) format('woff'),
            url(geneiantiquep_medium.otf) format('truetype');
+    }
+
+    /* 6 */
+    @font-face {
+      font-family: 'smartfontui';
+      font-style: normal;
+      font-weight: 500;
+      src: url(smartfontui.otf);
+      src: url(smartfontui.otf?#iefix) format('embedded-opentype'),
+           url(smartfontui.woff2) format('woff2'),
+           url(smartfontui.woff) format('woff'),
+           url(smartfontui.otf) format('truetype');
+    }
+
+    /* 7 */
+    @font-face {
+      font-family: 'flopdesignfont';
+      font-style: normal;
+      font-weight: 500;
+      src: url(flopdesignfont.eot);
+      src: url(flopdesignfont.eot?#iefix) format('embedded-opentype'),
+           url(flopdesignfont.woff2) format('woff2'),
+           url(flopdesignfont.woff) format('woff'),
+           url(flopdesignfonti.otf) format('truetype');
     }
 
     /*http://www.flycan.com/article/css/css-em-to-px-87.html*/
@@ -1164,6 +1188,9 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
         <option value="javascript:font_set('\'geneilatego\',arial');fancybox_openurl('http:\/\/okoneya.jp\/font\/genei\-latin.html');">源暎ラテゴ（有點太粗XD）</option>
         <option value="javascript:font_set('\'geneigothicp\_light\',arial');fancybox_openurl('http:\/\/okoneya.jp\/font\/genei\-gothic.html');">源暎ゴシックＰ Light</option>
         <option value="javascript:font_set('\'geneiantiquep\_medium\',arial');fancybox_openurl('http:\/\/okoneya.jp\/font\/genei\-antique.html');">源暎アンチック Medium（有點粗，50 音好看）</option>
+        <option value="javascript:font_set('\'smartfontui\',arial');fancybox_openurl('http:\/\/www.flopdesign.com\/freefont\/smartfont.html');" title="少許漏字">スマートフォントUI+</option>
+        <option value="javascript:font_set('\'flopdesignfont\',arial');fancybox_openurl('http:\/\/www.flopdesign.com\/freefont\/flopdesignfont.html');" title="少許漏字">フロップデザインフォント</option>
+        
       </optgroup>
         <option value="javascript:font_set();">不使用 Web font，使用電腦原有字體（EX：微軟正黑體）</option>
     </select>
