@@ -158,6 +158,7 @@
            url(geneiantiquep_medium.woff) format('woff'),
            url(geneiantiquep_medium.otf) format('truetype');
     }
+
     /*http://www.flycan.com/article/css/css-em-to-px-87.html*/
     /*https://kreen.org/906/google-drive-folder-size*/
     #md-content{
@@ -1050,13 +1051,20 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
         }
         //未完成區域-------
 
-        //2016.11.09 +燈箱網頁顯示
+        //2016.11.09+ 燈箱網頁顯示
         function fancybox_openurl(url){
           $.fancybox.open({
               padding : 0,
               href:url,
               type: 'iframe'
           });
+        }
+
+        //2016.11.10+ 
+        function selectchanged(selecter) {
+            //var options_max = selecter.length; // selecter.name
+            console.log(selecter.options[selecter.selectedIndex].text + ' = ' + selecter.options[selecter.selectedIndex].value);
+            eval(selecter.options[selecter.selectedIndex].value);
         }
 
         /*
@@ -1131,7 +1139,34 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
     <div id="md-all" onclick="javascript:parseLink();">
     <!-- <div id="md-all"> -->
     </div>
-    　<a href="javascript:window.open(location.href.replace(/(.*)#!(.*)/,'$1').replace('index.html','')  + location.href.replace(/(.*)#!(.*)/,'$2'),'_blank');" target="_blank">→ 點我查看本頁原始碼 ←</a>
+    　<a href="javascript:window.open(location.href.replace(/(.*)#!(.*)/,'$1').replace('index.html','')  + location.href.replace(/(.*)#!(.*)/,'$2'),'_blank');" target="_blank">→ 點我查看本頁原始碼 ←</a><br />
+    　字體選擇：
+    <select id='change_font' onchange='javascript:selectchanged(this)'>
+      <option value="javascript://" selected>字體切換</option>
+      <optgroup label="收費制中文 Web font 平台"></optgroup>
+      <optgroup label="華康：免費試用不可替換三套字體～ 2016.11.27">
+        <option value="javascript:font_set('\'DFT\_HZP3\',arial');jsgendfo();">華康翩翩體 W3</option>
+        <option value="javascript:font_set('\'DFT\_HZP5\',arial');jsgendfo();">華康翩翩體 W5</option>
+        <option value="javascript:font_set('\'DFT\_TF3\',arial');jsgendfo();">華康采風體 W3（這有點小）</option>
+      </optgroup>
+
+      <optgroup label="Just Font（免費試用可替換兩套字體維持一個月，只支援 http 協定）">
+        <option value="javascript:font_set('\'cwtexqhei\'');_jf.flush();" title="根據頁面的字數動態調整字體檔。所以檔案大小不佔太多傳輸量。除非那頁寫太多不重複的字XD">cwTeX 黑體</option>
+        <option value="javascript:font_set('\'sourcehansans\-tc\'');_jf.flush();" title="根據頁面的字數動態調整字體檔。所以檔案大小不佔太多傳輸量。除非那頁寫太多不重複的字XD">思源黑體 Extralight</option>
+      </optgroup>
+
+      <optgroup label="固定式 Web font 原檔（缺點：肥大佔流量）">
+        <option value="javascript:font_set('\'cwTeXHei\',arial');">Google 思源黑體（警告這會耗用 <b>3 MB</b> 的網路流量）</option>
+      </optgroup>
+
+      <optgroup label="固定式 Web font 輕量（缺點：更新內文需手動產檔）">
+        <option value="javascript:font_set('\'kazesawa_light\',arial');fancybox_openurl('http:\/\/kazesawa.github.io');" title="M+ と Source Sans Pro の合成フォント">Kazesawa フォント Light</option>
+        <option value="javascript:font_set('\'geneilatego\',arial');fancybox_openurl('http:\/\/okoneya.jp\/font\/genei\-latin.html');">源暎ラテゴ（有點太粗XD）</option>
+        <option value="javascript:font_set('\'geneigothicp\_light\',arial');fancybox_openurl('http:\/\/okoneya.jp\/font\/genei\-gothic.html');">源暎ゴシックＰ Light</option>
+        <option value="javascript:font_set('\'geneiantiquep\_medium\',arial');fancybox_openurl('http:\/\/okoneya.jp\/font\/genei\-antique.html');">源暎アンチック Medium（有點粗，50 音好看）</option>
+      </optgroup>
+        <option value="javascript:font_set();">不使用 Web font，使用電腦原有字體（EX：微軟正黑體）</option>
+    </select>
     <!-- 2016.10.30+ 控制廣告提示 -->
     <div id="ninja">
     <hr />
