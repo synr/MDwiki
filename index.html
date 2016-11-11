@@ -583,7 +583,8 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
         }
         var change_font = localStorage['font'];
 
-        function uesLightbox(a_tag){
+        //2016.11.12+ https 規則單獨抽出來做 function 重複使用
+        function https_way(url){
             //如果是 https 端裡面要塞 http 會被拒絕，所以直接不允許他當成燈箱
             //先用這個解決。不然就要出問題的時候再排除。
             // http    http
@@ -593,22 +594,22 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
             var canuesiframe = 1;
             //https
             if(location.href.match(/^https\.*/i)){
-                if(a_tag.href.match(/^https\.*/i)){
+                if(url.match(/^https\.*/i)){
                     canuesiframe = 1;
                     //console.log('https + https');
                 }
-                if(a_tag.href.match(/^http\:\/\/.*/i)){
+                if(url.match(/^http\:\/\/.*/i)){
                     canuesiframe = 0;
                     //console.log('https + http');
                 }
             }
 
             if(location.href.match(/^http\:\/\/.*/i)){
-                if(a_tag.href.match(/^https\.*/i)){
+                if(url.match(/^https\.*/i)){
                     canuesiframe = 1;
                     //console.log('http + https');
                 }
-                if(a_tag.href.match(/^http\:\/\/.*/i)){
+                if(url.match(/^http\:\/\/.*/i)){
                     canuesiframe = 1;
                     //console.log('http + http');
                 }
@@ -618,8 +619,12 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                 canuesiframe = 1;
                 //console.log('localhost');
             }
+            return canuesiframe;
+        }
 
-            if (canuesiframe) {
+        function uesLightbox(a_tag){
+            //https 配合好允許的才建立燈箱機關
+            if (https_way(a_tag.href)) {
                 //http://www.w3schools.com/jsref/met_element_setattribute.asp
                 a_tag.setAttribute('class', 'googleiframe');
                 a_tag.setAttribute('data-fancybox-type', 'iframe');
@@ -920,10 +925,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                     //     }
                     // }
                     //----針對 X-Frame-Options 確定的網域，在這裡作手動排除。
-                    if(this.href.match(/(^https?:\/\/trello.com|^https?:\/\/developers.google.com|^https?:\/\/github.com|^https?:\/\/highlightjs.org|^https?:\/\/www.google.com|^https?:\/\/greasyfork.org|^https?:\/\/chrome.google.com|^https?:\/\/www.backblaze.com|^https?:\/\/.*sdbx.jp|^https?:\/\/www.ninja.co.jp|^https?:\/\/.*plurk.com)/gi)){
-                        console.log('【Error】Refused to display \'' + this.href + '\' in a frame because it set \'X-Frame-Options\'\n針對這些確定不支援跨站顯示框架網頁的網域，已自動排除使用燈箱。');
-                        $.fancybox.close(1);
-                    }
+                    fancybox_check_before(this);
                 },
                 afterLoad: function() {
                     var iframeAll_array = document.getElementsByTagName( "iframe" );
@@ -1200,6 +1202,20 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
         }
         //未完成區域-------
 
+        function fancybox_check_before(this_mono){
+                    //----針對 X-Frame-Options 確定的網域，在這裡作手動排除。
+                    if(this_mono.href.match(/(^https?:\/\/trello.com|^https?:\/\/developers.google.com|^https?:\/\/github.com|^https?:\/\/highlightjs.org|^https?:\/\/www.google.com|^https?:\/\/greasyfork.org|^https?:\/\/chrome.google.com|^https?:\/\/www.backblaze.com|^https?:\/\/.*sdbx.jp|^https?:\/\/www.ninja.co.jp|^https?:\/\/.*plurk.com)/gi)){
+                        console.log('【Error】Refused to display \'' + this_mono.href + '\' in a frame because it set \'X-Frame-Options\'\n針對這些確定不支援跨站顯示框架網頁的網域，已自動排除使用燈箱。');
+                        $.fancybox.close(1);
+                    }
+
+                    if( !(https_way(this_mono.href)) ){
+                      console.log('https can not open ' + this_mono.href);
+                      window.open(this_mono.href,'_blank');
+                      $.fancybox.close(1);  
+                    }
+        }
+
         //2016.11.09+ 燈箱網頁顯示
         function fancybox_openurl(url){
           $.fancybox.open({
@@ -1218,11 +1234,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                 openEffect  : 'none',
                 closeEffect : 'none',
                 beforeLoad: function() {
-                    //----針對 X-Frame-Options 確定的網域，在這裡作手動排除。
-                    if(this.href.match(/(^https?:\/\/trello.com|^https?:\/\/developers.google.com|^https?:\/\/github.com|^https?:\/\/highlightjs.org|^https?:\/\/www.google.com|^https?:\/\/greasyfork.org|^https?:\/\/chrome.google.com|^https?:\/\/www.backblaze.com|^https?:\/\/.*sdbx.jp|^https?:\/\/www.ninja.co.jp|^https?:\/\/.*plurk.com)/gi)){
-                        console.log('【Error】Refused to display \'' + this.href + '\' in a frame because it set \'X-Frame-Options\'\n針對這些確定不支援跨站顯示框架網頁的網域，已自動排除使用燈箱。');
-                        $.fancybox.close(1);
-                    }
+                    fancybox_check_before(this);
                 },
                 afterLoad: function() {
                     var iframeAll_array = document.getElementsByTagName( "iframe" );
