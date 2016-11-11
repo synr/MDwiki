@@ -16,8 +16,8 @@
   - [⏰ Alerts 提示底色變色](#!test/test.gimmicks.md)
   ----
   - #🔰 官方架設教學
-  - [GitHub 教學（目前最佳方案）](http://dynalon.github.io/mdwiki/#!tutorials/github.md "Hosting on GitHub")
-  - [IIS Server 教學](http://dynalon.github.io/mdwiki/#!tutorials/iis/iis.md "Set up MDwiki on IIS Server")
+  - [GitHub 教學（目前最佳方案）](https://dynalon.github.io/mdwiki/#!tutorials/github.md "Hosting on GitHub")
+  - [IIS Server 教學](https://dynalon.github.io/mdwiki/#!tutorials/iis/iis.md "Set up MDwiki on IIS Server")
   ----
   - #我用來測試架設各空間
   - #更新優先序 = 傳統＞GitHug＞Google＞Dropbox
@@ -153,9 +153,11 @@
   - <a href="###" id='md_file_navigation' class="googleiframe" title="#" data-fancybox-type="iframe">🔧 navigation.md  👀</a>
   - <a href="###" id='md_file_config' class="googleiframe" title="#" data-fancybox-type="iframe">🔨 config.json  👀</a>
 
-[🔃  2016.11.10 更新]()
+[🔃  2016.11.12 更新]()
 
   - #更新項目
+  - [🆕 修改燈箱獨立 functiion、優化燈箱開啟驗證](# "2016.11.12")
+  - [🆕 建立燈箱獨立 functiion](# "2016.11.11")
   - [🆕 新增 其他輕量版固定字體，並在介面做收納。](# "2016.11.10")
   - [🆕 新增 手動輕量版的「Kazesawa フォント」、「源暎ラテゴ」](# "2016.11.09")
   - [🆕 新增 共鳴](# "2016.11.08")

@@ -8,7 +8,7 @@
 而且到處都可以正常觀看！電腦、手機、平板...等等各種行動裝置螢幕翻轉，都會隨時變化最方便觀看的排版。
 
 - MDwiki：主要特色是用 ``Markdown`` + Wiki 視覺感(?) 來呈現，簡單卻有章節架構的網站。
-  - 官方網站：[http://dynalon.github.io/mdwiki/](http://dynalon.github.io/mdwiki/)
+  - 官方網站：[https://dynalon.github.io/mdwiki/](http://dynalon.github.io/mdwiki/)
   - 只要一個官方設計的 ``.html`` 檔案，搭配現成或自己新創的 ``*.md`` [Markdown](http://daringfireball.net/projects/markdown/) 純文字檔案就能架站。
 檔案結構配置得宜，就能馬上有一個網站。最簡單的配置是放在同一個資料夾下。
 完全不需要其他的安裝手續，屬於輕量的一種小型 [CMS 系統（Content Management System）](https://zh.wikipedia.org/zh-tw/%E5%86%85%E5%AE%B9%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F)。
