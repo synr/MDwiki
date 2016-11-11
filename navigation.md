@@ -47,7 +47,8 @@
   - [網站 Web 線上字體操作示範](https://drive.google.com/file/d/0B3rgktr7zpP9M28zb0ptSzV4Z2M/preview)
   - [原價屋硬碟真比價書籤工具示範](https://drive.google.com/file/d/0B3rgktr7zpP9TFAxWFN3ZnVQODA/preview)
   ----
-  - <a href="javascript:$.fancybox.open({padding : 0,href:'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/14616981&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=false&amp;show_reposts=false&amp;visual=true&amp;download=true&amp;download=true&amp;start_track=10',type: 'iframe'});">★─☆｡oﾟ｡共鳴中(o｀▽´)っ ～*♪･ﾟ｡☆彡</a>
+  - #亂唱中！音量注意建議調小！
+  - <a href="javascript:fancybox_openurl('https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/14616981&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=false&amp;show_reposts=false&amp;visual=true&amp;download=true&amp;download=true&amp;start_track=10');">★─☆｡oﾟ｡共鳴中(o｀▽´)っ ～*♪･ﾟ｡☆彡</a>
 
 [gimmick:themechooser](🎨  網站配色)
 <!-- [gimmick:theme](darkly) -->
@@ -209,6 +210,10 @@
 
   - <a href="javascript:window.open('https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/14616981&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=false&amp;show_reposts=false&amp;visual=true&amp;download=true&amp;download=true&amp;start_track=10','_blank');">★─☆｡oﾟ｡共鳴中(o｀▽´)っ ～*♪･ﾟ｡☆彡</a>
 
+
+  - <a href="javascript:$.fancybox.open({padding : 0,href:'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/14616981&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=false&amp;show_reposts=false&amp;visual=true&amp;download=true&amp;download=true&amp;start_track=10',type: 'iframe'});">★─☆｡oﾟ｡共鳴中(o｀▽´)っ ～*♪･ﾟ｡☆彡</a>
+
 -->
 
 <!-- http://bookmarklets.org/maker/ -->
+

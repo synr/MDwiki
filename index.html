@@ -100,7 +100,7 @@
       src: url(font/sp_test.otf?#iefix) format('embedded-opentype'),
            url(font/sp_test.otf) format('woff2'),
            url(font/sp_test.otf) format('woff'),
-           url(font/sp_test.otf) format('truetype');font/
+           url(font/sp_test.otf) format('truetype');
     }
 
     /* 1 */
@@ -1024,10 +1024,9 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
     <script type="text/javascript" src="screenfull.js"></script>
     <script type="text/javascript">
         function max_full(iframe_id,trigger_item){
-            var elem = document.getElementById(iframe_id);
             document.getElementById(trigger_item).addEventListener('click', () => {
                 if (screenfull.enabled) {
-                    screenfull.request(elem);
+                    screenfull.request(document.getElementById(iframe_id));
                 }
             });
         }
@@ -1110,6 +1109,9 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
             if(document.getElementsByTagName(target_tag)[0] !== undefined){
                 for (var i = 0; i < document.getElementsByTagName(target_tag).length; i++) {
                     if(document.getElementsByTagName(target_tag)[i].style.fontFamily != myfont_string){
+
+
+
                         if(myfont_string=='\'微軟正黑體\',\'Microsoft JhengHei\',\'sans\-serif\''){
                             document.getElementsByTagName(target_tag)[i].style.fontFamily = myfont_string;
                         }
@@ -1203,7 +1205,44 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
           $.fancybox.open({
               padding : 0,
               href:url,
-              type: 'iframe'
+              type: 'iframe',
+
+                maxWidth    : 9999,
+                maxHeight   : 9999,
+                fitToView   : false,
+                width       : '100%',
+                height      : '100%',
+                autoSize    : true,
+                autoResize  : true,
+                closeClick  : false,
+                openEffect  : 'none',
+                closeEffect : 'none',
+                beforeLoad: function() {
+                    //----針對 X-Frame-Options 確定的網域，在這裡作手動排除。
+                    if(this.href.match(/(^https?:\/\/trello.com|^https?:\/\/developers.google.com|^https?:\/\/github.com|^https?:\/\/highlightjs.org|^https?:\/\/www.google.com|^https?:\/\/greasyfork.org|^https?:\/\/chrome.google.com|^https?:\/\/www.backblaze.com|^https?:\/\/.*sdbx.jp|^https?:\/\/www.ninja.co.jp|^https?:\/\/.*plurk.com)/gi)){
+                        console.log('【Error】Refused to display \'' + this.href + '\' in a frame because it set \'X-Frame-Options\'\n針對這些確定不支援跨站顯示框架網頁的網域，已自動排除使用燈箱。');
+                        $.fancybox.close(1);
+                    }
+                },
+                afterLoad: function() {
+                    var iframeAll_array = document.getElementsByTagName( "iframe" );
+                    var iframe_id = '';
+                    for (var i = 0; i < iframeAll_array.length; i++) {
+
+                        if(iframeAll_array[i].id.match(/^fancybox.*/i)){
+                            iframe_id = iframeAll_array[i].id.match(/^fancybox.*/i);
+                            console.log(i + ' = 燈箱 id = ' + iframeAll_array[i].id.match(/^fancybox.*/i));
+                            console.log(i + ' = 燈箱網址 = ' + iframeAll_array[i].src);
+                        }
+                    }
+                    this.title = '<a href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);">如果空白讀不到 → 請點此連結 ← 另開直連該網站。</a>　<button id="button_iframe" onclick="javascript:max_full(\'' + iframe_id + '\',\'button_iframe\');document.getElementById(\'button_iframe\').click();">→ 點我變成全螢幕 ←</button>　<a href="javascript:console.log(document.getElementsByClassName(\'fancybox-title fancybox-title-over-wrap\')[0].style.visibility=\'hidden\')">我知道了，我要關閉這礙眼的提示。</a>';
+                },
+                helpers : {
+                    title : {
+                        type : 'over'
+                    }
+                }
+
           });
         }
 
