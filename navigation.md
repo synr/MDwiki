@@ -20,12 +20,15 @@
   - [IIS Server 教學](https://dynalon.github.io/mdwiki/#!tutorials/iis/iis.md "Set up MDwiki on IIS Server")
   ----
   - #我用來測試架設各空間
-  - #更新優先序 = 傳統＞GitHug＞Google＞Dropbox
-  - [普通傳統靜態架站空間測試](http://landerso.at-ninja.jp/)
+  - #更新優先序 = 傳統 FTP ＞GitHug＞Coding
+  - [普通傳統靜態架站空間測試](http://landerso.at-ninja.jp)
+  - [無法使用資料夾的忍者新平台（需要另外改寫成無資料夾的寫法）](http://landerso.sdbx.jp)
   - [網址漂亮共編稍難保留編輯紀錄的 GitHub](https://synr.github.io/MDwiki)
+  - [仿 Github 的中國版平台 Coding.net](http://landerso.coding.me/mdwiki)
+  ----
+  - #已經沒效的空間方案遺體(X)
   - [網址醜醜上傳共編很便利的 Google](http://googledrive.com/host/0B_b1e3AASsaLN1BmcjhSZ09JM3c)
   - [新創需要付費的 Dropbox（已有的可用）](https://dl.dropboxusercontent.com/u/277393262/wiki/index.html)
-  - [無法使用資料夾的忍者新平台（需要另外改寫成無資料夾的寫法）](http://landerso.sdbx.jp/)
   ----
   - #Markdown
   - [常見的 Markdown 寫法介紹](# "待補")
