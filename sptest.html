@@ -1,0 +1,55 @@
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+$(function() {
+    var obj_n;
+    var start_time;
+    var picLoad = function() {
+        var end_time = new Date().getTime(); // 結束時間
+        var pass_time = (end_time - start_time) + ' 毫秒';
+        $('.speed').eq(obj_n).html(pass_time);
+        nextTest();
+    };
+    var picError = function() {
+        $('.speed').eq(obj_n).html("無法連結");
+        nextTest();
+    };
+    var nextTest = function() {
+        ++obj_n;
+        $('.speed').eq(obj_n).html('測速中...');
+        setTimeout(function() {
+            testSpeed();
+        }, 500);
+    };
+
+    var testSpeed = function() {
+        var obj = $('.speed').eq(obj_n);
+        if (obj.length != 1) {
+            return false;
+        }
+        obj.html('測速中...');
+        // 建立 img 元素
+        var pic = document.createElement('img');
+        pic.onload = picLoad;
+        pic.onerror = picError;
+        start_time = new Date().getTime(); // 開始時間
+        pic.src = obj.data('url').split('/').slice(0, 3).join('/') + '/speed.gif' + "?" + (Math.random() + '').replace('0.', '') + "s" + obj_n;
+    };
+    $(document).on('click', '#btnTest', function() {
+        obj_n = 0;
+        testSpeed();
+    });
+});
+</script>
+</head>
+<body>
+<!-- http://xyz.cinc.biz/2014/08/javascript-connection-speed-test.html -->
+<div><button id="btnTest">測速</button></div><br />
+<br />
+第1個測速網站：http://aa.example.com<br />
+<div class="speed" data-url="http://aa.example.com"></div><br />
+<br />
+第2個測速網站：http://bb.example.com<br />
+<div class="speed" data-url="http://bb.example.com"></div><br />
+</body></html>
