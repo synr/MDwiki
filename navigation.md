@@ -87,7 +87,7 @@
   - #華康（收費制，免費試用不可替換三套字體～ 2016.11.27 ）
   - <a href="javascript:font_set('\'DFT\_HZP3\',arial');jsgendfo();" title="根據頁面的字數動態調整字體檔。所以檔案大小不佔太多傳輸量。除非那頁寫太多不重複的字XD">華康翩翩體 W3 ★</a>
   - <a href="javascript:font_set('\'DFT\_TF3\',arial');jsgendfo();" title="根據頁面的字數動態調整字體檔。所以檔案大小不佔太多傳輸量。除非那頁寫太多不重複的字XD">華康采風體 W3（這有點小）</a>
-  - #Just Font（免費試用可替換兩套字體維持一個月，只支援 http 協定）
+  - #Just Font（免費試用可替換兩套字體～2016-11-22，只支援 http 協定）
   - <a href="javascript:font_set('\'cwtexqhei\'');_jf.flush();" title="根據頁面的字數動態調整字體檔。所以檔案大小不佔太多傳輸量。除非那頁寫太多不重複的字XD">cwTeX 黑體</a>
   - <a href="javascript:font_set('\'sourcehansans\-tc\'');_jf.flush();" title="根據頁面的字數動態調整字體檔。所以檔案大小不佔太多傳輸量。除非那頁寫太多不重複的字XD">思源黑體 Extralight</a>
   ----
@@ -156,9 +156,10 @@
   - <a href="###" id='md_file_navigation' class="googleiframe" title="#" data-fancybox-type="iframe">🔧 navigation.md  👀</a>
   - <a href="###" id='md_file_config' class="googleiframe" title="#" data-fancybox-type="iframe">🔨 config.json  👀</a>
 
-[🔃  2016.11.12 更新]()
+[🔃  2016.11.14 更新]()
 
   - #更新項目
+  - [🆕 實驗性增加 coding.me、Github 調整為主要、拿掉忍者觀察](# "2016.11.14")
   - [🆕 修改燈箱獨立 functiion、優化燈箱開啟驗證](# "2016.11.12 本來只驗證建立，現在也驗證開啟。")
   - [🆕 建立燈箱獨立 functiion](# "2016.11.11")
   - [🆕 新增 其他輕量版固定字體，並在介面做收納。](# "2016.11.10")
