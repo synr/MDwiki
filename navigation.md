@@ -23,7 +23,7 @@
   - #更新優先序 = 傳統 FTP ＞GitHug＞Coding
   - [普通傳統靜態架站空間測試](http://landerso.at-ninja.jp)
   - [無法使用資料夾的忍者新平台（需要另外改寫成無資料夾的寫法）](http://landerso.sdbx.jp)
-  - [網址漂亮共編稍難保留編輯紀錄的 GitHub](https://synr.github.io/MDwiki)
+  - [網址漂亮共編稍難保留編輯紀錄的 GitHub](https://synr.github.io)
   - [仿 Github 的中國版平台 Coding.net](http://landerso.coding.me/mdwiki)
   ----
   - #已經沒效的空間方案遺體(X)
