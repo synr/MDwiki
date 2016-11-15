@@ -514,21 +514,59 @@
     /*http://www.css88.com/book/css/rules/@keyframes.htm*/
     /*https://coolors.co/3688c3-3474b2-5d53b8-3b76b0-3688c3*/
 
-/*    body{
-      animation: grad 30s ease 2s infinite;
+    body{
+/*      background: linear-gradient(180deg, #000000, #0f1012, #1b1e20, #272b30, #191b1e, #0c161e);
+      background-size: 1200% 1200%;
+      -webkit-animation: AnimationName 30s ease 2s infinite;
+      -moz-animation: AnimationName 30s ease 2s infinite;
+      -o-animation: AnimationName 30s ease 2s infinite;
+      animation: AnimationName 30s ease 2s infinite;*/
+
+/*      -webkit-animation: changebackcolor 30s ease 2s infinite;
+      -moz-animation: changebackcolor 30s ease 2s infinite;
+      -o-animation: changebackcolor 30s ease 2s infinite;
+      animation: changebackcolor 30s ease 2s infinite;*/
+      animation-direction:alternate;
     }
 
+/*
     @keyframes grad { 0% { background-color: #050D12; }
       26% { background-color: #132B41; }
       57% { background-color: #1A1733; }
       74% { background-color: #162B40; }
-      100% { background-color: #050D12; } }*/
+      100% { background-color: #050D12; } }
+*/
 
-/*    @keyframes grad { 0% { background-color: #3688c3; }
-      26% { background-color: #3474B2; }
-      57% { background-color: #5d53b8; }
-      74% { background-color: #3B76B0; }
-      100% { background-color: #3688c3; } }*/
+/*   slate
+   https://coolors.co/272b30-262a30-202328-24282d-272b30*/
+/*   @keyframes changebackcolor { 0% { background-color: #272b30; }
+      26% { background-color: #262A30; }
+      57% { background-color: #202328; }
+      74% { background-color: #24282D; }
+      100% { background-color: #272b30; } }    */
+
+
+/*https://www.gradient-animator.com/*/
+/*      @-webkit-keyframes AnimationName {
+          0%{background-position:0% 97%}
+          50%{background-position:100% 4%}
+          100%{background-position:0% 97%}
+      }
+      @-moz-keyframes AnimationName {
+          0%{background-position:0% 97%}
+          50%{background-position:100% 4%}
+          100%{background-position:0% 97%}
+      }
+      @-o-keyframes AnimationName {
+          0%{background-position:0% 97%}
+          50%{background-position:100% 4%}
+          100%{background-position:0% 97%}
+      }
+      @keyframes AnimationName { 
+          0%{background-position:0% 97%}
+          50%{background-position:100% 4%}
+          100%{background-position:0% 97%}
+      }*/
 
 
     div img {
@@ -773,6 +811,8 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
         if (localStorage['font'] === undefined){
             localStorage['font'] = '';
         }
+        localStorage['backcolorchange'] = '';
+
         var change_font = localStorage['font'];
 
         //2016.11.12+ https 規則單獨抽出來做 function 重複使用
@@ -903,62 +943,102 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
             if(bootstrap_theme()!=''){
                 switch(bootstrap_theme()) {
                     case 'bootstrap':
+                        //changebackcolor('https://coolors.co/ffffff-fcfcfc-f9f9f9-fcfcfc-ffffff');
                         break;
                     case 'amelia':
+                        css_add_inline("li.dropdown-header{color:#7a8288 !important;};");
                         set_theme_color('#8e1821');
+                        //changebackcolor('https://coolors.co/108a93-0e777f-0c696f-0f868e-108a93');
+                        changebackcolor('https://coolors.co/108a93-a50d59-0c696f-510d0a-108a93');
+                        //changebackcolor('https://coolors.co/app/042f8a-0cabf8-d6023a-f27900-ffbb00');
                         break;
                     case 'cerulean':
                         set_theme_color('#1993d9');
+                        css_add_inline("#md-content{text-shadow: 0 0 0.001em !important;}");
+                        changebackcolor('https://coolors.co/ffffff-f1f8fc-d1e9f7-e2f2fc-ffffff');
                         break; 
                     case 'cosmo':
                         set_theme_color('#111');
+                        changebackcolor('https://coolors.co/ffffff-d3f57d-f4f07c-dbf694-ffffff');
                         break;
                     case 'cyborg':
                         set_theme_color('#000');
+                        css_add_inline("#md-content{text-shadow: 0 0 0.001em !important;}");
+                        changebackcolor('https://coolors.co/060606-062535-062637-041a26-060606');
                         break;
                     case 'flatly':
                         set_theme_color('#1f2c39');
+                        css_add_inline("#md-content{text-shadow: 0 0 0.001em !important;}");
+                        changebackcolor('https://coolors.co/ffffff-dcf9ef-f7f3cf-d7fff1-ffffff');
+                        //changebackcolor('https://coolors.co/ffffff-d0f7e9-f7f3cf-c9ffec-ffffff');
+                        //changebackcolor('https://coolors.co/ffffff-d0f7e9-f7f3cf-b9f993-ffffff');
+                        //changebackcolor('https://coolors.co/78fbc7-b1dbf7-a9f3e5-f9bc59-d8ffed');
                         break;
                     case 'journal':
                         set_theme_color('#ededed');
+                        css_add_inline("#md-content{text-shadow: 0 0 0.001em !important;}");
+                        changebackcolor('https://coolors.co/ffffff-ffdea5-f0ba97-ffd98e-ffffff');
                         break;
                     case 'readable':
                         set_theme_color('#e7e7e7');
+                        css_add_inline("#md-content{text-shadow: 0 0 0.001em !important;}");
+                        changebackcolor('https://coolors.co/f9f9f9-cfe1f1-bbd5ef-c8ddef-f9f9f9');
                         break; 
                     case 'simplex':
                         set_theme_color('#ededed');
+                        css_add_inline("#md-content{text-shadow: 0 0 0.001em !important;}");
+                        changebackcolor('https://coolors.co/ffffff-ffdec7-ffc59d-ffacbc-ffffff'); 
+                        //changebackcolor('https://coolors.co/f7f7f7-d0f7e9-f7f3cf-dbf3f9-f7f7f7'); //1
                         break; 
                     case 'slate':
                         set_theme_color('#2a2d31');
+                        //changebackcolor('https://coolors.co/272b30-262a30-202328-24282d-272b30');
+                        changebackcolor('https://coolors.co/272b30-0a1421-050b33-1e1f28-272b30');
                         break;
                     case 'spacelab':
                         set_theme_color('#dcdcdc');
+                        css_add_inline("#md-content{text-shadow: 0 0 0.001em !important;}");
+                        changebackcolor('https://coolors.co/ffffff-f5f5f5-eaf5ff-f8f7ff-ffffff');
+                        //changebackcolor('https://coolors.co/ffffff-c0dfe3-b3ede0-e5f6f4-ffffff'); //2
                         break;
                     case 'united':
                         set_theme_color('#bc3d11');
+                        css_add_inline("#md-content{text-shadow: 0 0 0.001em !important;}");
                         break;
                     case 'yeti':
                         set_theme_color('#222');
+                        css_add_inline("#md-content{text-shadow: 0 0 0.001em !important;}");
                         break;
                     case 'darkly':
                         set_theme_color('#375a7f');
+                        changebackcolor('https://coolors.co/222222-000533-01143a-17002b-222222');
                         break;
                     case 'lumen':
                         set_theme_color('#f8f8f8');
+                        css_add_inline("#md-content{text-shadow: 0 0 0.001em !important;}");
                         break;
                     case 'Paper':
                         set_theme_color('#FFF');
+                        css_add_inline("#md-content{text-shadow: 0 0 0.001em !important;}");
                         break;
                     case 'sandstone':
                         set_theme_color('#3e3f3a');
+                        css_add_inline("#md-content{text-shadow: 0 0 0.001em !important;}");
                         break;
                     case 'superhero':
                         set_theme_color('#2b3e50');
+                        changebackcolor('https://coolors.co/2b3e50-192a3a-142536-172838-2b3e50');
+                        //changebackcolor('https://coolors.co/2b3e50-22394f-1e3a54-1f364c-2b3e50'); //1
+                        //changebackcolor('https://coolors.co/2b3e50-192a3a-142536-111e2a-2b3e50');
                         break;
                     default:
                         set_theme_color('#e6e6e6');
+                        changebackcolor('https://coolors.co/ffffff-fcfcfc-f9f9f9-fcfcfc-ffffff');
+                        //changebackcolor('https://coolors.co/3688c3-3474b2-5d53b8-3b76b0-3688c3');  //始
                         break;
                 }
+            }else{
+              css_add_inline("#md-content{text-shadow: 0 0 0.001em !important;}");
             }
             //2016.10.22+ font
             // var myfont = '\'微軟正黑體\',\'Microsoft JhengHei\',\'sans\-serif\'';//'\"メイリオ\", Meiryo, \"ＭＳ Ｐゴシック\", \"MS PGothic\", sans-serif';
@@ -1252,10 +1332,13 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
     <!-- Share 結束 -->
 <!-- 2016.10.20 增加判斷瀏覽者裝置 function 開始 -->
     <script type="text/javascript">
+        //mobile
         // http://blog.webgolds.com/view/160
         function is_mobile(){
             return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
         }
+
+        //color
         //2016.10.21 判別目前的 bootstrap 佈景主題（http://bootswatch.com/）
         function bootstrap_theme(){
             var get_css = '';
@@ -1295,14 +1378,73 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                         x[i].content = set_color;
                     }
                 }
-                console.log(bootstrap_theme() + '：' + get_theme_color());
+                console.log('目前配色佈景主題 = ' + bootstrap_theme() + '\n手機板 Chrome 上方網址列配色：' + get_theme_color());
             }
         }
 
+        //2016.11.15+
+        function css_add_inline( css_code ) {
+          var div = document.createElement( "div" );
+          div.innerHTML = "<p>x</p><style>" + css_code + "</style>";
+          document.body.appendChild(div.childNodes[1]);
+        }
+
+        function changebackcolor(url='http',color1="red",color2="orange",color3="green",color4="blown",color5="black"){
+
+            //https://coolors.co/03384d-02464f-003e37-01362a-2c2d23
+            if(localStorage['backcolorchange']!=url){
+
+              if(url.match(/^https?/gi)){
+                var regex = /^https?:\/\/coolors\.co\/(.{6})\-(.{6})\-(.{6})\-(.{6})\-(.{6}).*$|^https?:\/\/coolors\.co\/app\/(.{6})\-(.{6})\-(.{6})\-(.{6})\-(.{6}).*$/gi;
+                // /^https?:\/\/coolors\.co\/.{0,4}(.{6})\-(.{6})\-(.{6})\-(.{6})\-(.{6}).*$/gi
+                //if(url.match(/^https?:\/\/coolors\.co\/(.{6})\-(.{6})\-(.{6})\-(.{6})\-(.{6})/gi)){
+                if(url.match(regex)){
+                  console.log('使用網址套色 = ' + url);
+                  localStorage['backcolorchange'] = url;
+                  //color5 = '#' + url.replace(/^https?:\/\/coolors\.co\/(.{6})\-(.{6})\-(.{6})\-(.{6})\-(.{6})/gi,'$5');
+                  color5 = '#' + url.replace(regex,'$5') + url.replace(regex,'$10') ;
+                  color4 = '#' + url.replace(regex,'$4') + url.replace(regex,'$9') ;
+                  color3 = '#' + url.replace(regex,'$3') + url.replace(regex,'$8') ;
+                  color2 = '#' + url.replace(regex,'$2') + url.replace(regex,'$7') ;
+                  color1 = '#' + url.replace(regex,'$1') + url.replace(regex,'$6') ;
+                }else{
+                  color1 = "red";
+                  color2 = "orange";
+                  color3 = "green";
+                  color4 = "blown";
+                  color5 = "black";
+                }
+              }else{
+                color5 = color4;
+                color4 = color3;
+                color3 = color2;
+                color2 = color1;
+                color1 = url;
+              }
+
+              document.getElementsByTagName('body')[0].style.WebkitAnimation = "changebackcolor 30s ease 2s infinite";
+              document.getElementsByTagName('body')[0].style.animation = "changebackcolor 30s ease 2s infinite";
+
+              //css_add_inline( "@keyframes changebackcolor { 0% { background-color: #FFF; } 26% { background-color: #FFF; } 57% { background-color: #FFF; } 74% { background-color: #FFF; }  100% { background-color: #FFF; } } " );          
+              css_add_inline( "@keyframes changebackcolor { 0% { background-color: " + color1 + "; } 26% { background-color: " + color2 + "; } 57% { background-color: " + color3 + "; } 74% { background-color: " + color4 +  "; }  100% { background-color: " + color5 + "; } };" );
+              css_add_inline(".panel,.list-group-item {border: 1px solid rgba(97%, 97%, 97%, 0.1) !important;background-color: rgba(97%, 97%, 97%, 0.1) !important;border-radius: 6px !important;-moz-border-radius: 6px !important;-webkit-border-radius: 6px !important;};");
+
+              console.log('color1 = ' + color1);
+              console.log('color2 = ' + color2);
+              console.log('color3 = ' + color3);
+              console.log('color4 = ' + color4);
+              console.log('color5 = ' + color5);
+            }
+        }
+
+        //font
         function tag_font_set(target_tag,myfont_string){
             if(document.getElementsByTagName(target_tag)[0] !== undefined){
                 for (var i = 0; i < document.getElementsByTagName(target_tag).length; i++) {
                     if(document.getElementsByTagName(target_tag)[i].style.fontFamily != myfont_string){
+
+
+
 
                         if(myfont_string=='\'微軟正黑體\',\'Microsoft JhengHei\',\'sans\-serif\''){
                             document.getElementsByTagName(target_tag)[i].style.fontFamily = myfont_string;
@@ -1354,7 +1496,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
             }
         }
 
-        //未完成區域-------
+        //未完成區域-------自製代碼抽換
         function wiki_link(target_tag){
             if(document.getElementsByTagName(target_tag)[0] !== undefined){
                 for (var i = 0; i < document.getElementsByTagName(target_tag).length; i++) {
@@ -1391,7 +1533,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
             }
         }
         //未完成區域-------
-
+        //燈箱驗證用 function，排除事項統一加在這裡。
         function fancybox_check_before(this_mono){
                     //----針對 X-Frame-Options 確定的網域，在這裡作手動排除。
                     if(this_mono.href.match(/(^https?:\/\/trello.com|^https?:\/\/developers.google.com|^https?:\/\/github.com|^https?:\/\/highlightjs.org|^https?:\/\/www.google.com|^https?:\/\/greasyfork.org|^https?:\/\/chrome.google.com|^https?:\/\/www.backblaze.com|^https?:\/\/.*sdbx.jp|^https?:\/\/www.ninja.co.jp|^https?:\/\/.*plurk.com)/gi)){
@@ -1407,7 +1549,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                     }
         }
 
-        //2016.11.09+ 燈箱網頁顯示
+        //2016.11.09+ 燈箱網頁顯示（仿前面自動型，這是手動獨立命令型）
         function fancybox_openurl(url){
           $.fancybox.open({
               padding : 0,
@@ -1496,21 +1638,21 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
     _jf.push(['_eventPreload',function(){
 
        //載入前觸發事件
-       console.log('JF 載入前');
+       console.log('JustFont 載入前');
 
     }]);
 
     _jf.push(['_eventActived',function(){
 
        //成功觸發事件
-       console.log('JF 載入成功');
+       console.log('JustFont 載入成功');
 
     }]);
 
     _jf.push(['_eventInactived',function(){
 
        //失敗觸發事件
-       console.log('JF 載入失敗');
+       console.log('JustFont 載入失敗');
 
     }])
 
