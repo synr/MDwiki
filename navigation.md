@@ -57,7 +57,8 @@
 <!-- [gimmick:theme](darkly) -->
 <!-- [gimmick:theme](flatly) -->
 <!-- cyborg -->
-[gimmick:theme](slate)
+[gimmick:theme](amelia)
+<!-- [gimmick:theme](slate) -->
 <!-- cosmo -->
 <!-- [gimmick:theme](cerulean) -->
 
@@ -156,9 +157,15 @@
   - <a href="###" id='md_file_navigation' class="googleiframe" title="#" data-fancybox-type="iframe">🔧 navigation.md  👀</a>
   - <a href="###" id='md_file_config' class="googleiframe" title="#" data-fancybox-type="iframe">🔨 config.json  👀</a>
 
-[🔃  2016.11.14 更新]()
+[交流]()
+
+  - #聯絡我
+  - <a href="javascript:fancybox_openurl('https://www.powr.io/plugins/contact-form/view?unique_label=cff23c83_1479222775&external_type=webs');">給我意見</a>
+
+[🔃  2016.11.16 更新]()
 
   - #更新項目
+  - [🆕 測試性增加交流/給我意見](# "2016.11.16")
   - [🆕 增加 部分配色背景漸變](# "2016.11.15")
   - [🆕 實驗性增加 coding.me、Github 調整為主要、拿掉忍者觀察](# "2016.11.14")
   - [🆕 修改燈箱獨立 functiion、優化燈箱開啟驗證](# "2016.11.12 本來只驗證建立，現在也驗證開啟。")
@@ -170,9 +177,9 @@
   - [🆕 新增 線上網頁字體：有華康(動態變化)、Google 思源](# "2016.10.30")
   - [🆕 增加 字體變化測試 function](# "2016.10.22 完成待補寫，Icon font 暫時不考慮")
   - [🆕 增加 手機板 Chrome 變色處理、繁簡轉換修正、完成 Line](# "2016.10.21 完成待補寫")
-  - [🆕 增加 OneNote、Flipboard，修正噗浪、Gmail 手機BUG。](# "2016.10.20 完成待補寫")
-  - [🆕 增加「語言/漢字轉換」：可不換頁轉換漢字外觀](# "2016.10.19 完成待補寫")
-  - [🆕 \[內/外部都調整\]完成「Trello 格式化儲存卡片功能」並新增儲存分享按鈕](# "2016.10.18 完成待補寫")
+  - [增加 OneNote、Flipboard，修正噗浪、Gmail 手機BUG。](# "2016.10.20 完成待補寫")
+  - [增加「語言/漢字轉換」：可不換頁轉換漢字外觀](# "2016.10.19 完成待補寫")
+  - [\[內/外部都調整\]完成「Trello 格式化儲存卡片功能」並新增儲存分享按鈕](# "2016.10.18 完成待補寫")
   - [\[外部調整\] 加入外的「fancybox」燈箱](#!update.md#[2016.08.08]_加入外的「fancybox」燈箱)
   - [更新 MDwiki 重點架構檔案 頁面](#!update.md#[2016.08.05]_更新_MDwiki_重點架構檔案)
   - [新增 md 檔案竟然也能直接使用 HTML 標籤！？頁面](#!update.md#[2016.08.05]_增加_md_檔案竟然也能直接使用_HTML_標籤！？頁面)
@@ -182,6 +189,7 @@
   - [\[外部調整\] 解決超連結不會另開新視窗的問題](#!update.md#[2016.08.03]_解決超連結不會另開新視窗的問題)
   - [\[外部調整\] 解決 Google Drive 空間網址超亂會連錯頁問題](#!update.md#[2016.08.03]_解決超連結不會另開新視窗的問題)
   - <a id='close_ni' href="javascript:$(document.getElementsByClassName('tdftad')).hide();$(document.getElementById('ninja')).hide();$(document.getElementById('close_ni')).hide();document.getElementById('justfont\-badge').id='bye';$(document.getElementById('bye')).hide();$(document.getElementById('justfont\-badge')).hide();">沙忍</a>
+
 
 <!-- [[img(https://xa.shinobi.jp/bin/ll?181939900)]][https://xa.shinobi.jp/bin/gg?181939900 アクセス解析] -->
 

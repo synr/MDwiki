@@ -135,6 +135,9 @@ Google Drive 已經在 2016.08.31 ~~偷偷摸摸~~取消這功能。</font>
 ####提供參考：
 - 這份頁面寫的 ``markdown`` 原始文件內容，可下載此連結查看：[→ 點我點我 ←](http://landerso.at-ninja.jp/index.md)
 - [本站使用 0.6.2 版作測試](https://github.com/Dynalon/mdwiki/releases "2014.05.23 發布的版本到現在都沒有更新\n可能不會更新了。")
+
+<!-- <script src="//www.powr.io/powr.js" external-type="html"></script> 
+ <div class="powr-contact-form" id="cff23c83_1479222775"></div> -->
  
 <!-- 
 
