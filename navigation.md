@@ -57,8 +57,8 @@
 <!-- [gimmick:theme](darkly) -->
 <!-- [gimmick:theme](flatly) -->
 <!-- cyborg -->
-[gimmick:theme](amelia)
-<!-- [gimmick:theme](slate) -->
+<!-- [gimmick:theme](amelia) -->
+[gimmick:theme](slate)
 <!-- cosmo -->
 <!-- [gimmick:theme](cerulean) -->
 
