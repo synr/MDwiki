@@ -160,7 +160,8 @@
 [交流]()
 
   - #聯絡我
-  - <a href="javascript:fancybox_openurl('https://www.powr.io/plugins/contact-form/view?unique_label=cff23c83_1479222775&external_type=webs');">給我意見</a>
+  - <a href="javascript:fancybox_openurl('https://docs.google.com/forms/d/e/1FAIpQLSdERtSvQfS_6Oul8hCnxKzcIvceM5f8ZN75QirMZh1VvukmkQ/viewform?embedded=true');">給我意見（Google）</a>
+  - <a href="javascript:fancybox_openurl('https://www.powr.io/plugins/contact-form/view?unique_label=cff23c83_1479222775&external_type=webs');">給我意見（powr.io）</a>
 
 [🔃  2016.11.16 更新]()
 
