@@ -940,6 +940,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
             */
             //2016.10.21+ 根據佈景主題改變網址列顏色
             //<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.7/darkly/bootstrap.min.css">
+            css_add_inline(".img-thumbnail {border: 0px solid !important;background-color:rgba(97%, 97%, 97%, 0.0) !important;};");
             if(bootstrap_theme()!=''){
                 switch(bootstrap_theme()) {
                     case 'bootstrap':
@@ -1155,19 +1156,21 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
 
 <!-- Lightbox fancybox 燈箱開始-->
     <!-- Add mousewheel plugin (this is optional) -->
-    <script type="text/javascript" src="fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+    <!-- async https://developers.google.com/speed/docs/insights/BlockingJS -->
+    <script defer  type="text/javascript" src="fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
 
     <!-- Add fancyBox -->
     <link rel="stylesheet" href="fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
-    <script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+    <script defer  type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
     <!-- Optionally add helpers - button, thumbnail and/or media -->
     <link rel="stylesheet" href="fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
-    <script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
-    <script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+    <script defer  type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+    <script defer  type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
 
     <link rel="stylesheet" href="fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
-    <script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+    <script defer type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+    <!-- http://blog.xuite.net/vexed/tech/61308318-script+tag+%E5%B1%AC%E6%80%A7+async+defer+%E5%B7%AE%E5%88%A5 -->
 
     <script type="text/javascript">
         $(document).ready(function() {
@@ -1298,7 +1301,8 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
 <!-- Lightbox fancybox 燈箱結束-->
 <!-- 全螢幕功能_開始 -->
     <!-- https://github.com/sindresorhus/screenfull.js -->
-    <script type="text/javascript" src="screenfull.js"></script>
+    <!-- <script async type="text/javascript" src="screenfull.js"></script> -->
+    <script defer type="text/javascript" src="screenfull.js"></script>
     <script type="text/javascript">
         function max_full(iframe_id,trigger_item){
             document.getElementById(trigger_item).addEventListener('click', () => {
@@ -1629,10 +1633,10 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
     <!-- 2016.10.28+ font test by https://dfo.dynacw.com.tw/Javascript_Module/JSFontPreview.aspx?t=JS_Gen --> <!-- KEY point:jsgendfo() -->
     <!-- <script>FontJSON={User:"5305" ,DomainID:"freeGXSDOLNEOKGXS", Font:["DFT_HZP5"]}</script>  -->
     <script>FontJSON={User:"5305" ,DomainID:"freeGXSDOLNEOKGXS", Font:["DFT_TF3","DFT_HZP3","DFT_HZP5"]}</script>
-    <script src='https://dfo.dynacw.com.tw/DynaJSFont/DynaFont.js'></script>
+    <script async src='https://dfo.dynacw.com.tw/DynaJSFont/DynaFont.js'></script>
     
     <!-- JustFont -->
-    <script src="//s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-45679.js"></script>
+    <script async src="//s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-45679.js"></script>
 
     <script type="text/javascript">
     // https://www.justfont.com/cheats

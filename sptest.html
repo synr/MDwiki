@@ -34,7 +34,7 @@ $(function() {
         pic.onload = picLoad;
         pic.onerror = picError;
         start_time = new Date().getTime(); // 開始時間
-        pic.src = obj.data('url').split('/').slice(0, 3).join('/') + '/speed.gif' + "?" + (Math.random() + '').replace('0.', '') + "s" + obj_n;
+        pic.src = 'http://www.kui.com.tw/data/product/18526.jpeg'; //obj.data('url').split('/').slice(0, 3).join('/') + '/speed.gif' + "?" + (Math.random() + '').replace('0.', '') + "s" + obj_n;
     };
     $(document).on('click', '#btnTest', function() {
         obj_n = 0;
@@ -48,7 +48,7 @@ $(function() {
 <div><button id="btnTest">測速</button></div><br />
 <br />
 第1個測速網站：http://www.google.com<br />
-<div class="speed" data-url="http://www.google.com"></div><br />
+<div class="speed" data-url="http://fonts.gstatic.com/ea/cwtexhei/v3/cwTeXHei-zhonly.ttf"></div><br />
 <br />
 第2個測速網站：http://mail.live.jp<br />
 <div class="speed" data-url="http://mail.live.jp"></div><br />
