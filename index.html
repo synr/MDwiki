@@ -1254,7 +1254,11 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                     }
 
                     //this.title = '<a href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);">→ ' + this.title + ' ←</a>';
-                    this.title = '<a href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);fancybox_openurl(\'https://docs.google.com/forms/d/e/1FAIpQLSdJt1yMfFcPzJU5zWIISvuD_hycmW4kZH7HsjoP_ML-ZhxeFw/viewform?embedded=true&entry.751272824=' + encodeURIComponent(this.href) + '&entry.779956480=%E5%9C%A8%E7%B6%B2%E7%AB%99%E5%85%A7%E9%BB%9E%E9%80%A3%E7%B5%90%EF%BC%8C%E7%B5%90%E6%9E%9C%E8%B7%B3%E5%87%BA%E4%B8%80%E5%A4%A7%E5%A1%8A%E7%99%BD%E7%99%BD%E7%9A%84%E5%B0%8F%E7%AA%97%EF%BC%8C%E7%AD%89%E5%BE%88%E4%B9%85%E9%83%BD%E6%B2%92%E4%BB%BB%E4%BD%95%E6%9D%B1%E8%A5%BF%E5%87%BA%E7%8F%BE%E3%80%82%EF%BC%88%E7%87%88%E7%AE%B1%E9%96%8B%E5%95%9F%E5%A4%B1%E6%95%97%EF%BC%89&entry.1366325438\');">如果空白讀不到 → 請點此連結 ← 另開直連該網站。</a>　<button id="button_iframe" onclick="javascript:max_full(\'' + iframe_id + '\',\'button_iframe\');document.getElementById(\'button_iframe\').click();">→ 點我變成全螢幕 ←</button>　<a href="javascript:console.log(document.getElementsByClassName(\'fancybox-title fancybox-title-over-wrap\')[0].style.visibility=\'hidden\')">我知道了，我要關閉這礙眼的提示。</a>';
+                    //this.title = '<a href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);fancybox_openurl(\'https://docs.google.com/forms/d/e/1FAIpQLSdJt1yMfFcPzJU5zWIISvuD_hycmW4kZH7HsjoP_ML-ZhxeFw/viewform?embedded=true&entry.751272824=' + encodeURIComponent(this.href) + '&entry.779956480=%E5%9C%A8%E7%B6%B2%E7%AB%99%E5%85%A7%E9%BB%9E%E9%80%A3%E7%B5%90%EF%BC%8C%E7%B5%90%E6%9E%9C%E8%B7%B3%E5%87%BA%E4%B8%80%E5%A4%A7%E5%A1%8A%E7%99%BD%E7%99%BD%E7%9A%84%E5%B0%8F%E7%AA%97%EF%BC%8C%E7%AD%89%E5%BE%88%E4%B9%85%E9%83%BD%E6%B2%92%E4%BB%BB%E4%BD%95%E6%9D%B1%E8%A5%BF%E5%87%BA%E7%8F%BE%E3%80%82%EF%BC%88%E7%87%88%E7%AE%B1%E9%96%8B%E5%95%9F%E5%A4%B1%E6%95%97%EF%BC%89&entry.1366325438\');">如果空白讀不到 → 請點此連結 ← 另開直連該網站。</a>　<button id="button_iframe" onclick="javascript:max_full(\'' + iframe_id + '\',\'button_iframe\');document.getElementById(\'button_iframe\').click();">→ 點我變成全螢幕 ←</button>　<a href="javascript:console.log(document.getElementsByClassName(\'fancybox-title fancybox-title-over-wrap\')[0].style.visibility=\'hidden\')">我知道了，我要關閉這礙眼的提示。</a>';
+                    //OK google 表單
+                    //this.title = '<a href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);fancybox_openurl(\'https://docs.google.com/forms/d/e/1FAIpQLSdJt1yMfFcPzJU5zWIISvuD_hycmW4kZH7HsjoP_ML-ZhxeFw/viewform?embedded=true&entry.751272824=' + encodeURIComponent(this.href) + '&entry.779956480=%E5%9C%A8%E7%B6%B2%E7%AB%99%E5%85%A7%E9%BB%9E%E9%80%A3%E7%B5%90%EF%BC%8C%E7%B5%90%E6%9E%9C%E8%B7%B3%E5%87%BA%E4%B8%80%E5%A4%A7%E5%A1%8A%E7%99%BD%E7%99%BD%E7%9A%84%E5%B0%8F%E7%AA%97%EF%BC%8C%E7%AD%89%E5%BE%88%E4%B9%85%E9%83%BD%E6%B2%92%E4%BB%BB%E4%BD%95%E6%9D%B1%E8%A5%BF%E5%87%BA%E7%8F%BE%E3%80%82%EF%BC%88%E7%87%88%E7%AE%B1%E9%96%8B%E5%95%9F%E5%A4%B1%E6%95%97%EF%BC%89&entry.1366325438\');">如果空白讀不到 → 請點此連結 ← 另開直連該網站。</a>　<button id="button_iframe" onclick="javascript:max_full(\'' + iframe_id + '\',\'button_iframe\');document.getElementById(\'button_iframe\').click();">→ 點我變成全螢幕 ←</button>　<a href="javascript:console.log(document.getElementsByClassName(\'fancybox-title fancybox-title-over-wrap\')[0].style.visibility=\'hidden\')">我知道了，我要關閉這礙眼的提示。</a>';
+                    //2016.11.17+ 自動收集資料到 JANDI（以後也可以改成同步傳給 Trello 專門用來讓機器人控制的帳號）
+                    this.title = '<a href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);report_error(this);fancybox_openurl(\'https://docs.google.com/forms/d/e/1FAIpQLSdJt1yMfFcPzJU5zWIISvuD_hycmW4kZH7HsjoP_ML-ZhxeFw/viewform?embedded=true&entry.751272824=' + encodeURIComponent(this.href) + '&entry.779956480=%E5%9C%A8%E7%B6%B2%E7%AB%99%E5%85%A7%E9%BB%9E%E9%80%A3%E7%B5%90%EF%BC%8C%E7%B5%90%E6%9E%9C%E8%B7%B3%E5%87%BA%E4%B8%80%E5%A4%A7%E5%A1%8A%E7%99%BD%E7%99%BD%E7%9A%84%E5%B0%8F%E7%AA%97%EF%BC%8C%E7%AD%89%E5%BE%88%E4%B9%85%E9%83%BD%E6%B2%92%E4%BB%BB%E4%BD%95%E6%9D%B1%E8%A5%BF%E5%87%BA%E7%8F%BE%E3%80%82%EF%BC%88%E7%87%88%E7%AE%B1%E9%96%8B%E5%95%9F%E5%A4%B1%E6%95%97%EF%BC%89&entry.1366325438\');">如果空白讀不到 → 請點此連結 ← 另開直連該網站。</a>　<button id="button_iframe" onclick="javascript:max_full(\'' + iframe_id + '\',\'button_iframe\');document.getElementById(\'button_iframe\').click();">→ 點我變成全螢幕 ←</button>　<a href="javascript:console.log(document.getElementsByClassName(\'fancybox-title fancybox-title-over-wrap\')[0].style.visibility=\'hidden\')">我知道了，我要關閉這礙眼的提示。</a>';
                     // function css_add_inline( css_code ) {
                     //     var div = document.createElement( "div" );
                     //     div.innerHTML = "<p>x</p><style>" + css_code + "</style>";
@@ -1589,7 +1593,10 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                     }
                     //this.title = '<a href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);fancybox_openurl(\'https://docs.google.com/forms/d/e/1FAIpQLSdERtSvQfS_6Oul8hCnxKzcIvceM5f8ZN75QirMZh1VvukmkQ/viewform?embedded=true\');">如果空白讀不到 → 請點此連結 ← 另開直連該網站。</a>　<button id="button_iframe" onclick="javascript:max_full(\'' + iframe_id + '\',\'button_iframe\');document.getElementById(\'button_iframe\').click();">→ 點我變成全螢幕 ←</button>　<a href="javascript:console.log(document.getElementsByClassName(\'fancybox-title fancybox-title-over-wrap\')[0].style.visibility=\'hidden\')">我知道了，我要關閉這礙眼的提示。</a>';
                     //this.title = '<a href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);fancybox_openurl(\'https://docs.google.com/forms/d/e/1FAIpQLSdERtSvQfS_6Oul8hCnxKzcIvceM5f8ZN75QirMZh1VvukmkQ/viewform?embedded=true&entry.2011053752&entry.1922860709=%E7%B6%B2%E9%A0%81%E8%BC%89%E5%85%A5%E7%95%B0%E5%B8%B8%EF%BC%8C%E8%AB%8B%E7%AB%99%E9%95%B7%E6%9F%A5%E7%9C%8B%E3%80%82&entry.404358769&entry.701382185=%E5%9B%9E%E5%A0%B1%EF%BC%9A%E6%89%93%E4%B8%8D%E9%96%8B%E7%B6%B2%E9%A0%81&entry.1336754087=' + encodeURIComponent(this.href) + '\');">如果空白讀不到 → 請點此連結 ← 另開直連該網站。</a>　<button id="button_iframe" onclick="javascript:max_full(\'' + iframe_id + '\',\'button_iframe\');document.getElementById(\'button_iframe\').click();">→ 點我變成全螢幕 ←</button>　<a href="javascript:console.log(document.getElementsByClassName(\'fancybox-title fancybox-title-over-wrap\')[0].style.visibility=\'hidden\')">我知道了，我要關閉這礙眼的提示。</a>';
-                    this.title = '<a href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);fancybox_openurl(\'https://docs.google.com/forms/d/e/1FAIpQLSdJt1yMfFcPzJU5zWIISvuD_hycmW4kZH7HsjoP_ML-ZhxeFw/viewform?embedded=true&entry.751272824=' + encodeURIComponent(this.href) + '&entry.779956480=%E5%9C%A8%E7%B6%B2%E7%AB%99%E5%85%A7%E9%BB%9E%E9%80%A3%E7%B5%90%EF%BC%8C%E7%B5%90%E6%9E%9C%E8%B7%B3%E5%87%BA%E4%B8%80%E5%A4%A7%E5%A1%8A%E7%99%BD%E7%99%BD%E7%9A%84%E5%B0%8F%E7%AA%97%EF%BC%8C%E7%AD%89%E5%BE%88%E4%B9%85%E9%83%BD%E6%B2%92%E4%BB%BB%E4%BD%95%E6%9D%B1%E8%A5%BF%E5%87%BA%E7%8F%BE%E3%80%82%EF%BC%88%E7%87%88%E7%AE%B1%E9%96%8B%E5%95%9F%E5%A4%B1%E6%95%97%EF%BC%89&entry.1366325438\');">如果空白讀不到 → 請點此連結 ← 另開直連該網站。</a>　<button id="button_iframe" onclick="javascript:max_full(\'' + iframe_id + '\',\'button_iframe\');document.getElementById(\'button_iframe\').click();">→ 點我變成全螢幕 ←</button>　<a href="javascript:console.log(document.getElementsByClassName(\'fancybox-title fancybox-title-over-wrap\')[0].style.visibility=\'hidden\')">我知道了，我要關閉這礙眼的提示。</a>';
+                    //OK google 表單
+                    //this.title = '<a href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);fancybox_openurl(\'https://docs.google.com/forms/d/e/1FAIpQLSdJt1yMfFcPzJU5zWIISvuD_hycmW4kZH7HsjoP_ML-ZhxeFw/viewform?embedded=true&entry.751272824=' + encodeURIComponent(this.href) + '&entry.779956480=%E5%9C%A8%E7%B6%B2%E7%AB%99%E5%85%A7%E9%BB%9E%E9%80%A3%E7%B5%90%EF%BC%8C%E7%B5%90%E6%9E%9C%E8%B7%B3%E5%87%BA%E4%B8%80%E5%A4%A7%E5%A1%8A%E7%99%BD%E7%99%BD%E7%9A%84%E5%B0%8F%E7%AA%97%EF%BC%8C%E7%AD%89%E5%BE%88%E4%B9%85%E9%83%BD%E6%B2%92%E4%BB%BB%E4%BD%95%E6%9D%B1%E8%A5%BF%E5%87%BA%E7%8F%BE%E3%80%82%EF%BC%88%E7%87%88%E7%AE%B1%E9%96%8B%E5%95%9F%E5%A4%B1%E6%95%97%EF%BC%89&entry.1366325438\');">如果空白讀不到 → 請點此連結 ← 另開直連該網站。</a>　<button id="button_iframe" onclick="javascript:max_full(\'' + iframe_id + '\',\'button_iframe\');document.getElementById(\'button_iframe\').click();">→ 點我變成全螢幕 ←</button>　<a href="javascript:console.log(document.getElementsByClassName(\'fancybox-title fancybox-title-over-wrap\')[0].style.visibility=\'hidden\')">我知道了，我要關閉這礙眼的提示。</a>';
+                    //2016.11.17+ 自動收集資料到 JANDI（以後也可以改成同步傳給 Trello 專門用來讓機器人控制的帳號）
+                    this.title = '<a href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);report_error(this);fancybox_openurl(\'https://docs.google.com/forms/d/e/1FAIpQLSdJt1yMfFcPzJU5zWIISvuD_hycmW4kZH7HsjoP_ML-ZhxeFw/viewform?embedded=true&entry.751272824=' + encodeURIComponent(this.href) + '&entry.779956480=%E5%9C%A8%E7%B6%B2%E7%AB%99%E5%85%A7%E9%BB%9E%E9%80%A3%E7%B5%90%EF%BC%8C%E7%B5%90%E6%9E%9C%E8%B7%B3%E5%87%BA%E4%B8%80%E5%A4%A7%E5%A1%8A%E7%99%BD%E7%99%BD%E7%9A%84%E5%B0%8F%E7%AA%97%EF%BC%8C%E7%AD%89%E5%BE%88%E4%B9%85%E9%83%BD%E6%B2%92%E4%BB%BB%E4%BD%95%E6%9D%B1%E8%A5%BF%E5%87%BA%E7%8F%BE%E3%80%82%EF%BC%88%E7%87%88%E7%AE%B1%E9%96%8B%E5%95%9F%E5%A4%B1%E6%95%97%EF%BC%89&entry.1366325438\');">如果空白讀不到 → 請點此連結 ← 另開直連該網站。</a>　<button id="button_iframe" onclick="javascript:max_full(\'' + iframe_id + '\',\'button_iframe\');document.getElementById(\'button_iframe\').click();">→ 點我變成全螢幕 ←</button>　<a href="javascript:console.log(document.getElementsByClassName(\'fancybox-title fancybox-title-over-wrap\')[0].style.visibility=\'hidden\')">我知道了，我要關閉這礙眼的提示。</a>';
                 },
                 helpers : {
                     title : {
@@ -1605,6 +1612,38 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
             //var options_max = selecter.length; // selecter.name
             console.log(selecter.options[selecter.selectedIndex].text + ' = ' + selecter.options[selecter.selectedIndex].value);
             eval(selecter.options[selecter.selectedIndex].value);
+        }
+
+        //2016.11.17+ 新增自動記錄異常情況供事後人工修正
+        function report_error(this_mono,target_web="JANDI",other_msg=""){
+
+            //經過 Zapier 再發給 JANDI
+            //https://zapier.com/blog/how-use-zapier-webhooks/
+            //http://blog.jandi.com/tw/2016/02/17/webhook/
+            var zapier_target_url = "";
+            if(target_web=="JANDI"){
+                zapier_target_url = "https://hooks.zapier.com/hooks/catch/132196/tty63e/";
+            }else{
+            }
+
+            $.ajax({
+                url: zapier_target_url,
+                data: JSON.stringify({"error_url": this_mono.href , "website_url": location.href  ,"other_msg": other_msg}),
+                type:"POST",
+                dataType:'text',
+
+                success: function(msg){
+                    console.log('通報成功！');
+                    console.log('被通報的網址：' + this_mono.href);
+                    console.log('詳細資訊備查：\n' + msg); 
+                },
+
+                 error:function(xhr, ajaxOptions, thrownError){ 
+                    console.log("通報失敗，詳細資訊如下：")
+                    console.log(xhr.status); 
+                    console.log(thrownError); 
+                 }
+            });
         }
 
         /*
@@ -1670,19 +1709,38 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
     <!-- 文鼎 -->
     <!-- <script type='text/javascript' src='//font.arphic.com/FontSubsetOutput/1470551355753/EEC76680DA382707F92AE6B91449CB67/1470551355753.JS?5178207705'></script> -->
 
-    <!-- 2016.11.16+ 即時通 -->
+    <!-- 2016.11.16+ 即時通線上客服 -->
     <!-- Smartsupp Live Chat script https://dashboard.smartsupp.com -->
     <script type="text/javascript">
-    var _smartsupp = _smartsupp || {};
-    _smartsupp.key = '77b943aeaffa11a51bb483a816f552c70e322417';
-    window.smartsupp||(function(d) {
-      var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
-      s=d.getElementsByTagName('script')[0];c=d.createElement('script');
-      c.type='text/javascript';c.charset='utf-8';c.async=true;
-      c.src='//www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
-    })(document);
+    // https://developers.smartsupp.com/chat/
+    // https://developers.smartsupp.com/chat/configuration#pre-chat-form
+    // https://developers.smartsupp.com/chat/configuration
+    // https://developers.smartsupp.com/examples/multilanguage
+      var _smartsupp = _smartsupp || {};
+      _smartsupp.key = '77b943aeaffa11a51bb483a816f552c70e322417';
+      _smartsupp.ratingEnabled = true;  // default value : false
+      _smartsupp.ratingComment = true;  // default value : false
+      window.smartsupp||(function(d) {
+        var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+        s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+        c.type='text/javascript';c.charset='utf-8';c.async=true;
+        c.src='//www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+      })(document);
+      smartsupp('language', 'tw');
     </script>
 
+    <!--Start of Zendesk Chat Script-->
+<!--     <script type="text/javascript">
+    //https://dashboard.zopim.com/?first_login#home
+      window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+      d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+      _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+      $.src="https://v2.zopim.com/?4N2hjeOYagZS4xf0gOM94IzSBQHiZmm9";z.t=+new Date;$.
+      type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+    </script> -->
+    <!--End of Zendesk Chat Script-->
+
+     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/0.2.0/trianglify.min.js"></script> -->
 
 </head>
 <body onload="javascript:parseLink();" onclick="javascript:parseLink();">
