@@ -1258,7 +1258,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                     //OK google 表單
                     //this.title = '<a href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);fancybox_openurl(\'https://docs.google.com/forms/d/e/1FAIpQLSdJt1yMfFcPzJU5zWIISvuD_hycmW4kZH7HsjoP_ML-ZhxeFw/viewform?embedded=true&entry.751272824=' + encodeURIComponent(this.href) + '&entry.779956480=%E5%9C%A8%E7%B6%B2%E7%AB%99%E5%85%A7%E9%BB%9E%E9%80%A3%E7%B5%90%EF%BC%8C%E7%B5%90%E6%9E%9C%E8%B7%B3%E5%87%BA%E4%B8%80%E5%A4%A7%E5%A1%8A%E7%99%BD%E7%99%BD%E7%9A%84%E5%B0%8F%E7%AA%97%EF%BC%8C%E7%AD%89%E5%BE%88%E4%B9%85%E9%83%BD%E6%B2%92%E4%BB%BB%E4%BD%95%E6%9D%B1%E8%A5%BF%E5%87%BA%E7%8F%BE%E3%80%82%EF%BC%88%E7%87%88%E7%AE%B1%E9%96%8B%E5%95%9F%E5%A4%B1%E6%95%97%EF%BC%89&entry.1366325438\');">如果空白讀不到 → 請點此連結 ← 另開直連該網站。</a>　<button id="button_iframe" onclick="javascript:max_full(\'' + iframe_id + '\',\'button_iframe\');document.getElementById(\'button_iframe\').click();">→ 點我變成全螢幕 ←</button>　<a href="javascript:console.log(document.getElementsByClassName(\'fancybox-title fancybox-title-over-wrap\')[0].style.visibility=\'hidden\')">我知道了，我要關閉這礙眼的提示。</a>';
                     //2016.11.17+ 自動收集資料到 JANDI（以後也可以改成同步傳給 Trello 專門用來讓機器人控制的帳號）
-                    this.title = '<a href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);report_error(this);fancybox_openurl(\'https://docs.google.com/forms/d/e/1FAIpQLSdJt1yMfFcPzJU5zWIISvuD_hycmW4kZH7HsjoP_ML-ZhxeFw/viewform?embedded=true&entry.751272824=' + encodeURIComponent(this.href) + '&entry.779956480=%E5%9C%A8%E7%B6%B2%E7%AB%99%E5%85%A7%E9%BB%9E%E9%80%A3%E7%B5%90%EF%BC%8C%E7%B5%90%E6%9E%9C%E8%B7%B3%E5%87%BA%E4%B8%80%E5%A4%A7%E5%A1%8A%E7%99%BD%E7%99%BD%E7%9A%84%E5%B0%8F%E7%AA%97%EF%BC%8C%E7%AD%89%E5%BE%88%E4%B9%85%E9%83%BD%E6%B2%92%E4%BB%BB%E4%BD%95%E6%9D%B1%E8%A5%BF%E5%87%BA%E7%8F%BE%E3%80%82%EF%BC%88%E7%87%88%E7%AE%B1%E9%96%8B%E5%95%9F%E5%A4%B1%E6%95%97%EF%BC%89&entry.1366325438\');">如果空白讀不到 → 請點此連結 ← 另開直連該網站。</a>　<button id="button_iframe" onclick="javascript:max_full(\'' + iframe_id + '\',\'button_iframe\');document.getElementById(\'button_iframe\').click();">→ 點我變成全螢幕 ←</button>　<a href="javascript:console.log(document.getElementsByClassName(\'fancybox-title fancybox-title-over-wrap\')[0].style.visibility=\'hidden\')">我知道了，我要關閉這礙眼的提示。</a>';
+                    this.title = '<a href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);report_error(this);report_error(this,\'LINE\');fancybox_openurl(\'https://docs.google.com/forms/d/e/1FAIpQLSdJt1yMfFcPzJU5zWIISvuD_hycmW4kZH7HsjoP_ML-ZhxeFw/viewform?embedded=true&entry.751272824=' + encodeURIComponent(this.href) + '&entry.779956480=%E5%9C%A8%E7%B6%B2%E7%AB%99%E5%85%A7%E9%BB%9E%E9%80%A3%E7%B5%90%EF%BC%8C%E7%B5%90%E6%9E%9C%E8%B7%B3%E5%87%BA%E4%B8%80%E5%A4%A7%E5%A1%8A%E7%99%BD%E7%99%BD%E7%9A%84%E5%B0%8F%E7%AA%97%EF%BC%8C%E7%AD%89%E5%BE%88%E4%B9%85%E9%83%BD%E6%B2%92%E4%BB%BB%E4%BD%95%E6%9D%B1%E8%A5%BF%E5%87%BA%E7%8F%BE%E3%80%82%EF%BC%88%E7%87%88%E7%AE%B1%E9%96%8B%E5%95%9F%E5%A4%B1%E6%95%97%EF%BC%89&entry.1366325438\');">如果空白讀不到 → 請點此連結 ← 另開直連該網站。</a>　<button id="button_iframe" onclick="javascript:max_full(\'' + iframe_id + '\',\'button_iframe\');document.getElementById(\'button_iframe\').click();">→ 點我變成全螢幕 ←</button>　<a href="javascript:console.log(document.getElementsByClassName(\'fancybox-title fancybox-title-over-wrap\')[0].style.visibility=\'hidden\')">我知道了，我要關閉這礙眼的提示。</a>';
                     // function css_add_inline( css_code ) {
                     //     var div = document.createElement( "div" );
                     //     div.innerHTML = "<p>x</p><style>" + css_code + "</style>";
@@ -1596,7 +1596,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                     //OK google 表單
                     //this.title = '<a href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);fancybox_openurl(\'https://docs.google.com/forms/d/e/1FAIpQLSdJt1yMfFcPzJU5zWIISvuD_hycmW4kZH7HsjoP_ML-ZhxeFw/viewform?embedded=true&entry.751272824=' + encodeURIComponent(this.href) + '&entry.779956480=%E5%9C%A8%E7%B6%B2%E7%AB%99%E5%85%A7%E9%BB%9E%E9%80%A3%E7%B5%90%EF%BC%8C%E7%B5%90%E6%9E%9C%E8%B7%B3%E5%87%BA%E4%B8%80%E5%A4%A7%E5%A1%8A%E7%99%BD%E7%99%BD%E7%9A%84%E5%B0%8F%E7%AA%97%EF%BC%8C%E7%AD%89%E5%BE%88%E4%B9%85%E9%83%BD%E6%B2%92%E4%BB%BB%E4%BD%95%E6%9D%B1%E8%A5%BF%E5%87%BA%E7%8F%BE%E3%80%82%EF%BC%88%E7%87%88%E7%AE%B1%E9%96%8B%E5%95%9F%E5%A4%B1%E6%95%97%EF%BC%89&entry.1366325438\');">如果空白讀不到 → 請點此連結 ← 另開直連該網站。</a>　<button id="button_iframe" onclick="javascript:max_full(\'' + iframe_id + '\',\'button_iframe\');document.getElementById(\'button_iframe\').click();">→ 點我變成全螢幕 ←</button>　<a href="javascript:console.log(document.getElementsByClassName(\'fancybox-title fancybox-title-over-wrap\')[0].style.visibility=\'hidden\')">我知道了，我要關閉這礙眼的提示。</a>';
                     //2016.11.17+ 自動收集資料到 JANDI（以後也可以改成同步傳給 Trello 專門用來讓機器人控制的帳號）
-                    this.title = '<a href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);report_error(this);fancybox_openurl(\'https://docs.google.com/forms/d/e/1FAIpQLSdJt1yMfFcPzJU5zWIISvuD_hycmW4kZH7HsjoP_ML-ZhxeFw/viewform?embedded=true&entry.751272824=' + encodeURIComponent(this.href) + '&entry.779956480=%E5%9C%A8%E7%B6%B2%E7%AB%99%E5%85%A7%E9%BB%9E%E9%80%A3%E7%B5%90%EF%BC%8C%E7%B5%90%E6%9E%9C%E8%B7%B3%E5%87%BA%E4%B8%80%E5%A4%A7%E5%A1%8A%E7%99%BD%E7%99%BD%E7%9A%84%E5%B0%8F%E7%AA%97%EF%BC%8C%E7%AD%89%E5%BE%88%E4%B9%85%E9%83%BD%E6%B2%92%E4%BB%BB%E4%BD%95%E6%9D%B1%E8%A5%BF%E5%87%BA%E7%8F%BE%E3%80%82%EF%BC%88%E7%87%88%E7%AE%B1%E9%96%8B%E5%95%9F%E5%A4%B1%E6%95%97%EF%BC%89&entry.1366325438\');">如果空白讀不到 → 請點此連結 ← 另開直連該網站。</a>　<button id="button_iframe" onclick="javascript:max_full(\'' + iframe_id + '\',\'button_iframe\');document.getElementById(\'button_iframe\').click();">→ 點我變成全螢幕 ←</button>　<a href="javascript:console.log(document.getElementsByClassName(\'fancybox-title fancybox-title-over-wrap\')[0].style.visibility=\'hidden\')">我知道了，我要關閉這礙眼的提示。</a>';
+                    this.title = '<a href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);report_error(this);report_error(this,\'LINE\');fancybox_openurl(\'https://docs.google.com/forms/d/e/1FAIpQLSdJt1yMfFcPzJU5zWIISvuD_hycmW4kZH7HsjoP_ML-ZhxeFw/viewform?embedded=true&entry.751272824=' + encodeURIComponent(this.href) + '&entry.779956480=%E5%9C%A8%E7%B6%B2%E7%AB%99%E5%85%A7%E9%BB%9E%E9%80%A3%E7%B5%90%EF%BC%8C%E7%B5%90%E6%9E%9C%E8%B7%B3%E5%87%BA%E4%B8%80%E5%A4%A7%E5%A1%8A%E7%99%BD%E7%99%BD%E7%9A%84%E5%B0%8F%E7%AA%97%EF%BC%8C%E7%AD%89%E5%BE%88%E4%B9%85%E9%83%BD%E6%B2%92%E4%BB%BB%E4%BD%95%E6%9D%B1%E8%A5%BF%E5%87%BA%E7%8F%BE%E3%80%82%EF%BC%88%E7%87%88%E7%AE%B1%E9%96%8B%E5%95%9F%E5%A4%B1%E6%95%97%EF%BC%89&entry.1366325438\');">如果空白讀不到 → 請點此連結 ← 另開直連該網站。</a>　<button id="button_iframe" onclick="javascript:max_full(\'' + iframe_id + '\',\'button_iframe\');document.getElementById(\'button_iframe\').click();">→ 點我變成全螢幕 ←</button>　<a href="javascript:console.log(document.getElementsByClassName(\'fancybox-title fancybox-title-over-wrap\')[0].style.visibility=\'hidden\')">我知道了，我要關閉這礙眼的提示。</a>';
                 },
                 helpers : {
                     title : {
@@ -1615,6 +1615,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
         }
 
         //2016.11.17+ 新增自動記錄異常情況供事後人工修正
+        //2016.11.24+ LINE 通報 (https://notify-bot.line.me/my/)
         function report_error(this_mono,target_web="JANDI",other_msg=""){
 
             //經過 Zapier 再發給 JANDI
@@ -1623,7 +1624,9 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
             var zapier_target_url = "";
             if(target_web=="JANDI"){
                 zapier_target_url = "https://hooks.zapier.com/hooks/catch/132196/tty63e/";
-            }else{
+            }
+            if(target_web=="LINE"){
+                zapier_target_url = "https://hooks.zapier.com/hooks/catch/132196/tmvlrd/";   
             }
 
             $.ajax({
@@ -1636,6 +1639,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                     console.log('通報成功！');
                     console.log('被通報的網址：' + this_mono.href);
                     console.log('詳細資訊備查：\n' + msg); 
+                    console.log(target_web);
                 },
 
                  error:function(xhr, ajaxOptions, thrownError){ 
@@ -1645,6 +1649,44 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                  }
             });
         }
+
+        //2016.11.19+ 從 LINE BOT 得到啟發尋找關鍵字 setRequestHeader + jQ 得到 http://stackoverflow.com/questions/14010851/set-request-header-jquery-ajax
+        // type 後面 data 前面 + beforeSend
+        //2016.11.24 驗證 JANDI Error 400，驗證 LINE 有擋，所以結論還是要靠 Zapier Webhooks
+        function JADIN_webhooks(send_json_data,JADIN_webhooks_url){
+            $.ajax({
+                url: JADIN_webhooks_url,
+                type:"POST",
+                data: JSON.stringify(send_json_data),
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('Accept', 'application/vnd.tosslab.jandi-v2+json');
+                    xhr.setRequestHeader('Content-Type', 'application/json');
+                },
+                dataType:'text',
+                success: function(msg){
+                    console.log('通報成功！');
+                    //console.log('被通報的網址：' + this_mono.href);
+                    console.log('詳細資訊備查：\n' + msg); 
+                },
+
+                 error:function(xhr, ajaxOptions, thrownError){ 
+                    console.log("通報失敗，詳細資訊如下：")
+                    console.log(xhr.status); 
+                    console.log(thrownError); 
+                 }
+            });
+        }
+
+          // var request = new XMLHttpRequest();
+          // request.onreadystatechange= function () {
+          //     if (request.readyState==4) {
+          //         //handle response
+          //     }
+          // }
+          // request.open("POST", "url", true);
+          // request.setRequestHeader("header", "blah blah");
+          // request.setRequestHeader("Accept","text/plain");
+          // request.send("post data");
 
         /*
         function plus_js(data_url,id_){
@@ -1815,6 +1857,9 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
     <!--shinobi1-->
     <!-- <script type="text/javascript" src="//xa.shinobi.jp/ufo/181939900"></script><noscript><a href="//xa.shinobi.jp/bin/gg?181939900" target="_blank"><img src="//xa.shinobi.jp/bin/ll?181939900" border="0"></a><br><span style="font-size:9px"><img style="margin:0;vertical-align:text-bottom;" src="//img.shinobi.jp/tadaima/fj.gif" width="19" height="11"> </span></noscript> -->
     <!--shinobi2-->
+    <!-- <a href="https://line.me/R/ti/p/%40uwk0684z"><img height="36" border="0" alt="加入好友" src="https://scdn.line-apps.com/n/line_add_friends/btn/zh-Hant.png"></a> -->
+    <!-- <a href="https://line.me/R/ti/p/%40pyv6283b"><img height="36" border="0" alt="加入好友" src="https://scdn.line-apps.com/n/line_add_friends/btn/zh-Hant.png"></a> -->
+    <!-- https://web.skype.com/share?url=https%3A//www.youtube.com/watch%3Fv%3D8oQgACdLERA%26feature%3Dshare%26list%3DPL1mRuVi7tD2KcPKMgidnpdj8nLQlcBqF6%26index%3D23&source=youtube -->
     <br />
     </div>
     <div id="addthis"></div>

@@ -160,12 +160,16 @@
 [交流]()
 
   - #聯絡我
-  - <a href="javascript:fancybox_openurl('https://docs.google.com/forms/d/e/1FAIpQLSdERtSvQfS_6Oul8hCnxKzcIvceM5f8ZN75QirMZh1VvukmkQ/viewform?embedded=true');">給我意見（Google）</a>
-  - <a href="javascript:fancybox_openurl('https://www.powr.io/plugins/contact-form/view?unique_label=cff23c83_1479222775&external_type=webs');">給我意見（powr.io）</a>
-
-[🔃  2016.11.17 更新]()
+  - [給我意見（Google）](https://docs.google.com/forms/d/e/1FAIpQLSdERtSvQfS_6Oul8hCnxKzcIvceM5f8ZN75QirMZh1VvukmkQ/viewform?embedded=true)
+  - [給我意見（powr.io）](https://www.powr.io/plugins/contact-form/view?unique_label=cff23c83_1479222775&external_type=webs)
+  - LINE 服務台
+  - <a href="javascript:fancybox_openurl('https://line.me/R/ti/p/%40uwk0684z');" alt="加入好友"><img src="line.png" /> 本站的 LINE</a>
+  - <a href="javascript:fancybox_openurl('https://line.me/R/ti/p/%40pyv6283b');" alt="加入好友"><img src="line.png" /> 動畫瘋 LINE 機器人（站長試寫作）</a>
+  
+[🔃  2016.11.24 更新]()
 
   - #更新項目
+  - [🆕 增加 LINE 通報、本站 LINE、站長機器人 LINE](# "2016.11.24")
   - [🆕 增加 JANDI 錯誤紀錄功能](# "2016.11.17")
   - [🆕 測試性增加交流/給我意見](# "2016.11.16")
   - [🆕 增加 部分配色背景漸變](# "2016.11.15")
@@ -233,4 +237,10 @@
 -->
 
 <!-- http://bookmarklets.org/maker/ -->
+<!-- 
+[交流]()
+
+  - #聯絡我
+  - <a href="javascript:fancybox_openurl('https://docs.google.com/forms/d/e/1FAIpQLSdERtSvQfS_6Oul8hCnxKzcIvceM5f8ZN75QirMZh1VvukmkQ/viewform?embedded=true');">給我意見（Google）</a>
+  - <a href="javascript:fancybox_openurl('https://www.powr.io/plugins/contact-form/view?unique_label=cff23c83_1479222775&external_type=webs');">給我意見（powr.io）</a> -->
 
