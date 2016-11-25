@@ -46,6 +46,7 @@
 [📺 影片]()
 
   - #操作示範
+  - [示範在網站設置 LINE 直接留言的效果](https://drive.google.com/file/d/0B3rgktr7zpP9QXlLbmJXM3NyRE0/preview "這是基本版純文字訊息，據官方文件所示也支援傳送圖片、聲音、影像、檔案。但那需要另外研究怎麼寫。")
   - [Save & Share 選項拉成書籤工具的示範](https://drive.google.com/file/d/0B3rgktr7zpP9Y253d2xkcTJkSWM/preview)
   - [網站 Web 線上字體操作示範](https://drive.google.com/file/d/0B3rgktr7zpP9M28zb0ptSzV4Z2M/preview)
   - [原價屋硬碟真比價書籤工具示範](https://drive.google.com/file/d/0B3rgktr7zpP9TFAxWFN3ZnVQODA/preview)
@@ -170,10 +171,11 @@
   ----
   - #LINE 服務台
   - <a href="javascript:line_me();"><img src="line.png" /> 直接發 LINE 訊息給站長</a>
+  - [操作示範站長效果](https://drive.google.com/file/d/0B3rgktr7zpP9QXlLbmJXM3NyRE0/preview "這是基本版純文字訊息，據官方文件所示也支援傳送圖片、聲音、影像、檔案。但那需要另外研究怎麼寫。")
   ----
   - #加入本站的 LINE
   - <a href="javascript:fancybox_openurl('https://line.me/R/ti/p/%40uwk0684z');" alt="加入好友"><img src="line.png" /> 本站的 LINE</a>
-  - <a href="javascript:fancybox_openurl('https://line.me/R/ti/p/%40pyv6283b');" alt="加入好友"><img src="line.png" /> 動畫瘋 LINE 機器人（站長試寫作）</a>
+  - <a href="javascript:fancybox_openurl('https://line.me/R/ti/p/%40pyv6283b');" alt="加入好友"><img src="line.png" /> 動畫瘋 LINE 機器人（站長試寫）</a>
   
 [🔃  2016.11.25 更新]()
 
