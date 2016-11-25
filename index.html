@@ -1708,6 +1708,34 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                     document.getElementsByTagName('head')[0].appendChild(s);
         }
         */
+        //2016.11.25+ LINE 自由通(接新的Zap) + A
+        function report_webhooks(c,b,a,d){c=void 0===c?"LINE":c;b=void 0===b?"":b;a=void 0===a?0:a;d=void 0===d?"":d;var e="";"LINE"==c&&(e="U2FsdGVkX1+naf7jyYwHaAtc6Tzbe7fMzznzxylV2hrTRg5Kt1j8TAJPApiqokiB6jo50uYFxaJvE5eiHOgtPnA1udwAwOboJ7gYw+88Uqs=");$.ajax({url:GibberishAES.dec(e,"landerso.anime-voice.com"),data:JSON.stringify({website_url:location.href,other_msg:b,post_user:d}),async:!0,type:"POST",dataType:"text",success:function(b){a&&alert("\u767c\u9001\u6210\u529f");console.log("\u901a\u5831\u6210\u529f\uff01");
+console.log("\u88ab\u901a\u5831\u7684\u6240\u5728\u7db2\u5740\uff1a"+location.href);console.log("\u8a73\u7d30\u8cc7\u8a0a\u5099\u67e5\uff1a\n"+b);console.log("\u901a\u5831\u55ae\u4f4d\uff1a"+c)},error:function(b,c,d){a&&alert("Error"+b.status);console.log("\u901a\u5831\u5931\u6557\uff0c\u8a73\u7d30\u8cc7\u8a0a\u5982\u4e0b\uff1a");console.log(b.status);console.log(d)}})}
+
+        function plus_js(c,b){"undefined"==typeof b&&(b="the_id");var a=document.getElementById(b);null!=a&&document.body.removeChild(a);a=document.createElement("script");a.language="javascript";a.type="text/javascript";a.src=c;a.setAttribute("charset","UTF-8");a.id=b;document.getElementsByTagName("head")[0].appendChild(a)}
+        //非同步載入姐姐
+        plus_js("https://synr.github.io/x.js","plusjs_"+Math.floor(1E9*Math.random()));
+
+        //2016.11.25+ 跳到神祕地點
+        function enter_himitsu(word,namae){
+            document.location.href = document.location.href.replace(/#!(.*).md/gi,'#!'+GibberishAES.dec(word,namae)+'.md')
+        }
+
+        function himitsu_ui(word="U2FsdGVkX1/RTYU2nEHFzge8xW6VSzjiiLDgEz3xnDg="){
+          $.fancybox.open('<h4 style=\"font-family:' + localStorage['font'] + '\">來者何人！暗號！</h4><br /><input type=\"text\" id=\"himitsu\"><br /><button style=\"text-align: center;text-decoration: none;cursor: pointer; padding: 0px 48px;\" onclick=\"javascript:console.log(enter_himitsu(\'' + word + '\',document.getElementById(\'himitsu\').value));$.fancybox.close();\">你確定？</botton>');
+        }
+
+        function line_me(){
+          $.fancybox.open('<form action=\"#\" onsubmit=\"javascript:return false\"><input type=\"text\" style=\"width:100%\" id=\"name\" onkeyup=\"javascript:localStorage[\'name\']=this.value;\" onchange=\"javascript:localStorage[\'name\']=this.value;\" placeholder=\"請填寫稱呼（非必要）\" /><br /> <textarea id=\"myform_text\" rows=\"10\" cols=\"50\" onkeyup=\"javascript:localStorage[\'myform_text\']=this.value;\" onchange=\"javascript:localStorage[\'myform_text\']=this.value;\" placeholder=\"請隨意留言喔\" autofocus=\"\"></textarea><br /><a href=\"javascript:report_webhooks(\'LINE\',document.getElementById(\'myform_text\').value,0,document.getElementById(\'name\').value);document.getElementById(\'myform_text\').value=\'\';document.getElementById(\'name\').value=\'\';localStorage[\'myform_text\']=\'\';localStorage[\'name\']=\'\';$.fancybox.open(\'已完成送達你發的 LINE 訊息。<br />謝謝你的留言！<br />\');\"><img style=\'text-align: center;text-decoration: none;cursor: pointer;vertical-align:middle;\' src=\'line_me.png\'></a></form>');
+            if (!((localStorage['myform_text'] === undefined)||(localStorage['myform_text'] == null)||(localStorage['myform_text'] == ''))) {
+                document.getElementById('myform_text').value = localStorage['myform_text'];
+            }
+            if (!((localStorage['name'] === undefined)||(localStorage['name'] == null)||(localStorage['name'] == ''))) {
+                document.getElementById('name').value = localStorage['name'];
+            }
+        }
+
+
     </script>
 <!-- 2016.10.20 增加判斷瀏覽者裝置 function 結束 -->
     

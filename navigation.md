@@ -53,12 +53,17 @@
   - #亂唱中！音量注意建議調小！
   - <a href="javascript:fancybox_openurl('https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/14616981&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=false&amp;show_reposts=false&amp;visual=true&amp;download=true&amp;download=true&amp;start_track=10');">★─☆｡oﾟ｡共鳴中(o｀▽´)っ ～*♪･ﾟ｡☆彡</a>
 
+[秘密基地]()
+
+  - #你要來嗎？
+  - <a href="javascript:himitsu_ui('U2FsdGVkX1/RTYU2nEHFzge8xW6VSzjiiLDgEz3xnDg=');">你知道就進來吧</a>
+
 [gimmick:themechooser](🎨  網站配色)
 <!-- [gimmick:theme](darkly) -->
 <!-- [gimmick:theme](flatly) -->
 <!-- cyborg -->
-<!-- [gimmick:theme](amelia) -->
-[gimmick:theme](slate)
+[gimmick:theme](amelia)
+<!-- [gimmick:theme](slate) -->
 <!-- cosmo -->
 <!-- [gimmick:theme](cerulean) -->
 
@@ -162,13 +167,18 @@
   - #聯絡我
   - [給我意見（Google）](https://docs.google.com/forms/d/e/1FAIpQLSdERtSvQfS_6Oul8hCnxKzcIvceM5f8ZN75QirMZh1VvukmkQ/viewform?embedded=true)
   - [給我意見（powr.io）](https://www.powr.io/plugins/contact-form/view?unique_label=cff23c83_1479222775&external_type=webs)
-  - LINE 服務台
+  ----
+  - #LINE 服務台
+  - <a href="javascript:line_me();"><img src="line.png" /> 直接發 LINE 訊息給站長</a>
+  ----
+  - #加入本站的 LINE
   - <a href="javascript:fancybox_openurl('https://line.me/R/ti/p/%40uwk0684z');" alt="加入好友"><img src="line.png" /> 本站的 LINE</a>
   - <a href="javascript:fancybox_openurl('https://line.me/R/ti/p/%40pyv6283b');" alt="加入好友"><img src="line.png" /> 動畫瘋 LINE 機器人（站長試寫作）</a>
   
-[🔃  2016.11.24 更新]()
+[🔃  2016.11.25 更新]()
 
   - #更新項目
+  - [🆕 增加 LINE 服務台、秘密基地](# "2016.11.25")
   - [🆕 增加 LINE 通報、本站 LINE、站長機器人 LINE](# "2016.11.24")
   - [🆕 增加 JANDI 錯誤紀錄功能](# "2016.11.17")
   - [🆕 測試性增加交流/給我意見](# "2016.11.16")
