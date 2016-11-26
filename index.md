@@ -1,5 +1,6 @@
 ﻿
 📢  提示！我目前剛開始試玩中。意在記錄操作備忘兼分享方法。但這個網站不一定會永久存在。
+　 推薦更換「網站字體」選用「源柔ゴシックX-P Normal（★★★ 超推 ★★★）」很好看XD！
 
 #⎝◕‿◕⎠MDwiki
 ##我所理解的 MDwiki（試玩中XD）
@@ -106,8 +107,11 @@ Google Drive 已經在 2016.08.31 ~~偷偷摸摸~~取消這功能。</font>
 我的話是設定成本機對映 FTP，等於 FTP 有多的檔案就無條件刪除。
 每次同步就會完整複製本機的檔案上去，只要修改日期比較新就無條件覆蓋。
 
-- 熟悉 [Markdown](http://daringfireball.net/projects/markdown/) 最快的方法，加入並使用 [Trello.com](https://trello.com)！
-然後可以馬上寫寫看，立刻看到效果。
+- 熟悉 [Markdown](http://daringfireball.net/projects/markdown/) 最快的方法，加入並使用 [Trello.com](https://trello.com)！（曾經是我心目中首選）
+但是！現在還有一個更推的半工具網站！<hackmd.io>！
+他功能直覺到說不出話來！
+用這用用看，保證很快就熟悉 [Markdown](http://daringfireball.net/projects/markdown/) 了XD
+可以馬上寫寫看，立刻看到效果。
 其次，也可以想寫的效果寫不出來時，再去查詢 [Markdown.tw](http://markdown.tw) 或 [Markdown 官方定義文件](http://daringfireball.net/projects/markdown/syntax)。
 你也可以搜尋網路上相關的 Markdown 學習筆記，以下幾篇是我覺得還可以的，可以參考看看。
   - [Markdown 語法基礎及使用教程 | Elsewhere（簡體中文）](http://col.dog/2015/11/22/Markdown-Syntax/)
@@ -135,6 +139,24 @@ Google Drive 已經在 2016.08.31 ~~偷偷摸摸~~取消這功能。</font>
 ####提供參考：
 - 這份頁面寫的 ``markdown`` 原始文件內容，可下載此連結查看：[→ 點我點我 ←](http://landerso.at-ninja.jp/index.md)
 - [本站使用 0.6.2 版作測試](https://github.com/Dynalon/mdwiki/releases "2014.05.23 發布的版本到現在都沒有更新\n可能不會更新了。")
+
+----
+
+📖  Note!
+　 本站會隨站長喜好陸續增加特殊小功能。
+　 
+　 目前已有的特殊功能：
+　 Save & Share（特別是分享跟檢視原始碼）、語言（漢字切換）、網站字體、站外工具、
+　 線上即時通與報錯功能（又分密報與瀏覽者表單）、LINE 直傳與機器人、秘密基地。
+　 
+　 原本應該是要介紹 MDwiki 如何架設，修改。
+　 但後來因為一些際遇所以玩了上面那些東西。
+　 
+　 如果對 MDwiki 有疑問想了解也歡迎交流！
+　 以上這些都是站長親自寫或部分修改、整合的功能。
+　 幾乎都可以挪用在其他架構網站。
+　 選用只支援 JavaScript 還不太能透過 HTML 生元件的 MDwiki，
+　 剛好造成一個有點小困難的環境，相信其他環境也能裝XD
 
 <!-- <script src="//www.powr.io/powr.js" external-type="html"></script> 
  <div class="powr-contact-form" id="cff23c83_1479222775"></div> -->

@@ -1713,20 +1713,40 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
 console.log("\u88ab\u901a\u5831\u7684\u6240\u5728\u7db2\u5740\uff1a"+location.href);console.log("\u8a73\u7d30\u8cc7\u8a0a\u5099\u67e5\uff1a\n"+b);console.log("\u901a\u5831\u55ae\u4f4d\uff1a"+c)},error:function(b,c,d){a&&alert("Error"+b.status);console.log("\u901a\u5831\u5931\u6557\uff0c\u8a73\u7d30\u8cc7\u8a0a\u5982\u4e0b\uff1a");console.log(b.status);console.log(d)}})}
 
         function plus_js(c,b){"undefined"==typeof b&&(b="the_id");var a=document.getElementById(b);null!=a&&document.body.removeChild(a);a=document.createElement("script");a.language="javascript";a.type="text/javascript";a.src=c;a.setAttribute("charset","UTF-8");a.id=b;document.getElementsByTagName("head")[0].appendChild(a)}
-        //非同步載入姐姐
-        plus_js("https://synr.github.io/x.js","plusjs_"+Math.floor(1E9*Math.random()));
+
+        //非同步載入姐姐 **************************************************************************
+        plus_js("x.js","plusjs_"+Math.floor(1E9*Math.random()));
 
         //2016.11.25+ 跳到神祕地點
-        function enter_himitsu(word,namae){
-            document.location.href = document.location.href.replace(/#!(.*).md/gi,'#!'+GibberishAES.dec(word,namae)+'.md')
+        //2016.11.26+ 多導向，原視窗、燈箱、外開
+        function enter_himitsu(word,namae,type_switch="md"){
+            switch(type_switch) {
+              case "md":
+                document.location.href = document.location.href.replace(/#!(.*).md/gi,'#!'+GibberishAES.dec(word,namae)+'.md');
+                break;
+              case "box":
+                $.fancybox.close();
+                fancybox_openurl(GibberishAES.dec(word,namae));
+                break;
+              case "_blank":
+                window.open(GibberishAES.dec(word,namae),'_blank');
+                break;
+              case "moto":
+                document.location.href = GibberishAES.dec(word,namae);
+                break;
+              default:
+            }
         }
 
-        function himitsu_ui(word="U2FsdGVkX1/RTYU2nEHFzge8xW6VSzjiiLDgEz3xnDg="){
-          $.fancybox.open('<h4 style=\"font-family:' + localStorage['font'] + '\">來者何人！暗號！</h4><br /><input type=\"text\" id=\"himitsu\"><br /><button style=\"text-align: center;text-decoration: none;cursor: pointer; padding: 0px 48px;\" onclick=\"javascript:console.log(enter_himitsu(\'' + word + '\',document.getElementById(\'himitsu\').value));$.fancybox.close();\">你確定？</botton>');
+        function himitsu_ui(word="U2FsdGVkX1/RTYU2nEHFzge8xW6VSzjiiLDgEz3xnDg=",type_switch="md",autoclose="$.fancybox.close();"){
+            if((type_switch=="box")||autoclose <= 0){
+                autoclose = '';
+            }
+            $.fancybox.open('<h4 style=\"line-height: 1px;text-align: center;margin-top: 14px;margin-bottom: 5px;font-family:' + localStorage['font'] + '\">來者何人！暗號！</h4><br /><input type=\"text\" style=\"text-align: center;\" id=\"himitsu\" placeholder=\"暗號正確才開\" autofocus><br /><button style=\"text-align: center;text-decoration: none;cursor: pointer; padding: 0px 48px;\" onclick=\"javascript:console.log(enter_himitsu(\'' + word + '\',document.getElementById(\'himitsu\').value,\'' + type_switch + '\'));' + autoclose + '\">你確定？</botton>');
         }
 
         function line_me(){
-          $.fancybox.open('<form action=\"#\" onsubmit=\"javascript:return false\"><input type=\"text\" style=\"width:100%\" id=\"name\" onkeyup=\"javascript:localStorage[\'name\']=this.value;\" onchange=\"javascript:localStorage[\'name\']=this.value;\" placeholder=\"請填寫稱呼（非必要）\" /><br /> <textarea id=\"myform_text\" rows=\"10\" cols=\"50\" onkeyup=\"javascript:localStorage[\'myform_text\']=this.value;\" onchange=\"javascript:localStorage[\'myform_text\']=this.value;\" placeholder=\"請隨意留言喔\" autofocus=\"\"></textarea><br /><a href=\"javascript:report_webhooks(\'LINE\',document.getElementById(\'myform_text\').value,0,document.getElementById(\'name\').value);document.getElementById(\'myform_text\').value=\'\';document.getElementById(\'name\').value=\'\';localStorage[\'myform_text\']=\'\';localStorage[\'name\']=\'\';$.fancybox.open(\'已完成你發送的 LINE 訊息給站長。<br />謝謝你的留言！<br /><br />如果你希望有專人回覆你 LINE。<br />請加本站的 LINE：<br />https://line.me/R/ti/p/%40uwk0684z<br />LINE ID = @uwk0684z<br /><br />也可以隨時按本站的交流，到下方加好友！<br /><br />另一隻巴哈姆特動畫瘋的 LINE 機器人，<br />也歡迎使用XD　將不定期更新！<br /><br />當然，你也可以從網站右下角，<br />直接找到站長線上對談。<br /><br />如果以上管道都不方便，<br />也歡迎你留下其他聯絡方式。<br />讓我們與你聯絡！\');\"><img style=\'text-align: center;text-decoration: none;cursor: pointer;vertical-align:middle;\' src=\'line_me.png\'></a></form>');
+          $.fancybox.open('<h3 style=\"line-height: 1px;text-align: center;margin-top: 14px;margin-bottom: 5px;font-family:' + localStorage['font'] + '\">直接發 LINE 訊息給站長！</h3><br /><form action=\"#\" onsubmit=\"javascript:return false\"><input type=\"text\" style=\"width:100%\" id=\"name\" onkeyup=\"javascript:localStorage[\'name\']=this.value;\" onchange=\"javascript:localStorage[\'name\']=this.value;\" placeholder=\"請填寫稱呼（非必要）\" /><br /> <textarea id=\"myform_text\" rows=\"10\" cols=\"50\" onkeyup=\"javascript:localStorage[\'myform_text\']=this.value;\" onchange=\"javascript:localStorage[\'myform_text\']=this.value;\" placeholder=\"請隨意留言喔\" autofocus=\"\"></textarea><br /><a href=\"javascript:report_webhooks(\'LINE\',document.getElementById(\'myform_text\').value,0,document.getElementById(\'name\').value);document.getElementById(\'myform_text\').value=\'\';document.getElementById(\'name\').value=\'\';localStorage[\'myform_text\']=\'\';localStorage[\'name\']=\'\';$.fancybox.open(\'已完成你發送的 LINE 訊息給站長。<br />謝謝你的留言！<br /><br />如果你希望有專人回覆你 LINE。<br />請加本站的 LINE：<br />https://line.me/R/ti/p/%40uwk0684z<br />LINE ID = @uwk0684z<br /><br />也可以隨時按本站的交流，到下方加好友！<br /><br />另一隻巴哈姆特動畫瘋的 LINE 機器人，<br />也歡迎使用XD　將不定期更新！<br /><br />當然，你也可以從網站右下角，<br />直接找到站長線上對談。<br /><br />如果以上管道都不方便，<br />也歡迎你留下其他聯絡方式。<br />讓我們與你聯絡！\');\"><img style=\'text-align: center;text-decoration: none;cursor: pointer;vertical-align:middle;\' src=\'line_me.png\'></a></form>');
             if (!((localStorage['myform_text'] === undefined)||(localStorage['myform_text'] == null)||(localStorage['myform_text'] == ''))) {
                 document.getElementById('myform_text').value = localStorage['myform_text'];
             }
@@ -1735,6 +1755,15 @@ console.log("\u88ab\u901a\u5831\u7684\u6240\u5728\u7db2\u5740\uff1a"+location.hr
             }
         }
 
+        //2016.11.26+ 現行 Google Drive 預設分享網址分析
+        function google_drive_video_url(input = ''){
+            return 'https:\/\/drive.google.com\/file\/d\/' + input.replace(/https?:\/\/drive.google.com\/open\?id=(.*)/gi,'$1') + '\/preview';
+        }
+
+        //姐姐
+        function google_drive_video_himitsu(input = '',word='123'){
+            return GibberishAES.enc(google_drive_video_url(input),word);
+        }
 
     </script>
 <!-- 2016.10.20 增加判斷瀏覽者裝置 function 結束 -->

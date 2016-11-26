@@ -51,13 +51,20 @@
   - [網站 Web 線上字體操作示範](https://drive.google.com/file/d/0B3rgktr7zpP9M28zb0ptSzV4Z2M/preview)
   - [原價屋硬碟真比價書籤工具示範](https://drive.google.com/file/d/0B3rgktr7zpP9TFAxWFN3ZnVQODA/preview)
   ----
+  - #技術設定示範
+  - <a href="javascript:himitsu_ui('U2FsdGVkX1+4e5kYaQ5hMMK1YTcGPCW2jU+EwQseECg=','md');">安裝直接發 LINE 給站長（教學文）</a>
+  - <a href="javascript:himitsu_ui('U2FsdGVkX18Urm63wL0/ZsWSRGmGnOBffUq/4w/vwR5gABli1fbs/CKwaEPJbvOm/dga/2m2XAYt908QzirS5ZeTnHOiYL1EFBsNvbrq2+KdPF1Q7DgswtJwbcJzGJD0','box');">安裝直接發 LINE 給站長 啟程</a>
+  - <a href="javascript:himitsu_ui('U2FsdGVkX18U9t5LVTbRILASTkWzqP9+Y4hFEtEMLsofjUXAvx4EeoBzWBlMC8lnRgxMRgFvKfm8IZYmIrOxhwXfRpm/gmBYmpEe4q/CtJ9gYVBzX1RtGz4QQYg2B9kE','box');">安裝直接發 LINE 給站長 前置</a>
+  - <a href="javascript:himitsu_ui('U2FsdGVkX19Tl7ubPjiUVSflyuFj6mARZSa4rnb3hH2nvV/iwYMEMSe4QLUlUCvIqhWVoGitCsdpKKka0WRASPzraep8/eVbNyrkRea7z6UI9DNoT5tnbdo7sHlXKncv','box');">安裝直接發 LINE 給站長 主要</a>
+  - <a href="javascript:himitsu_ui('U2FsdGVkX1/QDo8a2/3dPRdwYQBXhlTdL/ZAJfe1b+xNmmbcaV2HmVG/yaVQmR6mCljmAi+Alq59EbKzOtSjoW9hvncQfTHP1BqTJr6ovkPRBOIf88KyLxCNlGy75NyJ','box');">安裝直接發 LINE 給站長 完</a>
+  ----
   - #亂唱中！音量注意建議調小！
-  - <a href="javascript:fancybox_openurl('https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/14616981&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=false&amp;show_reposts=false&amp;visual=true&amp;download=true&amp;download=true&amp;start_track=10');">★─☆｡oﾟ｡共鳴中(o｀▽´)っ ～*♪･ﾟ｡☆彡</a>
+  - <a href="javascript:himitsu_ui('U2FsdGVkX1+IUFEqTr/bZx3d9qmPjmjS1px7fjzfjfvpdatjU8LOlWzuGsChKdTucXyYHUdp4aaooGCAN7SXjF/FwoYMMMX4AZqgKa6yTcUn4AW/yPJsX+eaofyHyLKRUCERmmaXowABbRqrxNhicXXsjSwqk1d8gB/zyFsdA/y0buD6Bol41LCA+WX0tEsJZTTL+Y907aQdVLfWlEzewkNpAV/KzzeHM4JfUVuCaBaHW0j06ATBI9VGu0dFdNI+8S2ETR7R1m2e0cTvh0dtd7+Oq+jOQzX1lw4N9NGCsotOAhwnzttwzJl2EwtcZoMx4G9CQpMFBIyUlACjn7wRInH+HL8mFCpwt2sS6dFx+3HYnX/gkSaOVzaWrVgxMBOL','_blank');" title="要聽我唱歌嗎？直接問我本人暗號多少就可以聽了！">★─☆｡oﾟ｡共鳴中(o｀▽´)っ ～*♪･ﾟ｡☆彡</a>
 
 [秘密基地]()
 
   - #你要來嗎？
-  - <a href="javascript:himitsu_ui('U2FsdGVkX1/RTYU2nEHFzge8xW6VSzjiiLDgEz3xnDg=');">你知道就進來吧</a>
+  - <a href="javascript:himitsu_ui('U2FsdGVkX1/RTYU2nEHFzge8xW6VSzjiiLDgEz3xnDg=','md');">你知道就進來吧</a>
 
 [gimmick:themechooser](🎨  網站配色)
 <!-- [gimmick:theme](darkly) -->
@@ -166,20 +173,21 @@
 [交流]()
 
   - #聯絡我
-  - [給我意見（Google）](https://docs.google.com/forms/d/e/1FAIpQLSdERtSvQfS_6Oul8hCnxKzcIvceM5f8ZN75QirMZh1VvukmkQ/viewform?embedded=true)
+  - [給我意見或諮詢（Google）](https://docs.google.com/forms/d/e/1FAIpQLSdERtSvQfS_6Oul8hCnxKzcIvceM5f8ZN75QirMZh1VvukmkQ/viewform?embedded=true)
   - [給我意見（powr.io）](https://www.powr.io/plugins/contact-form/view?unique_label=cff23c83_1479222775&external_type=webs)
   ----
   - #LINE 服務台
   - <a href="javascript:line_me();"><img src="line.png" /> 直接發 LINE 訊息給站長</a>
-  - [操作示範站長效果](https://drive.google.com/file/d/0B3rgktr7zpP9QXlLbmJXM3NyRE0/preview "這是基本版純文字訊息，據官方文件所示也支援傳送圖片、聲音、影像、檔案。但那需要另外研究怎麼寫。")
+  - [📺 操作示範效果](https://drive.google.com/file/d/0B3rgktr7zpP9QXlLbmJXM3NyRE0/preview "這是基本版純文字訊息，據官方文件所示也支援傳送圖片、聲音、影像、檔案。但那需要另外研究怎麼寫。")
   ----
   - #加入本站的 LINE
-  - <a href="javascript:fancybox_openurl('https://line.me/R/ti/p/%40uwk0684z');" alt="加入好友"><img src="line.png" /> 本站的 LINE</a>
+  - <a href="javascript:fancybox_openurl('https://line.me/R/ti/p/%40uwk0684z');" alt="加入好友"><img src="line.png" /> 真人管理本站的 LINE</a>
   - <a href="javascript:fancybox_openurl('https://line.me/R/ti/p/%40pyv6283b');" alt="加入好友"><img src="line.png" /> 動畫瘋 LINE 機器人（站長試寫）</a>
   
 [🔃  2016.11.25 更新]()
 
   - #更新項目
+  - [🆕 優化 LINE 服務台、秘密基地 介面](# "2016.11.26")
   - [🆕 增加 LINE 服務台、秘密基地](# "2016.11.25")
   - [🆕 增加 LINE 通報、本站 LINE、站長機器人 LINE](# "2016.11.24")
   - [🆕 增加 JANDI 錯誤紀錄功能](# "2016.11.17")
@@ -256,3 +264,6 @@
   - <a href="javascript:fancybox_openurl('https://docs.google.com/forms/d/e/1FAIpQLSdERtSvQfS_6Oul8hCnxKzcIvceM5f8ZN75QirMZh1VvukmkQ/viewform?embedded=true');">給我意見（Google）</a>
   - <a href="javascript:fancybox_openurl('https://www.powr.io/plugins/contact-form/view?unique_label=cff23c83_1479222775&external_type=webs');">給我意見（powr.io）</a> -->
 
+<!-- 
+  - <a href="javascript:fancybox_openurl('https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/不告訴你&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=false&amp;show_reposts=false&amp;visual=true&amp;download=true&amp;download=true&amp;start_track=10');">★─☆｡oﾟ｡共鳴中(o｀▽´)っ ～*♪･ﾟ｡☆彡</a>
+ -->
