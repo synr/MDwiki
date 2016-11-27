@@ -265,7 +265,7 @@ Note：
 
 <form action="#" target="_blank" onsubmit="javascript:return false">
  <input style="width:100%" type="text" id="name" onkeyup="javascript:localStorage['name']=this.value;" onchange="javascript:localStorage['name']=this.value;" placeholder="請填寫稱呼（非必要）" /><br />
- <textarea style="width:100%" id="myform_text" rows="10" cols="50" onkeyup="javascript:localStorage['myform_text']=this.value;" onchange="javascript:localStorage['myform_text']=this.value;" placeholder="請隨意留言喔" autofocus=""></textarea><br />
+ <textarea style="width:100%" id="myform_text" rows="10" cols="50" onkeyup="javascript:localStorage['myform_text']=this.value;" onchange="javascript:localStorage['myform_text']=this.value;" placeholder="請隨意留言喔"></textarea><br />
  <button style="width:100%" onclick="javascript:report_webhooks('LINE',document.getElementById('myform_text').value,1,document.getElementById('name').value);document.getElementById('myform_text').value='';document.getElementById('name').value='';localStorage['myform_text']='';localStorage['name']='';">發送 LINE 給我</button>
 </form>
 <script type="text/javascript">
