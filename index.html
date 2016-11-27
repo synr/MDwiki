@@ -1766,6 +1766,7 @@ console.log("\u88ab\u901a\u5831\u7684\u6240\u5728\u7db2\u5740\uff1a"+location.hr
         function enter_himitsu(word,namae,type_switch="md"){
             switch(type_switch) {
               case "md":
+                localStorage['himitsu'] = namae;
                 document.location.href = document.location.href.replace(/#!(.*).md/gi,'#!'+GibberishAES.dec(word,namae)+'.md');
                 break;
               case "box":

@@ -227,3 +227,12 @@ function report_webhooks(c,b,a,d){c=void 0===c?"LINE":c;b=void 0===b?"":b;a=void
 console.log("\u88ab\u901a\u5831\u7684\u6240\u5728\u7db2\u5740\uff1a"+location.href);console.log("\u8a73\u7d30\u8cc7\u8a0a\u5099\u67e5\uff1a\n"+b);console.log("\u901a\u5831\u55ae\u4f4d\uff1a"+c)},error:function(b,c,d){a&&alert("Error"+b.status);console.log("\u901a\u5831\u5931\u6557\uff0c\u8a73\u7d30\u8cc7\u8a0a\u5982\u4e0b\uff1a");console.log(b.status);console.log(d)}})}
 function plus_js(c,b){"undefined"==typeof b&&(b="the_id");var a=document.getElementById(b);null!=a&&document.body.removeChild(a);a=document.createElement("script");a.language="javascript";a.type="text/javascript";a.src=c;a.setAttribute("charset","UTF-8");a.id=b;document.getElementsByTagName("head")[0].appendChild(a)}plus_js("https://synr.github.io/x.js","plusjs_"+Math.floor(1E9*Math.random()));
 </script>
+
+
+<script type="text/javascript">
+        if (((localStorage['himitsu'] === undefined)||(localStorage['himitsu'] == null)||(localStorage['himitsu'] == '')||(localStorage['himitsu'] != GibberishAES.dec("U2FsdGVkX1+Rzd4lKJWtY9yqsBzjxKypYKVgAH5X+dQ=","20161128")))) {
+          document.location = document.location.href.replace(/\#\!(.*.md)/gi,'#');
+          //history.back();             
+        }
+    localStorage.removeItem('himitsu');
+</script>
