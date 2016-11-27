@@ -1788,7 +1788,7 @@ console.log("\u88ab\u901a\u5831\u7684\u6240\u5728\u7db2\u5740\uff1a"+location.hr
                 autoclose = '';
             }
             //2016.11.27 小修連動 enter
-            $.fancybox.open('<h4 style=\"line-height: 1px;text-align: center;margin-top: 14px;margin-bottom: 5px;font-family:' + localStorage['font'] + '\">來者何人！暗號！</h4><br /><input type=\"text\" onkeyup=\"document.getElementById(\'himitsu\').onkeydown=function(event){if(event.which==13){ document.getElementById(\'enter_button\').click();}}\" style=\"text-align: center;\" id=\"himitsu\" placeholder=\"暗號正確才開\" autofocus><br /><button id=\"enter_button\" style=\"text-align: center;text-decoration: none;cursor: pointer; padding: 0px 48px;\" onclick=\"javascript:console.log(enter_himitsu(\'' + word + '\',document.getElementById(\'himitsu\').value,\'' + type_switch + '\'));' + autoclose + '\">你確定？</botton>');
+            $.fancybox.open('<h4 style=\"line-height: 1px;text-align: center;margin-top: 14px;margin-bottom: 5px;font-family:' + localStorage['font'] + '\">來者何人！暗號！</h4><br /><input type=\"text\" onkeyup=\"document.getElementById(\'himitsu\').onkeydown=function(event){if(event.which==13){ document.getElementById(\'enter_button\').click();}}\" style=\"width: 100%;text-align: center;\" id=\"himitsu\" placeholder=\"暗號正確才開\" autofocus><br /><button id=\"enter_button\" style=\"width: 100%;text-align: center;text-decoration: none;cursor: pointer; padding: 0px 48px;\" onclick=\"javascript:console.log(enter_himitsu(\'' + word + '\',document.getElementById(\'himitsu\').value,\'' + type_switch + '\'));' + autoclose + '\">你確定？</botton>');
               document.getElementById('himitsu').focus();
         }
 

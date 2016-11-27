@@ -94,7 +94,7 @@ Note：
 但是一般開啟網站時，不能讓瀏覽者看到。
 也就是說要讓他寫到你的網頁原始碼才算成功。
 - 放置地點建議盡量可以放在 ``<head>`` ～ ``</head>`` 之間。
-真的沒辦法也可以放在  ``<body> ～ </body>`` 之間。
+真的沒辦法也可以放在  ``<body>`` ～ ``</body>`` 之間。
 - 以 [忍者 Blog](http://www.ninja.co.jp/blog) 來舉例：有三種方法，擇一使用即可。（推薦第一種）
   1. 你可以到後台，去設定タグ（Tag）
 你就會連到類似 ``http://你的忍者BLOG網址/hoge/SetCommonTag/`` 的網址。
@@ -320,16 +320,16 @@ Note：
 
 ----
 
-Note：
-這種可以用來自動傳遞訊息的我很愛用，
-如果未來有更多新增的功能變化，（我猜可能有）
-我可能會不定期更新此篇。
+📖 Note：
+　 這種可以用來自動傳遞訊息的我很愛用，
+　 如果未來有更多新增的功能變化，（我猜可能有）
+　 我可能會不定期更新此篇。
 　　
-如果！
-你們有人發現他其他的用途，或新功能或新用法，也歡迎隨時留言給我 XD！
+　 如果！
+　 你們有人發現他其他的用途，或新功能或新用法，也歡迎隨時留言給我 XD！
 　
-2016/11/28 更新改掉部分錯字
-2016/11/27 初稿
+　 2016/11/28 更新改掉部分錯字
+　 2016/11/27 初稿
 
 <script type="text/javascript">
         if (((localStorage['himitsu'] === undefined)||(localStorage['himitsu'] == null)||(localStorage['himitsu'] == '')||(localStorage['himitsu'] != GibberishAES.dec("U2FsdGVkX1+Rzd4lKJWtY9yqsBzjxKypYKVgAH5X+dQ=","20161128")))) {
