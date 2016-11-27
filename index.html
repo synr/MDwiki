@@ -919,6 +919,14 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
         }
 
         function parseLink(){
+            //2016.11.27+ high code
+            change_tag_class('pre','prettyprint');
+            plus_js("https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js","plusjs_"+Math.floor(1E9*Math.random()));
+            //https://jmblog.github.io/color-themes-for-google-code-prettify/
+            css_add_inline(".prettyprint{padding: 20px !important;margin-bottom: 20px !important;border: 1px solid transparent !important;border-radius: 6px !important;text-shadow: 0 0 0.001em !important;font-size:14px !important;background:#000 !important;font-family:Menlo,Bitstream Vera Sans Mono,DejaVu Sans Mono,Monaco,Consolas,monospace !important;border:0!important}.pln{color:#fff !important}ol.linenums{margin-top:0 !important;margin-bottom:0 !important;color:#666 !important}li.L0,li.L1,li.L2,li.L3,li.L4,li.L5,li.L6,li.L7,li.L8,li.L9{padding-left:1em !important;background-color:#000 !important;list-style-type:decimal !important}@media screen{.str{color:#6f0 !important}.kwd{color:#f60 !important}.com{color:#4D5382 !important}.typ{color:#458 !important}.lit{color:#00C3FF !important}.pun{color:#fff !important}.opn{color:#fff !important}.clo{color:#fff !important}.tag{color:orange !important}.atn{color:#9c9 !important}.atv{color:#6f0 !important}.dec{color:#fff !important}.var{color:#fff !important}.fun{color:#fc0 !important}}");
+            //https://jmblog.github.io/color-themes-for-google-code-prettify/
+            //css_add_inline(".prettyprint{text-shadow: 0 0 0.001em !important;font-size:14px;background:#f4fbf4;font-family:Menlo,Bitstream Vera Sans Mono,DejaVu Sans Mono,Monaco,Consolas,monospace;border:0!important}.pln{color:#131513!important}ol.linenums{margin-top:0;margin-bottom:0;color:#809980!important}li.L0,li.L1,li.L2,li.L3,li.L4,li.L5,li.L6,li.L7,li.L8,li.L9{padding-left:1em;background-color:#f4fbf4;list-style-type:decimal}@media screen{.str{color:#29a329}.kwd{color:#ad2bee}.com{color:#809980}.typ{color:#3d62f5}.lit{color:#87711d}.pun{color:#131513}.opn{color:#131513}.clo{color:#131513}.tag{color:#e6193c}.atn{color:#87711d}.atv{color:#1999b3}.dec{color:#87711d}.var{color:#e6193c}.fun{color:#3d62f5}}");
+
             //2016.10.19+ md_file_show()
             md_file_show('$2','md_file');
             md_file_show('navigation.md','md_file_navigation');
@@ -1420,7 +1428,6 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
         }
 
         function changebackcolor(url='http',color1="red",color2="orange",color3="green",color4="blown",color5="black"){
-
             //https://coolors.co/03384d-02464f-003e37-01362a-2c2d23
             if(localStorage['backcolorchange']!=url){
 
@@ -1566,7 +1573,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
         //燈箱驗證用 function，排除事項統一加在這裡。
         function fancybox_check_before(this_mono){
                     //----針對 X-Frame-Options 確定的網域，在這裡作手動排除。
-                    if(this_mono.href.match(/(^https?:\/\/trello.com|^https?:\/\/developers.google.com|^https?:\/\/github.com|^https?:\/\/highlightjs.org|^https?:\/\/www.google.com|^https?:\/\/greasyfork.org|^https?:\/\/chrome.google.com|^https?:\/\/www.backblaze.com|^https?:\/\/.*sdbx.jp|^https?:\/\/www.ninja.co.jp|^https?:\/\/.*plurk.com)/gi)){
+                    if(this_mono.href.match(/(^https?:\/\/trello.com|^https?:\/\/developers.google.com|^https?:\/\/github.com|^https?:\/\/highlightjs.org|^https?:\/\/www.google.com|^https?:\/\/greasyfork.org|^https?:\/\/chrome.google.com|^https?:\/\/www.zapier.com|^https?:\/\/zapier.com|^https?:\/\/www.backblaze.com|^https?:\/\/.*sdbx.jp|^https?:\/\/www.ninja.co.jp|^https?:\/\/.*plurk.com)/gi)){
                         console.log('【Error】Refused to display \'' + this_mono.href + '\' in a frame because it set \'X-Frame-Options\'\n針對這些確定不支援跨站顯示框架網頁的網域，已自動排除使用燈箱。');
                         window.open(this_mono.href,'_blank');
                         $.fancybox.close(1);
@@ -1624,6 +1631,19 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                 }
 
           });
+        }
+
+        //2016.11.27+ 改變指定標籤的 class
+        function change_tag_class(tag_name,class_name){
+            var tagA = document.getElementsByTagName(tag_name);
+            for( var i=0; i < tagA.length; i++ ){
+                if(tagA[i].getAttribute('class')!=class_name){
+                  if(tagA[i].getAttribute('class')!='prettyprint prettyprinted'){
+                    tagA[i].setAttribute('class', class_name);
+                    console.log(document.getElementsByTagName(tag_name)[i]);
+                  }
+                }
+            }
         }
 
         //2016.11.10+ 
@@ -1736,6 +1756,11 @@ console.log("\u88ab\u901a\u5831\u7684\u6240\u5728\u7db2\u5740\uff1a"+location.hr
         //非同步載入姐姐 **************************************************************************
         plus_js("x.js","plusjs_"+Math.floor(1E9*Math.random()));
 
+        function css_add_inline( css_code ) {
+          var div = document.createElement( "div" );
+          div.innerHTML = "<p>x</p><style>" + css_code + "</style>";
+          document.body.appendChild(div.childNodes[1]);
+        }
         //2016.11.25+ 跳到神祕地點
         //2016.11.26+ 多導向，原視窗、燈箱、外開
         function enter_himitsu(word,namae,type_switch="md"){

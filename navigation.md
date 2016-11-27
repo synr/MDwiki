@@ -174,7 +174,6 @@
 
   - #聯絡我
   - [給我意見或諮詢（Google）](https://docs.google.com/forms/d/e/1FAIpQLSdERtSvQfS_6Oul8hCnxKzcIvceM5f8ZN75QirMZh1VvukmkQ/viewform?embedded=true)
-  - [給我意見（powr.io）](https://www.powr.io/plugins/contact-form/view?unique_label=cff23c83_1479222775&external_type=webs)
   ----
   - #LINE 服務台
   - <a href="javascript:line_me();"><img src="line.png" /> 直接發 LINE 訊息給站長</a>
@@ -268,3 +267,5 @@
 <!-- 
   - <a href="javascript:fancybox_openurl('https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/不告訴你&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=false&amp;show_reposts=false&amp;visual=true&amp;download=true&amp;download=true&amp;start_track=10');">★─☆｡oﾟ｡共鳴中(o｀▽´)っ ～*♪･ﾟ｡☆彡</a>
  -->
+
+<!-- - [給我意見（powr.io）](https://www.powr.io/plugins/contact-form/view?unique_label=cff23c83_1479222775&external_type=webs) -->
