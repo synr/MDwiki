@@ -184,9 +184,10 @@
   - <a href="javascript:fancybox_openurl('https://line.me/R/ti/p/%40uwk0684z');" alt="加入好友"><img src="line.png" /> 真人管理本站的 LINE</a>
   - <a href="javascript:fancybox_openurl('https://line.me/R/ti/p/%40pyv6283b');" alt="加入好友"><img src="line.png" /> 動畫瘋 LINE 機器人（站長試寫）</a>
   
-[🔃  2016.11.25 更新]()
+[🔃  2016.11.27 更新]()
 
   - #更新項目
+  - [🆕 新增設置 LINE 給站長教學影片](# "2016.11.27")
   - [🆕 優化 LINE 服務台、秘密基地 介面](# "2016.11.26")
   - [🆕 增加 LINE 服務台、秘密基地](# "2016.11.25")
   - [🆕 增加 LINE 通報、本站 LINE、站長機器人 LINE](# "2016.11.24")

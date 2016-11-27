@@ -1090,11 +1090,11 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
 
             // 2016.10.30+ 控制廣告提示
             //如果是行動裝置或者不是忍者網域，就不要顯示廣告提示
-            if( (is_mobile()) || (!(location.href.indexOf('landerso.at-ninja.jp')!=-1))  ){
+            if( (is_mobile()) || (!(document.domain.indexOf('landerso.at-ninja.jp')!=-1))  ){
                 $(document.getElementById('ninja')).hide();
             }
     
-            var tagA = document.getElementsByTagName( "a" );
+            var tagA = document.getElementsByTagName('a');
 
             isgoogle = new RegExp( "^https?:\/\/.*.googledrive.com.*\/host\/(.*)\/(#.*)$", "i");
             var thispage_googleid = location.href.replace(isgoogle,'$1');
@@ -1118,12 +1118,12 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                                 //上層 if 判斷是 google，這層判斷 google id 不同就要當外站處理，另開視窗。
                                 tagA[i].target = "_blank";
                                 uesLightbox(tagA[i]);
-                                console.log(tagA[i]);   
+                                console.log('[google] = ' + tagA[i]);   
                             }
                         }else{
                             tagA[i].target = "_blank";
                             uesLightbox(tagA[i]);
-                            console.log(tagA[i]);                        
+                            console.log(tagA[i]);
                         }
                     }
                 }
@@ -1136,9 +1136,13 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                 }
                 //如果是 https 端裡面要塞 http 會被拒絕，所以全都當成 https 去連線
                 // if(!(tagA[i].href.match(/^https.*/i))){
-                //     tagA[i].href = tagA[i].href.replace(/^http\:\/\//,'https\:\/\/')
+                //     tagA[idocument.domain tagA[i].href.replace(/^http\:\/\//,'https\:\/\/')
                 //     console.log('無差別改寫成 https: = ' + tagA[i].href);
                 // }
+
+                //2016.11.27+ 檢查有沒有設置錯誤的 JavaScript Command url
+                //這裡是整個 atag 的迴圈，所以放進來直接利用
+                reset_javascript_command_url(tagA[i]);
             }
         }
         function googledrive_url(link_url_array){
@@ -1150,6 +1154,21 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
             if ( (taga_before != link_url_array.href) && (taga_before != '') ){
                 console.log('Google drive change = ' + taga_before + '  to  ' + link_url_array);
             }        
+        }
+
+        //2016.11.27+ 修正網址有深層資料夾中的 javascript: 連結被弄成 Domain 型網頁連結
+        function reset_javascript_command_url(tagA){
+            // var tagA = document.getElementsByTagName('a');
+            // for( var i=0; i < tagA.length; i++ ){
+            //     if(tagA[i].href.match(/^http.*(javascript:.*$)/gi)){
+            //         tagA[i].href = tagA[i].href.replace(/^http.*(javascript:.*$)/gi,'$1');
+            //         console.log('change javascript url = ' + tagA[i]);
+            //     }
+            // } 
+                if(tagA.href.match(/^http.*(javascript:.*$)/gi)){
+                    tagA.href = tagA.href.replace(/^http.*(javascript:.*$)/gi,'$1');
+                    console.log('change javascript url after = ' + tagA);
+                }
         }
     </script>
 <!-- 外部超連結另開視窗 Google Drive 複雜版 function + 單機設置  end -->
@@ -1653,29 +1672,29 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
         //2016.11.19+ 從 LINE BOT 得到啟發尋找關鍵字 setRequestHeader + jQ 得到 http://stackoverflow.com/questions/14010851/set-request-header-jquery-ajax
         // type 後面 data 前面 + beforeSend
         //2016.11.24 驗證 JANDI Error 400，驗證 LINE 有擋，所以結論還是要靠 Zapier Webhooks
-        function JADIN_webhooks(send_json_data,JADIN_webhooks_url){
-            $.ajax({
-                url: JADIN_webhooks_url,
-                type:"POST",
-                data: JSON.stringify(send_json_data),
-                beforeSend: function (xhr) {
-                    xhr.setRequestHeader('Accept', 'application/vnd.tosslab.jandi-v2+json');
-                    xhr.setRequestHeader('Content-Type', 'application/json');
-                },
-                dataType:'text',
-                success: function(msg){
-                    console.log('通報成功！');
-                    //console.log('被通報的網址：' + this_mono.href);
-                    console.log('詳細資訊備查：\n' + msg); 
-                },
+        // function JADIN_webhooks(send_json_data,JADIN_webhooks_url){
+        //     $.ajax({
+        //         url: JADIN_webhooks_url,
+        //         type:"POST",
+        //         data: JSON.stringify(send_json_data),
+        //         beforeSend: function (xhr) {
+        //             xhr.setRequestHeader('Accept', 'application/vnd.tosslab.jandi-v2+json');
+        //             xhr.setRequestHeader('Content-Type', 'application/json');
+        //         },
+        //         dataType:'text',
+        //         success: function(msg){
+        //             console.log('通報成功！');
+        //             //console.log('被通報的網址：' + this_mono.href);
+        //             console.log('詳細資訊備查：\n' + msg); 
+        //         },
 
-                 error:function(xhr, ajaxOptions, thrownError){ 
-                    console.log("通報失敗，詳細資訊如下：")
-                    console.log(xhr.status); 
-                    console.log(thrownError); 
-                 }
-            });
-        }
+        //          error:function(xhr, ajaxOptions, thrownError){ 
+        //             console.log("通報失敗，詳細資訊如下：")
+        //             console.log(xhr.status); 
+        //             console.log(thrownError); 
+        //          }
+        //     });
+        // }
 
           // var request = new XMLHttpRequest();
           // request.onreadystatechange= function () {
