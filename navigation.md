@@ -182,6 +182,7 @@
   - #加入本站的 LINE
   - <a href="javascript:fancybox_openurl('https://line.me/R/ti/p/%40uwk0684z');" alt="加入好友"><img src="line.png" /> 真人管理本站的 LINE</a>
   - <a href="javascript:fancybox_openurl('https://line.me/R/ti/p/%40pyv6283b');" alt="加入好友"><img src="line.png" /> 動畫瘋 LINE 機器人（站長試寫）</a>
+  - [📺 操作示範效果](https://drive.google.com/file/d/0B3rgktr7zpP9c3BXR2c1WC1RdTQ/preview "這是基本版純文字訊息，據官方文件所示也支援傳送圖片、聲音、影像、檔案。但那需要另外研究怎麼寫。")
   
 [🔃  2016.11.27 更新]()
 
