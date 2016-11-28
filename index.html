@@ -919,6 +919,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
         }
 
         function parseLink(){
+
             //2016.11.27+ high code
             change_tag_class('pre','prettyprint');
             plus_js("https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js","plusjs_"+Math.floor(1E9*Math.random()));
@@ -1150,7 +1151,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
 
                 //2016.11.27+ 檢查有沒有設置錯誤的 JavaScript Command url
                 //這裡是整個 atag 的迴圈，所以放進來直接利用
-                reset_javascript_command_url(tagA[i]);
+                //reset_javascript_command_url(tagA[i]);
             }
         }
         function googledrive_url(link_url_array){
@@ -1166,18 +1167,20 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
 
         //2016.11.27+ 修正網址有深層資料夾中的 javascript: 連結被弄成 Domain 型網頁連結
         function reset_javascript_command_url(tagA){
-            // var tagA = document.getElementsByTagName('a');
-            // for( var i=0; i < tagA.length; i++ ){
-            //     if(tagA[i].href.match(/^http.*(javascript:.*$)/gi)){
-            //         tagA[i].href = tagA[i].href.replace(/^http.*(javascript:.*$)/gi,'$1');
-            //         console.log('change javascript url = ' + tagA[i]);
-            //     }
-            // } 
-                if(tagA.href.match(/^http.*(javascript:.*$)/gi)){
-                    tagA.href = tagA.href.replace(/^http.*(javascript:.*$)/gi,'$1');
-                    console.log('change javascript url after = ' + tagA);
+            var tagA = document.getElementsByTagName('a');
+            for( var i=0; i < tagA.length; i++ ){
+                if(tagA[i].href.match(/^http.*(javascript:.*$)/gi)){
+                    tagA[i].href = tagA[i].href.replace(/^http.*(javascript:.*$)/gi,'$1');
+                    console.log('change javascript url = ' + tagA[i]);
                 }
+            } 
+                // if(tagA.href.match(/^http.*(javascript:.*$)/gi)){
+                //     tagA.href = tagA.href.replace(/^http.*(javascript:.*$)/gi,'$1');
+                //     console.log('change javascript url after = ' + tagA);
+                // }
         }
+        window.setTimeout(reset_javascript_command_url,1000); 
+        //window.setInterval(new_a_tag_javascript, 3000); //循環
     </script>
 <!-- 外部超連結另開視窗 Google Drive 複雜版 function + 單機設置  end -->
 

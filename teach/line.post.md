@@ -332,19 +332,11 @@ Note：
 　 2016/11/27 初稿
 
 <script type="text/javascript">
-        if (((localStorage['himitsu'] === undefined)||(localStorage['himitsu'] == null)||(localStorage['himitsu'] == '')||(localStorage['himitsu'] != GibberishAES.dec("U2FsdGVkX1+Rzd4lKJWtY9yqsBzjxKypYKVgAH5X+dQ=","20161128")))) {
-	        document.location = document.location.href.replace(/\#\!(.*.md)/gi,'#');
-        	//history.back();       	  	
-        }
-		localStorage.removeItem('himitsu');
+  if (((localStorage['himitsu'] === undefined)||(localStorage['himitsu'] == null)||(localStorage['himitsu'] == '')||(localStorage['himitsu'] != GibberishAES.dec("U2FsdGVkX1+Rzd4lKJWtY9yqsBzjxKypYKVgAH5X+dQ=","20161128")))) {
+	    document.location = document.location.href.replace(/\#\!(.*.md)/gi,'#');
+     	//history.back();       	  	
+  }
+	localStorage.removeItem('himitsu');
 
-
-    //為了解決 a 的 JavaScript 有時候會瞬破
-    var tagA = document.getElementsByTagName('a');
-    for( var i=0; i < tagA.length; i++ ){
-                if(tagA[i].href.match(/^http.*(javascript:.*$)/gi)){
-                    tagA[i].href = tagA[i].href.replace(/^http.*(javascript:.*$)/gi,'$1');
-                    console.log('change javascript url after = ' + tagA[i]);
-                }
-    }
+  window.setTimeout(reset_javascript_command_url,1000);   //window.setInterval(new_a_tag_javascript, 3000); //循環
 </script>
