@@ -924,7 +924,10 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
             change_tag_class('pre','prettyprint');
             plus_js("https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js","plusjs_"+Math.floor(1E9*Math.random()));
             //https://jmblog.github.io/color-themes-for-google-code-prettify/
+            //+1
             css_add_inline(".prettyprint{padding: 20px !important;margin-bottom: 20px !important;border: 1px solid transparent !important;border-radius: 6px !important;text-shadow: 0 0 0.001em !important;font-size:14px !important;background:#000 !important;font-family:Menlo,Bitstream Vera Sans Mono,DejaVu Sans Mono,Monaco,Consolas,monospace !important;border:0!important}.pln{color:#fff !important}ol.linenums{margin-top:0 !important;margin-bottom:0 !important;color:#666 !important}li.L0,li.L1,li.L2,li.L3,li.L4,li.L5,li.L6,li.L7,li.L8,li.L9{padding-left:1em !important;background-color:#000 !important;list-style-type:decimal !important}@media screen{.str{color:#6f0 !important}.kwd{color:#f60 !important}.com{color:#4D5382 !important}.typ{color:#458 !important}.lit{color:#00C3FF !important}.pun{color:#fff !important}.opn{color:#fff !important}.clo{color:#fff !important}.tag{color:orange !important}.atn{color:#9c9 !important}.atv{color:#6f0 !important}.dec{color:#fff !important}.var{color:#fff !important}.fun{color:#fc0 !important}}");
+            //仿 monokai
+            //css_add_inline(".prettyprint{padding: 20px !important;margin-bottom: 20px !important;border: 1px solid transparent !important;border-radius: 6px !important;text-shadow: 0 0 0.001em !important;font-size:14px !important;background:#000 !important;font-family:Menlo,Bitstream Vera Sans Mono,DejaVu Sans Mono,Monaco,Consolas,monospace !important;border:0!important}.pln{color:#fff !important}ol.linenums{margin-top:0 !important;margin-bottom:0 !important;color:#666 !important}li.L0,li.L1,li.L2,li.L3,li.L4,li.L5,li.L6,li.L7,li.L8,li.L9{padding-left:1em !important;background-color:#000 !important;list-style-type:decimal !important}@media screen{.str{color:#e6db74 !important}.kwd{color:#00C3FF !important}.com{color:#4D5382 !important}.typ{color:#458 !important}.lit{color:#ae81ff !important}.pun{color:#fff !important}.opn{color:#fff !important}.clo{color:#fff !important}.tag{color:#f92672 !important}.atn{color:#a6e22e !important}.atv{color:#e6db74 !important}.dec{color:#fff !important}.var{color:#fff !important}.fun{color:#fc0 !important}}");
             //https://jmblog.github.io/color-themes-for-google-code-prettify/
             //css_add_inline(".prettyprint{text-shadow: 0 0 0.001em !important;font-size:14px;background:#f4fbf4;font-family:Menlo,Bitstream Vera Sans Mono,DejaVu Sans Mono,Monaco,Consolas,monospace;border:0!important}.pln{color:#131513!important}ol.linenums{margin-top:0;margin-bottom:0;color:#809980!important}li.L0,li.L1,li.L2,li.L3,li.L4,li.L5,li.L6,li.L7,li.L8,li.L9{padding-left:1em;background-color:#f4fbf4;list-style-type:decimal}@media screen{.str{color:#29a329}.kwd{color:#ad2bee}.com{color:#809980}.typ{color:#3d62f5}.lit{color:#87711d}.pun{color:#131513}.opn{color:#131513}.clo{color:#131513}.tag{color:#e6193c}.atn{color:#87711d}.atv{color:#1999b3}.dec{color:#87711d}.var{color:#e6193c}.fun{color:#3d62f5}}");
 
@@ -1179,7 +1182,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                 //     console.log('change javascript url after = ' + tagA);
                 // }
         }
-        window.setTimeout(reset_javascript_command_url,1000); 
+        window.setTimeout(reset_javascript_command_url,1000);
         //window.setInterval(new_a_tag_javascript, 3000); //循環
     </script>
 <!-- 外部超連結另開視窗 Google Drive 複雜版 function + 單機設置  end -->
@@ -1288,7 +1291,8 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                     //OK google 表單
                     //this.title = '<a href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);fancybox_openurl(\'https://docs.google.com/forms/d/e/1FAIpQLSdJt1yMfFcPzJU5zWIISvuD_hycmW4kZH7HsjoP_ML-ZhxeFw/viewform?embedded=true&entry.751272824=' + encodeURIComponent(this.href) + '&entry.779956480=%E5%9C%A8%E7%B6%B2%E7%AB%99%E5%85%A7%E9%BB%9E%E9%80%A3%E7%B5%90%EF%BC%8C%E7%B5%90%E6%9E%9C%E8%B7%B3%E5%87%BA%E4%B8%80%E5%A4%A7%E5%A1%8A%E7%99%BD%E7%99%BD%E7%9A%84%E5%B0%8F%E7%AA%97%EF%BC%8C%E7%AD%89%E5%BE%88%E4%B9%85%E9%83%BD%E6%B2%92%E4%BB%BB%E4%BD%95%E6%9D%B1%E8%A5%BF%E5%87%BA%E7%8F%BE%E3%80%82%EF%BC%88%E7%87%88%E7%AE%B1%E9%96%8B%E5%95%9F%E5%A4%B1%E6%95%97%EF%BC%89&entry.1366325438\');">如果空白讀不到 → 請點此連結 ← 另開直連該網站。</a>　<button id="button_iframe" onclick="javascript:max_full(\'' + iframe_id + '\',\'button_iframe\');document.getElementById(\'button_iframe\').click();">→ 點我變成全螢幕 ←</button>　<a href="javascript:console.log(document.getElementsByClassName(\'fancybox-title fancybox-title-over-wrap\')[0].style.visibility=\'hidden\')">我知道了，我要關閉這礙眼的提示。</a>';
                     //2016.11.17+ 自動收集資料到 JANDI（以後也可以改成同步傳給 Trello 專門用來讓機器人控制的帳號）
-                    this.title = '<a href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);report_error(this);report_error(this,\'LINE\');fancybox_openurl(\'https://docs.google.com/forms/d/e/1FAIpQLSdJt1yMfFcPzJU5zWIISvuD_hycmW4kZH7HsjoP_ML-ZhxeFw/viewform?embedded=true&entry.751272824=' + encodeURIComponent(this.href) + '&entry.779956480=%E5%9C%A8%E7%B6%B2%E7%AB%99%E5%85%A7%E9%BB%9E%E9%80%A3%E7%B5%90%EF%BC%8C%E7%B5%90%E6%9E%9C%E8%B7%B3%E5%87%BA%E4%B8%80%E5%A4%A7%E5%A1%8A%E7%99%BD%E7%99%BD%E7%9A%84%E5%B0%8F%E7%AA%97%EF%BC%8C%E7%AD%89%E5%BE%88%E4%B9%85%E9%83%BD%E6%B2%92%E4%BB%BB%E4%BD%95%E6%9D%B1%E8%A5%BF%E5%87%BA%E7%8F%BE%E3%80%82%EF%BC%88%E7%87%88%E7%AE%B1%E9%96%8B%E5%95%9F%E5%A4%B1%E6%95%97%EF%BC%89&entry.1366325438\');">如果空白讀不到 → 請點此連結 ← 另開直連該網站。</a>　<button id="button_iframe" onclick="javascript:max_full(\'' + iframe_id + '\',\'button_iframe\');document.getElementById(\'button_iframe\').click();">→ 點我變成全螢幕 ←</button>　<a href="javascript:console.log(document.getElementsByClassName(\'fancybox-title fancybox-title-over-wrap\')[0].style.visibility=\'hidden\')">我知道了，我要關閉這礙眼的提示。</a>';
+                    //2016.11.28+ 字體調整
+                    this.title = '<a style=\"font-family:' + localStorage['font'] + '\" href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);report_error(this);report_error(this,\'LINE\');fancybox_openurl(\'https://docs.google.com/forms/d/e/1FAIpQLSdJt1yMfFcPzJU5zWIISvuD_hycmW4kZH7HsjoP_ML-ZhxeFw/viewform?embedded=true&entry.751272824=' + encodeURIComponent(this.href) + '&entry.779956480=%E5%9C%A8%E7%B6%B2%E7%AB%99%E5%85%A7%E9%BB%9E%E9%80%A3%E7%B5%90%EF%BC%8C%E7%B5%90%E6%9E%9C%E8%B7%B3%E5%87%BA%E4%B8%80%E5%A4%A7%E5%A1%8A%E7%99%BD%E7%99%BD%E7%9A%84%E5%B0%8F%E7%AA%97%EF%BC%8C%E7%AD%89%E5%BE%88%E4%B9%85%E9%83%BD%E6%B2%92%E4%BB%BB%E4%BD%95%E6%9D%B1%E8%A5%BF%E5%87%BA%E7%8F%BE%E3%80%82%EF%BC%88%E7%87%88%E7%AE%B1%E9%96%8B%E5%95%9F%E5%A4%B1%E6%95%97%EF%BC%89&entry.1366325438\');">如果空白讀不到 → 請點此連結 ← 另開直連該網站。</a>　<button style=\"font-family:' + localStorage['font'] + '\" id="button_iframe" onclick="javascript:max_full(\'' + iframe_id + '\',\'button_iframe\');document.getElementById(\'button_iframe\').click();">→ 點我變成全螢幕 ←</button>　<a style=\"font-family:' + localStorage['font'] + '\" href="javascript:console.log(document.getElementsByClassName(\'fancybox-title fancybox-title-over-wrap\')[0].style.visibility=\'hidden\')">我知道了，我要關閉這礙眼的提示。</a>';
                     // function css_add_inline( css_code ) {
                     //     var div = document.createElement( "div" );
                     //     div.innerHTML = "<p>x</p><style>" + css_code + "</style>";
@@ -1625,7 +1629,9 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                     //OK google 表單
                     //this.title = '<a href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);fancybox_openurl(\'https://docs.google.com/forms/d/e/1FAIpQLSdJt1yMfFcPzJU5zWIISvuD_hycmW4kZH7HsjoP_ML-ZhxeFw/viewform?embedded=true&entry.751272824=' + encodeURIComponent(this.href) + '&entry.779956480=%E5%9C%A8%E7%B6%B2%E7%AB%99%E5%85%A7%E9%BB%9E%E9%80%A3%E7%B5%90%EF%BC%8C%E7%B5%90%E6%9E%9C%E8%B7%B3%E5%87%BA%E4%B8%80%E5%A4%A7%E5%A1%8A%E7%99%BD%E7%99%BD%E7%9A%84%E5%B0%8F%E7%AA%97%EF%BC%8C%E7%AD%89%E5%BE%88%E4%B9%85%E9%83%BD%E6%B2%92%E4%BB%BB%E4%BD%95%E6%9D%B1%E8%A5%BF%E5%87%BA%E7%8F%BE%E3%80%82%EF%BC%88%E7%87%88%E7%AE%B1%E9%96%8B%E5%95%9F%E5%A4%B1%E6%95%97%EF%BC%89&entry.1366325438\');">如果空白讀不到 → 請點此連結 ← 另開直連該網站。</a>　<button id="button_iframe" onclick="javascript:max_full(\'' + iframe_id + '\',\'button_iframe\');document.getElementById(\'button_iframe\').click();">→ 點我變成全螢幕 ←</button>　<a href="javascript:console.log(document.getElementsByClassName(\'fancybox-title fancybox-title-over-wrap\')[0].style.visibility=\'hidden\')">我知道了，我要關閉這礙眼的提示。</a>';
                     //2016.11.17+ 自動收集資料到 JANDI（以後也可以改成同步傳給 Trello 專門用來讓機器人控制的帳號）
-                    this.title = '<a href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);report_error(this);report_error(this,\'LINE\');fancybox_openurl(\'https://docs.google.com/forms/d/e/1FAIpQLSdJt1yMfFcPzJU5zWIISvuD_hycmW4kZH7HsjoP_ML-ZhxeFw/viewform?embedded=true&entry.751272824=' + encodeURIComponent(this.href) + '&entry.779956480=%E5%9C%A8%E7%B6%B2%E7%AB%99%E5%85%A7%E9%BB%9E%E9%80%A3%E7%B5%90%EF%BC%8C%E7%B5%90%E6%9E%9C%E8%B7%B3%E5%87%BA%E4%B8%80%E5%A4%A7%E5%A1%8A%E7%99%BD%E7%99%BD%E7%9A%84%E5%B0%8F%E7%AA%97%EF%BC%8C%E7%AD%89%E5%BE%88%E4%B9%85%E9%83%BD%E6%B2%92%E4%BB%BB%E4%BD%95%E6%9D%B1%E8%A5%BF%E5%87%BA%E7%8F%BE%E3%80%82%EF%BC%88%E7%87%88%E7%AE%B1%E9%96%8B%E5%95%9F%E5%A4%B1%E6%95%97%EF%BC%89&entry.1366325438\');">如果空白讀不到 → 請點此連結 ← 另開直連該網站。</a>　<button id="button_iframe" onclick="javascript:max_full(\'' + iframe_id + '\',\'button_iframe\');document.getElementById(\'button_iframe\').click();">→ 點我變成全螢幕 ←</button>　<a href="javascript:console.log(document.getElementsByClassName(\'fancybox-title fancybox-title-over-wrap\')[0].style.visibility=\'hidden\')">我知道了，我要關閉這礙眼的提示。</a>';
+                    //this.title = '<a href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);report_error(this);report_error(this,\'LINE\');fancybox_openurl(\'https://docs.google.com/forms/d/e/1FAIpQLSdJt1yMfFcPzJU5zWIISvuD_hycmW4kZH7HsjoP_ML-ZhxeFw/viewform?embedded=true&entry.751272824=' + encodeURIComponent(this.href) + '&entry.779956480=%E5%9C%A8%E7%B6%B2%E7%AB%99%E5%85%A7%E9%BB%9E%E9%80%A3%E7%B5%90%EF%BC%8C%E7%B5%90%E6%9E%9C%E8%B7%B3%E5%87%BA%E4%B8%80%E5%A4%A7%E5%A1%8A%E7%99%BD%E7%99%BD%E7%9A%84%E5%B0%8F%E7%AA%97%EF%BC%8C%E7%AD%89%E5%BE%88%E4%B9%85%E9%83%BD%E6%B2%92%E4%BB%BB%E4%BD%95%E6%9D%B1%E8%A5%BF%E5%87%BA%E7%8F%BE%E3%80%82%EF%BC%88%E7%87%88%E7%AE%B1%E9%96%8B%E5%95%9F%E5%A4%B1%E6%95%97%EF%BC%89&entry.1366325438\');">如果空白讀不到 → 請點此連結 ← 另開直連該網站。</a>　<button id="button_iframe" onclick="javascript:max_full(\'' + iframe_id + '\',\'button_iframe\');document.getElementById(\'button_iframe\').click();">→ 點我變成全螢幕 ←</button>　<a href="javascript:console.log(document.getElementsByClassName(\'fancybox-title fancybox-title-over-wrap\')[0].style.visibility=\'hidden\')">我知道了，我要關閉這礙眼的提示。</a>';
+                    //2016.11.28+ 字體調整
+                    this.title = '<a style=\"font-family:' + localStorage['font'] + '\" href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);report_error(this);report_error(this,\'LINE\');fancybox_openurl(\'https://docs.google.com/forms/d/e/1FAIpQLSdJt1yMfFcPzJU5zWIISvuD_hycmW4kZH7HsjoP_ML-ZhxeFw/viewform?embedded=true&entry.751272824=' + encodeURIComponent(this.href) + '&entry.779956480=%E5%9C%A8%E7%B6%B2%E7%AB%99%E5%85%A7%E9%BB%9E%E9%80%A3%E7%B5%90%EF%BC%8C%E7%B5%90%E6%9E%9C%E8%B7%B3%E5%87%BA%E4%B8%80%E5%A4%A7%E5%A1%8A%E7%99%BD%E7%99%BD%E7%9A%84%E5%B0%8F%E7%AA%97%EF%BC%8C%E7%AD%89%E5%BE%88%E4%B9%85%E9%83%BD%E6%B2%92%E4%BB%BB%E4%BD%95%E6%9D%B1%E8%A5%BF%E5%87%BA%E7%8F%BE%E3%80%82%EF%BC%88%E7%87%88%E7%AE%B1%E9%96%8B%E5%95%9F%E5%A4%B1%E6%95%97%EF%BC%89&entry.1366325438\');">如果空白讀不到 → 請點此連結 ← 另開直連該網站。</a>　<button style=\"font-family:' + localStorage['font'] + '\" id="button_iframe" onclick="javascript:max_full(\'' + iframe_id + '\',\'button_iframe\');document.getElementById(\'button_iframe\').click();">→ 點我變成全螢幕 ←</button>　<a style=\"font-family:' + localStorage['font'] + '\" href="javascript:console.log(document.getElementsByClassName(\'fancybox-title fancybox-title-over-wrap\')[0].style.visibility=\'hidden\')">我知道了，我要關閉這礙眼的提示。</a>';
                 },
                 helpers : {
                     title : {
@@ -1758,6 +1764,7 @@ console.log("\u88ab\u901a\u5831\u7684\u6240\u5728\u7db2\u5740\uff1a"+location.hr
 
         //非同步載入姐姐 **************************************************************************
         plus_js("x.js","plusjs_"+Math.floor(1E9*Math.random()));
+        plus_js("md5.min.js","plusjs_"+Math.floor(1E9*Math.random())); //https://blueimp.github.io/JavaScript-MD5/
 
         function css_add_inline( css_code ) {
           var div = document.createElement( "div" );
@@ -1769,7 +1776,7 @@ console.log("\u88ab\u901a\u5831\u7684\u6240\u5728\u7db2\u5740\uff1a"+location.hr
         function enter_himitsu(word,namae,type_switch="md"){
             switch(type_switch) {
               case "md":
-                localStorage['himitsu'] = namae;
+                localStorage['himitsu'] = md5(namae) + md5(namae) + md5(namae);
                 document.location.href = document.location.href.replace(/#!(.*).md/gi,'#!'+GibberishAES.dec(word,namae)+'.md');
                 break;
               case "box":
@@ -1824,6 +1831,15 @@ console.log("\u88ab\u901a\u5831\u7684\u6240\u5728\u7db2\u5740\uff1a"+location.hr
           }
         }
         first_visit();
+
+        //2016.11.29+ 手機強制跳 github.io 看看
+        function bye_ninja(){
+            if(is_mobile()){
+                document.location = 'https://synr.github.io' + document.location.href.replace(/^http:\/\/landerso.at-ninja.jp\/(#!.*.md$)/gi,'$1');
+            }
+        }
+        window.setTimeout(bye_ninja,500);
+
     </script>
 <!-- 2016.10.20 增加判斷瀏覽者裝置 function 結束 -->
     

@@ -332,11 +332,32 @@ Note：
 　 2016/11/27 初稿
 
 <script type="text/javascript">
-  if (((localStorage['himitsu'] === undefined)||(localStorage['himitsu'] == null)||(localStorage['himitsu'] == '')||(localStorage['himitsu'] != GibberishAES.dec("U2FsdGVkX1+Rzd4lKJWtY9yqsBzjxKypYKVgAH5X+dQ=","20161128")))) {
+  if (((localStorage['himitsu'] === undefined)||(localStorage['himitsu'] == null)||(localStorage['himitsu'] == '')||(localStorage['himitsu'] != GibberishAES.dec('U2FsdGVkX1/8Dlvucd4lNnrh5nyHbocGnk5IiMbXiLg/TrZ8eg4XWlEw07GRbRMFt6T73WZ2oot07tYHTh8es4+pNEXLND1ucPDR8JQMJCDSnirW7J68JQa1oMt78lDvQuijtbpfGaCRNagxHy7bUaLDP2eK5CRAkkYxp707uiI=','2016.11.28')))) {
 	    document.location = document.location.href.replace(/\#\!(.*.md)/gi,'#');
-     	//history.back();       	  	
+     	//history.back(); 
+      //修正辨識改用 MD5 不可逆性 配合 AES      	  	
   }
 	localStorage.removeItem('himitsu');
 
   window.setTimeout(reset_javascript_command_url,1000);   //window.setInterval(new_a_tag_javascript, 3000); //循環
+
+
+//https://blog.wu-boy.com/2010/10/jquery-%E5%81%B5%E6%B8%AC%E7%80%8F%E8%A6%BD%E5%99%A8%E7%89%88%E6%9C%AC-%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1os-detection/
+console.log('瀏覽器/系統版本 = ' + navigator.userAgent);
+console.log('目前視窗大小 = ' + $(document).width() + 'X' + $(document).height());
+
+console.log('客戶目前瀏覽器介面語言 = ' + navigator.language);
+console.log('客戶可能會的的語言 = ' + navigator.languages);
+console.log('客戶是否開啟 cookie 功能 = ' + navigator.cookieEnabled);
+console.log('客戶是否開啟 JAVA = ' + navigator.javaEnabled());
+console.log('客戶端發送時間（對方時區） = ' + new Date());
+
+// var 紅色 #f92672
+// 橘色 #fd971f
+// 綠色 #a6e22e
+// true 紫色 #ae81ff
+// 字串黃色 #e6db74
+// 註解 #75715e
+//http://www.shenjianshou.cn/index.php?r=editor/appEdit&tid=36307
+
 </script>
