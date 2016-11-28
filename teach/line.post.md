@@ -337,4 +337,14 @@ Note：
         	//history.back();       	  	
         }
 		localStorage.removeItem('himitsu');
+
+
+    //為了解決 a 的 JavaScript 有時候會瞬破
+    var tagA = document.getElementsByTagName('a');
+    for( var i=0; i < tagA.length; i++ ){
+                if(tagA[i].href.match(/^http.*(javascript:.*$)/gi)){
+                    tagA[i].href = tagA[i].href.replace(/^http.*(javascript:.*$)/gi,'$1');
+                    console.log('change javascript url after = ' + tagA[i]);
+                }
+    }
 </script>

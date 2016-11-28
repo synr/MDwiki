@@ -1812,6 +1812,15 @@ console.log("\u88ab\u901a\u5831\u7684\u6240\u5728\u7db2\u5740\uff1a"+location.hr
             return GibberishAES.enc(google_drive_video_url(input),word);
         }
 
+        //2016.11.28+ 第一次來的讓他體驗源柔字體
+        function first_visit(){
+          if (((localStorage['first_visit'] === undefined)||(localStorage['first_visit'] == null)||(localStorage['first_visit'] == ''))) {
+              localStorage['first_visit'] = false;
+              localStorage['font'] = ('\'genjyuugothicx_p_normal\',arial');
+              console.log('歡迎你第一次來，請試試看源柔字體！');
+          }
+        }
+        first_visit();
     </script>
 <!-- 2016.10.20 增加判斷瀏覽者裝置 function 結束 -->
     
