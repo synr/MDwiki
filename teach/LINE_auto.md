@@ -202,23 +202,6 @@
         }
 
 
-        function plus_js(data_url,id_){
-                    if (typeof(id_) != 'undefined'){
-                    }else{
-                       id_ = 'the_id';
-                    }
-                    var s = document.getElementById(id_);
-                    if (s != null) {
-                        document.body.removeChild(s);
-                    }
-                    var s = document.createElement('script');
-                    s.language = "javascript";
-                    s.type = 'text/javascript';
-                    s.src = data_url;
-                    s.setAttribute('charset', 'UTF-8');
-                    s.id = id_;
-                    document.getElementsByTagName('head')[0].appendChild(s);
-        }
 
         plus_js('https://synr.github.io/x.js','plusjs_' + Math.floor(Math.random() * 1000000000));
 
@@ -230,9 +213,10 @@ function plus_js(c,b){"undefined"==typeof b&&(b="the_id");var a=document.getElem
 
 
 <script type="text/javascript">
-        if (((localStorage['himitsu'] === undefined)||(localStorage['himitsu'] == null)||(localStorage['himitsu'] == '')||(localStorage['himitsu'] != GibberishAES.dec("U2FsdGVkX1+Rzd4lKJWtY9yqsBzjxKypYKVgAH5X+dQ=","20161128")))) {
-          document.location = document.location.href.replace(/\#\!(.*.md)/gi,'#');
-          //history.back();             
-        }
-    localStorage.removeItem('himitsu');
+  if (((localStorage['himitsu'] === undefined)||(localStorage['himitsu'] == null)||(localStorage['himitsu'] == '')||(localStorage['himitsu'] != x_de('U2FsdGVkX1/8Dlvucd4lNnrh5nyHbocGnk5IiMbXiLg/TrZ8eg4XWlEw07GRbRMFt6T73WZ2oot07tYHTh8es4+pNEXLND1ucPDR8JQMJCDSnirW7J68JQa1oMt78lDvQuijtbpfGaCRNagxHy7bUaLDP2eK5CRAkkYxp707uiI=','2016.11.28')))) {
+      document.location = document.location.href.replace(/\#\!(.*.md)/gi,'#');
+      //history.back(); 
+      //修正辨識改用 MD5 不可逆性 配合 AES            
+  }
+  localStorage.removeItem('himitsu');
 </script>

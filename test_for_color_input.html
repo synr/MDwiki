@@ -1,0 +1,205 @@
+﻿<!-- https://trello.com/c/x1VuCAFW/345-css3
+https://trello.com/c/cjusqols/386-css3
+https://trello.com/c/jKtLXTJE/424-css-gradient-animator -->
+
+
+<br /><br /><br /><br /><br /><br /><br />
+
+<input type="text" onkeyup="document.getElementById('himitsu').onkeydown=function(event){if(event.which==13){ document.getElementById('enter_button').click();}}" style="width: 100%; text-align: center;" id="himitsu" placeholder="暗號正確才開" autofocus="">
+
+<br /><br />
+<textarea style="width: 100%; transition: all 2s ease 0s; font-family: genjyuugothicx_p_normal, arial, 微軟正黑體, &quot;Microsoft JhengHei&quot;, sans-serif;" id="myform_text" rows="10" cols="50" onkeyup="javascript:localStorage['myform_text']=this.value;" onchange="javascript:localStorage['myform_text']=this.value;" placeholder="請隨意留言喔" autofocus=""></textarea>
+
+<style type="text/css">
+
+    body{
+      		background-color: #f9f9f9;
+  /*color: #2dbe60;
+  background-image: -webkit-linear-gradient(-45deg, #36a4fc, #35e564);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line  ar-gradient(270deg, #24bb94, #246abb);
+  */  
+	}
+
+    input[type="text"],textarea{
+    	font-size: 15px;
+      line-height:30px;
+      border-style:outset;
+      border-width:0;
+ 
+        border-radius: 6px; 
+        -moz-border-radius: 6px;
+        -webkit-border-radius: 6px;
+
+        -webkit-transition: all 0.4s ease;
+           -moz-transition: all 0.4s ease;
+            -ms-transition: all 0.4s ease;
+             -o-transition: all 0.4s ease;
+                transition: all 0.4s ease;
+
+        outline:none;
+
+		/*黃*/
+        border-color:rgba(250,188,1,.75)!important;
+        box-shadow:0 0 18px rgba(250,188,1,.5);
+
+        -moz-box-shadow:0 0 18px rgba(250,188,1,.5);
+        -webkit-box-shadow:0 0 18px rgba(250,188,1,.5);
+    }
+
+    input[type="text"]:hover,textarea:hover{
+    	font-size: 18px;
+    	font-style: bold;
+      color: brown ; /*#0BC10F;*/
+      text-decoration: none; 
+    }
+
+    input[type="text"]:hover{
+      -webkit-transform: scale(1.1);
+      -moz-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+
+    input[type="text"]:focus, input[type="text"]:hover, textarea:focus,textarea:hover{
+/*          outline:none;
+          border-color:rgba(11,193,15,.75)!important;
+          box-shadow:0 0 18px rgba(11,193,15,.5);
+
+          -moz-box-shadow:0 0 18px rgba(11,193,15,.5);
+          -webkit-box-shadow:0 0 18px rgba(11,193,15,.5);*/
+          animation: forminput 4s ease 2s infinite;
+    }
+
+    @keyframes forminput {
+      0% {
+      	/*黃*/
+        border-color:rgba(250,188,1,.75)!important;
+        box-shadow:0 0 18px rgba(250,188,1,.5);
+
+        -moz-box-shadow:0 0 18px rgba(250,188,1,.5);
+        -webkit-box-shadow:0 0 18px rgba(250,188,1,.5);
+      }
+      10% {
+      	/*綠*/
+          outline:none;
+          border-color:rgba(11,193,15,.75)!important;
+          box-shadow:0 0 20px rgba(11,193,15,.5);
+
+          -moz-box-shadow:0 0 20px rgba(11,193,15,.5);
+          -webkit-box-shadow:0 0 20px rgba(11,193,15,.5);
+   	  }	
+      20% {
+      	/*藍*/
+          outline:none;
+          border-color:rgba(102, 217, 239,.75)!important;
+          box-shadow:0 0 25px rgba(102, 217, 239,.5);
+
+          -moz-box-shadow:0 0 25px rgba(102, 217, 239,.5);
+          -webkit-box-shadow:0 0 25px rgba(102, 217, 239,.5);
+   	  }	
+      30% {
+      	/*紫*/
+          outline:none;
+          border-color:rgba(107, 45, 218,.75)!important;
+          box-shadow:0 0 31px rgba(107, 45, 218,.5);
+
+          -moz-box-shadow:0 0 31px rgba(107, 45, 218,.5);
+          -webkit-box-shadow:0 0 31px rgba(107, 45, 218,.5);
+   	  }	
+      35% {
+      	/*粉*/
+          outline:none;
+          border-color:rgba(250, 1, 185,.75)!important;
+          box-shadow:0 0 34px rgba(250, 1, 185,.5);
+
+          -moz-box-shadow:0 0 34px rgba(250, 1, 185,.5);
+          -webkit-box-shadow:0 0 34px rgba(250, 1, 185,.5);
+   	  }	
+      37% {
+      	/* 蛋粉 */
+        border-color:rgba(255, 76, 180,.75)!important;
+        box-shadow:0 0 36px rgba(255, 76, 180,.5);
+
+        -moz-box-shadow:0 0 36px rgba(255, 76, 180,.5);
+        -webkit-box-shadow:0 0 36px rgba(255, 76, 180,.5);
+      }
+      40% {
+      	/* 紅 */
+        border-color:rgba(249, 38, 89,.75)!important;
+        box-shadow:0 0 38px rgba(249, 38, 89,.5);
+
+        -moz-box-shadow:0 0 38px rgba(249, 38, 89,.5);
+        -webkit-box-shadow:0 0 38px rgba(249, 38, 89,.5);
+      }
+      50% {
+      	/* 橘 */
+        border-color:rgba(255, 165, 0,.75)!important;
+        box-shadow:0 0 40px rgba(255, 165, 0,.5);
+
+        -moz-box-shadow:0 0 40px rgba(255, 165, 0,.5);
+        -webkit-box-shadow:0 0 40px rgba(255, 165, 0,.5);
+      }
+      60% {
+      	/* 紅 */
+        border-color:rgba(249, 38, 89,.75)!important;
+        box-shadow:0 0 38px rgba(249, 38, 89,.5);
+
+        -moz-box-shadow:0 0 38px rgba(249, 38, 89,.5);
+        -webkit-box-shadow:0 0 38px rgba(249, 38, 89,.5);
+      }
+      63% {
+      	/* 蛋粉 */
+        border-color:rgba(255, 76, 180,.75)!important;
+        box-shadow:0 0 36px rgba(255, 76, 180,.5);
+
+        -moz-box-shadow:0 0 36px rgba(255, 76, 180,.5);
+        -webkit-box-shadow:0 0 36px rgba(255, 76, 180,.5);
+      }
+      65% {
+      	/*粉*/
+          outline:none;
+          border-color:rgba(250, 1, 185,.75)!important;
+          box-shadow:0 0 34px rgba(250, 1, 185,.5);
+
+          -moz-box-shadow:0 0 34px rgba(250, 1, 185,.5);
+          -webkit-box-shadow:0 0 34px rgba(250, 1, 185,.5);
+   	  }	
+      70% {
+      	/*紫*/
+          outline:none;
+          border-color:rgba(107, 45, 218,.75)!important;
+          box-shadow:0 0 31px rgba(107, 45, 218,.5);
+
+          -moz-box-shadow:0 0 31px rgba(107, 45, 218,.5);
+          -webkit-box-shadow:0 0 31px rgba(107, 45, 218,.5);
+   	  }	
+      80% {
+      	/*藍*/
+          outline:none;
+          border-color:rgba(102, 217, 239,.75)!important;
+          box-shadow:0 0 25px rgba(102, 217, 239,.5);
+
+          -moz-box-shadow:0 0 25px rgba(102, 217, 239,.5);
+          -webkit-box-shadow:0 0 25px rgba(102, 217, 239,.5);
+   	  }	
+      90% {
+      	/*綠*/
+          outline:none;
+          border-color:rgba(11,193,15,.75)!important;
+          box-shadow:0 0 20px rgba(11,193,15,.5);
+
+          -moz-box-shadow:0 0 20px rgba(11,193,15,.5);
+          -webkit-box-shadow:0 0 20px rgba(11,193,15,.5);
+   	  }
+      100% {
+      	/*黃*/
+        border-color:rgba(250,188,1,.75)!important;
+        box-shadow:0 0 18px rgba(250,188,1,.5);
+
+        -moz-box-shadow:0 0 18px rgba(250,188,1,.5);
+        -webkit-box-shadow:0 0 18px rgba(250,188,1,.5);
+       } 
+   }
+
+</style>

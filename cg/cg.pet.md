@@ -58,9 +58,13 @@ R5 寵物水晶 + R5 可用寵，範圍就是可幫採 R4 ~ R6。
 [gimmick:Disqus](mdwikiplay.disqus.com)
 
 <script type="text/javascript">
-        if (((localStorage['himitsu'] === undefined)||(localStorage['himitsu'] == null)||(localStorage['himitsu'] == '')||(localStorage['himitsu'] != GibberishAES.dec('U2FsdGVkX1+JmdT5RqbSz7+sT3yu5aLZYSVPHab+c6dr+ikvZv7QQXKylLyz+uBF7tsuk/TTUZcbWWmogzDIjHnKRtH4fvBEIlS4FdLEcuZYNQgWkuwHPcalbFmFEmFE2MvghDIdiJglI5eqhxAtmNFh/iawIZRAoFS3PHYvpAY=','2016')))) {
+        if (((localStorage['himitsu'] === undefined)||(localStorage['himitsu'] == null)||(localStorage['himitsu'] == '')||(localStorage['himitsu'] != x_de('U2FsdGVkX1+JmdT5RqbSz7+sT3yu5aLZYSVPHab+c6dr+ikvZv7QQXKylLyz+uBF7tsuk/TTUZcbWWmogzDIjHnKRtH4fvBEIlS4FdLEcuZYNQgWkuwHPcalbFmFEmFE2MvghDIdiJglI5eqhxAtmNFh/iawIZRAoFS3PHYvpAY=','2016')))) {
           document.location = document.location.href.replace(/\#\!(.*.md)/gi,'#');
           //history.back();             
         }
     localStorage.removeItem('himitsu');
 </script>
+
+<!-- 
+('U2FsdGVkX19Zfiw2zdL5BXTlpzV1RRqIhMr9oZs7RKw=','md');
+-->

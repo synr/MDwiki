@@ -141,7 +141,7 @@
   ----
   - #輔助資料
   - #損壞率高的硬碟型號
-  - [2016 Q2 硬碟雷區參考表](https://trello-attachments.s3.amazonaws.com/52ff05f27a3c676c046c37f9/53eb5e460648c9ca4746de2d/4b38264b621c8009a86761e953f1f07f/blog-q2-failure-rates.jpg)
+  - <a href="https://trello-attachments.s3.amazonaws.com/52ff05f27a3c676c046c37f9/53eb5e460648c9ca4746de2d/4b38264b621c8009a86761e953f1f07f/blog-q2-failure-rates.jpg" class="fancybox-thumb" data-fancybox-type="image" title="2016 Q2 硬碟雷區參考表" rel="no">2016 Q2 硬碟雷區參考表</a>
   - [Backblaze.com 2016 Q2 報告](https://www.backblaze.com/blog/hard-drive-failure-rates-q2-2016/) 
  
 [💾 Save & Share]()
