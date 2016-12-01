@@ -1842,7 +1842,8 @@ console.log("\u88ab\u901a\u5831\u7684\u6240\u5728\u7db2\u5740\uff1a"+location.hr
                 }
             }
         }
-
+        //2016.12.01+ 控制聚焦
+        var focusid = 0;
         function himitsu_ui(word="U2FsdGVkX1/RTYU2nEHFzge8xW6VSzjiiLDgEz3xnDg=",type_switch="md",wrangway_not_close="1"){
             // var autoclose = '$.fancybox.close();';
             // if(wrangway_not_close){
@@ -1856,8 +1857,13 @@ console.log("\u88ab\u901a\u5831\u7684\u6240\u5728\u7db2\u5740\uff1a"+location.hr
             //$.fancybox.open('<h4 style=\"line-height: 1px;text-align: center;margin-top: 14px;margin-bottom: 5px;font-family:' + localStorage['font'] + '\">來者何人！暗號！</h4><br /><input type=\"text\" onkeyup=\"document.getElementById(\'himitsu\').onkeydown=function(event){if(event.which==13){ document.getElementById(\'enter_button\').click();}}\" style=\"width: 100%;text-align: center;-webkit-transition: all 2s ease 0s;-moz-transition: all 2s ease 0s;-ms-transition: all 2s ease 0s;-o-transition: all 2s ease 0s;\" id=\"himitsu\" placeholder=\"暗號正確才開\" autofocus><br /><button id=\"enter_button\" style=\"width: 100%;text-align: center;text-decoration: none;cursor: pointer; padding: 0px 48px;\" onclick=\"javascript:console.log(enter_himitsu(\'' + word + '\',document.getElementById(\'himitsu\').value,\'' + type_switch + '\',' + wrangway_not_close + '));' + autoclose + '\">你確定？</botton>');
             //  document.getElementById('himitsu').focus();
             //2016.12.01 修正邏輯，關門由 enter 完全負責
-            $.fancybox.open('<h4 style=\"line-height: 1px;text-align: center;margin-top: 14px;margin-bottom: 5px;font-family:' + localStorage['font'] + '\">來者何人！暗號！</h4><br /><input type=\"text\" onkeyup=\"document.getElementById(\'himitsu\').onkeydown=function(event){if(event.which==13){ document.getElementById(\'enter_button\').click();}}\" style=\"width: 100%;text-align: center;-webkit-transition: all 2s ease 0s;-moz-transition: all 2s ease 0s;-ms-transition: all 2s ease 0s;-o-transition: all 2s ease 0s;\" id=\"himitsu\" placeholder=\"暗號正確才開\" autofocus><br /><button id=\"enter_button\" style=\"width: 100%;text-align: center;text-decoration: none;cursor: pointer; padding: 0px 48px;\" onclick=\"javascript:console.log(enter_himitsu(\'' + word + '\',document.getElementById(\'himitsu\').value,\'' + type_switch + '\',' + wrangway_not_close + '));\">你確定？</botton>');
-              document.getElementById('himitsu').focus();
+            $.fancybox.open('<h4 style=\"line-height: 1px;text-align: center;margin-top: 14px;margin-bottom: 5px;font-family:' + localStorage['font'] + '\">來者何人！暗號！</h4><br /><input type=\"text\" onkeyup=\"document.getElementById(\'himitsu\').onkeydown=function(event){if(event.which==13){ document.getElementById(\'enter_button\').click();}}\" style=\"width: 100%;text-align: center;-webkit-transition: all 2s ease 0s;-moz-transition: all 2s ease 0s;-ms-transition: all 2s ease 0s;-o-transition: all 2s ease 0s;\" id=\"himitsu\" placeholder=\"暗號正確才開\" autofocus><br /><button id=\"enter_button\" style=\"width: 100%;text-align: center;text-decoration: none;cursor: pointer; padding: 0px 48px;\" onclick=\"javascript:console.log(enter_himitsu(\'' + word + '\',document.getElementById(\'himitsu\').value,\'' + type_switch + '\',' + wrangway_not_close + '));clearInterval(focusid);document.getElementById(\'himitsu\').focus();\">你確定？</botton>');
+              function focusme(){
+                document.getElementById('himitsu').focus();
+                console.log('已聚焦');
+              }
+              focusid = window.setInterval(focusme, 500);
+              console.log(focusid);
         }
 
         function line_me(){
@@ -1888,7 +1894,8 @@ console.log("\u88ab\u901a\u5831\u7684\u6240\u5728\u7db2\u5740\uff1a"+location.hr
               console.log('歡迎你第一次來，請試試看源柔字體！');
           }
         }
-        first_visit();
+        window.setTimeout(first_visit,500);
+        window.setInterval(parseLink, 45000);
 
         //2016.11.29+ 手機強制跳 github.io 看看
         function bye_ninja(){
@@ -1897,6 +1904,19 @@ console.log("\u88ab\u901a\u5831\u7684\u6240\u5728\u7db2\u5740\uff1a"+location.hr
             }
         }
         window.setTimeout(bye_ninja,500);
+
+        //2016.12.01+ md 白名模式（過程跟姐姐反過來，姊姊過程給門票，到達地點對方Ｍ驗。這邊反過來，這邊驗，對方給自動發門票）
+        function check_md_ok(listname,word="",namae=""){
+            if (((localStorage[listname] === undefined)||(localStorage[listname] == null)||(localStorage[listname] == '')||(localStorage[listname] != x_de(word,namae)))) {
+                document.location = document.location.href.replace(/\#\!(.*.md)/gi,'#');
+                //history.back(); 
+            }
+            localStorage.removeItem(listname);
+        }
+        var checked_md = 0;
+        // if(checked_md==0){
+        //   check_md_ok('md');
+        // }
 
     </script>
 <!-- 2016.10.20 增加判斷瀏覽者裝置 function 結束 -->

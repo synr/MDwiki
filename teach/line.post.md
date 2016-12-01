@@ -332,12 +332,14 @@ Note：
 　 2016/11/27 初稿
 
 <script type="text/javascript">
-  if (((localStorage['himitsu'] === undefined)||(localStorage['himitsu'] == null)||(localStorage['himitsu'] == '')||(localStorage['himitsu'] != x_de('U2FsdGVkX1/8Dlvucd4lNnrh5nyHbocGnk5IiMbXiLg/TrZ8eg4XWlEw07GRbRMFt6T73WZ2oot07tYHTh8es4+pNEXLND1ucPDR8JQMJCDSnirW7J68JQa1oMt78lDvQuijtbpfGaCRNagxHy7bUaLDP2eK5CRAkkYxp707uiI=','2016.11.28')))) {
-	    document.location = document.location.href.replace(/\#\!(.*.md)/gi,'#');
-     	//history.back(); 
-      //修正辨識改用 MD5 不可逆性 配合 AES      	  	
-  }
-	localStorage.removeItem('himitsu');
+ //  if (((localStorage['himitsu'] === undefined)||(localStorage['himitsu'] == null)||(localStorage['himitsu'] == '')||(localStorage['himitsu'] != x_de('U2FsdGVkX1/8Dlvucd4lNnrh5nyHbocGnk5IiMbXiLg/TrZ8eg4XWlEw07GRbRMFt6T73WZ2oot07tYHTh8es4+pNEXLND1ucPDR8JQMJCDSnirW7J68JQa1oMt78lDvQuijtbpfGaCRNagxHy7bUaLDP2eK5CRAkkYxp707uiI=','2016.11.28')))) {
+	//     document.location = document.location.href.replace(/\#\!(.*.md)/gi,'#');
+ //     	//history.back(); 
+ //      //修正辨識改用 MD5 不可逆性 配合 AES      	  	
+ //  }
+	// localStorage.removeItem('himitsu');
+
+  check_md_ok('himitsu','U2FsdGVkX1/8Dlvucd4lNnrh5nyHbocGnk5IiMbXiLg/TrZ8eg4XWlEw07GRbRMFt6T73WZ2oot07tYHTh8es4+pNEXLND1ucPDR8JQMJCDSnirW7J68JQa1oMt78lDvQuijtbpfGaCRNagxHy7bUaLDP2eK5CRAkkYxp707uiI=','2016.11.28');
 
   window.setTimeout(reset_javascript_command_url,1000);   //window.setInterval(new_a_tag_javascript, 3000); //循環
 
