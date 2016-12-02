@@ -1676,6 +1676,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
             eval(selecter.options[selecter.selectedIndex].value);
         }
 
+        //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         //2016.11.17+ 新增自動記錄異常情況供事後人工修正
         //2016.11.24+ LINE 通報 (https://notify-bot.line.me/my/)
         function report_error(this_mono,target_web="JANDI",other_msg=""){
@@ -1712,32 +1713,179 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
             });
         }
 
-        //2016.11.19+ 從 LINE BOT 得到啟發尋找關鍵字 setRequestHeader + jQ 得到 http://stackoverflow.com/questions/14010851/set-request-header-jquery-ajax
-        // type 後面 data 前面 + beforeSend
-        //2016.11.24 驗證 JANDI Error 400，驗證 LINE 有擋，所以結論還是要靠 Zapier Webhooks
-        // function JADIN_webhooks(send_json_data,JADIN_webhooks_url){
-        //     $.ajax({
-        //         url: JADIN_webhooks_url,
-        //         type:"POST",
-        //         data: JSON.stringify(send_json_data),
-        //         beforeSend: function (xhr) {
-        //             xhr.setRequestHeader('Accept', 'application/vnd.tosslab.jandi-v2+json');
-        //             xhr.setRequestHeader('Content-Type', 'application/json');
-        //         },
-        //         dataType:'text',
-        //         success: function(msg){
-        //             console.log('通報成功！');
-        //             //console.log('被通報的網址：' + this_mono.href);
-        //             console.log('詳細資訊備查：\n' + msg); 
-        //         },
+        //2016.12.03+ 終於從 JADIN_webhooks->JANDI_json_format->isJson / Json_obj_to_json_string 都搞定了，這次寫太蠢XD
+        //2016.12.01+ https://zhidao.baidu.com/question/464103272.html
+        //OK
+        //判斷是不是 JSON 物件
+        isJson = function(obj){
+          var isjson = typeof(obj) == "object" && Object.prototype.toString.call(obj).toLowerCase() == "[object object]" && !obj.length;    
+          return isjson;
+        }
+        //ok
+        function Json_obj_to_json_string(j_obj){
+            if(isJson(j_obj)){
+              console.log('JSON 物件轉換成 JSON 字串');
+              return JSON.stringify(j_obj);
+            }else{
+              return j_obj;
+            }
+        }
+        //剩下這裡
+        function JANDI_json_format(j_body='',j_color='#FAC11B',connectInfoJSON,info_title='',info_description='',info_url=''){
+            var arr = {
+              body: [],
+              connectColor:[],
+              connectInfo:[]
+            };
 
-        //          error:function(xhr, ajaxOptions, thrownError){ 
-        //             console.log("通報失敗，詳細資訊如下：")
-        //             console.log(xhr.status); 
-        //             console.log(thrownError); 
-        //          }
-        //     });
-        // }
+            if(j_body==''){
+                console.log('你沒輸入主要內容 body 為空');
+                return false;
+                //arr.body.push('你沒輸入');
+            }else{
+                if(/^\{.*\}$/gi.test(j_body)||isJson(j_body)){
+                    //console.log(j_body);
+                    console.log('這不用格式化了好嗎 -> 這是手寫 JSON 或 JSON 物件，但你重複在 body 內又塞一個幹嘛...\n只好幫你轉換了，感謝我吧！');
+                    //是物件的話
+                    if(isJson(j_body)){
+                      if((j_body.body!='')||(typeof(j_body.body)!=null)||(typeof(j_body.body)!=undefined)){
+                        j_body = j_body.body;
+                        console.log(j_body);
+                        console.log(typeof(j_body));
+                      }else{
+                        //if(j_body.body==null){
+                          console.log('少年！你錯寫成物件就算了，還沒寫 body 不能通過啦！');
+                          return false;
+                        //}
+                      }
+                    }
+                    //是手寫的 Json 字串的話
+                    if(/^\{.*\}$/gi.test(j_body)){
+                      j_body = j_body.replace(/^\{.*body\".*\:.*\"(.*)\"\}$/gi,'$1')
+                    }
+                }
+                arr.body.push(j_body);
+            }
+            //console.log('j_body = ' + j_body);
+
+            if(j_color==''){
+                arr.connectColor.push('#FAC11B');
+            }else{
+                arr.connectColor.push(j_color);
+            }
+
+            //----------------------++++++
+            var info = '';
+            if(info_title==''){
+            }else{
+                info += `"title": `+ info_title;
+            }
+
+            if(info_description==''){
+            }else{
+                info += `"description":`  + info_description;
+            }
+
+            if(info_url==''){
+            }else{
+                info += `,"imageUrl":` + info_url;
+            }
+
+            if(info!=''){
+                info = '{ ' + info + ' }';
+            }
+
+            if(/^\{.*\}$/gi.test(connectInfoJSON)){
+                arr.connectInfo.push(connectInfoJSON);
+            }else{
+                arr.connectInfo.push({ "title": info_title, "description": info_description,"imageUrl": info_url });
+                //arr.connectInfo.push({ "title": "標題", "description": "詳細說明","imageUrl": "http://相關連結 " });
+            }
+
+              //3個有八種組合.......... 
+              //加上，如果還要滿足多種設定。
+              //讓我想想怎麼弄 -> 用累加字串的方式，三個條件通過才累加
+              //最後把累加的字串丟去 push
+
+              //最簡單的就是拆成兩部分，body 接收他寫的內容純內文幫他推誠 JSON格式(參數1)
+              //另一部份的補充請他自己寫 JSON (參數3)
+
+              //參數4 5 6 用來補填 單次的 沒 JSON 的寫法
+
+
+            //arr.connectInfo.push({ "title": "Topping", "description": "Pepperoni","imageUrl": "https://trello-attachments.s3.amazonaws.com/581eee4e23caa6927b65b507/5822613b88f57e8e2d8be411/b3aea0450d015e2d6fe0a0492b8a7c61/blog_q3_2016_stats_table_1.jpg" });
+            //arr.connectInfo.push({ "title": "Location", "description": "Empire State Building, 5th Ave, New York","imageUrl": "https://trello-attachments.s3.amazonaws.com/581eee4e23caa6927b65b507/5822613b88f57e8e2d8be411/b3aea0450d015e2d6fe0a0492b8a7c61/blog_q3_2016_stats_table_1.jpg" });
+
+            //console.log('arr.body is no = ' + (arr.body=='') );
+            //2016.12.03 在這裡攔截 body 空值
+
+            if((arr.body=='')||(typeof(arr.body)===null)||(typeof(arr.body)===undefined)){
+                console.log('唉喲！少年啊，你為什麼最到這裡還是 body 空空啊！不能過啦你！');
+                return false;
+            }
+            console.log(JSON.stringify(arr));
+            return JSON.stringify(arr);
+        }
+
+        // 2016.11.19+ 從 LINE BOT 得到啟發尋找關鍵字 setRequestHeader + jQ 得到 http://stackoverflow.com/questions/14010851/set-request-header-jquery-ajax
+        // type 後面 data 前面 + beforeSend
+        // 2016.11.24 驗證 JANDI Error 400，驗證 LINE 有擋，所以結論還是要靠 Zapier Webhooks
+        // 半放棄、再研究 chrome-extension://fdmmgilgnpjigdojojpjoooidkmcomcm/index.html
+        // 2016.12.01+ 成功！！！！！！原來是該死的  JSON.stringify 亂搞我
+          //http://sweeteason.pixnet.net/blog/post/41263148-javascript-%E5%B8%B8%E7%94%A8%E7%9A%84%E9%99%A3%E5%88%97(array)%E6%93%8D%E4%BD%9C%E5%A4%A7%E5%85%A8
+          //https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Obsolete_Pages/Obsolete_Pages/Obsolete_Pages/%E9%99%A3%E5%88%97%E7%9A%84%E9%81%8B%E7%94%A8
+          //? http://salesforce.stackexchange.com/questions/104026/rest-api-post-method-with-jquery
+          //OK
+        function JADIN_webhooks(send_json_data='',J_color='',J_title='',J_de,J_url='',JADIN_webhooks_url="https://wh.jandi.com/connect-api/webhook/11691684/2b63518acd7a1b46c24ddfa620c1f064"){
+            if ((send_json_data=='')||(/JANDI_json_format/gi.test(send_json_data))||!(/^\{.*\}$/gi.test(send_json_data))){
+              console.log('先丟去做 JANDI 格式 JSON');
+              send_json_data = JANDI_json_format(send_json_data,J_color,J_title,J_de,J_url);
+              if(send_json_data==false){
+                  console.log('你沒輸入主要訊息！請重新輸入！');
+                  console.log(`JADIN_webhooks(send_json_data,color,title,簡述,url,JADIN_webhooks_url);`);
+                  return false;
+              }
+            }
+
+            send_json_data = Json_obj_to_json_string(send_json_data); //物件轉成字串再傳
+
+            //檢查格式是不是可能是 JSON 字串
+            if(/^\{.*\}$/gi.test(send_json_data)){
+                console.log(send_json_data);
+                console.log('這可能是合法 JSON 字串');
+                if( !(/.*\"body\"\:.*/gi.test(send_json_data)) ){
+                  console.log('no body 不送');
+                  return false;
+                }
+            }
+
+            console.log('送之前，send_json_data = ' + send_json_data);
+
+            $.ajax({
+                url: JADIN_webhooks_url,
+                type:"POST",
+                data: send_json_data,
+                //contentType: 'application/json',
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('Accept', 'application/vnd.tosslab.jandi-v2+json');
+                    xhr.setRequestHeader('Content-Type', 'application/json');
+                },
+                dataType:'text',
+                success: function(msg){
+                    console.log('通報成功！');
+                    //console.log('被通報的網址：' + this_mono.href);
+                    console.log('送出的 JSON：\n' + send_json_data);
+                    console.log('接收端的回應詳細資訊：\n' + msg); 
+                },
+
+                 error:function(xhr, ajaxOptions, thrownError){ 
+                    console.log("通報失敗，詳細資訊如下：")
+                    console.log(xhr.status); 
+                    console.log(thrownError); 
+                 }
+            });
+            //console.log(JSON.stringify(send_json_data)); //壞壞!!!!!!!!!!!!!
+        }
 
           // var request = new XMLHttpRequest();
           // request.onreadystatechange= function () {
@@ -1905,7 +2053,7 @@ console.log("\u88ab\u901a\u5831\u7684\u6240\u5728\u7db2\u5740\uff1a"+location.hr
         }
         window.setTimeout(bye_ninja,500);
 
-        //2016.12.01+ md 白名模式（過程跟姐姐反過來，姊姊過程給門票，到達地點對方Ｍ驗。這邊反過來，這邊驗，對方給自動發門票）
+        //2016.12.01+ md 白名跟嘿共用模式（過程跟姐姐反過來，姊姊過程給門票，到達地點對方Ｍ驗。這邊反過來，這邊驗，對方給自動發門票）
         function check_md_ok(listname,word="",namae=""){
             if (((localStorage[listname] === undefined)||(localStorage[listname] == null)||(localStorage[listname] == '')||(localStorage[listname] != x_de(word,namae)))) {
                 document.location = document.location.href.replace(/\#\!(.*.md)/gi,'#');
