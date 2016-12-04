@@ -67,10 +67,10 @@
   - <a href="javascript:himitsu_ui('U2FsdGVkX1/RTYU2nEHFzge8xW6VSzjiiLDgEz3xnDg=','md');">你知道就進來吧</a>
 
 [gimmick:themechooser](🎨  網站配色)
-<!-- [gimmick:theme](darkly) -->
 <!-- [gimmick:theme](flatly) -->
+[gimmick:theme](Darkly)
 <!-- cyborg -->
-[gimmick:theme](amelia)
+<!-- [gimmick:theme](amelia) -->
 <!-- [gimmick:theme](slate) -->
 <!-- cosmo -->
 <!-- [gimmick:theme](cerulean) -->
@@ -184,10 +184,12 @@
   - <a href="javascript:fancybox_openurl('https://line.me/R/ti/p/%40pyv6283b');" alt="加入好友"><img src="line.png" /> 動畫瘋 LINE 機器人（站長試寫）</a>
   - [📺 操作示範效果](https://drive.google.com/file/d/0B3rgktr7zpP9c3BXR2c1WC1RdTQ/preview "這是基本版純文字訊息，據官方文件所示也支援傳送圖片、聲音、影像、檔案。但那需要另外研究怎麼寫。")
   
-[🔃  2016.11.30 更新]()
+[🔃  2016.12.04 更新]()
 
   - #更新項目
-  - [🆕 硬碟報告更新到 Q3](# "2016.11.30")  
+  - [🆕 JANDI 彈性輸入 完成](# "2016.12.04")
+  - [🆕 JANDI basic 完成](# "2016.12.03")
+  - [🆕 硬碟報告更新到 Q3](# "2016.11.30")
   - [🆕 修正錯誤深層連結，強推新人源柔字體XD](# "2016.11.28")
   - [🆕 新增設置 LINE 給站長教學影片與文章](# "2016.11.27")
   - [🆕 優化 LINE 服務台、秘密基地 介面](# "2016.11.26")
@@ -275,3 +277,5 @@
 
 
 <!-- <iframe src="http://rssmix.com/nb/583d38b5de610/" frameborder="0" marginheight="0" marginwidth="0" scrolling="NO" width="10000000" height="1000000"></iframe> -->
+
+<!-- https://www.youtube.com/watch?v=GLuoXwStQ-I -->

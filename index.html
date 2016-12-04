@@ -1301,7 +1301,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                     //this.title = '<a href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);fancybox_openurl(\'https://docs.google.com/forms/d/e/1FAIpQLSdJt1yMfFcPzJU5zWIISvuD_hycmW4kZH7HsjoP_ML-ZhxeFw/viewform?embedded=true&entry.751272824=' + encodeURIComponent(this.href) + '&entry.779956480=%E5%9C%A8%E7%B6%B2%E7%AB%99%E5%85%A7%E9%BB%9E%E9%80%A3%E7%B5%90%EF%BC%8C%E7%B5%90%E6%9E%9C%E8%B7%B3%E5%87%BA%E4%B8%80%E5%A4%A7%E5%A1%8A%E7%99%BD%E7%99%BD%E7%9A%84%E5%B0%8F%E7%AA%97%EF%BC%8C%E7%AD%89%E5%BE%88%E4%B9%85%E9%83%BD%E6%B2%92%E4%BB%BB%E4%BD%95%E6%9D%B1%E8%A5%BF%E5%87%BA%E7%8F%BE%E3%80%82%EF%BC%88%E7%87%88%E7%AE%B1%E9%96%8B%E5%95%9F%E5%A4%B1%E6%95%97%EF%BC%89&entry.1366325438\');">如果空白讀不到 → 請點此連結 ← 另開直連該網站。</a>　<button id="button_iframe" onclick="javascript:max_full(\'' + iframe_id + '\',\'button_iframe\');document.getElementById(\'button_iframe\').click();">→ 點我變成全螢幕 ←</button>　<a href="javascript:console.log(document.getElementsByClassName(\'fancybox-title fancybox-title-over-wrap\')[0].style.visibility=\'hidden\')">我知道了，我要關閉這礙眼的提示。</a>';
                     //2016.11.17+ 自動收集資料到 JANDI（以後也可以改成同步傳給 Trello 專門用來讓機器人控制的帳號）
                     //2016.11.28+ 字體調整
-                    this.title = '<a style=\"font-family:' + localStorage['font'] + '\" href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);report_error(this);report_error(this,\'LINE\');fancybox_openurl(\'https://docs.google.com/forms/d/e/1FAIpQLSdJt1yMfFcPzJU5zWIISvuD_hycmW4kZH7HsjoP_ML-ZhxeFw/viewform?embedded=true&entry.751272824=' + encodeURIComponent(this.href) + '&entry.779956480=%E5%9C%A8%E7%B6%B2%E7%AB%99%E5%85%A7%E9%BB%9E%E9%80%A3%E7%B5%90%EF%BC%8C%E7%B5%90%E6%9E%9C%E8%B7%B3%E5%87%BA%E4%B8%80%E5%A4%A7%E5%A1%8A%E7%99%BD%E7%99%BD%E7%9A%84%E5%B0%8F%E7%AA%97%EF%BC%8C%E7%AD%89%E5%BE%88%E4%B9%85%E9%83%BD%E6%B2%92%E4%BB%BB%E4%BD%95%E6%9D%B1%E8%A5%BF%E5%87%BA%E7%8F%BE%E3%80%82%EF%BC%88%E7%87%88%E7%AE%B1%E9%96%8B%E5%95%9F%E5%A4%B1%E6%95%97%EF%BC%89&entry.1366325438\');">如果空白讀不到 → 請點此連結 ← 另開直連該網站。</a>　<button style=\"font-family:' + localStorage['font'] + '\" id="button_iframe" onclick="javascript:max_full(\'' + iframe_id + '\',\'button_iframe\');document.getElementById(\'button_iframe\').click();">→ 點我變成全螢幕 ←</button>　<a style=\"font-family:' + localStorage['font'] + '\" href="javascript:console.log(document.getElementsByClassName(\'fancybox-title fancybox-title-over-wrap\')[0].style.visibility=\'hidden\')">我知道了，我要關閉這礙眼的提示。</a>';
+                    this.title = '<a style=\"font-family:' + localStorage['font'] + '\" href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);report_error(this);report_error(this,\'LINE\');fancybox_openurl(\'https://docs.google.com/forms/d/e/1FAIpQLSdJt1yMfFcPzJU5zWIISvuD_hycmW4kZH7HsjoP_ML-ZhxeFw/viewform?embedded=true&entry.751272824=' + encodeURIComponent(this.href) + '&entry.779956480=%E5%9C%A8%E7%B6%B2%E7%AB%99%E5%85%A7%E9%BB%9E%E9%80%A3%E7%B5%90%EF%BC%8C%E7%B5%90%E6%9E%9C%E8%B7%B3%E5%87%BA%E4%B8%80%E5%A4%A7%E5%A1%8A%E7%99%BD%E7%99%BD%E7%9A%84%E5%B0%8F%E7%AA%97%EF%BC%8C%E7%AD%89%E5%BE%88%E4%B9%85%E9%83%BD%E6%B2%92%E4%BB%BB%E4%BD%95%E6%9D%B1%E8%A5%BF%E5%87%BA%E7%8F%BE%E3%80%82%EF%BC%88%E7%87%88%E7%AE%B1%E9%96%8B%E5%95%9F%E5%A4%B1%E6%95%97%EF%BC%89&entry.1366325438\');">如果空白讀不到 → 請點此連結 ← 另開直連該網站。</a>　<button style=\"background-color: #000; color: #fff;font-family:' + localStorage['font'] + '\" id="button_iframe" onclick="javascript:max_full(\'' + iframe_id + '\',\'button_iframe\');document.getElementById(\'button_iframe\').click();">→ 點我變成全螢幕 ←</button>　<a style=\"font-family:' + localStorage['font'] + '\" href="javascript:console.log(document.getElementsByClassName(\'fancybox-title fancybox-title-over-wrap\')[0].style.visibility=\'hidden\')">我知道了，我要關閉這礙眼的提示。</a>';
                     // function css_add_inline( css_code ) {
                     //     var div = document.createElement( "div" );
                     //     div.innerHTML = "<p>x</p><style>" + css_code + "</style>";
@@ -1642,7 +1642,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                       //2016.11.17+ 自動收集資料到 JANDI（以後也可以改成同步傳給 Trello 專門用來讓機器人控制的帳號）
                       //this.title = '<a href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);report_error(this);report_error(this,\'LINE\');fancybox_openurl(\'https://docs.google.com/forms/d/e/1FAIpQLSdJt1yMfFcPzJU5zWIISvuD_hycmW4kZH7HsjoP_ML-ZhxeFw/viewform?embedded=true&entry.751272824=' + encodeURIComponent(this.href) + '&entry.779956480=%E5%9C%A8%E7%B6%B2%E7%AB%99%E5%85%A7%E9%BB%9E%E9%80%A3%E7%B5%90%EF%BC%8C%E7%B5%90%E6%9E%9C%E8%B7%B3%E5%87%BA%E4%B8%80%E5%A4%A7%E5%A1%8A%E7%99%BD%E7%99%BD%E7%9A%84%E5%B0%8F%E7%AA%97%EF%BC%8C%E7%AD%89%E5%BE%88%E4%B9%85%E9%83%BD%E6%B2%92%E4%BB%BB%E4%BD%95%E6%9D%B1%E8%A5%BF%E5%87%BA%E7%8F%BE%E3%80%82%EF%BC%88%E7%87%88%E7%AE%B1%E9%96%8B%E5%95%9F%E5%A4%B1%E6%95%97%EF%BC%89&entry.1366325438\');">如果空白讀不到 → 請點此連結 ← 另開直連該網站。</a>　<button id="button_iframe" onclick="javascript:max_full(\'' + iframe_id + '\',\'button_iframe\');document.getElementById(\'button_iframe\').click();">→ 點我變成全螢幕 ←</button>　<a href="javascript:console.log(document.getElementsByClassName(\'fancybox-title fancybox-title-over-wrap\')[0].style.visibility=\'hidden\')">我知道了，我要關閉這礙眼的提示。</a>';
                       //2016.11.28+ 字體調整
-                      this.title = '<a style=\"font-family:' + localStorage['font'] + '\" href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);report_error(this);report_error(this,\'LINE\');fancybox_openurl(\'https://docs.google.com/forms/d/e/1FAIpQLSdJt1yMfFcPzJU5zWIISvuD_hycmW4kZH7HsjoP_ML-ZhxeFw/viewform?embedded=true&entry.751272824=' + encodeURIComponent(this.href) + '&entry.779956480=%E5%9C%A8%E7%B6%B2%E7%AB%99%E5%85%A7%E9%BB%9E%E9%80%A3%E7%B5%90%EF%BC%8C%E7%B5%90%E6%9E%9C%E8%B7%B3%E5%87%BA%E4%B8%80%E5%A4%A7%E5%A1%8A%E7%99%BD%E7%99%BD%E7%9A%84%E5%B0%8F%E7%AA%97%EF%BC%8C%E7%AD%89%E5%BE%88%E4%B9%85%E9%83%BD%E6%B2%92%E4%BB%BB%E4%BD%95%E6%9D%B1%E8%A5%BF%E5%87%BA%E7%8F%BE%E3%80%82%EF%BC%88%E7%87%88%E7%AE%B1%E9%96%8B%E5%95%9F%E5%A4%B1%E6%95%97%EF%BC%89&entry.1366325438\');">如果空白讀不到 → 請點此連結 ← 另開直連該網站。</a>　<button style=\"font-family:' + localStorage['font'] + '\" id="button_iframe" onclick="javascript:max_full(\'' + iframe_id + '\',\'button_iframe\');document.getElementById(\'button_iframe\').click();">→ 點我變成全螢幕 ←</button>　<a style=\"font-family:' + localStorage['font'] + '\" href="javascript:console.log(document.getElementsByClassName(\'fancybox-title fancybox-title-over-wrap\')[0].style.visibility=\'hidden\')">我知道了，我要關閉這礙眼的提示。</a>';
+                      this.title = '<a style=\"font-family:' + localStorage['font'] + '\" href="' + this.href + '" target="_blank" style="color:#fff" onclick="javascript:$.fancybox.close(1);report_error(this);report_error(this,\'LINE\');fancybox_openurl(\'https://docs.google.com/forms/d/e/1FAIpQLSdJt1yMfFcPzJU5zWIISvuD_hycmW4kZH7HsjoP_ML-ZhxeFw/viewform?embedded=true&entry.751272824=' + encodeURIComponent(this.href) + '&entry.779956480=%E5%9C%A8%E7%B6%B2%E7%AB%99%E5%85%A7%E9%BB%9E%E9%80%A3%E7%B5%90%EF%BC%8C%E7%B5%90%E6%9E%9C%E8%B7%B3%E5%87%BA%E4%B8%80%E5%A4%A7%E5%A1%8A%E7%99%BD%E7%99%BD%E7%9A%84%E5%B0%8F%E7%AA%97%EF%BC%8C%E7%AD%89%E5%BE%88%E4%B9%85%E9%83%BD%E6%B2%92%E4%BB%BB%E4%BD%95%E6%9D%B1%E8%A5%BF%E5%87%BA%E7%8F%BE%E3%80%82%EF%BC%88%E7%87%88%E7%AE%B1%E9%96%8B%E5%95%9F%E5%A4%B1%E6%95%97%EF%BC%89&entry.1366325438\');">如果空白讀不到 → 請點此連結 ← 另開直連該網站。</a>　<button style=\"background-color: #000; color: #fff;font-family:' + localStorage['font'] + '\" id="button_iframe" onclick="javascript:max_full(\'' + iframe_id + '\',\'button_iframe\');document.getElementById(\'button_iframe\').click();">→ 點我變成全螢幕 ←</button>　<a style=\"font-family:' + localStorage['font'] + '\" href="javascript:console.log(document.getElementsByClassName(\'fancybox-title fancybox-title-over-wrap\')[0].style.visibility=\'hidden\')">我知道了，我要關閉這礙眼的提示。</a>';
                   },
                   helpers : {
                       title : {
@@ -1686,10 +1686,16 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
             //http://blog.jandi.com/tw/2016/02/17/webhook/
             var zapier_target_url = "";
             if(target_web=="JANDI"){
-                zapier_target_url = "https://hooks.zapier.com/hooks/catch/132196/tty63e/";
+                //JANDI_webhooks(send_json_data,J_color,J_title,J_de,J_url,userinfo_show=1,JANID_webhooks_url)
+                JANDI_webhooks('可疑的新觀察對象網址：' + this_mono.href,'red','發生網址：[' + location.href + '](' + location.href + ')','其他附註：不透過 Zapier。' + other_msg,'',1,'https://wh.jandi.com/connect-api/webhook/11691684/1270ff78b1e11027dcf046159ccc19c8');
+                //zapier_target_url = "https://hooks.zapier.com/hooks/catch/132196/tty63e/";
+                console.log('改用新的方式，此程序轉交專門 function 處理。\n已直接通報 JANDI，不透過 Zapier.com。');
+                //+ false 表示不給這編做後續，因為 JANDI_webhooks() 本身會做全套。
+                return false;
             }
             if(target_web=="LINE"){
-                zapier_target_url = "https://hooks.zapier.com/hooks/catch/132196/tmvlrd/";   
+                //Trello + LINE
+                zapier_target_url = "https://hooks.zapier.com/hooks/catch/132196/tty63e/";   
             }
 
             $.ajax({
@@ -1713,7 +1719,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
             });
         }
 
-        //2016.12.03+ 終於從 JADIN_webhooks->JANDI_json_format->isJson / Json_obj_to_json_string 都搞定了，這次寫太蠢XD
+        //2016.12.03+ 終於從 JANDI_webhooks->JANDI_json_format->isJson / Json_obj_to_json_string 都搞定了，這次寫太蠢XD
         //2016.12.01+ https://zhidao.baidu.com/question/464103272.html
         //OK
         //判斷是不是 JSON 物件
@@ -1730,8 +1736,8 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
               return j_obj;
             }
         }
-        //剩下這裡
-        function JANDI_json_format(j_body='',j_color='#FAC11B',connectInfoJSON,info_title='',info_description='',info_url=''){
+
+        function JANDI_json_format(j_body='',j_color='#FAC11B',connectInfoJSON,info_title='',info_description='',info_url='',userinfo_show=1){
             var arr = {
               body: [],
               connectColor:[],
@@ -1795,13 +1801,41 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                 info = '{ ' + info + ' }';
             }
 
-            if(/^\{.*\}$/gi.test(connectInfoJSON)){
-                arr.connectInfo.push(connectInfoJSON);
+            if(typeof(connectInfoJSON)==="object"){
+                //2016.12.03+ 改成只准物件格式的自訂
+                console.log('你自己輸入了 connectInfo 的 JSON 詳細補充是嗎？好喔，那我就不幫你產了。');
+
+                if(connectInfoJSON.length>0){
+                  //表示是是陣列，有多項。
+                  for (var i = 0; i < connectInfoJSON.length; i++) {
+                    arr.connectInfo.push(connectInfoJSON[i]);
+                    //測試用：[{"title" : "Topping","description" : "Pepperoni"},{"title": "Location","description": "Empire State Building, 5th Ave, New York","imageUrl": "http://url_to_text"}]
+                  }
+                }else{
+                  arr.connectInfo.push(connectInfoJSON);
+                }
+                // var json_b=[{"title" : "Topping","description" : "Pepperoni"},{"title": "Location","description": "Empire State Building, 5th Ave, New York","imageUrl": "http://url_to_text"}];
+                //JSON.stringify(json_b[0])
+                return arr;
             }else{
                 arr.connectInfo.push({ "title": info_title, "description": info_description,"imageUrl": info_url });
                 //arr.connectInfo.push({ "title": "標題", "description": "詳細說明","imageUrl": "http://相關連結 " });
             }
 
+            //+ 傳送者資訊
+            if(userinfo_show){
+              var user_info_string = '瀏覽器/系統版本 詳細資訊：\n' + navigator.userAgent + '\n' + 
+              '所在頁面標題：[' + document.title + '](' + location.href + ')\n' +
+              '視窗寬度 X 網頁長度：' + $(document).width() + ' X ' + $(document).height() + '\n' + 
+              '瀏覽器介面語言：' + navigator.language + '\n' + 
+              '可能會的語言：' + navigator.languages + '\n' + 
+              '是否開啟 cookie 功能：' + ((navigator.cookieEnabled)?'已開啟':'沒開啟') + '\n' + 
+              '是否開啟 JAVA：' + ((navigator.javaEnabled())?'已開啟':'沒開啟') + '\n' + 
+              '發送時間（對方時區）：' + new Date() + '\n' + 
+              '發送時間戳（對方時區）：' + new Date().getTime() + '（new Date().getTime() 得到的數字丟回 new Date() 就可以還原當時的時間）';
+
+              arr.connectInfo.push({ "title": "發訊者環境資訊", "description": user_info_string,"imageUrl": "" });
+            }
               //3個有八種組合.......... 
               //加上，如果還要滿足多種設定。
               //讓我想想怎麼弄 -> 用累加字串的方式，三個條件通過才累加
@@ -1836,13 +1870,24 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
           //https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Obsolete_Pages/Obsolete_Pages/Obsolete_Pages/%E9%99%A3%E5%88%97%E7%9A%84%E9%81%8B%E7%94%A8
           //? http://salesforce.stackexchange.com/questions/104026/rest-api-post-method-with-jquery
           //OK
-        function JADIN_webhooks(send_json_data='',J_color='',J_title='',J_de,J_url='',JADIN_webhooks_url="https://wh.jandi.com/connect-api/webhook/11691684/2b63518acd7a1b46c24ddfa620c1f064"){
-            if ((send_json_data=='')||(/JANDI_json_format/gi.test(send_json_data))||!(/^\{.*\}$/gi.test(send_json_data))){
+        function JANDI_webhooks(send_json_data='',J_color='',J_title='',J_de,J_url='',userinfo_show=1,JANID_webhooks_url="https://wh.jandi.com/connect-api/webhook/11691684/2b63518acd7a1b46c24ddfa620c1f064"){
+            //( !(/^\{.*\}$/gi.test(send_json_data)) ) ==> 沒 {} 的字串
+            //NAND 可以 (XXXX 會有錯，造成純文字的掛掉)
+            //假 NAND //if ((send_json_data=='')||(/JANDI_json_format/gi.test(send_json_data))|| (!  ( !(/^\{.*\}$/gi.test(send_json_data)) )  &&  (typeof(send_json_data)==="object")     )       ){
+            if ((send_json_data=='')||(/JANDI_json_format/gi.test(send_json_data))|| (  (!(/^\{.*\}$/gi.test(send_json_data)) )  &&  (!(typeof(send_json_data)==="object") )    )       ){
               console.log('先丟去做 JANDI 格式 JSON');
-              send_json_data = JANDI_json_format(send_json_data,J_color,J_title,J_de,J_url);
+              //不是 JOSN 相關的字串就格式化 + 附註
+              //JANDI_json_format(j_body,j_color,connectInfoJSON,info_title,info_description,info_url,userinfo_show)
+              if(typeof(J_title)==="object")  {
+                //只准 object 的形式去自訂附註。自訂的時候用 J_title 代進去當 connectInfoJSON
+                send_json_data = JANDI_json_format(send_json_data,J_color,J_title,'','','',userinfo_show);
+              }else{
+                send_json_data = JANDI_json_format(send_json_data,J_color,'',J_title,J_de,J_url,userinfo_show);
+              }
+
               if(send_json_data==false){
                   console.log('你沒輸入主要訊息！請重新輸入！');
-                  console.log(`JADIN_webhooks(send_json_data,color,title,簡述,url,JADIN_webhooks_url);`);
+                  console.log(`JANDI_webhooks(send_json_data,color,title,簡述,url,是否顯示發送端資訊(1/0),JANID_webhooks_url);`);
                   return false;
               }
             }
@@ -1862,7 +1907,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
             console.log('送之前，send_json_data = ' + send_json_data);
 
             $.ajax({
-                url: JADIN_webhooks_url,
+                url: JANID_webhooks_url,
                 type:"POST",
                 data: send_json_data,
                 //contentType: 'application/json',
@@ -1876,6 +1921,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                     //console.log('被通報的網址：' + this_mono.href);
                     console.log('送出的 JSON：\n' + send_json_data);
                     console.log('接收端的回應詳細資訊：\n' + msg); 
+                    console.log('post JANDI 完畢');
                 },
 
                  error:function(xhr, ajaxOptions, thrownError){ 
@@ -2005,7 +2051,7 @@ console.log("\u88ab\u901a\u5831\u7684\u6240\u5728\u7db2\u5740\uff1a"+location.hr
             //$.fancybox.open('<h4 style=\"line-height: 1px;text-align: center;margin-top: 14px;margin-bottom: 5px;font-family:' + localStorage['font'] + '\">來者何人！暗號！</h4><br /><input type=\"text\" onkeyup=\"document.getElementById(\'himitsu\').onkeydown=function(event){if(event.which==13){ document.getElementById(\'enter_button\').click();}}\" style=\"width: 100%;text-align: center;-webkit-transition: all 2s ease 0s;-moz-transition: all 2s ease 0s;-ms-transition: all 2s ease 0s;-o-transition: all 2s ease 0s;\" id=\"himitsu\" placeholder=\"暗號正確才開\" autofocus><br /><button id=\"enter_button\" style=\"width: 100%;text-align: center;text-decoration: none;cursor: pointer; padding: 0px 48px;\" onclick=\"javascript:console.log(enter_himitsu(\'' + word + '\',document.getElementById(\'himitsu\').value,\'' + type_switch + '\',' + wrangway_not_close + '));' + autoclose + '\">你確定？</botton>');
             //  document.getElementById('himitsu').focus();
             //2016.12.01 修正邏輯，關門由 enter 完全負責
-            $.fancybox.open('<h4 style=\"line-height: 1px;text-align: center;margin-top: 14px;margin-bottom: 5px;font-family:' + localStorage['font'] + '\">來者何人！暗號！</h4><br /><input type=\"text\" onkeyup=\"document.getElementById(\'himitsu\').onkeydown=function(event){if(event.which==13){ document.getElementById(\'enter_button\').click();}}\" style=\"width: 100%;text-align: center;-webkit-transition: all 2s ease 0s;-moz-transition: all 2s ease 0s;-ms-transition: all 2s ease 0s;-o-transition: all 2s ease 0s;\" id=\"himitsu\" placeholder=\"暗號正確才開\" autofocus><br /><button id=\"enter_button\" style=\"width: 100%;text-align: center;text-decoration: none;cursor: pointer; padding: 0px 48px;\" onclick=\"javascript:console.log(enter_himitsu(\'' + word + '\',document.getElementById(\'himitsu\').value,\'' + type_switch + '\',' + wrangway_not_close + '));clearInterval(focusid);document.getElementById(\'himitsu\').focus();\">你確定？</botton>');
+            $.fancybox.open('<h4 style=\"line-height: 1px;text-align: center;margin-top: 14px;margin-bottom: 5px;font-family:' + localStorage['font'] + '\">來者何人！暗號！</h4><br /><input type=\"text\" onkeyup=\"document.getElementById(\'himitsu\').onkeydown=function(event){if(event.which==13){ document.getElementById(\'enter_button\').click();}}\" style=\"width: 100%;text-align: center;-webkit-transition: all 2s ease 0s;-moz-transition: all 2s ease 0s;-ms-transition: all 2s ease 0s;-o-transition: all 2s ease 0s;\" id=\"himitsu\" placeholder=\"暗號正確才開\" autofocus><br /><button id=\"enter_button\" style=\"width: 100%;text-align: center;text-decoration: none;cursor: pointer; padding: 0px 46px;\" onclick=\"javascript:console.log(enter_himitsu(\'' + word + '\',document.getElementById(\'himitsu\').value,\'' + type_switch + '\',' + wrangway_not_close + '));clearInterval(focusid);document.getElementById(\'himitsu\').focus();\">你確定？</botton>');
               function focusme(){
                 document.getElementById('himitsu').focus();
                 console.log('已聚焦');
