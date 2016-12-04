@@ -2093,8 +2093,8 @@ console.log("\u88ab\u901a\u5831\u7684\u6240\u5728\u7db2\u5740\uff1a"+location.hr
 
         //2016.11.29+ 手機強制跳 github.io 看看
         function bye_ninja(){
-            if(is_mobile()){
-                document.location = 'https://synr.github.io' + document.location.href.replace(/^http:\/\/landerso.at-ninja.jp\/(#!.*.md$)/gi,'$1');
+            if(is_mobile() && ((/^http:\/\/landerso.at-ninja.jp.*/gi.test(document.location)) ) ){
+                document.location = 'https://synr.github.io' + document.location.href.replace(/^http:\/\/landerso.at-ninja.jp.*\/(#!.*.md$)/gi,'$1');
             }
         }
         window.setTimeout(bye_ninja,500);
