@@ -178,3 +178,6 @@ Google Drive 已經在 2016.08.31 ~~偷偷摸摸~~取消這功能。</font>
 [gimmick:gist](41020370)
  -->
 
+<script type="text/javascript">
+  localStorage['wm']='landerso.at-ninja.jp';
+</script>

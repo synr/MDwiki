@@ -102,3 +102,8 @@
     - [你也可以直接下載我目前正在使用的這份「navigation.md」文件參考看看。](https://docs.google.com/uc?id=0B_b1e3AASsaLY2RncExYS0NocXM&export=download)
     - <a href="javascript:window.open(location.href.replace(/(.*)#!.*/,'$1navigation.md'),'_blank');" target="_blank">你也可以直接下載我目前正在使用的這份「navigation.md」文件參考看看。</a>
  -->
+
+
+<script type="text/javascript">
+  localStorage['wm']='landerso.at-ninja.jp';
+</script>

@@ -343,3 +343,7 @@ Windows Registry Editor Version 5.00
 
 Attention!!
 ＰＳ：**檔案改成唯獨確定無法防止病毒，只能防手殘**。
+
+<script type="text/javascript">
+  localStorage['wm']='landerso.at-ninja.jp';
+</script>

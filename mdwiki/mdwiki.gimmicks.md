@@ -23,3 +23,7 @@ Note、Hint、Attention、Warning 後面接半形的 ``:`` 或 ``!``，整個文
 
 ##測試使用
 - 詳見 [測試 Gimmicks](#!test/test.gimmicks.md)
+
+<script type="text/javascript">
+  localStorage['wm']='landerso.at-ninja.jp';
+</script>

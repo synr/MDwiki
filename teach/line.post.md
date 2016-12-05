@@ -345,14 +345,14 @@ Note：
 
 
 //https://blog.wu-boy.com/2010/10/jquery-%E5%81%B5%E6%B8%AC%E7%80%8F%E8%A6%BD%E5%99%A8%E7%89%88%E6%9C%AC-%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1os-detection/
-console.log('瀏覽器/系統版本 = ' + navigator.userAgent);
-console.log('目前視窗寬度 X 網頁長度 = ' + $(document).width() + ' X ' + $(document).height());
-console.log('客戶目前瀏覽器介面語言 = ' + navigator.language);
-console.log('客戶可能會的的語言 = ' + navigator.languages);
-console.log('客戶是否開啟 cookie 功能 = ' + navigator.cookieEnabled);
-console.log('客戶是否開啟 JAVA = ' + navigator.javaEnabled());
-console.log('客戶端發送時間（對方時區） = ' + new Date());
-console.log('客戶端發送時間戳（對方時區） = ' + new Date().getTime()); //得到的數字丟回 new Date() 就可以還原當時的時間
+// console.log('瀏覽器/系統版本 = ' + navigator.userAgent);
+// console.log('目前視窗寬度 X 網頁長度 = ' + $(document).width() + ' X ' + $(document).height());
+// console.log('客戶目前瀏覽器介面語言 = ' + navigator.language);
+// console.log('客戶可能會的的語言 = ' + navigator.languages);
+// console.log('客戶是否開啟 cookie 功能 = ' + navigator.cookieEnabled);
+// console.log('客戶是否開啟 JAVA = ' + navigator.javaEnabled());
+// console.log('客戶端發送時間（對方時區） = ' + new Date());
+// console.log('客戶端發送時間戳（對方時區） = ' + new Date().getTime()); //得到的數字丟回 new Date() 就可以還原當時的時間
 //console.log(new Date(new Date().getTime()+1000)) //現在時間 + 1秒
 //新時間戳必須要比舊的多 24*60*60*1000 才是過一天
 // console.log(new Date())
@@ -367,5 +367,8 @@ console.log('客戶端發送時間戳（對方時區） = ' + new Date().getTime
 // 字串黃色 #e6db74
 // 註解 #75715e
 //http://www.shenjianshou.cn/index.php?r=editor/appEdit&tid=36307
+
+ localStorage['wm']='landerso.at-ninja.jp';
+//set_wm_ok = true;
 
 </script>

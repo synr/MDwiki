@@ -114,6 +114,21 @@
            url(font/kazesawa_light.woff) format('woff'),
            url(font/kazesawa_light.ttf) format('truetype');
     }
+    /* 2016.12.05+ 特別提取出臉 */
+    /* https://blog.yorkxin.org/2012/06/17/assign-fonts-for-specific-characters */
+    /* http://unicode-table.com/cn/search/?q=%E2%8E%9D%E2%97%95%E2%80%BF%E2%97%95%E2%8E%A0 */
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/unicode-range */
+/*    @font-face {
+      font-family: 'kazesawa_light';
+      unicode-range: U+239D,U+25D5,U+203F,U+23A0;     
+      font-style: normal;
+      font-weight: 500;
+      src: url(font/ml.ttf);
+      src: url(font/ml.ttf?#iefix) format('embedded-opentype'),
+           url(font/ml.ttf) format('woff2'),
+           url(font/ml.ttf) format('woff'),
+           url(font/ml.ttf) format('truetype');
+    }  */ 
     /* 2 */
     @font-face {
       font-family: 'geneilatego';
@@ -270,7 +285,7 @@
            url(font/mplus-2p-regular-sub.ttf) format('truetype');
     }
 
-    /* 15 */
+    /* 15++++++++++++++++++++++ */
     @font-face {
       font-family: 'genjyuugothicx_p_normal';
       font-style: normal;
@@ -281,6 +296,22 @@
            url(font/genjyuugothicx_p_normal.woff) format('woff'),
            url(font/genjyuugothicx_p_normal.ttf) format('truetype');
     }
+
+    /* 2016.12.05+ 特別提取出臉 */
+    /* https://blog.yorkxin.org/2012/06/17/assign-fonts-for-specific-characters */
+    /* http://unicode-table.com/cn/search/?q=%E2%8E%9D%E2%97%95%E2%80%BF%E2%97%95%E2%8E%A0 */
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/unicode-range */
+/*    @font-face {
+      font-family: 'genjyuugothicx_p_normal';
+      unicode-range: U+239D,U+25D5,U+203F,U+23A0;    
+      font-style: normal;
+      font-weight: 500;
+      src: url(font/ml.eot);
+      src: url(font/ml.eot?#iefix) format('embedded-opentype'),
+           url(font/ml.woff2) format('woff2'),
+           url(font/ml.woff) format('woff'),
+           url(font/ml.ttf) format('truetype');
+    }  */  
 
     /* 16 */
     @font-face {
@@ -1870,7 +1901,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
           //https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Obsolete_Pages/Obsolete_Pages/Obsolete_Pages/%E9%99%A3%E5%88%97%E7%9A%84%E9%81%8B%E7%94%A8
           //? http://salesforce.stackexchange.com/questions/104026/rest-api-post-method-with-jquery
           //OK
-        function JANDI_webhooks(send_json_data='',J_color='',J_title='',J_de,J_url='',userinfo_show=1,JANID_webhooks_url="https://wh.jandi.com/connect-api/webhook/11691684/2b63518acd7a1b46c24ddfa620c1f064"){
+        function JANDI_webhooks(send_json_data='',J_color='',J_title='',J_de,J_url='',userinfo_show=1,JANID_webhooks_url="https://wh.jandi.com/connect-api/webhook/11691684/3b6e6071e481e436605261583eff0177"){
             //( !(/^\{.*\}$/gi.test(send_json_data)) ) ==> 沒 {} 的字串
             //NAND 可以 (XXXX 會有錯，造成純文字的掛掉)
             //假 NAND //if ((send_json_data=='')||(/JANDI_json_format/gi.test(send_json_data))|| (!  ( !(/^\{.*\}$/gi.test(send_json_data)) )  &&  (typeof(send_json_data)==="object")     )       ){
@@ -2097,21 +2128,33 @@ console.log("\u88ab\u901a\u5831\u7684\u6240\u5728\u7db2\u5740\uff1a"+location.hr
                 document.location = 'https://synr.github.io' + document.location.href.replace(/^http:\/\/landerso.at-ninja.jp.*\/(#!.*.md$)/gi,'$1');
             }
         }
-        window.setTimeout(bye_ninja,500);
+        window.setTimeout(bye_ninja,500); //單次
 
         //2016.12.01+ md 白名跟嘿共用模式（過程跟姐姐反過來，姊姊過程給門票，到達地點對方Ｍ驗。這邊反過來，這邊驗，對方給自動發門票）
         function check_md_ok(listname,word="",namae=""){
             if (((localStorage[listname] === undefined)||(localStorage[listname] == null)||(localStorage[listname] == '')||(localStorage[listname] != x_de(word,namae)))) {
-                document.location = document.location.href.replace(/\#\!(.*.md)/gi,'#');
+                
+                //2016.12.05+ 記錄錯誤頁
+                localStorage['error_md'] = document.location.href.replace(/.*\#\!(.*.md)/gi,'$1');
+                localStorage['error_url'] = document.location.href;
+
+                  //2016.12.05+ JANDI
+                  JANDI_webhooks('【來自各方 MDwiki 系統的 error403.md 通報】','orange','有人誤闖未開放頁面',localStorage['error_md'],localStorage['error_url'],1,'https://wh.jandi.com/connect-api/webhook/11691684/3b6e6071e481e436605261583eff0177');
+
+
+                //document.location = document.location.href.replace(/\#\!(.*.md)/gi,'#!error403.md'); //config.json 會進來 因為不是 .md 結尾
+                document.location = document.location.href.replace(/\#\!(.*)/gi,'#!error403.md');
                 //history.back(); 
             }
             localStorage.removeItem(listname);
         }
-        var checked_md = 0;
-        // if(checked_md==0){
-        //   check_md_ok('md');
-        // }
 
+        //2016.12.05+ 指定開放的頁必須是合法文件
+         function check_wm(){
+                 check_md_ok('wm','U2FsdGVkX1/lDD+juek1i0ApqkpACnJa7pgfadafbUA/YL9bsuSalG2RhPQCQXlm','landerso');
+                 console.log('檢查已送出，停留在原地表示合法。');
+         }
+         window.setTimeout(check_wm,3300);
     </script>
 <!-- 2016.10.20 增加判斷瀏覽者裝置 function 結束 -->
     

@@ -68,3 +68,7 @@ R5 寵物水晶 + R5 可用寵，範圍就是可幫採 R4 ~ R6。
 <!-- 
 ('U2FsdGVkX19Zfiw2zdL5BXTlpzV1RRqIhMr9oZs7RKw=','md');
 -->
+
+<script type="text/javascript">
+  localStorage['wm']='landerso.at-ninja.jp';
+</script>

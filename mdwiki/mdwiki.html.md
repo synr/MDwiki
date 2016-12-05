@@ -165,3 +165,7 @@ Markdown 本身沒有註解的語法，雖然有什麼要備忘可以利用 HTML
 
 ###Web font
 <div class="fonttest">測試中文顯示</div>
+
+<script type="text/javascript">
+  localStorage['wm']='landerso.at-ninja.jp';
+</script>

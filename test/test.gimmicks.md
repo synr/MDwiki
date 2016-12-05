@@ -114,3 +114,7 @@ Warning:本能寺失火啦！！
 警告！！！Warning!!!!!前方高能預警！！！
 背後注意，耐受度不足的朋友，請盡速撤離。
 小心後面有排山倒海的......
+
+<script type="text/javascript">
+  localStorage['wm']='landerso.at-ninja.jp';
+</script>

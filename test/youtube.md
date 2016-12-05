@@ -10,3 +10,7 @@
 ```markdown
 [](https://www.youtube.com/watch?v=TVzTnxBQq7E)
 ```
+
+<script type="text/javascript">
+  localStorage['wm']='landerso.at-ninja.jp';
+</script>

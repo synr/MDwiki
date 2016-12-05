@@ -53,3 +53,7 @@ HTML5 播放器的播放速度比 Flash 載入更快。
 
 Attention!!**建議要用的時候，再把該擴充功能有效，並開啟該腳本。
 不要用的時候，把腳本關掉，也把擴充功能關掉。**
+
+<script type="text/javascript">
+  localStorage['wm']='landerso.at-ninja.jp';
+</script>
