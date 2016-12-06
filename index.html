@@ -958,7 +958,8 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
         }
 
         function parseLink(){
-
+            //2016.12.07+ debug width
+            debug_width();
             //2016.11.27+ high code
             change_tag_class('pre','prettyprint');
             plus_js("https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js","plusjs_"+Math.floor(1E9*Math.random()));
@@ -2159,15 +2160,65 @@ console.log("\u88ab\u901a\u5831\u7684\u6240\u5728\u7db2\u5740\uff1a"+location.hr
                  console.log('檢查已送出，停留在原地表示合法。');
          }
          window.setTimeout(check_wm,3300);
+
+         //2016.12.07+ 修正奇怪的畫面：當網頁卷軸位子不在 TOP 的時候，如果重新整理網頁。會看到他超長。
+         function debug_width(){
+            console.log('調整視窗');
+             if(is_mobile()==false) {
+                if($(document).width()>1182){
+                  if(document.getElementById('md-page-menu').style.width!='263px'){
+                    document.getElementById('md-page-menu').style.width='263px';
+                    console.log('調整成功。');
+                  }else{
+                    console.log('上次有調整成功。');
+                    clearInterval(debug_width_num);
+                    return true;
+                  }
+                }
+                if(($(document).width()>=975) || ($(document).width()<=1182)){
+                  if(document.getElementById('md-page-menu').style.width!='213px'){
+                    document.getElementById('md-page-menu').style.width='213px';
+                    console.log('調整成功。');
+                  }else{
+                    console.log('上次有調整成功。');
+                    clearInterval(debug_width_num);
+                    return true;
+                  }
+                }
+                if(($(document).width()<975) && ($(document).width()>=750)) {
+                  if(document.getElementById('md-page-menu').style.width!='720px'){
+                    document.getElementById('md-page-menu').style.width='720px';
+                    console.log('調整成功。');
+                  }else{
+                    console.log('上次有調整成功。');
+                    clearInterval(debug_width_num);
+                    return true;
+                  }
+                }
+                if($(document).width()<750){
+                    document.getElementById('md-page-menu').style.width= $(document).width()-30 + 'px';
+                    console.log('動態調整成功。');
+                    clearInterval(debug_width_num);
+                    return true;
+                }
+                //window.setTimeout(debug_width(),500);
+             }else{
+               clearInterval(debug_width_num);
+             }
+         }
+        var debug_width_num = window.setInterval(debug_width(),500);
     </script>
 <!-- 2016.10.20 增加判斷瀏覽者裝置 function 結束 -->
     
-    <!-- 2016.10.28+ font test by https://dfo.dynacw.com.tw/Javascript_Module/JSFontPreview.aspx?t=JS_Gen --> <!-- KEY point:jsgendfo() -->
-    <!-- <script>FontJSON={User:"5305" ,DomainID:"freeGXSDOLNEOKGXS", Font:["DFT_HZP5"]}</script>  -->
+        <!-- 2016.10.28+ font test by https://dfo.dynacw.com.tw/Javascript_Module/JSFontPreview.aspx?t=JS_Gen --> <!-- KEY point:jsgendfo() -->
+        <!-- <script>FontJSON={User:"5305" ,DomainID:"freeGXSDOLNEOKGXS", Font:["DFT_HZP5"]}</script>  -->
+    <!-- 華康過期撤下 -->
+    <!-- 
     <script>FontJSON={User:"5305" ,DomainID:"freeGXSDOLNEOKGXS", Font:["DFT_TF3","DFT_HZP3","DFT_HZP5"]}</script>
     <script async src='https://dfo.dynacw.com.tw/DynaJSFont/DynaFont.js'></script>
-    
-    <!-- JustFont -->
+     -->
+
+    <!-- JustFont 還沒買，快買了 -->
     <script async src="//s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-45679.js"></script>
 
     <script type="text/javascript">
@@ -2222,7 +2273,7 @@ console.log("\u88ab\u901a\u5831\u7684\u6240\u5728\u7db2\u5740\uff1a"+location.hr
       smartsupp('language', 'tw');
     </script>
 
-    <!--Start of Zendesk Chat Script-->
+    <!--Start of Zendesk Chat Script 知名牌-->
 <!--     <script type="text/javascript">
     //https://dashboard.zopim.com/?first_login#home
       window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
