@@ -1565,6 +1565,10 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
             tag_font_set('input',myfont);
             tag_font_set('select',myfont);
 
+            tag_font_set('ruby',myfont);
+            tag_font_set('rb',myfont);
+            tag_font_set('rt',myfont);
+
             //jsgendfo(); //華康用的
 
             //2016.10.30+ 華康專用次數限制，但不知道為什麼變成次數優先於變化了。變成變化的時候也不會更。但這問題不大就是了。但還是個 BUG。
@@ -1620,7 +1624,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
         //燈箱驗證用 function，排除事項統一加在這裡。
         function fancybox_check_before(this_mono){
                     //----針對 X-Frame-Options 確定的網域，在這裡作手動排除。
-                    if(this_mono.href.match(/(^https?:\/\/trello.com|^https?:\/\/developers.google.com|^https?:\/\/github.com|^https?:\/\/highlightjs.org|^https?:\/\/www.google.com|^https?:\/\/greasyfork.org|^https?:\/\/chrome.google.com|^https?:\/\/www.zapier.com|^https?:\/\/zapier.com|^https?:\/\/www.backblaze.com|^https?:\/\/.*sdbx.jp|^https?:\/\/www.ninja.co.jp|^https?:\/\/.*plurk.com)/gi)){
+                    if(this_mono.href.match(/(^https?:\/\/trello.com|^https?:\/\/.*osdn.net|^https?:\/\/developers.google.com|^https?:\/\/github.com|^https?:\/\/highlightjs.org|^https?:\/\/www.google.com|^https?:\/\/greasyfork.org|^https?:\/\/chrome.google.com|^https?:\/\/www.zapier.com|^https?:\/\/zapier.com|^https?:\/\/www.backblaze.com|^https?:\/\/.*sdbx.jp|^https?:\/\/www.ninja.co.jp|^https?:\/\/.*plurk.com)/gi)){
                         console.log('【Error】Refused to display \'' + this_mono.href + '\' in a frame because it set \'X-Frame-Options\'\n針對這些確定不支援跨站顯示框架網頁的網域，已自動排除使用燈箱。');
                         window.open(this_mono.href,'_blank');
                         $.fancybox.close(1);

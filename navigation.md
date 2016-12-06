@@ -28,10 +28,10 @@
   ----
   - #已經沒效的空間方案遺體(X)
   - [網址醜醜上傳共編很便利的 Google](http://googledrive.com/host/0B_b1e3AASsaLN1BmcjhSZ09JM3c)
-  - [新創需要付費的 Dropbox（已有的可用）](https://dl.dropboxusercontent.com/u/277393262/wiki/index.html)
+  - [新創需要付費的 Dropbox（不能用了）](https://dl.dropboxusercontent.com/u/277393262/wiki/index.html)
   ----
   - #Markdown
-  - [常見的 Markdown 寫法介紹](#!mdwiki.markdown.md "待補")
+  - [常見的 Markdown 寫法介紹](#!mdwiki/markdown.md "待補")
 
 [🏥  反勒索病毒推廣！]()
 
