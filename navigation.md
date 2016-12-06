@@ -99,11 +99,11 @@
   ----
   - #動態 Web font
   - #華康（收費制，免費試用不可替換三套字體～ 2016.11.27 ）
-  - <a href="javascript:font_set('\'DFT\_HZP3\',arial');jsgendfo();" title="根據頁面的字數動態調整字體檔。所以檔案大小不佔太多傳輸量。除非那頁寫太多不重複的字XD">華康翩翩體 W3 ★</a>
-  - <a href="javascript:font_set('\'DFT\_TF3\',arial');jsgendfo();" title="根據頁面的字數動態調整字體檔。所以檔案大小不佔太多傳輸量。除非那頁寫太多不重複的字XD">華康采風體 W3（這有點小）</a>
+  - <a href="javascript:font_set('\'DFT\_HZP3\',arial');jsgendfo();" title="根據頁面的字數動態調整字體檔。所以檔案大小不佔太多傳輸量。除非那頁寫太多不重複的字XD">華康翩翩體 W3 ★（已過期）</a>
+  - <a href="javascript:font_set('\'DFT\_TF3\',arial');jsgendfo();" title="根據頁面的字數動態調整字體檔。所以檔案大小不佔太多傳輸量。除非那頁寫太多不重複的字XD">華康采風體 W3（這有點小）（已過期）</a>
   - #Just Font（免費試用可替換兩套字體～2016-11-22，只支援 http 協定）
-  - <a href="javascript:font_set('\'cwtexqhei\'');_jf.flush();" title="根據頁面的字數動態調整字體檔。所以檔案大小不佔太多傳輸量。除非那頁寫太多不重複的字XD">cwTeX 黑體</a>
-  - <a href="javascript:font_set('\'sourcehansans\-tc\'');_jf.flush();" title="根據頁面的字數動態調整字體檔。所以檔案大小不佔太多傳輸量。除非那頁寫太多不重複的字XD">思源黑體 Extralight</a>
+  - <a href="javascript:font_set('\'cwtexqhei\'');_jf.flush();" title="根據頁面的字數動態調整字體檔。所以檔案大小不佔太多傳輸量。除非那頁寫太多不重複的字XD">cwTeX 黑體（未繳費）</a>
+  - <a href="javascript:font_set('\'sourcehansans\-tc\'');_jf.flush();" title="根據頁面的字數動態調整字體檔。所以檔案大小不佔太多傳輸量。除非那頁寫太多不重複的字XD">思源黑體 Extralight（未繳費）</a>
   ----
   - #固定式 Web font 原檔（缺點：肥大佔流量）
   - <a href="javascript:font_set('\'cwTeXHei\',arial');">Google 思源黑體（警告這會耗用 <b>3 MB</b> 的網路流量）★</a>

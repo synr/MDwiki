@@ -297,6 +297,19 @@
            url(font/genjyuugothicx_p_normal.ttf) format('truetype');
     }
 
+    @font-face {
+      font-family: 'genjyuugothicx_p_medium';
+      font-style: normal;
+      font-weight: 500;
+      src: url(font/genjyuugothicx_p_medium.eot);
+      src: url(font/genjyuugothicx_p_medium.eot?#iefix) format('embedded-opentype'),
+           url(font/genjyuugothicx_p_medium.woff2) format('woff2'),
+           url(font/genjyuugothicx_p_medium.woff) format('woff'),
+           url(font/genjyuugothicx_p_medium.ttf) format('truetype');
+    }
+
+
+
     /* 2016.12.05+ 特別提取出臉 */
     /* https://blog.yorkxin.org/2012/06/17/assign-fonts-for-specific-characters */
     /* http://unicode-table.com/cn/search/?q=%E2%8E%9D%E2%97%95%E2%80%BF%E2%97%95%E2%8E%A0 */
@@ -958,6 +971,8 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
         }
 
         function parseLink(){
+            //2016.12.07+ 關閉過期字體 
+            font_close();
             //2016.12.07+ debug width
             debug_width();
             //2016.11.27+ high code
@@ -2163,50 +2178,76 @@ console.log("\u88ab\u901a\u5831\u7684\u6240\u5728\u7db2\u5740\uff1a"+location.hr
 
          //2016.12.07+ 修正奇怪的畫面：當網頁卷軸位子不在 TOP 的時候，如果重新整理網頁。會看到他超長。
          function debug_width(){
-            console.log('調整視窗');
-             if(is_mobile()==false) {
-                if($(document).width()>1182){
-                  if(document.getElementById('md-page-menu').style.width!='263px'){
-                    document.getElementById('md-page-menu').style.width='263px';
-                    console.log('調整成功。');
-                  }else{
-                    console.log('上次有調整成功。');
-                    clearInterval(debug_width_num);
-                    return true;
+            debug_width_timer++;
+            if(debug_width_timer<2){
+              console.log('調整視窗');
+               if(is_mobile()==false) {
+                  if($(document).width()<750){
+                      document.getElementById('md-page-menu').style.width= $(document).width()-30 + 'px';
+                      console.log('動態調整成功。');
+                      clearInterval(debug_width_num);
+                      return true;
                   }
-                }
-                if(($(document).width()>=975) || ($(document).width()<=1182)){
-                  if(document.getElementById('md-page-menu').style.width!='213px'){
-                    document.getElementById('md-page-menu').style.width='213px';
-                    console.log('調整成功。');
-                  }else{
-                    console.log('上次有調整成功。');
-                    clearInterval(debug_width_num);
-                    return true;
+                  if(($(document).width()<975) && ($(document).width()>=750)) {
+                    if(document.getElementById('md-page-menu').style.width!='720px'){
+                      document.getElementById('md-page-menu').style.width='720px';
+                      console.log('調整成功。');
+                    }else{
+                      console.log('上次有調整成功。');
+                      clearInterval(debug_width_num);
+                      return true;
+                    }
                   }
-                }
-                if(($(document).width()<975) && ($(document).width()>=750)) {
-                  if(document.getElementById('md-page-menu').style.width!='720px'){
-                    document.getElementById('md-page-menu').style.width='720px';
-                    console.log('調整成功。');
-                  }else{
-                    console.log('上次有調整成功。');
-                    clearInterval(debug_width_num);
-                    return true;
+                  if(($(document).width()>=975) || ($(document).width()<=1182)){
+                    if(document.getElementById('md-page-menu').style.width!='213px'){
+                      document.getElementById('md-page-menu').style.width='213px';
+                      console.log('調整成功。');
+                    }else{
+                      console.log('上次有調整成功。');
+                      clearInterval(debug_width_num);
+                      return true;
+                    }
+                  }          
+                  if($(document).width()>1182){
+                    if(document.getElementById('md-page-menu').style.width!='263px'){
+                      document.getElementById('md-page-menu').style.width='263px';
+                      console.log('調整成功。');
+                    }else{
+                      console.log('上次有調整成功。');
+                      clearInterval(debug_width_num);
+                      return true;
+                    }
                   }
-                }
-                if($(document).width()<750){
-                    document.getElementById('md-page-menu').style.width= $(document).width()-30 + 'px';
-                    console.log('動態調整成功。');
-                    clearInterval(debug_width_num);
-                    return true;
-                }
-                //window.setTimeout(debug_width(),500);
-             }else{
-               clearInterval(debug_width_num);
-             }
+                  //window.setTimeout(debug_width(),500);
+               }else{
+                 clearInterval(debug_width_num);
+               }
+            }
          }
         var debug_width_num = window.setInterval(debug_width(),500);
+        var debug_width_timer = 0;
+
+        //2016.12.07+ 關閉 過期的字體商
+        //https://kkbruce.tw/bs3/Components
+        function font_close(){
+          for (var i = 0; i < document.getElementsByTagName('li').length; i++) {
+            if(document.getElementsByTagName('li')[i].children.length>0){
+              switch(document.getElementsByTagName('li')[i].children[0].innerText){
+                  case '華康翩翩體 W3 ★（已過期）':
+                  case '華康采風體 W3（這有點小）（已過期）':
+                  case 'cwTeX 黑體（未繳費）':
+                  case '思源黑體 Extralight（未繳費）':
+                      if(document.getElementsByTagName('li')[i].getAttribute('class')!='disabled'){
+                        document.getElementsByTagName('li')[i].setAttribute('class', 'disabled');
+                        document.getElementsByTagName('li')[i].children[0].href = 'javascript:\/\/';
+                        console.log('已關閉 ' + document.getElementsByTagName('li')[i].children[0].innerText + '功能');
+                      }
+                      break;
+              }
+            }
+          }
+        }
+
     </script>
 <!-- 2016.10.20 增加判斷瀏覽者裝置 function 結束 -->
     
@@ -2305,6 +2346,7 @@ console.log("\u88ab\u901a\u5831\u7684\u6240\u5728\u7db2\u5740\uff1a"+location.hr
 
       <optgroup label="固定式 Web font 輕量（缺點：更新內文需手動產檔）">
         <option value="javascript:font_set('\'genjyuugothicx\_p_normal\',arial');fancybox_openurl('http:\/\/jikasei.me\/font\/genjyuu');" title="源柔ゴシック (げんじゅうゴシック) は、フリーの OpenType フォントである「源ノ角ゴシック (Noto Sans CJK / Source Han Sans の日本語部分)」を TrueType 形式に変換し、角を丸める加工を行い丸ゴシック風にした派生フォントです。">源柔ゴシックX-P Normal（★★★ 超推 ★★★）</option>
+        <option value="javascript:font_set('\'genjyuugothicx\_p\_medium\',arial');fancybox_openurl('http:\/\/jikasei.me\/font\/genjyuu');" title="源柔ゴシック (げんじゅうゴシック) は、フリーの OpenType フォントである「源ノ角ゴシック (Noto Sans CJK / Source Han Sans の日本語部分)」を TrueType 形式に変換し、角を丸める加工を行い丸ゴシック風にした派生フォントです。">源柔ゴシックX-P Medium（★★★ 很推 ★★★）</option>
         <option value="javascript:font_set('\'kazesawa\_light\',arial');fancybox_openurl('http:\/\/kazesawa.github.io');" title="M+ と Source Sans Pro の合成フォント">Kazesawa フォント Light（★★ 很推薦 ★★）</option>
         <option value="javascript:font_set('\'mplus\-2p\-regular\-sub\',arial');fancybox_openurl('http:\/\/mplus.font\-face.jp');" title="M+">M+（Web font）Regular（★★ 推薦 ★★）</option>
         <option value="javascript:font_set('\'mplus\-2p\-medium\-sub\',arial');fancybox_openurl('http:\/\/mplus.font\-face.jp');" title="M+">M+（Web font）Medium（有點粗的推薦）</option>
@@ -2342,14 +2384,14 @@ console.log("\u88ab\u901a\u5831\u7684\u6240\u5728\u7db2\u5740\uff1a"+location.hr
         <option value="javascript:font_set();">不使用 Web font，使用裝置原有字體（EX：微軟正黑體）</option>
       <optgroup label="收費制中文 Web font 平台"></optgroup>
       <optgroup label="華康：免費試用不可替換三套字體～ 2016.11.27">
-        <option value="javascript:font_set('\'DFT\_HZP3\',arial');jsgendfo();">華康翩翩體 W3</option>
-        <option value="javascript:font_set('\'DFT\_HZP5\',arial');jsgendfo();">華康翩翩體 W5</option>
-        <option value="javascript:font_set('\'DFT\_TF3\',arial');jsgendfo();">華康采風體 W3（這有點小）</option>
+        <option value="javascript://font_set('\'DFT\_HZP3\',arial');jsgendfo();">華康翩翩體 W3（已過期）</option>
+        <option value="javascript://font_set('\'DFT\_HZP5\',arial');jsgendfo();">華康翩翩體 W5（已過期）</option>
+        <option value="javascript://font_set('\'DFT\_TF3\',arial');jsgendfo();">華康采風體 W3（這有點小）（已過期）</option>
       </optgroup>
 
       <optgroup label="Just Font（免費試用可替換兩套字體維持一個月，只支援 http 協定）">
-        <option value="javascript:font_set('\'cwtexqhei\'');_jf.flush();" title="根據頁面的字數動態調整字體檔。所以檔案大小不佔太多傳輸量。除非那頁寫太多不重複的字XD">cwTeX 黑體</option>
-        <option value="javascript:font_set('\'sourcehansans\-tc\'');_jf.flush();" title="根據頁面的字數動態調整字體檔。所以檔案大小不佔太多傳輸量。除非那頁寫太多不重複的字XD">思源黑體 Extralight</option>
+        <option value="javascript://font_set('\'cwtexqhei\'');_jf.flush();" title="根據頁面的字數動態調整字體檔。所以檔案大小不佔太多傳輸量。除非那頁寫太多不重複的字XD">cwTeX 黑體（未繳費）</option>
+        <option value="javascript://font_set('\'sourcehansans\-tc\'');_jf.flush();" title="根據頁面的字數動態調整字體檔。所以檔案大小不佔太多傳輸量。除非那頁寫太多不重複的字XD">思源黑體 Extralight（未繳費）</option>
       </optgroup>
     </select>
     <!-- 2016.10.30+ 控制廣告提示 -->
