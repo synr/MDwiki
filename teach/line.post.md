@@ -24,10 +24,10 @@
 專門當報馬仔，只會 LINE 1 對 1 說話或是在群組聊天說話。
 - 要播放相關完整設置教學影片，隨時點選網站最上方選單中的影片去做選播，並輸入暗號。
 或點下面這些也可以。
-  - <a href="javascript:himitsu_ui('U2FsdGVkX18Urm63wL0/ZsWSRGmGnOBffUq/4w/vwR5gABli1fbs/CKwaEPJbvOm/dga/2m2XAYt908QzirS5ZeTnHOiYL1EFBsNvbrq2+KdPF1Q7DgswtJwbcJzGJD0','box');">安裝直接發 LINE 給站長 啟程</a>
-  - <a href="javascript:himitsu_ui('U2FsdGVkX18U9t5LVTbRILASTkWzqP9+Y4hFEtEMLsofjUXAvx4EeoBzWBlMC8lnRgxMRgFvKfm8IZYmIrOxhwXfRpm/gmBYmpEe4q/CtJ9gYVBzX1RtGz4QQYg2B9kE','box');">安裝直接發 LINE 給站長 前置</a>（這錄影有發生常見錯誤，請當負面教材XD。下部影片會解決。）
-  - <a href="javascript:himitsu_ui('U2FsdGVkX19Tl7ubPjiUVSflyuFj6mARZSa4rnb3hH2nvV/iwYMEMSe4QLUlUCvIqhWVoGitCsdpKKka0WRASPzraep8/eVbNyrkRea7z6UI9DNoT5tnbdo7sHlXKncv','box');">安裝直接發 LINE 給站長 主要</a>
-  - <a href="javascript:himitsu_ui('U2FsdGVkX1/QDo8a2/3dPRdwYQBXhlTdL/ZAJfe1b+xNmmbcaV2HmVG/yaVQmR6mCljmAi+Alq59EbKzOtSjoW9hvncQfTHP1BqTJr6ovkPRBOIf88KyLxCNlGy75NyJ','box');">安裝直接發 LINE 給站長 完</a>
+  - <a href="javascript:himitsu_ui('U2FsdGVkX18Urm63wL0/ZsWSRGmGnOBffUq/4w/vwR5gABli1fbs/CKwaEPJbvOm/dga/2m2XAYt908QzirS5ZeTnHOiYL1EFBsNvbrq2+KdPF1Q7DgswtJwbcJzGJD0','box');">安裝直接發 LINE 給站長（Zapier.com 版） 啟程</a>
+  - <a href="javascript:himitsu_ui('U2FsdGVkX18U9t5LVTbRILASTkWzqP9+Y4hFEtEMLsofjUXAvx4EeoBzWBlMC8lnRgxMRgFvKfm8IZYmIrOxhwXfRpm/gmBYmpEe4q/CtJ9gYVBzX1RtGz4QQYg2B9kE','box');">安裝直接發 LINE 給站長（Zapier.com 版） 前置</a>（這錄影有發生常見錯誤，請當負面教材XD。下部影片會解決。）
+  - <a href="javascript:himitsu_ui('U2FsdGVkX19Tl7ubPjiUVSflyuFj6mARZSa4rnb3hH2nvV/iwYMEMSe4QLUlUCvIqhWVoGitCsdpKKka0WRASPzraep8/eVbNyrkRea7z6UI9DNoT5tnbdo7sHlXKncv','box');">安裝直接發 LINE 給站長（Zapier.com 版） 主要</a>
+  - <a href="javascript:himitsu_ui('U2FsdGVkX1/QDo8a2/3dPRdwYQBXhlTdL/ZAJfe1b+xNmmbcaV2HmVG/yaVQmR6mCljmAi+Alq59EbKzOtSjoW9hvncQfTHP1BqTJr6ovkPRBOIf88KyLxCNlGy75NyJ','box');">安裝直接發 LINE 給站長（Zapier.com 版） 完</a>
 
 ###你也可以大致瀏覽一下 LINE Notify-bot 的官方技術說明文件
 ####推薦大概看一下裡面插圖，有大概的概念（~~看插圖就好嗎~~ XD
@@ -154,7 +154,15 @@ Note：
 ```
 
 - 其中 ``zapier_target_url = "xxxx";`` 的內容，你可以參考影片上的示範。
-可以直接寫成公開的改成 。（基本款）
+可以直接寫成公開的目標網址。（基本款）
+  - 這串網址，請參考影片（Zapier.com 版）。
+  除了填寫這段網址外，請參考影片詳細設定之後要轉送去哪裡。
+  - 舉一反三的應用，你也可以用在 [IFTTT](https://ifttt.com) 的 [Maker](https://ifttt.com/maker)。
+  但這只是一個觸發接點，最後你要讓這個接點觸發轉訊息給誰你自己去調。
+  這篇主要是在說 LINE 的，所以最後都會設定去給 LINE。
+  但你也可以同時發給很多個平台，有看到的選項都可以玩玩看。
+  [Zapier](https://zapier.com) 跟 [IFTTT](https://ifttt.com) 兩家都有很多平台可以互通玩玩。
+  甚至你可以設計一連串的各種平台，讓 [Zapier](https://zapier.com) 跟 [IFTTT](https://ifttt.com)T 互通有無 XD！
 - 也可以像我寫成加密後的寫法。
 但這加密**只防君子，不防小人**。（**很重要**）
 知道怎麼理解 JavaScript 的人查一查就知道密碼是什麼了。
@@ -281,6 +289,27 @@ Note：
              document.getElementById('name').value = localStorage['name'];
          }
 </script>
+
+----
+
+##更新預告
+###以上是搭配 Zapier.com 的版本
+###目前測試另一個專門資訊連動~~通風報信~~的平台 IFTTT.com 也成功！
+
+- 今天（2016.12.10）測試 [IFTTT](https://ifttt.com) 的轉接方式也成功了！
+- 所以除非要設計一次觸發多個平台，
+不然如果是要 1 對 1 連動資訊給 LINE 我強烈建議透過 IFTTT。
+  - 好處：
+    1. [IFTTT](https://ifttt.com) 沒有限制設置規則的數量，Zapier 只能同時啟動五個規則且一個規則只能三個動作。
+    2. LINE Notify 官方直接有跟 [IFTTT](https://ifttt.com) 有合作關係，設定比較簡單。
+    雖然這也是缺點，因為簡單的同時也等於資料格式的自訂規格比 Zapier 還差。（例如不能控制貼圖）
+    3. 分享圖片很容易，Zapier 那邊我還沒成功 PO 過 LINE 圖片XD
+
+- 但是我最近開太多坑了，所以這個坑只有做會更新的預告。
+詳細到底什麼時候更新，我也不知道。
+最糟糕的情況有可能是，只有補上 IFTTTT 版本錄影跟程式碼。
+真的很忙的話，可能會暫時沒有敘述文字。
+如果真的是這樣，請你們~~看影片用猜的~~學影片操作吧XD
 
 ----
 

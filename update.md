@@ -4,6 +4,64 @@
 這個系統只有一個 ``*.html`` 檔案，應該不會搞錯吧XD！
 會寫成 ``*.html``，只是單純有可能每個人命名不一樣。最多的可能是叫做 ``index.html`` 。
 
+## \[2016.12.11\] 修正 燈箱開啟 YouTube 問題
+
+- 這問題是 ``https://www.youtube.com/watch?v=ID`` 或 ``https://youtu.be/ID`` 是瀏覽網址。
+但他們不能被 embed 到 框架，所以燈箱不能開。
+必須要開啟前先偷抓 ID，然後把目標改成
+~~~
+https://www.youtube.com/embed/ID
+~~~
+才可以在框架內使用。
+
+- 設定方法
+```
+//2016.12.11+ YouTube 強迫用崁入
+var youtube_url = this_mono.href;//'http://www.youtube.com/watch?v=pnds1KIE-hM&sfsdf=987';//'https://youtu.be/pnds1KIE-hM?d=987';
+if(/^https?:\/\/(.*\.youtube\.com\/watch\?v\=|youtu\.be\/)([^&|^?]*)($|\&.*$|\?.*$)/gi.test(youtube_url)){
+    this_mono.href = youtube_url.replace(/^https?:\/\/(.*\.youtube\.com\/watch\?v\=|youtu\.be\/)([^&|^?]*)($|\&.*$|\?.*$)/gi,'https://www.youtube.com/embed/$2');
+}
+```
+
+- 這方面 Google Drive 倒是不用處理。
+因為 ``https://drive.google.com/file/d/ID/preview`` 本身就是給框架載入用的網址。
+倒是可以再增加自動組合網址的方法。
+例如現在 Google Drive 最容易取得的網址形式其實是
+~~~
+https://drive.google.com/open?id=ＩＤ
+~~~
+倒是~~可以考慮~~讓他自動轉連到 ``https://drive.google.com/file/d/ID/preview`` 用燈箱開啟。
+已經新增了
+
+- 已安裝
+
+```
+//2016.12.11+ Google Drive 自動切換到 preview
+var google_drive_url = this_mono.href;//'https://drive.google.com/file/d/0B_b1e3AASsaLLVZzR0Y3WE1pUmc/view';
+if(/^https?:\/\/(drive\.google\.com\/open\?id=|drive\.google\.com\/file\/d\/)([^&|^?]*)(\/view.*$|\/view$|\/preview$|\/preview.*$|\&.*$)/gi.test(google_drive_url)){
+    this_mono.href = google_drive_url.replace(/^https?:\/\/(drive\.google\.com\/open\?id=|drive\.google\.com\/file\/d\/)([^&|^?]*)(\/view.*$|\/view$|\/preview$|\/preview.*$|\&.*$)/gi,'https://drive.google.com/file/d/$2/preview');
+}
+
+if(/^https?:\/\/drive\.google\.com\/open\?id=([^&|^?]*)($|\&.*$)/gi.test(google_drive_url)){
+    this_mono.href = google_drive_url.replace(/^https?:\/\/drive\.google\.com\/open\?id=([^&|^?]*)($|\&.*$)/gi,'https://drive.google.com/file/d/$1/preview');
+}
+```
+
+- 順便更新另一個禁止燈箱的 Google Drive
+```
+//----針對 X-Frame-Options 確定的網域，在這裡作手動排除。
+if(this_mono.href.match(/(^https?:\/\/trello.com|^https?:\/\/drive\.google\.com\/drive\/folders\/.*$|^https?:\/\/.*minwt.com|^https?:\/\/ifttt.com|^https?:\/\/.*osdn.net|^https?:\/\/developers.google.com|^https?:\/\/github.com|^https?:\/\/highlightjs.org|^https?:\/\/www.google.com|^https?:\/\/greasyfork.org|^https?:\/\/chrome.google.com|^https?:\/\/www.zapier.com|^https?:\/\/zapier.com|^https?:\/\/www.backblaze.com|^https?:\/\/.*sdbx.jp|^https?:\/\/www.ninja.co.jp|^https?:\/\/.*plurk.com)/gi)){
+    console.log('【Error】Refused to display \'' + this_mono.href + '\' in a frame because it set \'X-Frame-Options\'\n針對這些確定不支援跨站顯示框架網頁的網域，已自動排除使用燈箱。');
+    window.open(this_mono.href,'_blank');
+    $.fancybox.close(1);
+}
+```
+
+## \[2016.12.10\] 偷偷增加 每日第一次開啟網頁瀏覽的時候會通報
+
+- 第一次玩時間參數XD
+- 透過資料收集來辨認訪客
+
 ## \[2016.12.09\] 增加 Bootstrap 選單上的特效
 
 - 參考自：[「Animate\.css」讓Boostrap導覽列的下拉選單動起來|梅問題．教學網](https://www.minwt.com/?p=16745)

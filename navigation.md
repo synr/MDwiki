@@ -184,9 +184,10 @@
   - <a href="javascript:fancybox_openurl('https://line.me/R/ti/p/%40pyv6283b');" alt="加入好友"><img src="line.png" /> 動畫瘋 LINE 機器人（站長試寫）</a>
   - [📺 操作示範效果](https://drive.google.com/file/d/0B3rgktr7zpP9c3BXR2c1WC1RdTQ/preview "這是基本版純文字訊息，據官方文件所示也支援傳送圖片、聲音、影像、檔案。但那需要另外研究怎麼寫。")
   
-[🔃  2016.12.09 更新]()
+[🔃  2016.12.11 更新]()
 
   - #更新項目
+  - [🆕 修正 燈箱開啟 YouTube 問題](#!update.md "2016.12.11")
   - [🆕 增加 Bootstrap 選單上的特效](#!update.md#[2016.12.09]_增加_Bootstrap_選單上的特效 "2016.12.09")
   - [🆕 基於 JavaScript 的 Error 403 封印完成](#!update.md#[2016.12.05]_基於_JavaScript_的_Error_403_封印完成 "2016.12.05")
   - [🆕 JANDI 彈性輸入 完成](#!update.md# "2016.12.04")

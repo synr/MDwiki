@@ -1643,7 +1643,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
         //燈箱驗證用 function，排除事項統一加在這裡。
         function fancybox_check_before(this_mono){
                     //----針對 X-Frame-Options 確定的網域，在這裡作手動排除。
-                    if(this_mono.href.match(/(^https?:\/\/trello.com|^https?:\/\/.*minwt.com|^https?:\/\/ifttt.com|^https?:\/\/.*osdn.net|^https?:\/\/developers.google.com|^https?:\/\/github.com|^https?:\/\/highlightjs.org|^https?:\/\/www.google.com|^https?:\/\/greasyfork.org|^https?:\/\/chrome.google.com|^https?:\/\/www.zapier.com|^https?:\/\/zapier.com|^https?:\/\/www.backblaze.com|^https?:\/\/.*sdbx.jp|^https?:\/\/www.ninja.co.jp|^https?:\/\/.*plurk.com)/gi)){
+                    if(this_mono.href.match(/(^https?:\/\/trello.com|^https?:\/\/drive\.google\.com\/drive\/folders\/.*$|^https?:\/\/.*minwt.com|^https?:\/\/ifttt.com|^https?:\/\/.*osdn.net|^https?:\/\/developers.google.com|^https?:\/\/github.com|^https?:\/\/highlightjs.org|^https?:\/\/www.google.com|^https?:\/\/greasyfork.org|^https?:\/\/chrome.google.com|^https?:\/\/www.zapier.com|^https?:\/\/zapier.com|^https?:\/\/www.backblaze.com|^https?:\/\/.*sdbx.jp|^https?:\/\/www.ninja.co.jp|^https?:\/\/.*plurk.com)/gi)){
                         console.log('【Error】Refused to display \'' + this_mono.href + '\' in a frame because it set \'X-Frame-Options\'\n針對這些確定不支援跨站顯示框架網頁的網域，已自動排除使用燈箱。');
                         window.open(this_mono.href,'_blank');
                         $.fancybox.close(1);
@@ -1653,6 +1653,22 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                       console.log('https can not open ' + this_mono.href);
                       window.open(this_mono.href,'_blank');
                       $.fancybox.close(1);  
+                    }
+
+                    //2016.12.11+ YouTube 強迫用崁入
+                    var youtube_url = this_mono.href;//'http://www.youtube.com/watch?v=pnds1KIE-hM&sfsdf=987';//'https://youtu.be/pnds1KIE-hM?d=987';
+                    if(/^https?:\/\/(.*\.youtube\.com\/watch\?v\=|youtu\.be\/)([^&|^?]*)($|\&.*$|\?.*$)/gi.test(youtube_url)){
+                        this_mono.href = youtube_url.replace(/^https?:\/\/(.*\.youtube\.com\/watch\?v\=|youtu\.be\/)([^&|^?]*)($|\&.*$|\?.*$)/gi,'https://www.youtube.com/embed/$2');
+                    }
+
+                    //2016.12.11+ Google Drive 自動切換到 preview
+                    var google_drive_url = this_mono.href;//'https://drive.google.com/file/d/0B_b1e3AASsaLLVZzR0Y3WE1pUmc/view';
+                    if(/^https?:\/\/(drive\.google\.com\/open\?id=|drive\.google\.com\/file\/d\/)([^&|^?]*)(\/view.*$|\/view$|\/preview$|\/preview.*$|\&.*$)/gi.test(google_drive_url)){
+                        this_mono.href = google_drive_url.replace(/^https?:\/\/(drive\.google\.com\/open\?id=|drive\.google\.com\/file\/d\/)([^&|^?]*)(\/view.*$|\/view$|\/preview$|\/preview.*$|\&.*$)/gi,'https://drive.google.com/file/d/$2/preview');
+                    }
+
+                    if(/^https?:\/\/drive\.google\.com\/open\?id=([^&|^?]*)($|\&.*$)/gi.test(google_drive_url)){
+                        this_mono.href = google_drive_url.replace(/^https?:\/\/drive\.google\.com\/open\?id=([^&|^?]*)($|\&.*$)/gi,'https://drive.google.com/file/d/$1/preview');
                     }
         }
 
@@ -2233,7 +2249,11 @@ console.log("\u88ab\u901a\u5831\u7684\u6240\u5728\u7db2\u5740\uff1a"+location.hr
          //2016.12.08+ debug
          function debug_width(){
             debug_width_timer++;
-            if(debug_width_timer<2){
+                        if((parseInt(document.getElementById('md-page-menu').style.width.replace(/(\d+).*/gi,'$1'))>parseInt($(document).width())*0.25) && (!($(document).width()<975)) ) {
+                            //document.getElementById('md-page-menu').style.width='263px';
+                            debug_width_timer = 1;
+                        }
+            if(debug_width_timer<5){
               var target_obj = document.getElementById('md-page-menu');
               if(target_obj!=null){
                   console.log('調整視窗');
