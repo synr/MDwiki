@@ -2213,6 +2213,9 @@ console.log("\u88ab\u901a\u5831\u7684\u6240\u5728\u7db2\u5740\uff1a"+location.hr
                 //document.location = 'https://synr.github.io' + document.location.href.replace(/^http:\/\/landerso.at-ninja.jp.*\/(#!.*.md$)/gi,'$1');
                 document.location = 'https://synr.github.io/' + document.location.hash;
             }
+            if(/^http:\/\/landerso.coding.me\/mdwiki\/.*/gi.test(document.location)){
+                 document.location = 'https://landerso.coding.me/' + document.location.hash;
+            }
         }
         window.setTimeout(bye_ninja,500); //單次
 
@@ -2249,10 +2252,14 @@ console.log("\u88ab\u901a\u5831\u7684\u6240\u5728\u7db2\u5740\uff1a"+location.hr
          //2016.12.08+ debug
          function debug_width(){
             debug_width_timer++;
+            try {
                         if((parseInt(document.getElementById('md-page-menu').style.width.replace(/(\d+).*/gi,'$1'))>parseInt($(document).width())*0.25) && (!($(document).width()<975)) ) {
                             //document.getElementById('md-page-menu').style.width='263px';
                             debug_width_timer = 1;
                         }
+            }catch (e) {
+                console.log(e);
+            }
             if(debug_width_timer<5){
               var target_obj = document.getElementById('md-page-menu');
               if(target_obj!=null){
