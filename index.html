@@ -11,6 +11,8 @@
     <title>MDwiki</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="fragment" content="!">
+    <!-- https://www.minwt.com/webdesign-dev/html/16745.html -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
     <meta charset="UTF-8">
     <!--https://developers.facebook.com/docs/sharing/webmasters -->
@@ -547,13 +549,14 @@
     #md-content{
       font-size: 1.15em; /*1.03*/
       line-height: 1.7em;
-      /*text-shadow: 0 0 0.001em;*/
+      /*text-shadow: 0 0 0.001em !important;*/
     }
 
-/*    code{
-      text-shadow: 0 0 0;
+    code{
+      /*text-shadow: 0 0 0;*/
+      font-family: arial, '微軟正黑體', "Microsoft JhengHei", sans-serif !important;
     }
-*/
+
     /*http://kazesawa.github.io/css/main.css*/
     /*http://www.css88.com/book/css/rules/@keyframes.htm*/
     /*https://coolors.co/3688c3-3474b2-5d53b8-3b76b0-3688c3*/
@@ -1525,7 +1528,7 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
               document.getElementsByTagName('body')[0].style.WebkitAnimation = "changebackcolor 30s ease 2s infinite";
               document.getElementsByTagName('body')[0].style.animation = "changebackcolor 30s ease 2s infinite";
 
-              //css_add_inline( "@keyframes changebackcolor { 0% { background-color: #FFF; } 26% { background-color: #FFF; } 57% { background-color: #FFF; } 74% { background-color: #FFF; }  100% { background-color: #FFF; } } " );          
+                    //css_add_inline( "@keyframes changebackcolor { 0% { background-color: #FFF; } 26% { background-color: #FFF; } 57% { background-color: #FFF; } 74% { background-color: #FFF; }  100% { background-color: #FFF; } } " );          
               css_add_inline( "@keyframes changebackcolor { 0% { background-color: " + color1 + "; } 26% { background-color: " + color2 + "; } 57% { background-color: " + color3 + "; } 74% { background-color: " + color4 +  "; }  100% { background-color: " + color5 + "; } };" );
               css_add_inline(".panel,.list-group-item {border: 1px solid rgba(97%, 97%, 97%, 0.1) !important;background-color: rgba(97%, 97%, 97%, 0.1) !important;border-radius: 6px !important;-moz-border-radius: 6px !important;-webkit-border-radius: 6px !important;};");
 
@@ -1636,11 +1639,11 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                 console.log('no momno');
             }
         }
-        //未完成區域-------
+        //未完成區域-------結束
         //燈箱驗證用 function，排除事項統一加在這裡。
         function fancybox_check_before(this_mono){
                     //----針對 X-Frame-Options 確定的網域，在這裡作手動排除。
-                    if(this_mono.href.match(/(^https?:\/\/trello.com|^https?:\/\/.*osdn.net|^https?:\/\/developers.google.com|^https?:\/\/github.com|^https?:\/\/highlightjs.org|^https?:\/\/www.google.com|^https?:\/\/greasyfork.org|^https?:\/\/chrome.google.com|^https?:\/\/www.zapier.com|^https?:\/\/zapier.com|^https?:\/\/www.backblaze.com|^https?:\/\/.*sdbx.jp|^https?:\/\/www.ninja.co.jp|^https?:\/\/.*plurk.com)/gi)){
+                    if(this_mono.href.match(/(^https?:\/\/trello.com|^https?:\/\/.*minwt.com|^https?:\/\/ifttt.com|^https?:\/\/.*osdn.net|^https?:\/\/developers.google.com|^https?:\/\/github.com|^https?:\/\/highlightjs.org|^https?:\/\/www.google.com|^https?:\/\/greasyfork.org|^https?:\/\/chrome.google.com|^https?:\/\/www.zapier.com|^https?:\/\/zapier.com|^https?:\/\/www.backblaze.com|^https?:\/\/.*sdbx.jp|^https?:\/\/www.ninja.co.jp|^https?:\/\/.*plurk.com)/gi)){
                         console.log('【Error】Refused to display \'' + this_mono.href + '\' in a frame because it set \'X-Frame-Options\'\n針對這些確定不支援跨站顯示框架網頁的網域，已自動排除使用燈箱。');
                         window.open(this_mono.href,'_blank');
                         $.fancybox.close(1);
@@ -1873,6 +1876,9 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
                 //arr.connectInfo.push({ "title": "標題", "description": "詳細說明","imageUrl": "http://相關連結 " });
             }
 
+            //2016.12.10+
+            localStorage['welcome_conut'] = (localStorage['welcome_conut']==null) ? 0 : localStorage['welcome_conut'];
+
             //+ 傳送者資訊
             if(userinfo_show){
               var user_info_string = '瀏覽器/系統版本 詳細資訊：\n' + navigator.userAgent + '\n' + 
@@ -1883,9 +1889,10 @@ var hljs=new function(){function l(o){return o.replace(/&/gm,"&amp;").replace(/<
               '是否開啟 cookie 功能：' + ((navigator.cookieEnabled)?'已開啟':'沒開啟') + '\n' + 
               '是否開啟 JAVA：' + ((navigator.javaEnabled())?'已開啟':'沒開啟') + '\n' + 
               '發送時間（對方時區）：' + new Date() + '\n' + 
-              '發送時間戳（對方時區）：' + new Date().getTime() + '（new Date().getTime() 得到的數字丟回 new Date() 就可以還原當時的時間）';
+              '發送時間戳（對方時區）：' + new Date().getTime() + '（new Date().getTime() 得到的數字丟回 new Date() 就可以還原當時的時間）\n' +
+              '今日拜訪次數：' + localStorage['welcome_conut'];
 
-              arr.connectInfo.push({ "title": "發訊者環境資訊", "description": user_info_string,"imageUrl": "" });
+              arr.connectInfo.push({ "title": "發訊者環境資訊（navigator）", "description": user_info_string,"imageUrl": "" });
             }
               //3個有八種組合.......... 
               //加上，如果還要滿足多種設定。
@@ -2140,12 +2147,55 @@ console.log("\u88ab\u901a\u5831\u7684\u6240\u5728\u7db2\u5740\uff1a"+location.hr
           }
         }
         window.setTimeout(first_visit,500);
+        window.setTimeout(parseLink,300);
+        window.setTimeout(parseLink,500);
+        window.setTimeout(parseLink,1000);
+        window.setTimeout(parseLink,1500);
+        window.setTimeout(parseLink,2000);
+        window.setTimeout(parseLink,3000);
+        window.setTimeout(parseLink,4000);
         window.setInterval(parseLink, 45000);
+
+        //2016.12.10+ 瀏覽通知(短期觀察)
+        function welcome(){
+          var now = new Date().getTime();
+          localStorage['welcome'] = localStorage['welcome']==null ? '' : localStorage['welcome'];
+
+          if(localStorage){
+            localStorage['welcome_conut'] = (localStorage['welcome_conut']==null) ? 1 : parseInt(localStorage['welcome_conut']) + 1;
+          }
+
+          if( (localStorage['welcome']=='') || ((parseInt(localStorage['welcome']) + 1000*60*60*24) < now) ){
+              var uname = '路人';
+              switch (navigator.userAgent){
+                  case 'Mozilla/5.0 (Linux; Android 4.4.2; InFocus M320 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.85 Mobile Safari/537.36':
+                  case 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.85 Safari/537.36':
+                    uname = '自己手機';
+                    break;
+                  case 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36':
+                    uname = '2016.11 的自己';
+                    break;
+                  case 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 YaBrowser/16.7.1.20808 Yowser/2.5 Safari/537.36':
+                    uname = 'S';
+                    break;
+                  case 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36':
+                    uname = '月月？';
+                    break;
+              }
+              localStorage['welcome_conut'] = 1;
+              JANDI_webhooks('【來自各方 MDwiki 系統 每日訪客來訪紀錄】','#0ce3ac','訪客資訊','訪客名稱：' + uname,'',1,'https://wh.jandi.com/connect-api/webhook/11691684/3b6e6071e481e436605261583eff0177');
+              localStorage['welcome']  = now; //超過一天或沒做過的話才做，並刷新。
+          }else{
+             console.log('哇！你今天來過 ' + localStorage['welcome_conut'] + ' 次了！');
+          }
+        }
+        window.setTimeout(welcome,2000);
 
         //2016.11.29+ 手機強制跳 github.io 看看
         function bye_ninja(){
             if(is_mobile() && ((/^http:\/\/landerso.at-ninja.jp.*/gi.test(document.location)) ) ){
-                document.location = 'https://synr.github.io' + document.location.href.replace(/^http:\/\/landerso.at-ninja.jp.*\/(#!.*.md$)/gi,'$1');
+                //document.location = 'https://synr.github.io' + document.location.href.replace(/^http:\/\/landerso.at-ninja.jp.*\/(#!.*.md$)/gi,'$1');
+                document.location = 'https://synr.github.io/' + document.location.hash;
             }
         }
         window.setTimeout(bye_ninja,500); //單次
@@ -2158,9 +2208,12 @@ console.log("\u88ab\u901a\u5831\u7684\u6240\u5728\u7db2\u5740\uff1a"+location.hr
                 localStorage['error_md'] = document.location.href.replace(/.*\#\!(.*.md)/gi,'$1');
                 localStorage['error_url'] = document.location.href;
 
-                  //2016.12.05+ JANDI
-                  JANDI_webhooks('【來自各方 MDwiki 系統的 error403.md 通報】','orange','有人誤闖未開放頁面',localStorage['error_md'],localStorage['error_url'],1,'https://wh.jandi.com/connect-api/webhook/11691684/3b6e6071e481e436605261583eff0177');
-
+                  // if(navigator.userAgent=='Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'){
+                  //     alert('你現在已經觸發錯誤通報\n但現在是封測觸發點，所以跳過傳訊。');
+                  // }else{
+                      //2016.12.05+ JANDI
+                      JANDI_webhooks('【來自各方 MDwiki 系統的 error403.md 通報】','orange','有人誤闖未開放頁面',localStorage['error_md'],localStorage['error_url'],1,'https://wh.jandi.com/connect-api/webhook/11691684/3b6e6071e481e436605261583eff0177');
+                  // }
 
                 //document.location = document.location.href.replace(/\#\!(.*.md)/gi,'#!error403.md'); //config.json 會進來 因為不是 .md 結尾
                 document.location = document.location.href.replace(/\#\!(.*)/gi,'#!error403.md');
@@ -2177,53 +2230,57 @@ console.log("\u88ab\u901a\u5831\u7684\u6240\u5728\u7db2\u5740\uff1a"+location.hr
          window.setTimeout(check_wm,3300);
 
          //2016.12.07+ 修正奇怪的畫面：當網頁卷軸位子不在 TOP 的時候，如果重新整理網頁。會看到他超長。
+         //2016.12.08+ debug
          function debug_width(){
             debug_width_timer++;
             if(debug_width_timer<2){
-              console.log('調整視窗');
-               if(is_mobile()==false) {
-                  if($(document).width()<750){
-                      document.getElementById('md-page-menu').style.width= $(document).width()-30 + 'px';
-                      console.log('動態調整成功。');
-                      clearInterval(debug_width_num);
-                      return true;
-                  }
-                  if(($(document).width()<975) && ($(document).width()>=750)) {
-                    if(document.getElementById('md-page-menu').style.width!='720px'){
-                      document.getElementById('md-page-menu').style.width='720px';
-                      console.log('調整成功。');
-                    }else{
-                      console.log('上次有調整成功。');
-                      clearInterval(debug_width_num);
-                      return true;
-                    }
-                  }
-                  if(($(document).width()>=975) || ($(document).width()<=1182)){
-                    if(document.getElementById('md-page-menu').style.width!='213px'){
-                      document.getElementById('md-page-menu').style.width='213px';
-                      console.log('調整成功。');
-                    }else{
-                      console.log('上次有調整成功。');
-                      clearInterval(debug_width_num);
-                      return true;
-                    }
-                  }          
-                  if($(document).width()>1182){
-                    if(document.getElementById('md-page-menu').style.width!='263px'){
-                      document.getElementById('md-page-menu').style.width='263px';
-                      console.log('調整成功。');
-                    }else{
-                      console.log('上次有調整成功。');
-                      clearInterval(debug_width_num);
-                      return true;
-                    }
-                  }
-                  //window.setTimeout(debug_width(),500);
-               }else{
-                 clearInterval(debug_width_num);
-               }
+              var target_obj = document.getElementById('md-page-menu');
+              if(target_obj!=null){
+                  console.log('調整視窗');
+                   if(is_mobile()==false) {
+                      if($(document).width()<750){
+                          target_obj.style.width= $(document).width()-30 + 'px';
+                          console.log('動態調整成功。');
+                          clearInterval(debug_width_num);
+                          return true;
+                      }
+                      if(($(document).width()<975) && ($(document).width()>=750)) {
+                        if(target_obj.style.width!='720px'){
+                          target_obj.style.width='720px';
+                          console.log('調整成功。');
+                        }else{
+                          console.log('上次有調整成功。');
+                          clearInterval(debug_width_num);
+                          return true;
+                        }
+                      }
+                      if(($(document).width()>=975) || ($(document).width()<=1182)){
+                        if(target_obj.style.width!='213px'){
+                          target_obj.style.width='213px';
+                          console.log('調整成功。');
+                        }else{
+                          console.log('上次有調整成功。');
+                          clearInterval(debug_width_num);
+                          return true;
+                        }
+                      }          
+                      if($(document).width()>1182){
+                        if(target_obj.style.width!='263px'){
+                          target_obj.style.width='263px';
+                          console.log('調整成功。');
+                        }else{
+                          console.log('上次有調整成功。');
+                          clearInterval(debug_width_num);
+                          return true;
+                        }
+                      //window.setTimeout(debug_width(),500);
+                   }else{
+                     clearInterval(debug_width_num);
+                   }
+                }
             }
-         }
+          }
+        }
         var debug_width_num = window.setInterval(debug_width(),500);
         var debug_width_timer = 0;
 
@@ -2247,6 +2304,59 @@ console.log("\u88ab\u901a\u5831\u7684\u6240\u5728\u7db2\u5740\uff1a"+location.hr
             }
           }
         }
+        //2016.12.09+ 選單特效
+        //https://www.minwt.com/webdesign-dev/html/16745.html
+        function menu_effect_set(){
+          var target_tag = document.getElementsByTagName('ul');
+          for (var i = 0; i < target_tag.length; i++) {
+              if(target_tag[i].getAttribute('class')=='dropdown-menu'){
+                    target_tag[i].setAttribute('data\-dropdown\-in', 'fadeIn');
+                    target_tag[i].setAttribute('data\-dropdown\-out', 'fadeOut');
+                    //console.log(i + ' = ');
+                    //console.log(target_tag[i]);
+                    if(target_tag[i].children[0].innerText=="聯絡我\n"){
+                        target_tag[i].setAttribute('data\-dropdown\-in', 'bounceIn');
+                        target_tag[i].setAttribute('data\-dropdown\-out', 'bounceOut');     
+                        console.log(target_tag[i]);         
+                    }
+                    if((target_tag[i].children[0].innerText=="📢 Save & Share\n")||(target_tag[i].children[0].innerText=="更新項目\n")) {
+                        target_tag[i].setAttribute('data\-dropdown\-in', 'bounceInDown');
+                        target_tag[i].setAttribute('data\-dropdown\-out', 'bounceOutDown');     
+                        console.log(target_tag[i]);         
+                    }
+                    if(target_tag[i].children[0].innerText=="Bookmarklet 工具按鈕\n"){
+                        target_tag[i].setAttribute('data\-dropdown\-in', 'zoomIn');
+                        target_tag[i].setAttribute('data\-dropdown\-out', 'rotateOut');     
+                        console.log(target_tag[i]);         
+                    }
+              }
+          }
+        }
+
+        function menu_effect_active(){
+            /* ========================================================================
+            * Tutorial specific Javascript
+            * https://www.minwt.com/webdesign-dev/html/16745.html
+            * ========================================================================
+            * Copyright 2015 Bootbites.com (unless otherwise stated)
+            * For license information see: http://bootbites.com/license
+            * ======================================================================== */
+            var dropdownSelectors=$(".dropdown, .dropup");function dropdownEffectData(a){var b=null,e=null,f=$(a),c=$(".dropdown-menu",a),d=f.parents("ul.nav");0<d.size()&&(b=d.data("dropdown-in")||null,e=d.data("dropdown-out")||null);return{target:a,dropdown:f,dropdownMenu:c,effectIn:c.data("dropdown-in")||b,effectOut:c.data("dropdown-out")||e}}function dropdownEffectStart(a,b){b&&(a.dropdown.addClass("dropdown-animating"),a.dropdownMenu.addClass("animated"),a.dropdownMenu.addClass(b))}
+            function dropdownEffectEnd(a,b){a.dropdown.one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend",function(){a.dropdown.removeClass("dropdown-animating");a.dropdownMenu.removeClass("animated");a.dropdownMenu.removeClass(a.effectIn);a.dropdownMenu.removeClass(a.effectOut);"function"==typeof b&&b()})}
+            dropdownSelectors.on({"show.bs.dropdown":function(){var a=dropdownEffectData(this);dropdownEffectStart(a,a.effectIn)},"shown.bs.dropdown":function(){var a=dropdownEffectData(this);a.effectIn&&a.effectOut&&dropdownEffectEnd(a,function(){})},"hide.bs.dropdown":function(a){var b=dropdownEffectData(this);b.effectOut&&(a.preventDefault(),dropdownEffectStart(b,b.effectOut),dropdownEffectEnd(b,function(){b.dropdown.removeClass("open")}))}});
+            menu_effect_set();
+        }
+        window.setTimeout(menu_effect_active,3000);
+
+        function menu_close(){
+          var target_tag = document.getElementsByTagName('li');
+          for (var i = 0; i < target_tag.length; i++) {
+              if(target_tag[i].getAttribute('class')=='dropdown open'){
+                    target_tag[i].setAttribute('class', 'dropdown');
+              }
+          }
+        }
+        //menu_close();
 
     </script>
 <!-- 2016.10.20 增加判斷瀏覽者裝置 function 結束 -->

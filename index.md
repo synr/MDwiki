@@ -28,10 +28,13 @@
 他有優先安排行動裝置排版的特性，可以在任何裝置上輕鬆閱讀。
 不論是電腦、手機、平版，都可以根據畫面即時變化（例如螢幕翻轉），
 變化成最容易閱讀，可輕鬆觀看的排版。
+        - 中文的相關應用教學建議可以參考：[梅問題教學](https://www.minwt.com/tag/bootstrap%E6%95%99%E5%AD%B8)
       2. 使用 [BootsWatch](http://bootswatch.com/) 做網站頂部下拉選單介面。
     - 程式語言高亮：使用 [highlightjs](https://highlightjs.org/)
-    - 燈箱：[colorbox](http://www.jacklmoore.com/colorbox/)
+      - 但，本站目前已另外裝 [Google 的 code\-prettify](https://github.com/google/code-prettify) 取代。
+    - [燈箱（Lightbox）](https://en.wikipedia.org/wiki/Lightbox\_\(JavaScript\))：[colorbox](http://www.jacklmoore.com/colorbox/)
       - 我還在摸索這要怎麼使用XD
+      - 本站目前已經另外安裝 [fancybox](http://fancyapps.com/fancybox/#examples) 燈箱主要用。
   - 我覺得他很適合用來呈現章節關聯性較高的資訊。
 例如：
     - 某個東西的研究結果
